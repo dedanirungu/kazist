@@ -1,6 +1,6 @@
 {
     "name": "contacts",
-    "title": "Contacts",
+    "title": "Contacts Manager",
     "icon": "assets\/contacts\/contacts\/icon.png",
     "extension": "component",
     "path": "contacts\/",
