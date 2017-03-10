@@ -16,6 +16,9 @@
     "require": {
         "composer/installers": "~1.0",
         "composer/composer": "dev-master",
+        "kazist/themes": "*@stable",
+        "kazist/core": "*@stable",
+        "kazist/assets": "*@stable",
         "symfony/http-foundation": "*@stable",
         "symfony/http-kernel": "*@stable",
         "symfony/event-dispatcher": "*@stable",
@@ -61,5 +64,11 @@
         "psr-4": {
             "": "include/"
         }
-    }
+    },
+    "extra": {
+        "installer-paths": {
+            "./assets/": ["kazist/assets"],
+            "./themes/": ["kazist/themes"],
+            "./include/": ["kazist/core"]
+        }
 }
