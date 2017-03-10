@@ -15,6 +15,7 @@
     ],
     "require": {
         "composer/installers": "~1.0",
+        "composer/composer": "dev-master",
         "symfony/http-foundation": "*@stable",
         "symfony/http-kernel": "*@stable",
         "symfony/event-dispatcher": "*@stable",
