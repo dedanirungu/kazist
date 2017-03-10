@@ -71,4 +71,5 @@
             "./themes/": ["kazist/themes"],
             "./include/": ["kazist/core"]
         }
+    }
 }
