@@ -59,7 +59,7 @@
         "post-update-cmd": [
             "Setup\\InstallScript::postInstall"
         ]
-    },
+    }, 
     "autoload": {
         "psr-4": {
             "": "include/"
