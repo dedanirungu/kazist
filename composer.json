@@ -64,5 +64,12 @@
         "psr-4": {
             "": "include/"
         }
+    },
+    "extra": {
+        "installer-paths": {
+            "./assets/": ["kazist/assets"],
+            "./themes/": ["kazist/themes"],
+            "./include/": ["kazist/core"]
+        }
     }
 }
