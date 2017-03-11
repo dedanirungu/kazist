@@ -14,7 +14,6 @@
         }
     ],
     "require": {
-        "composer/installers": "~1.0",
         "composer/composer": "dev-master",
         "kazist/themes": "*@stable",
         "kazist/core": "*@stable",
@@ -67,9 +66,9 @@
     },
     "extra": {
         "installer-paths": {
-            "./assets/": ["kazist/assets"],
-            "./themes/": ["kazist/themes"],
-            "./include/": ["kazist/core"]
+            "assets/": ["kazist/assets"],
+            "themes/": ["kazist/themes"],
+            "include/": ["kazist/core"]
         }
     }
 }
