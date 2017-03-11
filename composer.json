@@ -5,7 +5,7 @@
     "keywords": ["kazist", "cms", "code generator", "system builder", "ERP"],
     "homepage": "https://github.com/kazist/kazist",
     "license": "GPL-3.0",
-    "authors": [
+    "authors": [ 
         {
             "name": "Dedan Irungu",
             "email": "info@emshyinnovate.com",
