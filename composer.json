@@ -1,7 +1,7 @@
 {
     "name": "kazist/kazist",
     "type": "project",
-    "description": "Description of project kazist.",
+    "description": "Description of project kazist. ",
     "keywords": ["kazist", "cms", "code generator", "system builder", "ERP", "School Manager"],
     "homepage": "https://github.com/kazist/kazist",
     "license": "GPL-3.0",
