@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3594841d43bd35894f36ff91dbdccbf8",
+    "content-hash": "eab79e5b8927cc7dae0dd9c5c06e56f1",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -107,16 +107,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "dev-master",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "5b63ce3ef390776d3b80a1f73fbcd24bc4ef34bf"
+                "reference": "7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/5b63ce3ef390776d3b80a1f73fbcd24bc4ef34bf",
-                "reference": "5b63ce3ef390776d3b80a1f73fbcd24bc4ef34bf",
+                "url": "https://api.github.com/repos/composer/composer/zipball/7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd",
+                "reference": "7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -180,7 +180,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-03-10 08:58:02"
+            "time": "2017-03-10T08:29:45+00:00"
         },
         {
             "name": "composer/installers",
@@ -1355,62 +1355,25 @@
         },
         {
             "name": "kazist/assets",
-            "version": "1.0.0",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/assets.git",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6"
+                "reference": "a259a790f5e16a5a98cdbea5b680900e7a56f062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/assets/zipball/74778776d9367a6edae43ab7acb0782bb757b5b6",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6",
+                "url": "https://api.github.com/repos/kazist/assets/zipball/a259a790f5e16a5a98cdbea5b680900e7a56f062",
+                "reference": "a259a790f5e16a5a98cdbea5b680900e7a56f062",
                 "shasum": ""
             },
             "require": {
-                "almasaeed2010/adminlte": "*@stable",
-                "composer/installers": "~1.0",
-                "doctrine/orm": "2.4.*",
-                "fabpot/goutte": "*@stable",
-                "fortawesome/font-awesome": "*@stable",
-                "imagine/imagine": "*@stable",
-                "kriswallsmith/assetic": "*@stable",
-                "maximebf/debugbar": "*@stable",
-                "monolog/monolog": "*@stable",
-                "mtdowling/cron-expression": "*@stable",
-                "swiftmailer/swiftmailer": "*@stable",
-                "symfony/asset": "*@stable",
-                "symfony/config": "*@stable",
-                "symfony/console": "*@stable",
-                "symfony/css-selector": "*@stable",
-                "symfony/dependency-injection": "*@stable",
-                "symfony/dom-crawler": "*@stable",
-                "symfony/event-dispatcher": "*@stable",
-                "symfony/finder": "*@stable",
-                "symfony/form": "*@stable",
-                "symfony/http-foundation": "*@stable",
-                "symfony/http-kernel": "*@stable",
-                "symfony/routing": "*@stable",
-                "symfony/security": "*@stable",
-                "symfony/translation": "*@stable",
-                "symfony/twig-bridge": "*@stable",
-                "symfony/validator": "*@stable",
-                "symfony/yaml": "2.*",
-                "tecnickcom/tcpdf": "*@stable",
-                "tijsverkoyen/css-to-inline-styles": "*@stable",
-                "tinymce/tinymce": "*@stable",
-                "twbs/bootstrap": "3.*@stable",
-                "twig/twig": "1.*@stable"
+                "composer/installers": "~1.0"
             },
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "": "include/"
-                }
-            },
+            "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "LGPL-3.0"
             ],
             "authors": [
                 {
@@ -1420,75 +1383,35 @@
                     "role": "Founder & Developer"
                 }
             ],
-            "description": "Description of project kazist.",
-            "homepage": "https://github.com/kazist/kazist",
+            "description": "Kazist assets Manager.",
+            "homepage": "https://github.com/kazist/assets",
             "keywords": [
-                "ERP",
-                "cms",
-                "code generator",
-                "kazist",
-                "system builder"
+                "assets manager",
+                "kazist"
             ],
-            "time": "2017-03-10T08:20:47+00:00"
+            "time": "2017-03-11T09:01:04+00:00"
         },
         {
             "name": "kazist/core",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/core.git",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6"
+                "reference": "c03babea702e60a70391aa34f7bc739a438fa73e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/core/zipball/74778776d9367a6edae43ab7acb0782bb757b5b6",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6",
+                "url": "https://api.github.com/repos/kazist/core/zipball/c03babea702e60a70391aa34f7bc739a438fa73e",
+                "reference": "c03babea702e60a70391aa34f7bc739a438fa73e",
                 "shasum": ""
             },
             "require": {
-                "almasaeed2010/adminlte": "*@stable",
-                "composer/installers": "~1.0",
-                "doctrine/orm": "2.4.*",
-                "fabpot/goutte": "*@stable",
-                "fortawesome/font-awesome": "*@stable",
-                "imagine/imagine": "*@stable",
-                "kriswallsmith/assetic": "*@stable",
-                "maximebf/debugbar": "*@stable",
-                "monolog/monolog": "*@stable",
-                "mtdowling/cron-expression": "*@stable",
-                "swiftmailer/swiftmailer": "*@stable",
-                "symfony/asset": "*@stable",
-                "symfony/config": "*@stable",
-                "symfony/console": "*@stable",
-                "symfony/css-selector": "*@stable",
-                "symfony/dependency-injection": "*@stable",
-                "symfony/dom-crawler": "*@stable",
-                "symfony/event-dispatcher": "*@stable",
-                "symfony/finder": "*@stable",
-                "symfony/form": "*@stable",
-                "symfony/http-foundation": "*@stable",
-                "symfony/http-kernel": "*@stable",
-                "symfony/routing": "*@stable",
-                "symfony/security": "*@stable",
-                "symfony/translation": "*@stable",
-                "symfony/twig-bridge": "*@stable",
-                "symfony/validator": "*@stable",
-                "symfony/yaml": "2.*",
-                "tecnickcom/tcpdf": "*@stable",
-                "tijsverkoyen/css-to-inline-styles": "*@stable",
-                "tinymce/tinymce": "*@stable",
-                "twbs/bootstrap": "3.*@stable",
-                "twig/twig": "1.*@stable"
+                "composer/installers": "~1.0"
             },
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "": "include/"
-                }
-            },
+            "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "LGPL-3.0"
             ],
             "authors": [
                 {
@@ -1498,75 +1421,35 @@
                     "role": "Founder & Developer"
                 }
             ],
-            "description": "Description of project kazist.",
-            "homepage": "https://github.com/kazist/kazist",
+            "description": "Kazist core Manager.",
+            "homepage": "https://github.com/kazist/core",
             "keywords": [
-                "ERP",
-                "cms",
-                "code generator",
-                "kazist",
-                "system builder"
+                "core manager",
+                "kazist"
             ],
-            "time": "2017-03-10T08:20:47+00:00"
+            "time": "2017-03-11T09:58:18+00:00"
         },
         {
             "name": "kazist/themes",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/themes.git",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6"
+                "reference": "21ef8a9075767d5fe2a3cda567c15ab8e5f4e449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/themes/zipball/74778776d9367a6edae43ab7acb0782bb757b5b6",
-                "reference": "74778776d9367a6edae43ab7acb0782bb757b5b6",
+                "url": "https://api.github.com/repos/kazist/themes/zipball/21ef8a9075767d5fe2a3cda567c15ab8e5f4e449",
+                "reference": "21ef8a9075767d5fe2a3cda567c15ab8e5f4e449",
                 "shasum": ""
             },
             "require": {
-                "almasaeed2010/adminlte": "*@stable",
-                "composer/installers": "~1.0",
-                "doctrine/orm": "2.4.*",
-                "fabpot/goutte": "*@stable",
-                "fortawesome/font-awesome": "*@stable",
-                "imagine/imagine": "*@stable",
-                "kriswallsmith/assetic": "*@stable",
-                "maximebf/debugbar": "*@stable",
-                "monolog/monolog": "*@stable",
-                "mtdowling/cron-expression": "*@stable",
-                "swiftmailer/swiftmailer": "*@stable",
-                "symfony/asset": "*@stable",
-                "symfony/config": "*@stable",
-                "symfony/console": "*@stable",
-                "symfony/css-selector": "*@stable",
-                "symfony/dependency-injection": "*@stable",
-                "symfony/dom-crawler": "*@stable",
-                "symfony/event-dispatcher": "*@stable",
-                "symfony/finder": "*@stable",
-                "symfony/form": "*@stable",
-                "symfony/http-foundation": "*@stable",
-                "symfony/http-kernel": "*@stable",
-                "symfony/routing": "*@stable",
-                "symfony/security": "*@stable",
-                "symfony/translation": "*@stable",
-                "symfony/twig-bridge": "*@stable",
-                "symfony/validator": "*@stable",
-                "symfony/yaml": "2.*",
-                "tecnickcom/tcpdf": "*@stable",
-                "tijsverkoyen/css-to-inline-styles": "*@stable",
-                "tinymce/tinymce": "*@stable",
-                "twbs/bootstrap": "3.*@stable",
-                "twig/twig": "1.*@stable"
+                "composer/installers": "~1.0"
             },
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "": "include/"
-                }
-            },
+            "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "LGPL-3.0"
             ],
             "authors": [
                 {
@@ -1576,16 +1459,14 @@
                     "role": "Founder & Developer"
                 }
             ],
-            "description": "Description of project kazist.",
-            "homepage": "https://github.com/kazist/kazist",
+            "description": "Kazist themes Manager.",
+            "homepage": "https://github.com/kazist/themes",
             "keywords": [
-                "ERP",
-                "cms",
-                "code generator",
+                "adverts",
                 "kazist",
-                "system builder"
+                "themes manager"
             ],
-            "time": "2017-03-10T08:20:47+00:00"
+            "time": "2017-03-11T08:04:56+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1724,6 +1605,58 @@
                 "debugbar"
             ],
             "time": "2017-01-05T08:46:19+00:00"
+        },
+        {
+            "name": "mnsami/composer-custom-directory-installer",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnsami/composer-custom-directory-installer.git",
+                "reference": "8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnsami/composer-custom-directory-installer/zipball/8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5",
+                "reference": "8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "Composer\\CustomDirectoryInstaller\\LibraryPlugin",
+                    "Composer\\CustomDirectoryInstaller\\PearPlugin",
+                    "Composer\\CustomDirectoryInstaller\\PluginPlugin"
+                ],
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\CustomDirectoryInstaller": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mina Nabil Sami",
+                    "email": "mina.nsami@gmail.com"
+                }
+            ],
+            "description": "A composer plugin, to help install packages of different types in custom paths.",
+            "keywords": [
+                "composer",
+                "composer-installer",
+                "composer-plugin"
+            ],
+            "time": "2016-05-25T08:26:02+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2189,7 +2122,7 @@
         },
         {
             "name": "symfony/asset",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset.git",
@@ -2244,7 +2177,7 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -2301,7 +2234,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -2418,7 +2351,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -2588,7 +2521,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -2644,7 +2577,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2704,7 +2637,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -2753,7 +2686,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -2802,7 +2735,7 @@
         },
         {
             "name": "symfony/form",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
@@ -2878,7 +2811,7 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -2931,16 +2864,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "bf1506fd6beb944d8afd052cd2e9ee8ceaf1c253"
+                "reference": "bc909e85b8585c9edf043d0fca871308c41bb9b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bf1506fd6beb944d8afd052cd2e9ee8ceaf1c253",
-                "reference": "bf1506fd6beb944d8afd052cd2e9ee8ceaf1c253",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bc909e85b8585c9edf043d0fca871308c41bb9b4",
+                "reference": "bc909e85b8585c9edf043d0fca871308c41bb9b4",
                 "shasum": ""
             },
             "require": {
@@ -3009,11 +2942,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-09T02:01:51+00:00"
+            "time": "2017-03-10T18:35:31+00:00"
         },
         {
             "name": "symfony/inflector",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
@@ -3070,7 +3003,7 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
@@ -3145,7 +3078,7 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
@@ -3483,7 +3416,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -3532,7 +3465,7 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
@@ -3600,7 +3533,7 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -3675,7 +3608,7 @@
         },
         {
             "name": "symfony/security",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security.git",
@@ -3753,7 +3686,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -3817,7 +3750,7 @@
         },
         {
             "name": "symfony/twig-bridge",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/twig-bridge.git",
@@ -3898,7 +3831,7 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
@@ -3975,7 +3908,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -4362,10 +4295,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "composer/composer": 20,
+        "mnsami/composer-custom-directory-installer": 0,
+        "composer/composer": 0,
         "kazist/themes": 0,
-        "kazist/core": 0,
         "kazist/assets": 0,
+        "kazist/core": 0,
         "symfony/http-foundation": 0,
         "symfony/http-kernel": 0,
         "symfony/event-dispatcher": 0,
