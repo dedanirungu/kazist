@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> 
+<html lang="en"> <!--<![endif]-->
+
+    {% import "blocks.index.twig" as block_index %}
+
+    {% set sidebar_length =sidebar|length %}  
+    {% set before_body_length =before_body|length %}
+    {% set after_body_length =after_body|length %}
+    {% set before_footer_length =before_footer|length %}
+    {% set after_footer_length =after_footer|length %}
+
+    <head>
+        <title>{{ document.title }}</title>
+
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        {% if document.unique_name == 'home' and document.user.id %}
+            <meta http-equiv="refresh" content="0;URL='{{ generate_url('projects.tasks', null, 0) }}'">
+            <script>
+                window.location.href="{{ generate_url('projects.tasks', null, 0) }}";
+            </script>
+        {% endif %}
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <!-- Web Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+        <script src="{{ web_root }}assets/js/jquery.js"></script>
+        <script src="{{ web_root }}assets/js/jquery-ui.js"></script>
+        <script src="{{ web_root }}themes/frontend/wonderful/assets/js/lazyload.js"></script>
+
+        <!-- CSS Global Compulsory -->
+        {{ set_assets('themes/frontend/unify/assets/css/style.css') }}
+
+        <!-- CSS Header and Footer -->
+        {{ set_assets('themes/frontend/unify/assets/css/headers/header-v8.css') }}
+        {{ set_assets('themes/frontend/unify/assets/css/footers/footer-v1.css') }}
+
+        <!-- CSS Implementing Plugins -->
+        {{ set_assets('themes/frontend/unify/assets/plugins/animate.css') }}
+        {{ set_assets('themes/frontend/unify/assets/plugins/login-signup-modal-window/css/style.css') }}
+
+        <!-- CSS Theme -->
+        {{ set_assets('themes/frontend/unify/assets/css/theme-colors/default.css') }}
+        {{ set_assets('themes/frontend/unify/assets/css/theme-skins/dark.css') }}
+
+        <!-- CSS Customization -->
+        {{ set_assets('themes/frontend/simplest/assets/css/custom.css') }}
+        {{ set_assets('themes/frontend/simplest/assets/css/ui-designer.css') }}
+        {{ set_assets('/assets/css/kazist.css') }}
+
+
+    </head>
+
+    <body class="header-fixed header-fixed-space-v2">
+
+        <div class="wrapper">
+            <!--=== Header v8 ===-->
+            <div class="header-v8 header-sticky">
+                <!-- Topbar blog -->
+                <div class="blog-topbar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-xs-8">
+                                <div class="topbar-time">{{ "now"|date('d M Y') }}</div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4 clearfix">
+                                {% if user.id %}
+
+                                    <ul class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
+                                        <li class=" home">
+                                            <a class="btn btn-danger btn-xs" href="{{ generate_url('logout') }}">Logout</a>
+                                        </li>
+                                    </ul>
+
+                                {% else %}
+                                    <ul class="topbar-list topbar-log_reg pull-right visible-sm-block visible-md-block visible-lg-block">
+                                        <li class=" home">
+                                            <a class="btn btn-success btn-xs" href="{{ generate_url('login') }}">Login</a>
+                                        </li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div><!--/end row-->
+                    </div><!--/end container-->
+                </div>
+                <!-- End Topbar blog -->
+
+                <!-- Navbar -->
+                <div class="navbar mega-menu" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="res-container">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="navbar-brand">
+                                <a href="{{ web_root }}">
+                                    <img src="{{ web_root }}assets/images/logo.png" alt="Logo">
+                                </a>
+                            </div>
+                        </div><!--/end responsive container-->
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-responsive-collapse">
+                            <div class="res-container">
+                                <ul class="nav navbar-nav">
+                                    <!-- Home -->
+                                    <li class="dropdown home active">
+                                        <a href="{{ web_root }}">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <!-- End Home -->
+
+                                    <!-- World -->
+                                    <li class="dropdown mega-menu-fullwidth">
+                                        <a href="{{ web_base }}/projects/projects">
+                                            Projects
+                                        </a>
+                                    </li>
+                                    <!-- End World -->
+
+                                    <!-- Fashion -->
+                                    <li class="dropdown mega-menu-fullwidth">
+                                        <a href="{{ web_base }}/projects/tasks">
+                                            Tasks
+                                        </a>
+                                    </li>
+                                    <!-- End Fashion -->
+
+                                    <!-- Archives -->
+                                    <li class="dropdown mega-menu-fullwidth">
+                                        <a href="{{ web_base }}/projects/tasks?search[mytask]=1">
+                                            My List
+                                        </a>
+                                    </li>
+                                    <!-- End Archives -->
+
+                                    <!-- Lifestyle -->
+                                    <li class="dropdown mega-menu-fullwidth">
+                                        <a href="{{ web_base }}/knowledgebase/articles">
+                                            Knowledgebase
+                                        </a>
+                                    </li>
+                                    <!-- End Lifestyle -->
+
+                                </ul>
+                            </div><!--/responsive container-->
+                        </div><!--/navbar-collapse-->
+                    </div><!--/end contaoner-->
+                </div>
+                <!-- End Navbar -->
+            </div>
+            <!--=== End Header v8 ===-->
+
+            {% if constant('WEB_IS_HOMEPAGE') %}
+                <!-- Interactive Slider v2 -->
+                <div class="interactive-slider-v2 img-v2">
+                    <div class="container">
+                        <h1>Welcome to Tracker</h1>
+                        <p>Clean and easy tracking.</p>
+                    </div>
+                </div>
+                <!-- End Interactive Slider v2 -->
+            {% endif %}
+
+            <!--=== Body Version 1 ===-->
+            {% if before_body_length> 0  %}
+                {{ block_index.render_block('before_body',_context, true) }}
+            {% endif %}
+
+            <div class="simplest-body">
+                <div class="container">
+
+                    {% include "messages.index.twig" %}
+
+                    {% set has_both_sides = false %}
+                    {% set mx_width = 'col-md-12 col-xs-12' %}
+                    {% set lx_width = 'col-md-10 col-xs-12 ' %}
+                    {% set lg_width = 'col-md-9 col-xs-12 ' %}
+                    {% set md_width = 'col-md-8 col-xs-12' %}
+                    {% set sm_width = 'col-md-6 col-xs-12' %}
+                    {% set side_sm_width = 'col-md-2 col-xs-12' %}
+                    {% set side_md_width = 'col-md-3 col-xs-12' %}
+                    {% set side_mx_width = 'col-md-4 col-xs-12' %}
+
+                    {% if sidebar_length == 0 %}
+                        {% set main_content_class = mx_width %}
+                    {% elseif sidebar_length > 0 %}
+                        {% set has_both_sides = true %}
+                        {% set main_content_class = lg_width %}
+                        {% set main_left_class = side_md_width %}
+                    {% else %}
+                        {% set main_content_class = mx_width %}
+                    {% endif %}
+
+
+                    <div class="{{ main_content_class }} maincontent-wrapper">
+
+                        {{ block_index.render_block('top', _context, true) }}
+                        <div class="clearfix"></div>
+
+                        {% if response_content|trim is not empty %}
+                            <div class="maincontent">
+                                {{ response_content|raw }}
+                                <div class="clearfix"></div>
+                            </div>
+                        {% endif %}
+
+                        {{ block_index.render_block('bottom', _context, true) }}
+
+                    </div>
+
+                    {% if sidebar_length > 0 %}
+                        <div class="{{ main_left_class }} sidebar-wrapper">
+                            {{ block_index.render_block('sidebar', _context, true) }}
+                            <div class="clearfix"></div>
+                        </div>
+                    {% endif %}                       
+
+                </div>
+            </div>
+
+
+            {% if after_body_length> 0  %}
+                <div class="after-body">
+                    <div class="container">
+                        {{ block_index.render_block('after_body', _context, true) }}
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            {% endif %}
+            <!--=== Body Version 1 ===-->
+
+
+            <!--=== Footer Version 1 ===-->
+            <div class="footer-v1">
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <!-- About -->
+                            <div class="col-md-7 md-margin-bottom-40">
+                                {{ block_index.render_block('footer_1', _context, true) }}
+                            </div><!--/col-md-3-->
+                            <!-- End About -->
+
+                            <!-- Address -->
+                            <div class="col-md-5 map-img md-margin-bottom-40">
+                                {{ block_index.render_block('footer_2', _context, true) }}
+                            </div><!--/col-md-3-->
+                            <!-- End Address -->
+                        </div>
+                    </div>
+                </div><!--/footer-->
+
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    2015 &copy; All Rights Reserved.
+                                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                                </p>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="col-md-6">
+                                <ul class="footer-socials list-inline">
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                            <i class="fa fa-skype"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Social Links -->
+                        </div>
+                    </div>
+                </div><!--/copyright-->
+            </div>
+            <!--=== End Footer Version 1 ===-->
+
+        </div><!--/wrapper-->
+
+        <!-- JS Implementing Plugins -->
+        {{ set_assets('themes/frontend/unify/assets/plugins/back-to-top.js') }}
+        <!-- JS Customization -->
+        {{ set_assets('themes/frontend/unify/assets/plugins/smoothScroll.js') }}
+        {{ set_assets('themes/frontend/unify/assets/plugins/modernizr.js') }}
+        {{ set_assets('themes/frontend/unify/assets/js/custom.js') }}
+        {{ set_assets('themes/frontend/unify/assets/plugins/login-signup-modal-window/js/main.js') }}
+        <!-- JS Page Level -->
+        {{ set_assets('themes/frontend/unify/assets/js/app.js') }}
+
+
+        <!--[if lt IE 9]>
+            <script src="assets/plugins/respond.js"></script>
+            <script src="assets/plugins/html5shiv.js"></script>
+            <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+        <![endif]-->
+
+    </body>
+</html>
+
+
+<script>
+
+    jQuery(document).ready(function () {
+
+        var profile_shown = false;
+
+        jQuery('.user-account-profile-link').click(function (event) {
+            if (!profile_shown) {
+                jQuery('#user-account-profile').show();
+                profile_shown = true;
+            } else {
+                jQuery('#user-account-profile').hide();
+                profile_shown = false;
+            }
+
+            event.stopPropagation();
+        });
+
+        jQuery('html').click(function (event) {
+            jQuery('#user-account-profile').hide();
+            profile_shown = false;
+        });
+
+        jQuery('#user-account-profile').click(function (event) {
+            event.stopPropagation();
+        });
+
+        jQuery('.user-account-profile-close-link').click(function () {
+            jQuery('#user-account-profile').hide();
+            profile_shown = false;
+        });
+
+
+    });
+</script>
+

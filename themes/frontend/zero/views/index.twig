@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> 
+<html lang="en"> <!--<![endif]-->
+
+    {% import "blocks.index.twig" as block_index %}
+
+    {% set sidebar_length =sidebar|length %}  
+    {% set before_body_length =before_body|length %}
+    {% set after_body_length =after_body|length %}
+    {% set before_footer_length =before_footer|length %}
+    {% set after_footer_length =after_footer|length %}
+
+    <head>
+        <title>{{ document.title }}</title>
+
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        {% if document.unique_name == 'home' and document.user.id %}
+            <meta http-equiv="refresh" content="0;URL='{{ generate_url('designer.templates', null, 0) }}'">
+            <script>
+                window.location.href = "{{ generate_url('designer.templates', null, 0) }}";
+            </script>
+        {% endif %}
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <!-- Web Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+        
+        <link rel="stylesheet" href="{{ web_root }}assets/css/jquery-ui.css">
+        <link rel="stylesheet" href="{{ web_root }}assets/css/bootstrap.css">
+        <link rel="stylesheet" href="{{ web_root }}assets/css/font-awesome.css">
+        <link rel="stylesheet" href="{{ web_root }}themes/frontend/zero/assets/css/custom.css">
+        <link rel="stylesheet" href="{{ web_root }}applications/Designer/assets/css/library.css">
+
+        <script src="{{ web_root }}assets/js/jquery.js"></script>
+        <script src="{{ web_root }}assets/js/jquery-ui.js"></script>
+        <script src="{{ web_root }}themes/frontend/wonderful/assets/js/lazyload.js"></script>
+
+        <!-- CSS Customization -->
+        {{ set_assets('themes/frontend/simplest/assets/css/custom.css') }}
+        {{ set_assets('themes/frontend/simplest/assets/css/ui-designer.css') }}
+        {{ set_assets('/assets/css/kazist.css') }}
+        
+
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+                window.$zopim || (function (d, s) {
+                    var z = $zopim = function (c) {
+                        z._.push(c)
+                    }, $ = z.s =
+                            d.createElement(s), e = d.getElementsByTagName(s)[0];
+                    z.set = function (o) {
+                        z.set.
+                                _.push(o)
+                    };
+                    z._ = [];
+                    z.set._ = [];
+                    $.async = !0;
+                    $.setAttribute('charset', 'utf-8');
+                    $.src = '//v2.zopim.com/?49RRPjCoN2iMbt3kcqyc9yoiKcF66HNn';
+                    z.t = +new Date;
+                    $.
+                            type = 'text/javascript';
+                    e.parentNode.insertBefore($, e)
+                })(document, 'script');
+        </script>
+        <!--End of Zopim Live Chat Script-->
+
+
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            {% include "messages.index.twig" %}
+
+            {% if document.unique_name == 'home'  %}
+                <meta http-equiv="refresh" content="0;URL='{{ generate_url('designer.templates', null, 0) }}'">
+                <script>
+                    window.location.href = "{{ generate_url('designer.templates', null, 0) }}";
+                </script>
+            {% endif %}
+
+            {% if constant('WEB_IS_HOMEPAGE') %}
+                <!-- Interactive Slider v2 -->
+                <div class="interactive-slider-v2 img-v2">
+                    <div class="container">
+                        <h1>Welcome to Tracker</h1>
+                        <p>Clean and easy tracking.</p>
+                    </div>
+                </div>
+                <!-- End Interactive Slider v2 -->
+            {% endif %}
+
+            {% if response_content|trim is not empty %}
+                <div class="maincontent">
+                    {{ response_content|raw }}
+                    <div class="clearfix"></div>
+                </div>
+            {% endif %}
+
+
+        </div><!--/wrapper-->
+
+        <!-- JS Implementing Plugins -->
+        {{ set_assets('themes/frontend/unify/assets/plugins/back-to-top.js') }}
+        <!-- JS Customization -->
+        {{ set_assets('themes/frontend/unify/assets/plugins/smoothScroll.js') }}
+        {{ set_assets('themes/frontend/unify/assets/plugins/modernizr.js') }}
+        {{ set_assets('themes/frontend/unify/assets/js/custom.js') }}
+        {{ set_assets('themes/frontend/unify/assets/plugins/login-signup-modal-window/js/main.js') }}
+        <!-- JS Page Level -->
+        {{ set_assets('themes/frontend/unify/assets/js/app.js') }}
+
+
+        <!--[if lt IE 9]>
+            <script src="assets/plugins/respond.js"></script>
+            <script src="assets/plugins/html5shiv.js"></script>
+            <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+        <![endif]-->
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-82808261-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>  
+
+    </body>
+</html>
+
+
+<script>
+
+    jQuery(document).ready(function () {
+
+        var profile_shown = false;
+
+        jQuery('.user-account-profile-link').click(function (event) {
+            if (!profile_shown) {
+                jQuery('#user-account-profile').show();
+                profile_shown = true;
+            } else {
+                jQuery('#user-account-profile').hide();
+                profile_shown = false;
+            }
+
+            event.stopPropagation();
+        });
+
+        jQuery('html').click(function (event) {
+            jQuery('#user-account-profile').hide();
+            profile_shown = false;
+        });
+
+        jQuery('#user-account-profile').click(function (event) {
+            event.stopPropagation();
+        });
+
+        jQuery('.user-account-profile-close-link').click(function () {
+            jQuery('#user-account-profile').hide();
+            profile_shown = false;
+        });
+
+
+    });
+</script>
+

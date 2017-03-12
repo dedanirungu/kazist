@@ -1,0 +1,19 @@
+{
+    "name": "kazist/themes",
+    "description": "Kazist themes Manager.",
+    "keywords": ["kazist", "themes manager", "adverts"],
+    "homepage": "https://github.com/kazist/themes",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Dedan Irungu",
+            "email": "info@emshyinnovate.com",
+            "homepage": "http://emshyinnovate.com",
+            "role": "Founder & Developer"
+        }
+
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

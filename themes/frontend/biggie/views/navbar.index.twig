@@ -1,0 +1,93 @@
+
+{% set user_id = getSessionItem('user_id') %}
+{% set user = getSessionItem('user') %}
+
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <button class=" btn btn-default btn-flat btn-xs navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+            <div style="display:inline-block;float:left;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+            <div style="display:inline-block;float:left; font-size: 20px; padding:0; line-height: 14px;">
+                &nbsp;
+                Menu
+            </div>
+        </button>
+        <a class="navbar-brand" href="{{generate_url('home') }}" title="{{ system_title }}"> Home</a>
+    </div>
+
+
+    <div class="collapse navbar-collapse js-navbar-collapse">
+
+        {{ block_index.render_block('top_menu') }}
+
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                {% if navbar_right_block|length > 0 %}
+                    {% for block in navbar_right_block %}
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{{ block.title }}">
+                                <i class="fa {{ block.icon }}"></i>
+                                <span class="label label-success">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">{{ block.name }}</li>
+                                <li>
+                                    {{ block_index.render_single_block( block, true) }}
+                                </li>
+                                <li class="footer"><a href="#" title="See All Messages">See All Messages</a></li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+
+                <!-- User Account: style can be found in dropdown.less -->
+                {% if not user.id %}
+                    <li>
+                        <a class="btn btn-primary btn-sm btn-flat" href="{{generate_url('login') }}" class="btn btn-default btn-flat" title="Sign In">Sign In</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-danger btn-sm btn-flat" href="{{generate_url('social.members.edit') }}" class="btn btn-default btn-flat" title="Join Now">Join Now</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a class="btn btn-danger btn-sm btn-flat" href="{{generate_url('subscriptions.subscriptions.subscribe', {'id':0}) }}" class="btn btn-default btn-flat" title="Upgrade">Upgrade</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-danger btn-sm btn-flat" href="{{generate_url('subscriptions.subscriptions.dashboard', {'id':0}) }}" class="btn btn-default btn-flat" title="Reseller">Reseller</a>
+                    </li>
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{{ user.name }}">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>{{ user.name }} <i class="caret"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% if navbar_user_block|length > 0 %}
+                                {% for block in navbar_user_block %}
+                                    {{ block_index.render_single_block( block, true) }}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="{{generate_url('social.members.detail', {'user_id': user.id}) }}" class="btn btn-default btn-flat" title="Profile">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="{{generate_url('logout') }}" class="btn btn-default btn-flat" title="Sign out">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div><!-- /.nav-collapse -->
+</nav>
+
+
+
+

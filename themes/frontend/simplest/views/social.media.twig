@@ -1,0 +1,118 @@
+{# empty Twig template #}
+<div class="social_media_popup">
+
+    <div class="container">
+        <div class="col-md-offset-2 col-sm-12 col-md-8">
+            <div class="col-sm-6">
+
+                <div id="fb-root"></div>
+                <script>(function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id))
+                            return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=954619697889823";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+                <div class="fb-page" data-href="https://www.facebook.com/SocialBizConnect" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/SocialBizConnect" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/SocialBizConnect">Facebook</a>
+                    </blockquote>
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <ul class="nav">
+                    <li>
+                        <a href="https://twitter.com/sbcsuccess" class="twitter-follow-button" data-show-count="false"  data-size="large">Follow @sbcsuccess</a>
+                        <!--  <a class="twitter-timeline" data-height="100" href="https://twitter.com/sbcsuccess">Tweets by TwitterDev</a>  -->
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </li>
+                    <li>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+                        <div class="g-ytsubscribe" data-channelid="UCO972GDDBCWrQJ-UTMYv49w" data-layout="full" data-count="hidden"></div>
+                    </li>
+                </ul>
+                <div class="clr"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+
+
+<div class="facebook-popup" style="display:none">
+    <div class="col-sm-12">
+
+        <a class="close-facebook-popup text-red pull-right" href="#">
+            <i class="fa fa-times-circle-o fa-2x"></i>
+        </a>
+        <div class="clr"></div>
+
+        <h4 class="text-center">
+            Don't miss 100% unfiltered, doable steps to happy 
+        </h4>
+
+        <div class="fb-page" data-href="https://www.facebook.com/SocialBizConnect" width="250px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+            <blockquote cite="https://www.facebook.com/SocialBizConnect" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/SocialBizConnect">Facebook</a>
+            </blockquote>
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+    .social_media_popup{
+        background: url("themes/frontend/unify/assets/images/dark_embroidery.png") #4765A0;
+        /*background:#4765A0;*/
+        padding: 10px 5px;
+    }
+
+    .social_media_popup .nav li{
+        background: white;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .facebook-popup{
+        position: fixed;
+        bottom: 0;
+        right:0;
+        z-index: 1000;
+        width:300px;
+        height:200px;
+        background: #f0ad4e;
+    }
+
+    .facebook-popup h3{
+        margin-top:10px;
+    }
+
+</style>
+
+<script>
+
+                    jQuery(document).ready(function () {
+
+                        var facebook_group = parseInt(kazist.readCookie("unify-facebook-popup"));
+                        
+                        console.log(' facebook_group = ' + facebook_group);
+                        
+                        if (facebook_group != 1) {
+                            setTimeout(function () {
+                                jQuery('.facebook-popup').show('slow');
+                                kazist.createCookie("unify-facebook-popup", 1, 12);
+                            }, 30000);
+                        }
+
+                        jQuery('.close-facebook-popup').click(function () {
+                            jQuery('.facebook-popup').hide();
+                        });
+
+                    });
+</script>

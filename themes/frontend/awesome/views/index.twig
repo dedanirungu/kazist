@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+{% import "blocks.index.twig" as block_index %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{{ system_title }} {% endblock %}</title>
+
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+        {{ set_assets('assets/css/AdminLTE.min.css', 4, false) }}
+        {{ set_assets('themes/frontend/awesome/assets/css/theme.min.css', 1) }}
+        {{ set_assets('themes/frontend/awesome/assets/js/lazyload.min.js', 1) }}
+        {{ set_assets('themes/frontend/awesome/assets/js/awesome.min.js') }}
+
+         <script src="{{ web_root }}assets/js/jquery.js"></script>
+        
+        <script>
+            kazicode = new Object();
+            kazicode.file_url = kazicode.url = "{{ kazi_url.base_root }}";
+        </script>
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        {% include "navbar.index.twig" %}
+
+        <!-- header logo: style can be found in header.less -->
+        <header class="header" >
+            <div class="container-wrapper">
+                <div class="col-md-7">               
+                    <a href="{{ web_base }}" class="logo text-center" title="{{ system_title }}">
+                        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                        <img src="{{ web_root }}themes/frontend/awesome/assets/images/logo.png">
+                    </a>
+                </div>
+                <div class="col-md-5"> 
+                    {{ block_index.render_block('search_block',_context, true) }}
+                </div>
+                <div class="clearfix"></div>
+                <!-- Header Navbar: style can be found in header.less -->
+            </div>
+        </header>
+
+        <div class="col-md-12">
+            {{ block_index.render_block('menu_block',_context, true) }}
+        </div>
+
+        {{ block_index.render_block('slider_block',_context, true) }}
+
+        <div class="container-wrapper">
+
+            {{ block_index.render_block('top_wide_block',_context, true) }}
+
+            {% include "messages.index.twig" %}
+
+            {% if sidebar_block|length > 0 %}
+                {% set main_content_class = 'col-md-8' %}
+            {% else %}
+                {% set main_content_class = 'col-md-12' %}
+            {% endif %}
+
+            {% set top_block_length = top_block|length %}
+            {% set bottom_block_length = bottom_block|length %}
+            {% set _block = block('content') %}
+
+            
+            
+            {% if response_content|trim is not empty or top_block_length or bottom_block_length %}
+
+
+                <div class="{{ main_content_class }} maincontent-wrapper">
+
+                    {{ block_index.render_block('top_block',_context, true) }}
+                    <div class="clearfix"></div>
+
+                    {% if response_content|trim is not empty %}
+                        <div class="maincontent">
+                            {{ response_content|raw }}
+                            <div class="clearfix"></div>
+                        </div>
+                    {% endif %}
+
+                    {{ block_index.render_block('bottom_block',_context, true) }}
+
+                </div>
+
+
+            {% endif %}
+
+            {% if sidebar_block|length > 0 %}
+                <div class="col-md-4 sidebar-wrapper">
+                    {{ block_index.render_block('sidebar_block',_context, true) }}
+                    <div class="clearfix"></div>
+                </div>
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="footer">
+            <div class="container-wrapper">
+                <div class="col-sm-3">
+                    {{ block_index.render_block('footer_block_1',_context, true) }}
+                </div>
+                <div class="col-sm-3">
+                    {{ block_index.render_block('footer_block_2',_context, true) }}
+                </div>
+                <div class="col-sm-3">
+                    {{ block_index.render_block('footer_block_3',_context, true) }}
+                </div>
+                <div class="col-sm-3">
+                    {{ block_index.render_block('footer_block_4',_context, true) }}
+                </div>
+
+                <div class="clearfix"></div>
+                <p class="text-center">
+                    All right Reserved. {{ system_title }} @ 2013 - {{ now|date('Y') }}
+                </p>
+            </div>
+        </div>
+
+
+
+
+        {% set pop_block_length = pop_block|length %}
+
+        {% if pop_block_length > 0 %}
+            <!-- Modal -->
+            <div id="pop-block" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa fa-times-circle-o fa-x2"></i>
+                    </button>
+
+                    {% if pop_block_length == 1 %}
+                        {{ block_index.render_block('pop_block',_context, true) }}
+                    {% else %}
+                        {% set random_value = random(pop_block_length-1) %}
+                        {{ block_index.render_block('pop_block',_context, true) }}
+                    {% endif %}
+                </div>
+            </div>   
+
+
+        {% endif %}
+
+    </body>
+
+</html>
