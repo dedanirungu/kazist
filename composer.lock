@@ -1355,20 +1355,38 @@
         },
         {
             "name": "kazist/applications",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/applications.git",
-                "reference": "5308b21a7a051d5c85caaaf418fd4ab85033c817"
+                "reference": "9c918ec269d578f4b5656c35d4de631c5592ee77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/applications/zipball/5308b21a7a051d5c85caaaf418fd4ab85033c817",
-                "reference": "5308b21a7a051d5c85caaaf418fd4ab85033c817",
+                "url": "https://api.github.com/repos/kazist/applications/zipball/9c918ec269d578f4b5656c35d4de631c5592ee77",
+                "reference": "9c918ec269d578f4b5656c35d4de631c5592ee77",
                 "shasum": ""
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Applications Manager.",
+            "homepage": "https://github.com/kazist/applications",
+            "keywords": [
+                "applications manager",
+                "kazist"
+            ],
+            "time": "2017-03-12T14:22:06+00:00"
         },
         {
             "name": "kazist/assets",
