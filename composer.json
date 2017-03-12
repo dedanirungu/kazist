@@ -1,7 +1,7 @@
 {
     "name": "kazist/kazist",
     "type": "project",
-    "description": "Description of project kazist. ",
+    "description": "Description of project kazist.",
     "keywords": ["kazist", "cms", "code generator", "system builder", "ERP", "School Manager"],
     "homepage": "https://github.com/kazist/kazist",
     "license": "GPL-3.0",
@@ -15,10 +15,11 @@
     ],
     "require": {
         "mnsami/composer-custom-directory-installer": "*@stable",
-        "composer/composer": "*@stable",
+        "composer/composer": "dev-master",
+        "kazist/applications": "*@stable",
         "kazist/themes": "*@stable",
-        "kazist/assets": "*@stable",
         "kazist/core": "*@stable",
+        "kazist/assets": "*@stable",
         "symfony/http-foundation": "*@stable",
         "symfony/http-kernel": "*@stable",
         "symfony/event-dispatcher": "*@stable",
@@ -67,9 +68,10 @@
     },
     "extra": {
         "installer-paths": {
-            "assets": ["kazist/assets"],
-            "themes": ["kazist/themes"],
-            "include": ["kazist/core"]
+            "applications/": ["kazist/applications"],
+            "assets/": ["kazist/assets"],
+            "themes/": ["kazist/themes"],
+            "include/": ["kazist/core"]
         }
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eab79e5b8927cc7dae0dd9c5c06e56f1",
+    "content-hash": "49ebc8c665e3e6942ebe5dab5554b1ea",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -107,16 +107,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.4.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd"
+                "reference": "2e9dbb79ef63036090d01b07d005428e05c8a5fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd",
-                "reference": "7ee2a5e1cf32e9c8439445fe8dce2c046c2abebd",
+                "url": "https://api.github.com/repos/composer/composer/zipball/2e9dbb79ef63036090d01b07d005428e05c8a5fc",
+                "reference": "2e9dbb79ef63036090d01b07d005428e05c8a5fc",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -180,7 +180,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-03-10T08:29:45+00:00"
+            "time": "2017-03-11 16:11:59"
         },
         {
             "name": "composer/installers",
@@ -1352,6 +1352,23 @@
                 "schema"
             ],
             "time": "2017-02-22T03:28:16+00:00"
+        },
+        {
+            "name": "kazist/applications",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/applications.git",
+                "reference": "5308b21a7a051d5c85caaaf418fd4ab85033c817"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/applications/zipball/5308b21a7a051d5c85caaaf418fd4ab85033c817",
+                "reference": "5308b21a7a051d5c85caaaf418fd4ab85033c817",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/"
         },
         {
             "name": "kazist/assets",
@@ -4296,10 +4313,11 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "mnsami/composer-custom-directory-installer": 0,
-        "composer/composer": 0,
+        "composer/composer": 20,
+        "kazist/applications": 0,
         "kazist/themes": 0,
-        "kazist/assets": 0,
         "kazist/core": 0,
+        "kazist/assets": 0,
         "symfony/http-foundation": 0,
         "symfony/http-kernel": 0,
         "symfony/event-dispatcher": 0,
