@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "49ebc8c665e3e6942ebe5dab5554b1ea",
+    "content-hash": "6b5d2f240a4fe6a66f67cd21dee7fd9e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1354,41 +1354,6 @@
             "time": "2017-02-22T03:28:16+00:00"
         },
         {
-            "name": "kazist/applications",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kazist/applications.git",
-                "reference": "9c918ec269d578f4b5656c35d4de631c5592ee77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kazist/applications/zipball/9c918ec269d578f4b5656c35d4de631c5592ee77",
-                "reference": "9c918ec269d578f4b5656c35d4de631c5592ee77",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Dedan Irungu",
-                    "email": "info@emshyinnovate.com",
-                    "homepage": "http://emshyinnovate.com",
-                    "role": "Founder & Developer"
-                }
-            ],
-            "description": "Kazist Applications Manager.",
-            "homepage": "https://github.com/kazist/applications",
-            "keywords": [
-                "applications manager",
-                "kazist"
-            ],
-            "time": "2017-03-12T14:22:06+00:00"
-        },
-        {
             "name": "kazist/assets",
             "version": "1.0.3",
             "source": {
@@ -1425,6 +1390,41 @@
                 "kazist"
             ],
             "time": "2017-03-11T09:01:04+00:00"
+        },
+        {
+            "name": "kazist/contacts",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/contacts.git",
+                "reference": "278b53c711aadd2ff3ee28348fb4a4b049e93449"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/contacts/zipball/278b53c711aadd2ff3ee28348fb4a4b049e93449",
+                "reference": "278b53c711aadd2ff3ee28348fb4a4b049e93449",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Contacts Manager.",
+            "homepage": "https://github.com/kazist/contacts",
+            "keywords": [
+                "contacts manager",
+                "kazist"
+            ],
+            "time": "2017-03-15T10:34:50+00:00"
         },
         {
             "name": "kazist/core",
@@ -1465,6 +1465,181 @@
             "time": "2017-03-11T09:58:18+00:00"
         },
         {
+            "name": "kazist/media",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/media.git",
+                "reference": "6b9b23413aac50a1f66ac9cc6428a03bf420978a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/media/zipball/6b9b23413aac50a1f66ac9cc6428a03bf420978a",
+                "reference": "6b9b23413aac50a1f66ac9cc6428a03bf420978a",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Media Manager.",
+            "homepage": "https://github.com/kazist/media",
+            "keywords": [
+                "Media Manager",
+                "kazist"
+            ],
+            "time": "2017-03-15T10:34:28+00:00"
+        },
+        {
+            "name": "kazist/notification",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/notification.git",
+                "reference": "02f99af9c7f885cde8c10816c04ddd20a0804642"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/notification/zipball/02f99af9c7f885cde8c10816c04ddd20a0804642",
+                "reference": "02f99af9c7f885cde8c10816c04ddd20a0804642",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Notifications Manager.",
+            "homepage": "https://github.com/kazist/notifications",
+            "keywords": [
+                "kazist",
+                "notifications manager"
+            ],
+            "time": "2017-03-15T10:34:10+00:00"
+        },
+        {
+            "name": "kazist/search",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/search.git",
+                "reference": "87ef0d48a4a9cddd7956fb0218abe4930f3fc745"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/search/zipball/87ef0d48a4a9cddd7956fb0218abe4930f3fc745",
+                "reference": "87ef0d48a4a9cddd7956fb0218abe4930f3fc745",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Search Manager.",
+            "homepage": "https://github.com/kazist/search",
+            "keywords": [
+                "kazist",
+                "search manager"
+            ],
+            "time": "2017-03-15T10:33:54+00:00"
+        },
+        {
+            "name": "kazist/setup",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/setup.git",
+                "reference": "6d64116754aba40363f08e8bce74a7e0ef02a707"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/setup/zipball/6d64116754aba40363f08e8bce74a7e0ef02a707",
+                "reference": "6d64116754aba40363f08e8bce74a7e0ef02a707",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist Setup Manager.",
+            "homepage": "https://github.com/kazist/setup",
+            "keywords": [
+                "kazist",
+                "setup manager"
+            ],
+            "time": "2017-03-15T10:33:28+00:00"
+        },
+        {
+            "name": "kazist/system",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/system.git",
+                "reference": "6cc7ecced9416c8642f21d550896581b6f3df0d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/system/zipball/6cc7ecced9416c8642f21d550896581b6f3df0d8",
+                "reference": "6cc7ecced9416c8642f21d550896581b6f3df0d8",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist System Manager.",
+            "homepage": "https://github.com/kazist/system",
+            "keywords": [
+                "kazist",
+                "system manager"
+            ],
+            "time": "2017-03-15T10:32:44+00:00"
+        },
+        {
             "name": "kazist/themes",
             "version": "1.0.1",
             "source": {
@@ -1502,6 +1677,41 @@
                 "themes manager"
             ],
             "time": "2017-03-11T08:04:56+00:00"
+        },
+        {
+            "name": "kazist/users",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazist/users.git",
+                "reference": "8d07ec0b3fae44871953e4c4b633336597122380"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazist/users/zipball/8d07ec0b3fae44871953e4c4b633336597122380",
+                "reference": "8d07ec0b3fae44871953e4c4b633336597122380",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dedan Irungu",
+                    "email": "info@emshyinnovate.com",
+                    "homepage": "http://emshyinnovate.com",
+                    "role": "Founder & Developer"
+                }
+            ],
+            "description": "Kazist User Manager.",
+            "homepage": "https://github.com/kazist/users",
+            "keywords": [
+                "kazist",
+                "users manager"
+            ],
+            "time": "2017-03-15T10:32:37+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1695,16 +1905,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bad29cb8d18ab0315e6c477751418a82c850d558",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
                 "shasum": ""
             },
             "require": {
@@ -1769,7 +1979,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26T00:15:39+00:00"
+            "time": "2017-03-13T07:08:03+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1817,16 +2027,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
-                "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +2071,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-03T20:43:42+00:00"
+            "time": "2017-03-13T16:27:32+00:00"
         },
         {
             "name": "psr/http-message",
@@ -4332,7 +4542,13 @@
     "stability-flags": {
         "mnsami/composer-custom-directory-installer": 0,
         "composer/composer": 20,
-        "kazist/applications": 0,
+        "kazist/contacts": 0,
+        "kazist/media": 0,
+        "kazist/notification": 0,
+        "kazist/search": 0,
+        "kazist/setup": 0,
+        "kazist/system": 0,
+        "kazist/users": 0,
         "kazist/themes": 0,
         "kazist/core": 0,
         "kazist/assets": 0,
