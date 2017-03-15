@@ -16,7 +16,13 @@
     "require": {
         "mnsami/composer-custom-directory-installer": "*@stable",
         "composer/composer": "dev-master",
-        "kazist/applications": "*@stable",
+        "kazist/contacts": "*@stable",
+        "kazist/media": "*@stable",
+        "kazist/notification": "*@stable",
+        "kazist/search": "*@stable",
+        "kazist/setup": "*@stable",
+        "kazist/system": "*@stable",
+        "kazist/users": "*@stable",
         "kazist/themes": "*@stable",
         "kazist/core": "*@stable",
         "kazist/assets": "*@stable",
@@ -68,7 +74,13 @@
     },
     "extra": {
         "installer-paths": {
-            "applications/": ["kazist/applications"],
+            "applications/contacts/": ["kazist/contacts"],
+            "applications/media/": ["kazist/media"],
+            "applications/notification/": ["kazist/notification"],
+            "applications/search/": ["kazist/search"],
+            "applications/setup/": ["kazist/setup"],
+            "applications/system/": ["kazist/system"],
+            "applications/users/": ["kazist/users"],
             "assets/": ["kazist/assets"],
             "themes/": ["kazist/themes"],
             "include/": ["kazist/core"]
