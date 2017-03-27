@@ -5,7 +5,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Setup;
+namespace Updater;
 
 use Composer\Script\Event;
 
@@ -35,14 +35,6 @@ class InstallScript {
         $src_tinymcePath = 'vendor/tinymce/';
         $desc_tinymcePath = 'assets/js/';
         InstallScript::copyRecursively($src_tinymcePath, $desc_tinymcePath);
-
-        $src_adminltePath = 'vendor/almasaeed2010/adminlte/plugins/';
-        $desc_adminltePath = 'themes/backend/adminlte/plugins/';
-        InstallScript::copyRecursively($src_adminltePath, $desc_adminltePath);
-
-        $src_adminltePath = 'vendor/almasaeed2010/adminlte/dist/';
-        $desc_adminltePath = 'themes/backend/adminlte/';
-        InstallScript::copyRecursively($src_adminltePath, $desc_adminltePath);
 
         $src_fontawesomePath = 'vendor/fortawesome/font-awesome/css/';
         $desc_fontawesomePath = 'assets/css/';

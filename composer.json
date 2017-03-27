@@ -61,10 +61,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Setup\\InstallScript::postInstall"
+            "Updater\\InstallScript::postInstall"
         ],
         "post-update-cmd": [
-            "Setup\\InstallScript::postInstall"
+            "Updater\\InstallScript::postInstall"
         ]
     }, 
     "autoload": {

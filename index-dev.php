@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 define('KAZIST', true);
 
 $loader = require_once __DIR__ . '/vendor/autoload.php';
-$sc = include __DIR__ . '/include/container.php';
+$sc = require_once __DIR__ . '/include/container.php';
 
 $request = Request::createFromGlobals();
 $sc->register('request', $request);

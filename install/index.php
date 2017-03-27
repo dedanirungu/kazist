@@ -1,10 +1,12 @@
 <?php
 
-$this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Flexviews/Code/Tables';
-$this->doctrine->getEntityManager();
 
 print_r('sdfd');
 exit;
+
+$this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Flexviews/Code/Tables';
+$this->doctrine->getEntityManager();
+
 
 $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Flexviews/Positions/Code/Tables';
 $this->doctrine->getEntityManager();
