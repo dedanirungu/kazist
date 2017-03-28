@@ -1429,16 +1429,16 @@
         },
         {
             "name": "kazist/core",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/core.git",
-                "reference": "0375725eb7d20157072cbf16d111cb67a4ccb21b"
+                "reference": "175ad3852cff764ca40cb064049a50d0f68001ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/core/zipball/0375725eb7d20157072cbf16d111cb67a4ccb21b",
-                "reference": "0375725eb7d20157072cbf16d111cb67a4ccb21b",
+                "url": "https://api.github.com/repos/kazist/core/zipball/175ad3852cff764ca40cb064049a50d0f68001ca",
+                "reference": "175ad3852cff764ca40cb064049a50d0f68001ca",
                 "shasum": ""
             },
             "require": {
@@ -1463,7 +1463,7 @@
                 "core manager",
                 "kazist"
             ],
-            "time": "2017-03-27T17:10:04+00:00"
+            "time": "2017-03-28T10:19:41+00:00"
         },
         {
             "name": "kazist/media",
