@@ -1,0 +1,49 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+<form id="main-edit-form" action="index.php?action=save" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+
+    <h3 class="text-center">System Config</h3>
+
+    <div>
+        <table class="table">
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Title: 
+                    </b>
+                </td>
+                <td width="250px">{{ forms.input('system.title', 'text', system.title) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        System Title.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Description: 
+                    </b>
+                </td>
+                <td>{{ forms.input('system.description', 'textarea', system.description) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        System & SEO Description.
+                    </small>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{ forms.input('step', 'hidden', step) }}
+
+    <div class="text-center">
+        <button class="btn btn-success btn-sm" name="id" type="submit">
+            <i class="fa fa-arrow-right"></i>
+            Next
+        </button>
+        <br>
+    </div>
+</form>

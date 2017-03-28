@@ -1,0 +1,138 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+<form id="main-edit-form" action="index.php?action=savetofile" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+
+
+    <div>
+        <table class="table">
+            <tr>
+                <td colspan="10">
+                    <h3 class="text-center">Database Setup</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Name: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ database.name }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Username: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ database.username }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Password: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ database.password }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Host: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ database.host }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="10">
+                    <h3 class="text-center">Admin Profile</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Name: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ profile.name }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Username: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ profile.username }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Password: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ profile.password }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Email: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ profile.email }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="10">
+                    <h3 class="text-center">System Config</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="valign-middle">
+                    Title: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ system.title }}
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    Description: 
+                </td>
+                <td class="valign-middle">
+                    <small>
+                        {{ system.description }}
+                    </small>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{ forms.input('step', 'hidden', step) }}
+
+    <div class="text-center">
+        <button class="btn btn-success btn-sm" name="id" type="submit">
+            <i class="fa fa-arrow-right"></i>
+            Save and Redirect
+        </button>
+        <br>
+    </div>
+</form>

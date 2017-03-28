@@ -1,0 +1,31 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+
+<div class="alert alert-success">
+    <h3>
+        Congraduations!! Kazist Installed Successfully.
+    </h3>
+</div>
+
+
+<div class="alert alert-warning">
+    PLEASE REMEMBER TO COMPLETELY REMOVE THE INSTALLATION FOLDER.<br>
+    You will not be able to proceed beyond this point until installation directory has been removed.
+</div>
+
+
+<div class="text-center">
+    
+    <a href="{{ constant('WEB_ROOT') }}index.php" class="btn btn-success btn-sm" name="id" type="submit">
+        <i class="fa fa-eye"></i>
+        Site
+    </a>
+    
+    <a href="{{ constant('WEB_ROOT') }}index.php/admin" class="btn btn-primary btn-sm" name="id" type="submit">
+        <i class="fa fa-user"></i>
+        Admin
+    </a>
+    <br>
+</div>

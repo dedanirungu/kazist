@@ -1,0 +1,88 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+<form id="main-edit-form" action="index.php?action=save&token={{ unique }}" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+
+    <h3 class="text-center">Database Setup</h3>
+
+    <div>
+        <table class="table">
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Name: 
+                    </b>
+                </td>
+                <td width="250px">{{ forms.input('database.name', 'text', database.name) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        The name of database you want to run.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Username: 
+                    </b>
+                </td>
+                <td>{{ forms.input('database.username', 'text', database.username) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        Your MYSQL username.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Password: 
+                    </b>
+                </td>
+                <td>{{ forms.input('database.password', 'text', database.password) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        and your MYSQL password.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Host: 
+                    </b>
+                </td>
+                <td>{{ forms.input('database.host', 'text', database.host) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        use word <b>localhost</b>. else  get this information from web host provider.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Table Prefix: 
+                    </b>
+                </td>
+                <td>{{ forms.input('database.prefix', 'text', database.prefix|default('kazist_')) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        select a unique prefix if you intend to run multiple installations.
+                    </small>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    {{ forms.input('step', 'hidden', step) }}
+
+    <div class="text-center">
+        <button class="btn btn-success btn-sm" name="id" type="submit">
+            <i class="fa fa-arrow-right"></i>
+            Next
+        </button>
+        <br>
+    </div>
+</form>

@@ -1,0 +1,76 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+<form id="main-edit-form" action="index.php?action=save" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+
+    <h3 class="text-center">Admin Profile </h3>
+
+    <div>
+        <table class="table">
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Name: 
+                    </b>
+                </td>
+                <td width="250px">{{ forms.input('profile.name', 'text', profile.name) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        Enter Admin name.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Username: 
+                    </b>
+                </td>
+                <td>{{ forms.input('profile.username', 'text', profile.username) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        Enter unique Admin Username.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Password: 
+                    </b>
+                </td>
+                <td>{{ forms.input('profile.password', 'text', profile.password) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        Enter unique Admin Password.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td class="valign-middle">
+                    <b>
+                        Email: 
+                    </b>
+                </td>
+                <td>{{ forms.input('profile.email', 'text', profile.email) }}</td>
+                <td class="valign-middle">
+                    <small>
+                        Enter Admin Email. This will be the default notification system email.
+                    </small>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    {{ forms.input('step', 'hidden', step) }}
+
+    <div class="text-center">
+        <button class="btn btn-success btn-sm" name="id" type="submit">
+            <i class="fa fa-arrow-right"></i>
+            Next
+        </button>
+        <br>
+    </div>
+</form>
