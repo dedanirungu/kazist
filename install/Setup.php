@@ -72,8 +72,8 @@ class Setup {
         $profile = $session->get('profile');
         $system = $session->get('system');
 
-        $config_file = JPATH_ROOT . 'include/config.php';
-        $config_sample_file = JPATH_ROOT . 'include/config_sample.php';
+        $config_file = JPATH_ROOT . 'setting/config.php';
+        $config_sample_file = JPATH_ROOT . 'setting/config_sample.php';
 
         $config_content = file_get_contents($config_file);
         $config_sample_content = file_get_contents($config_sample_file);
@@ -358,7 +358,7 @@ class Setup {
         $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Settings/Code/Tables';
         $this->doctrine->getEntityManager();
 
-        $this->doctrine->entity_path = JPATH_ROOT . 'applications / System / Extensions / Code / Tables';
+        $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Extensions/Code/Tables';
         $this->doctrine->getEntityManager();
     }
 
