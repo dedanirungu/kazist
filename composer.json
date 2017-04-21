@@ -74,13 +74,13 @@
     },
     "extra": {
         "installer-paths": {
-            "applications/contacts/": ["kazist/contacts"],
-            "applications/media/": ["kazist/media"],
-            "applications/notification/": ["kazist/notification"],
-            "applications/search/": ["kazist/search"],
-            "applications/setup/": ["kazist/setup"],
-            "applications/system/": ["kazist/system"],
-            "applications/users/": ["kazist/users"],
+            "applications/Contacts/": ["kazist/Contacts"],
+            "applications/Media/": ["kazist/Media"],
+            "applications/Notification/": ["kazist/Notification"],
+            "applications/Search/": ["kazist/Search"],
+            "applications/Setup/": ["kazist/Setup"],
+            "applications/System/": ["kazist/System"],
+            "applications/Users/": ["kazist/Users"],
             "assets/": ["kazist/assets"],
             "themes/": ["kazist/themes"],
             "include/": ["kazist/core"]
