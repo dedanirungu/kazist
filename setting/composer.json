@@ -1,0 +1,17 @@
+{
+    "repositories": [ 
+        {
+            "type": "composer",
+            "url": "http://repo.emshyinnovate.com"
+        }
+    ],
+    "config": {
+        "secure-http": false
+    },
+    "require": {
+    },
+    "extra": {
+        "installer-paths": {
+        }
+    }
+}
