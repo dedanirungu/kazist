@@ -88,8 +88,8 @@ class BaseModel extends KazistModel {
             $query->andWhere($this->table_alias . '.id=:id');
             $query->setParameter('id', $id);
         } elseif ($slug) {
-            $where_arr[] = $this->table_alias . '.slug=:slug';
-            $parameter_arr['slug'] = $slug;
+            $query->andWhere($this->table_alias . '.slug=:slug');
+            $query->setParameter('slug', $slug);
         } else {
             $query->andWhere('1=-1');
         }
@@ -237,6 +237,7 @@ class BaseModel extends KazistModel {
         $data_entity = $this->getEntityObject();
 
         $form_data = $this->validateForm($form_data);
+
 
         try {
 
@@ -824,7 +825,7 @@ class BaseModel extends KazistModel {
                 $query = new Query();
                 $query->select('tx.slug');
                 $query->from($table_name, 'tx');
-                $query->where('tx.id=id');
+                $query->where('tx.id=:id');
                 $query->setParameter('id', $parameters['id']);
                 $record = $query->loadObject();
 
@@ -833,7 +834,7 @@ class BaseModel extends KazistModel {
                     $query = new Query();
                     $query->select('tx.*');
                     $query->from($table_name, 'tx');
-                    $query->where('tx.id=id');
+                    $query->where('tx.id=:id');
                     $query->setParameter('id', $parameters['id']);
                     $record = $query->loadObject();
 
