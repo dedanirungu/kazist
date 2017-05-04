@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f5d0a3492cb542070cc1935733fc74d",
+    "content-hash": "6e19f0805c318908f14489af78c1e0a6",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1429,20 +1429,17 @@
         },
         {
             "name": "kazist/core",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/core.git",
-                "reference": "ca12308977d3c022e7754136b8513bd9bd89160f"
+                "reference": "884a63dfeffda01f1660c8d52d41df76425ec541"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/core/zipball/ca12308977d3c022e7754136b8513bd9bd89160f",
-                "reference": "ca12308977d3c022e7754136b8513bd9bd89160f",
+                "url": "https://api.github.com/repos/kazist/core/zipball/884a63dfeffda01f1660c8d52d41df76425ec541",
+                "reference": "884a63dfeffda01f1660c8d52d41df76425ec541",
                 "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -1463,7 +1460,7 @@
                 "core manager",
                 "kazist"
             ],
-            "time": "2017-03-28T14:47:22+00:00"
+            "time": "2017-04-21T11:31:37+00:00"
         },
         {
             "name": "kazist/media",
@@ -4535,12 +4532,62 @@
                 "templating"
             ],
             "time": "2017-04-20T17:39:48+00:00"
+        },
+        {
+            "name": "wikimedia/composer-merge-plugin",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/composer-merge-plugin.git",
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/ca453f9f13d8b05f86f20ea10be992a782e6f78c",
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0.0",
+                "jakub-onderka/php-parallel-lint": "~0.8",
+                "phpunit/phpunit": "~4.8|~5.0",
+                "squizlabs/php_codesniffer": "~2.1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                },
+                "class": "Wikimedia\\Composer\\MergePlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wikimedia\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bryan Davis",
+                    "email": "bd808@wikimedia.org"
+                }
+            ],
+            "description": "Composer plugin to merge multiple composer.json files",
+            "time": "2017-03-13T16:52:55+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "wikimedia/composer-merge-plugin": 0,
         "mnsami/composer-custom-directory-installer": 0,
         "composer/composer": 20,
         "kazist/contacts": 0,

@@ -1,4 +1,6 @@
+*.gitignore
 *.DS_Store
 *.log
 *.zip
 *config.php
+*er/composer.json

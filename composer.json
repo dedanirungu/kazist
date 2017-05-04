@@ -14,6 +14,7 @@
         }
     ],
     "require": {
+        "wikimedia/composer-merge-plugin": "*@stable",
         "mnsami/composer-custom-directory-installer": "*@stable",
         "composer/composer": "dev-master",
         "kazist/contacts": "*@stable",
@@ -82,8 +83,18 @@
             "applications/System/": ["kazist/system"],
             "applications/Users/": ["kazist/users"],
             "assets/": ["kazist/assets"],
-            "themes/": ["kazist/themes"],
             "include/": ["kazist/core"]
+        },
+        "merge-plugin": {
+            "require": [
+                "setting/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": true,
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true
         }
     }
 }
