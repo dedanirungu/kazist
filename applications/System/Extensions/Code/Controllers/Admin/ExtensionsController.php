@@ -28,41 +28,39 @@ class ExtensionsController extends BaseController {
     public function installAction($path, $type, $namespace) {
         $urls = array();
 
-        $extensionsModel = new ExtensionsModel($this->doctrine, $this->request);
         $session = $this->container->get('session');
         $clear_name = str_replace('.', '_', $path);
 
         if ($path <> '' && $type == '') {
             $session_urls = $session->get('urls');
 
-            $urls = $extensionsModel->prepareUrl($path);
+            $urls = $this->model->prepareUrl($path);
             $new_urls = (!is_array($session_urls)) ? $urls : array_merge($session_urls, $urls);
             $session->set('urls', $new_urls);
         } elseif ($path == '') {
-            $urls = $extensionsModel->prepareUrl();
+            $urls = $this->model->prepareUrl();
             $session->set('urls', $urls);
         } else {
             $urls = $session->get('urls');
         }
 
-        $extensionsModel->install($path, $type, $namespace);
+        $this->model->install($path, $type, $namespace);
 
         if (!empty($urls)) {
-            return $extensionsModel->javascriptRedirector($path, $type, $namespace);
+            return $this->model->javascriptRedirector($path, $type, $namespace);
         }
 
         return $this->redirectToRoute('admin.system.extensions');
     }
 
     public function indexAction($offset = 0, $limit = 6) {
-        $extensionModel = new ExtensionsModel($this->doctrine, $this->request);
 
         $simple = $this->request->query->get('simple');
 
-        $repositories = $extensionModel->getExtensionList();
+        $repositories = $this->model->getExtensionList();
         $data_arr['items'] = $repositories;
 
-        $extensionModel->setAssets(JPATH_ROOT . '/assets/css/bootstrap.css');
+        $this->model->setAssets(JPATH_ROOT . '/assets/css/bootstrap.css');
 
         $this->html .= $this->render('System:Extensions:Code:views:admin:extension.list.twig', $data_arr);
 
@@ -78,8 +76,7 @@ class ExtensionsController extends BaseController {
 
     public function updatesystemAction() {
 
-        $extensionModel = new ExtensionsModel($this->doctrine, $this->request);
-        $extensionModel->updateSystem();
+        $this->model->updateSystem();
 
         return $this->redirectToRoute('admin.system.extensions');
     }

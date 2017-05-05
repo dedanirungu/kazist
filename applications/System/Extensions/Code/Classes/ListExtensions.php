@@ -26,15 +26,8 @@ class ListExtensions {
         foreach ($repositories as $key => $repository) {
 
             $extensionlist = $this->getOnlineAddonList($repository, $type);
-
-            if (!isset($updates['framework']) && isset($extensionlist['framework'])) {
-                $updates['framework'] = $extensionlist['framework'];
-                $updates['framework']['repository_id'] = $repository->id;
-            }
-            // print_r($updates); exit;
-
-            unset($extensionlist['framework']);
             $repository->updates = $extensionlist;
+           
             $updates['repositories'][] = $repository;
         }
 

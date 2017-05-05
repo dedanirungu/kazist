@@ -36,15 +36,11 @@
                         <i class="glyphicon glyphicon-download-alt"></i>
                         Update Core
                     </a>
-                    <a class="btn btn-default btn-sm btn-flat pull-right" href="{{ web_base }}/admin/system-download/vendor/vendor/{{ repository.id}}">
-                        <i class="glyphicon glyphicon-download-alt"></i>
-                        Update Vendor
-                    </a>
                 </div>
             </div>
 
-            {% if repository.updates.component|length %}
-                {% for item in repository.updates.component %}
+            {% if repository.updates|length %}
+                {% for item in repository.updates %}
 
                     <div class="col-sm-3 {% if not item.is_installed %}available{% else %}installed{% endif %}">
                         <div class="generator-item">

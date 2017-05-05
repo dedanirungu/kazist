@@ -1,9 +1,9 @@
 {
-    "name": "system",
+    "name": "kazist/system",
     "title": "System",
     "icon": "assets\/system\/routes\/icon.png",
     "extension": "component",
-    "path": "system\/",
+    "path": "applications/System/",
     "description": "System General Functionality",
     "version": "1"
 }

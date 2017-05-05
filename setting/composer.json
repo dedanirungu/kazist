@@ -2,7 +2,7 @@
     "repositories": [ 
         {
             "type": "composer",
-            "url": "http://repo.emshyinnovate.com"
+            "url": "https://repo.emshyinnovate.com"
         }
     ],
     "config": {

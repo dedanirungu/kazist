@@ -20,9 +20,9 @@
         <button type="button" class="btn btn-default show_available">Available</button>
     </div>
 
-
     {% if items.repositories|length %}
         {% for repository in items.repositories %}
+
             <div class="row">
                 <div class="col-sm-8">
                     <h3>{{ repository.title }}</h3>
@@ -36,57 +36,41 @@
                         <i class="glyphicon glyphicon-download-alt"></i>
                         Update Core
                     </a>
-                    <a class="btn btn-default btn-sm btn-flat pull-right" href="{{ web_base }}/admin/system-download/vendor/vendor/{{ repository.id}}">
-                        <i class="glyphicon glyphicon-download-alt"></i>
-                        Update Vendor
-                    </a>
                 </div>
             </div>
 
-            {% if repository.updates.component|length %}
-                {% for item in repository.updates.component %}
+            {% if repository.updates|length %}
+                {% for key,item in repository.updates %}
 
                     <div class="col-sm-3 {% if not item.is_installed %}available{% else %}installed{% endif %}">
                         <div class="generator-item">
+                            <div>
+                                {% if item.extension == 'component'%}
+                                    <label class="label label-success">{{ item.extension }}</label>
+                                {% else %}
+                                    <label class="label label-primary">{{ item.extension }}</label>
+                                {% endif %}
 
+                                {% if not item.is_installed %}
+                                    <a class="btn btn-red btn-xs btn-flat pull-right" href="{{ generate_url('system_download', {'id': item.id, 'repository_id': repository.id, 'installed_id': item.installed_id}) }}">
+                                        <i class="glyphicon glyphicon-download"></i> &nbsp; Install
+                                    </a>
+                                {% elseif item.is_installed and item.installed_version != item.update_version %}
+                                    <a class="btn btn-warning btn-xs btn-flat pull-right" href="{{ generate_url('system_download', {'id': item.id, 'repository_id': repository.id, 'installed_id': item.installed_id}) }}">
+                                        <i class="glyphicon glyphicon-download"></i> &nbsp; Update
+                                    </a>
+                                {% endif %}
 
+                            </div>
+                            <br>
+                            <img src="{{ web_root }}uploads/icons/{{ item.name }}.png" style="width:100%">
 
-
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>
-                                        <img src="{{ web_root }}uploads/icons/{{ item.name }}.png" width="60px">
-                                    </td>
-                                    <td>
-                                        <h4>{{ item.name }}</h4>
-                                        <b>Installed:</b>{{ item.installed_version }}<br>
-                                        <b>Update:</b>{{ item.update_version }}
-                                        <br>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        {% if item.extension == 'component'%}
-                                            <label class="label label-success pull-right">{{ item.extension }}</label>
-                                        {% else %}
-                                            <label class="label label-primary pull-right">{{ item.extension }}</label>
-                                        {% endif %}
-                                    </td>
-                                    <td>
-                                        {% if not item.is_core %}
-                                            {% if not item.is_installed %}
-                                                <a class="btn btn-red btn-xs btn-flat pull-right" href="{{ web_base }}/admin/system-download/{{ item.name}}/{{ item.type}}/{{ repository.id}}">
-                                                    <i class="glyphicon glyphicon-download"></i> &nbsp; Install
-                                                </a>
-                                            {% elseif item.is_installed and item.installed_version != item.update_version %}
-                                                <a class="btn btn-warning btn-xs btn-flat pull-right" href="{{ web_base }}/admin/system-download/{{ item.name}}/{{ item.type}}/{{ repository.id}}">
-                                                    <i class="glyphicon glyphicon-download"></i> &nbsp; Update
-                                                </a>
-                                            {% endif %}
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                            </table>
+                            <div>
+                                <h4>{{ item.name }}</h4>
+                                <b>Installed:</b>{{ item.installed_version }}<br>
+                                <b>Update:</b>{{ item.update_version }}
+                                <br>
+                            </div>
 
                         </div>
                     </div>

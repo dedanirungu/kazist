@@ -13,6 +13,10 @@ defined('KAZIST') or exit(DIE_MSG);
 use Kazist\KazistFactory;
 use System\Extensions\Code\Classes\AutoDiscover;
 use Kazist\Service\Database\Query;
+use Composer\Console\Application;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\BufferedOutput as Output;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Description of Update
@@ -30,12 +34,17 @@ class UpdateSystem {
         $autodiscover = new AutoDiscover();
         $factory = new KazistFactory();
 
-        $extract_path = JPATH_ROOT . '/uploads/updates/';
+        $extract_path = JPATH_ROOT . '/updater/';
         $factory->makeDir($extract_path, 0777);
+       print_r('$extract_path'); exit();
 
-        $name = $request->get('name');
-        $type = $request->get('extension');
+        $id = $request->get('id');
+        $installed_id = $request->get('installed_id');
         $repository_id = $request->get('repository_id');
+
+        $repository = $this->getRepository($repository_id);
+
+        $extension = $this->getExtensionCurl($id, $repository);
 
         $is_deleted = $this->recursiveDelete(realpath($extract_path));
 
@@ -46,31 +55,10 @@ class UpdateSystem {
             return false;
         }
 
-        $repository = $this->getRepository($repository_id);
+        $composer_content = file_get_contents($extension['composer_path']);
 
-        $this->curlProcessor($repository, $type, $name);
+        file_put_contents($extract_path . '/composer.json', $composer_content);
 
-        $zip = new \ZipArchive;
-
-        if (exec('echo EXEC') == 'EXEC') {
-
-            exec('unzip ' . $this->destination_file . ' -d ' . $extract_path);
-
-            $this->uploadViaFtp($name, $type);
-        } elseif ($zip->open($this->destination_file) === TRUE) {
-
-            $zip->extractTo(JPATH_ROOT . '/uploads/updates/');
-            $zip->close();
-
-            $this->uploadViaFtp($name, $type);
-        }
-
-        $result = $autodiscover->curlProcessor($repository, $name, $type);
-
-
-        $this->saveAddonToDatabase($result);
-
-        return $result;
     }
 
     public function saveAddonToDatabase($result) {
@@ -98,6 +86,51 @@ class UpdateSystem {
         $factory->saveRecord('#__system_extensions_updates', $update_obj);
 
         return$extension_id;
+    }
+
+    function getExtensionCurl($id, $repository) {
+
+        $data = array();
+        $data['token'] = $repository->token;
+        $data['type'] = $type;
+        $data['id'] = $id;
+
+        $url = rtrim($repository->url, '/') . '/extension-single';
+
+        $curl = curl_init();
+        // Set some options - we are passing in a useragent too here
+
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $url,
+            CURLOPT_USERAGENT => 'Codular Sample cURL Request',
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $data
+        ));
+
+        // Send the request & save response to $resp
+        $resp = curl_exec($curl);
+
+        // Close request to clear up some resources
+        curl_close($curl);
+
+        $result = json_decode($resp, true);
+
+        return $result;
+    }
+
+    function getExtension($id) {
+
+        $query = new Query();
+
+        $query->select('*');
+        $query->from('#__system_extensions', 'se');
+        $query->where('id=:id');
+        $query->setParameter('id', $id);
+
+        $record = $query->loadObject();
+
+        return $record;
     }
 
     function checkAddonExist($result) {
