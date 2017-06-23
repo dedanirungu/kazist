@@ -53,9 +53,9 @@ class ExtensionsModel extends BaseModel {
         $this->roles_ids['MODERATOR'] = $this->getRoleId('MODERATOR');
         $this->roles_ids['USER'] = $this->getRoleId('USER');
 
-        $extension_data = $factory->getRecord('#__system_extensions', 'se', array('se.path=:path'), array('path' => 'applications/'.trim($path_slash, '/') . '/'));
+        $extension_data = $factory->getRecord('#__system_extensions', 'se', array('se.path=:path'), array('path' => 'applications/' . trim($path_slash, '/') . '/'));
         $this->extension_id = $extension_data->id;
-        
+
         switch ($type) {
             case 'prepare':
                 $this->prepareTables();
@@ -130,8 +130,8 @@ class ExtensionsModel extends BaseModel {
         $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/menu' . '?' . $uniqid;
         $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/manifest' . '?' . $uniqid;
 
-
         $namespaces = json_decode(file_get_contents($namespace_path));
+
         foreach ($namespaces as $key => $namespace) {
             $table_urls[] = WEB_BASE . '/admin/system-install/' . $path . '/table/' . $key . '?' . $uniqid;
             $namespace_urls[] = WEB_BASE . '/admin/system-install/' . $path . '/namespace/' . $key . '?' . $uniqid;
@@ -189,12 +189,12 @@ class ExtensionsModel extends BaseModel {
         exit;
     }
 
-    public function prepareTables() {
+    public function prepareTables($clear_name = '') {
 
         $session = $this->container->get('session');
         $table_prepared = $session->get('table_prepared');
 
-        if (!$table_prepared) {
+        if (!$table_prepared || $clear_name == '') {
             $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Flexviews/Code/Tables';
             $this->doctrine->getEntityManager();
 
@@ -345,7 +345,7 @@ class ExtensionsModel extends BaseModel {
         $entityManager = $this->doctrine->getEntityManager();
 
         $data = json_decode(file_get_contents($manifest_path));
-        $path_slash = str_replace('.', '/', $path);
+        $path_slash = 'applications/' . str_replace('.', '/', $path);
 
         $data->description = ($data->title <> '') ? $data->title : $data->description;
         $data->is_core = ($data->is_core <> '') ? $data->is_core : 0;
@@ -719,6 +719,7 @@ class ExtensionsModel extends BaseModel {
                 $cron['subset_id'] = $this->subset_id;
                 $cron['is_new'] = 0;
                 $cron['completed_running'] = 0;
+                $cron['locked_key'] = '';
                 $cron['is_modified'] = 0;
 
                 $ids[] = $factory->saveRecord('#__system_crons', $cron);

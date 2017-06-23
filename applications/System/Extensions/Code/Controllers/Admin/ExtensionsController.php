@@ -44,6 +44,10 @@ class ExtensionsController extends BaseController {
             $urls = $session->get('urls');
         }
 
+        if ($clear_name == '') {
+            $this->model->prepareTables($clear_name);
+        }
+        
         $this->model->install($path, $type, $namespace);
 
         if (!empty($urls)) {

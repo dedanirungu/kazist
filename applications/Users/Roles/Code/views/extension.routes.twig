@@ -1,5 +1,6 @@
 
 {% if routes|length>0 %}
+
     <div>
         <table class="table table-responsive table-condensed">
             {% for key,route in routes %}
@@ -23,12 +24,10 @@
                                     <div class="col-sm-10">
                                         <ul class="route-permission-list">
 
-                                            {% set route_permission =  attribute(route.route_permissions, role.id) %}
-
                                             {% for permission in route.permissions %}
                                                 <li class="col-sm-4">
 
-                                                    {% set cur_permission = attribute(route_permission, permission) %}
+                                                    {% set cur_permission = attribute(route.route_permissions, permission) %}
 
                                                     {% if permission != '' %}
                                                         <input value="1" type="checkbox" {% if cur_permission %}checked{% endif %} role_id="{{ role.id }}" permission="{{ permission }}" route_id="{{ route.id }}"> {{ permission}}

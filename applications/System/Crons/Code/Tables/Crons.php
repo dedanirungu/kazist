@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Crons extends \Kazist\Table\BaseTable {
-
+class Crons extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -32,7 +32,7 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
-     * @ORM\Column(name="unique_name", type="string", length=255)
+     * @ORM\Column(name="unique_name", type="string", length=255, nullable=false)
      */
     protected $unique_name;
 
@@ -116,6 +116,13 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
+     * @ORM\Column(name="locked_key", type="string", length=255)
+     */
+    protected $locked_key;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="extension_path", type="string", length=255, nullable=false)
      */
     protected $extension_path;
@@ -155,54 +162,62 @@ class Crons extends \Kazist\Table\BaseTable {
      */
     protected $date_modified;
 
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set subset_id
+     * Set subsetId
      *
      * @param integer $subsetId
+     *
      * @return Crons
      */
-    public function setSubsetId($subsetId) {
+    public function setSubsetId($subsetId)
+    {
         $this->subset_id = $subsetId;
 
         return $this;
     }
 
     /**
-     * Get subset_id
+     * Get subsetId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getSubsetId() {
+    public function getSubsetId()
+    {
         return $this->subset_id;
     }
 
     /**
-     * Set unique_name
+     * Set uniqueName
      *
      * @param string $uniqueName
+     *
      * @return Crons
      */
-    public function setUniqueName($uniqueName) {
+    public function setUniqueName($uniqueName)
+    {
         $this->unique_name = $uniqueName;
 
         return $this;
     }
 
     /**
-     * Get unique_name
+     * Get uniqueName
      *
-     * @return string 
+     * @return string
      */
-    public function getUniqueName() {
+    public function getUniqueName()
+    {
         return $this->unique_name;
     }
 
@@ -210,9 +225,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set controller
      *
      * @param string $controller
+     *
      * @return Crons
      */
-    public function setController($controller) {
+    public function setController($controller)
+    {
         $this->controller = $controller;
 
         return $this;
@@ -221,9 +238,10 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get controller
      *
-     * @return string 
+     * @return string
      */
-    public function getController() {
+    public function getController()
+    {
         return $this->controller;
     }
 
@@ -231,9 +249,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set function
      *
      * @param string $function
+     *
      * @return Crons
      */
-    public function setFunction($function) {
+    public function setFunction($function)
+    {
         $this->function = $function;
 
         return $this;
@@ -242,9 +262,10 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get function
      *
-     * @return string 
+     * @return string
      */
-    public function getFunction() {
+    public function getFunction()
+    {
         return $this->function;
     }
 
@@ -252,9 +273,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set minute
      *
      * @param string $minute
+     *
      * @return Crons
      */
-    public function setMinute($minute) {
+    public function setMinute($minute)
+    {
         $this->minute = $minute;
 
         return $this;
@@ -263,9 +286,10 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get minute
      *
-     * @return string 
+     * @return string
      */
-    public function getMinute() {
+    public function getMinute()
+    {
         return $this->minute;
     }
 
@@ -273,9 +297,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set hour
      *
      * @param string $hour
+     *
      * @return Crons
      */
-    public function setHour($hour) {
+    public function setHour($hour)
+    {
         $this->hour = $hour;
 
         return $this;
@@ -284,30 +310,34 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get hour
      *
-     * @return string 
+     * @return string
      */
-    public function getHour() {
+    public function getHour()
+    {
         return $this->hour;
     }
 
     /**
-     * Set day_of_month
+     * Set dayOfMonth
      *
      * @param string $dayOfMonth
+     *
      * @return Crons
      */
-    public function setDayOfMonth($dayOfMonth) {
+    public function setDayOfMonth($dayOfMonth)
+    {
         $this->day_of_month = $dayOfMonth;
 
         return $this;
     }
 
     /**
-     * Get day_of_month
+     * Get dayOfMonth
      *
-     * @return string 
+     * @return string
      */
-    public function getDayOfMonth() {
+    public function getDayOfMonth()
+    {
         return $this->day_of_month;
     }
 
@@ -315,9 +345,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set month
      *
      * @param string $month
+     *
      * @return Crons
      */
-    public function setMonth($month) {
+    public function setMonth($month)
+    {
         $this->month = $month;
 
         return $this;
@@ -326,30 +358,34 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get month
      *
-     * @return string 
+     * @return string
      */
-    public function getMonth() {
+    public function getMonth()
+    {
         return $this->month;
     }
 
     /**
-     * Set day_of_week
+     * Set dayOfWeek
      *
      * @param string $dayOfWeek
+     *
      * @return Crons
      */
-    public function setDayOfWeek($dayOfWeek) {
+    public function setDayOfWeek($dayOfWeek)
+    {
         $this->day_of_week = $dayOfWeek;
 
         return $this;
     }
 
     /**
-     * Get day_of_week
+     * Get dayOfWeek
      *
-     * @return string 
+     * @return string
      */
-    public function getDayOfWeek() {
+    public function getDayOfWeek()
+    {
         return $this->day_of_week;
     }
 
@@ -357,9 +393,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set year
      *
      * @param string $year
+     *
      * @return Crons
      */
-    public function setYear($year) {
+    public function setYear($year)
+    {
         $this->year = $year;
 
         return $this;
@@ -368,93 +406,130 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get year
      *
-     * @return string 
+     * @return string
      */
-    public function getYear() {
+    public function getYear()
+    {
         return $this->year;
     }
 
     /**
-     * Set completed_running
+     * Set completedRunning
      *
      * @param integer $completedRunning
+     *
      * @return Crons
      */
-    public function setCompletedRunning($completedRunning) {
+    public function setCompletedRunning($completedRunning)
+    {
         $this->completed_running = $completedRunning;
 
         return $this;
     }
 
     /**
-     * Get completed_running
+     * Get completedRunning
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCompletedRunning() {
+    public function getCompletedRunning()
+    {
         return $this->completed_running;
     }
 
     /**
-     * Set next_run_time
+     * Set nextRunTime
      *
      * @param \DateTime $nextRunTime
+     *
      * @return Crons
      */
-    public function setNextRunTime($nextRunTime) {
+    public function setNextRunTime($nextRunTime)
+    {
         $this->next_run_time = $nextRunTime;
 
         return $this;
     }
 
     /**
-     * Get next_run_time
+     * Get nextRunTime
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getNextRunTime() {
+    public function getNextRunTime()
+    {
         return $this->next_run_time;
     }
 
     /**
-     * Set is_new
+     * Set isNew
      *
      * @param integer $isNew
+     *
      * @return Crons
      */
-    public function setIsNew($isNew) {
+    public function setIsNew($isNew)
+    {
         $this->is_new = $isNew;
 
         return $this;
     }
 
     /**
-     * Get is_new
+     * Get isNew
      *
-     * @return integer 
+     * @return integer
      */
-    public function getIsNew() {
+    public function getIsNew()
+    {
         return $this->is_new;
     }
 
     /**
-     * Set extension_path
+     * Set lockedKey
      *
-     * @param string $extensionPath
+     * @param string $lockedKey
+     *
      * @return Crons
      */
-    public function setExtensionPath($extensionPath) {
+    public function setLockedKey($lockedKey)
+    {
+        $this->locked_key = $lockedKey;
+
+        return $this;
+    }
+
+    /**
+     * Get lockedKey
+     *
+     * @return string
+     */
+    public function getLockedKey()
+    {
+        return $this->locked_key;
+    }
+
+    /**
+     * Set extensionPath
+     *
+     * @param string $extensionPath
+     *
+     * @return Crons
+     */
+    public function setExtensionPath($extensionPath)
+    {
         $this->extension_path = $extensionPath;
 
         return $this;
     }
 
     /**
-     * Get extension_path
+     * Get extensionPath
      *
-     * @return string 
+     * @return string
      */
-    public function getExtensionPath() {
+    public function getExtensionPath()
+    {
         return $this->extension_path;
     }
 
@@ -462,9 +537,11 @@ class Crons extends \Kazist\Table\BaseTable {
      * Set published
      *
      * @param integer $published
+     *
      * @return Crons
      */
-    public function setPublished($published) {
+    public function setPublished($published)
+    {
         $this->published = $published;
 
         return $this;
@@ -473,46 +550,58 @@ class Crons extends \Kazist\Table\BaseTable {
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
-    public function getPublished() {
+    public function getPublished()
+    {
         return $this->published;
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCreatedBy() {
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        // Add your code here
+    }
 }
+

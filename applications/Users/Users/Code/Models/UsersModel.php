@@ -38,6 +38,7 @@ class UsersModel extends BaseModel {
 
         $is_valid = '';
 
+        $factory = new KazistFactory();
         $registration = new Registration();
 
         $form = ($form <> '') ? $form : $this->request->get('form');
@@ -47,16 +48,35 @@ class UsersModel extends BaseModel {
         }
 
         $form_obj = json_decode(json_encode($form));
+        $form_obj->group_id = (array) $form_obj->group_id;
 
         if ($form['id']) {
             $registration->user_id = $form['id'];
             $is_valid = $registration->validateRegistration($form_obj, false);
+
             if ($is_valid) {
                 $user_id = $registration->registerUser($form_obj, $is_valid);
             }
         } else {
             $is_valid = $registration->validateRegistration($form_obj, true);
             $user_id = $registration->registerUser($form_obj, $is_valid);
+        }
+
+        $data_obj = new \stdClass();
+        $data_obj->user_id = $user_id;
+        $where_arr = array('user_id = :user_id');
+        $factory->deleteRecords('#__users_users_groups', $where_arr, $data_obj);
+
+        foreach ($form_obj->group_id as $key => $group_id) {
+
+            $data_obj = new \stdClass();
+
+            $data_obj->user_id = $user_id;
+            $data_obj->group_id = $group_id;
+
+            $where_arr = array('user_id = :user_id', 'group_id = :group_id');
+
+            $factory->saveRecord('#__users_users_groups', $data_obj, $where_arr, $data_obj);
         }
 
         return $user_id;
@@ -160,7 +180,7 @@ class UsersModel extends BaseModel {
         $query->where('verification=:verification');
         $query->setParameter('verification', $verification);
         $user = $query->loadObject();
-        // print_r((string)$query); exit;
+// print_r((string)$query); exit;
 
         if (is_object($user)) {
 
@@ -212,7 +232,7 @@ class UsersModel extends BaseModel {
         $factory = new KazistFactory();
 
 
-        //$db = $this->getDb();
+//$db = $this->getDb();
 
         $limit = 8;
         $offset = $this->request->request->get('offset', 0);
@@ -253,7 +273,7 @@ class UsersModel extends BaseModel {
         if (!empty($user_ids)) {
             $query->where(' uu.id NOT IN(' . implode(',', $user_ids) . ')');
         }
-        //print_r((string)$query); exit;
+//print_r((string)$query); exit;
         return $query;
     }
 
@@ -385,36 +405,36 @@ class UsersModel extends BaseModel {
     public function fetchCaptcha() {
 
         $session = $this->container->get('session');
-        // Adapted for The Art of Web: www.the-art-of-web.com
-        // Please acknowledge use of this code by including this header.
-        // initialise image with dimensions of 120 x 30 pixels
+// Adapted for The Art of Web: www.the-art-of-web.com
+// Please acknowledge use of this code by including this header.
+// initialise image with dimensions of 120 x 30 pixels
 
         $image = @imagecreatetruecolor(200, 50) or die("Cannot Initialize new GD image stream");
 
-        // set background to white and allocate drawing colours
+// set background to white and allocate drawing colours
         $background = imagecolorallocate($image, 0xFF, 0xFF, 0xFF);
         imagefill($image, 0, 0, $background);
         $linecolor = imagecolorallocate($image, 0xCC, 0xCC, 0xCC);
         $textcolor = imagecolorallocate($image, 0x33, 0x33, 0x33);
 
-        // draw random lines on canvas
+// draw random lines on canvas
         for ($i = 0; $i < 6; $i++) {
             imagesetthickness($image, rand(1, 3));
             imageline($image, 0, rand(0, 30), 250, rand(0, 30), $linecolor);
         }
 
 
-        // add random digits to canvas
+// add random digits to canvas
         $digit = '';
         for ($x = 15; $x <= 120; $x += 20) {
             $digit .= ($num = rand(0, 9));
             imagechar($image, rand(4, 5), $x, rand(2, 14), $num, $textcolor);
         }
 
-        // record digits in session variable
+// record digits in session variable
         $session->set('captcha-digit', $digit);
 
-        // display image and clean up
+// display image and clean up
         header('Content-type: image/png');
         imagepng($image);
         imagedestroy($image);

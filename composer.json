@@ -86,6 +86,10 @@
             "include/": ["kazist/core"]
         },
         "merge-plugin": {
+            "include": [
+                "composer.local.json",
+                "applications/*/composer.json"
+            ],
             "require": [
                 "setting/composer.json"
             ],

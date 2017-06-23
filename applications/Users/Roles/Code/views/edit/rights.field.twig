@@ -2,6 +2,8 @@
 {{ set_assets('applications/Users/assets/js/role.js') }}
 
 {% set extensions = callFunction( "Users.Roles.Code.Models.RolesModel", 'getSystemExtensions' ) %}
+{% set viewsides = callFunction( "Users.Roles.Code.Models.RolesModel", 'getViewSides' ) %}
+
 
 
 {% set applications = get_context('applications') %}
@@ -21,8 +23,14 @@
 </div>
 
 {% if item.id %}
-
-    {{ forms.input('extension_list','select', null, null, null, null, null, null, extensions) }}
+    <div>
+        <div class="col-sm-6">
+            {{ forms.input('extension_list','select', null, null, null, null, null, null, extensions) }}
+        </div>
+        <div class="col-sm-6">
+            {{ forms.input('viewside','radio', 'front', null, null, null, null, null, viewsides) }}
+        </div>
+    </div>
 
     <div class="extension_routes">
 
@@ -33,20 +41,30 @@
         jQuery(document).ready(function () {
 
             jQuery('#extension_list').change(function () {
-                extension = jQuery(this).val();
-                updateRightList(extension);
+
+                extension = jQuery('#extension_list').val();
+                viewside = jQuery('.viewside:checked').val();
+                updateRightList(extension, viewside);
+            });
+
+            jQuery('#viewside').change(function () {
+
+                extension = jQuery('#extension_list').val();
+                viewside = jQuery('.viewside:checked').val();
+                updateRightList(extension, viewside);
             });
 
             extension = jQuery('#extension_list').val();
-            updateRightList(extension);
+            viewside = jQuery('.viewside:checked').val();
+            updateRightList(extension, viewside);
 
         });
 
-        function updateRightList(extension) {
+        function updateRightList(extension, viewside) {
 
             var role_id = jQuery('.form-id').val();
 
-            var data_object = {"role_id": role_id, "extension": extension};
+            var data_object = {"role_id": role_id, "extension": extension, "viewside": viewside};
 
             jQuery('.extension_routes').html('Loading. Please Wait...');
             kazist.addSpinningIcon(jQuery('.extension_routes'));

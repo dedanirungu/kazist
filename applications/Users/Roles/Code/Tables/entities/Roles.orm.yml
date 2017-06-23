@@ -16,6 +16,10 @@ Users\Roles\Code\Tables\Roles:
       type: string
       length: 255
       nullable: false
+    admin_access:
+      name: admin_access
+      type: integer
+      length: 11
     published:
       name: published
       type: integer

@@ -39,6 +39,13 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
+     * @ORM\Column(name="admin_access", type="integer", length=11)
+     */
+    protected $admin_access;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="published", type="integer", length=11, nullable=true)
      */
     protected $published;
@@ -75,7 +82,7 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -86,6 +93,7 @@ class Roles extends \Kazist\Table\BaseTable
      * Set title
      *
      * @param string $title
+     *
      * @return Roles
      */
     public function setTitle($title)
@@ -98,7 +106,7 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -109,6 +117,7 @@ class Roles extends \Kazist\Table\BaseTable
      * Set alias
      *
      * @param string $alias
+     *
      * @return Roles
      */
     public function setAlias($alias)
@@ -121,7 +130,7 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * Get alias
      *
-     * @return string 
+     * @return string
      */
     public function getAlias()
     {
@@ -129,9 +138,34 @@ class Roles extends \Kazist\Table\BaseTable
     }
 
     /**
+     * Set adminAccess
+     *
+     * @param integer $adminAccess
+     *
+     * @return Roles
+     */
+    public function setAdminAccess($adminAccess)
+    {
+        $this->admin_access = $adminAccess;
+
+        return $this;
+    }
+
+    /**
+     * Get adminAccess
+     *
+     * @return integer
+     */
+    public function getAdminAccess()
+    {
+        return $this->admin_access;
+    }
+
+    /**
      * Set published
      *
      * @param integer $published
+     *
      * @return Roles
      */
     public function setPublished($published)
@@ -144,7 +178,7 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -152,9 +186,9 @@ class Roles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -162,9 +196,9 @@ class Roles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -172,9 +206,9 @@ class Roles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -182,9 +216,9 @@ class Roles extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -198,3 +232,4 @@ class Roles extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+

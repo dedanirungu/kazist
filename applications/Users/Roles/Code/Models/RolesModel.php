@@ -37,6 +37,15 @@ class RolesModel extends BaseModel {
         $id = $this->saveRecordByEntity('#__system_routes_permissions', $data_obj, array('role_id=:role_id', 'route_id=:route_id'), $exist_obj);
     }
 
+    public function getViewSides() {
+        $tmp_array = array();
+
+        $tmp_array[] = array('value' => 'front', 'text' => 'Front Side');
+        $tmp_array[] = array('value' => 'back', 'text' => 'Back Side');
+
+        return $tmp_array;
+    }
+
     public function getSystemExtensions() {
 
         $tmp_array = array();
@@ -62,15 +71,25 @@ class RolesModel extends BaseModel {
     public function getRouteList() {
 
         $tmp_array = array();
-        $route = $this->request->get('extension');
+        $tmp_route = $this->request->get('extension');
+        $viewside = $this->request->get('viewside');
+        $route = str_replace('kazist/', '', $tmp_route);
 
         $query = new Query();
         $query->select('sr.*');
         $query->from('#__system_routes', 'sr');
-        $query->where('route LIKE :route_front');
-        $query->orWhere('route LIKE :route_back');
-        $query->setParameter('route_front', $route . '/%');
-        $query->setParameter('route_back', 'admin/' . $route . '/%');
+        if ($viewside == 'front') {
+            $query->where('route LIKE :route_front');
+            $query->setParameter('route_front', $route . '/%');
+        } elseif ($viewside == 'back') {
+            $query->orWhere('route LIKE :route_back');
+            $query->setParameter('route_back', 'admin/' . $route . '/%');
+        } else {
+            $query->where('route LIKE :route_front');
+            $query->setParameter('route_front', $route . '/%');
+            $query->orWhere('route LIKE :route_back');
+            $query->setParameter('route_back', 'admin/' . $route . '/%');
+        }
         $query->orderBy('sr.route');
         $records = $query->loadObjectList();
 
@@ -94,15 +113,11 @@ class RolesModel extends BaseModel {
         $query->from('#__system_routes_permissions', 'srp');
         $query->where('srp.route_id LIKE :route_id');
         $query->setParameter('route_id', $record->id);
-        $records = $query->loadObjectList();
+        $record = $query->loadObject();
 
-        if (!empty($records)) {
-            foreach ($records as $key => $record) {
-                $tmp_array[$record->role_id] = $record;
-            }
-        }
+      
 
-        return $tmp_array;
+        return $record;
     }
 
     public function getRolesList($record) {

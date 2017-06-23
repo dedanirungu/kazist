@@ -19,7 +19,8 @@
                                             "fields": [
                                                 "title",
                                                 "alias",
-                                                "published"
+                                                "published",
+                                                "admin_access"
                                             ]
                                         }
                                     }
@@ -197,6 +198,27 @@
             }
         },
         {
+            "name": "admin_access",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "size": "",
+            "readonly": "0",
+            "default_value": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
             "dropdown_filter": "1",
             "nullable": "1",
             "name": "published",
@@ -343,6 +365,7 @@
             "ur.id",
             "ur.title",
             "ur.alias",
+            "ur.admin_access",
             "ur.published",
             "ur.created_by",
             "ur.date_created",

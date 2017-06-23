@@ -28,11 +28,11 @@ class MenuController extends AddonController {
 
         $document = $this->container->get('document');
 
-        if (is_object($document->extension)) {
-            $name_arr = array_reverse(explode('/', $document->extension->name));
+        if ($document->controller <> '') {
+            $name_arr = explode('\\', $document->controller);
             $alias = $name_arr[0];
         }
-    
+     
         $menus = $model->getCategoriesByAlias($alias, true);
 
         $all_menus = $model->getCategoriesByAlias(null, true);

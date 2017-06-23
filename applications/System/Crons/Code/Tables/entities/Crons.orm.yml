@@ -15,6 +15,7 @@ System\Crons\Code\Tables\Crons:
       name: unique_name
       type: string
       length: 255
+      nullable: false
     controller:
       name: controller
       type: string
@@ -69,6 +70,10 @@ System\Crons\Code\Tables\Crons:
       type: integer
       length: 11
       nullable: true
+    locked_key:
+      name: locked_key
+      type: string
+      length: 255
     extension_path:
       name: extension_path
       type: string
