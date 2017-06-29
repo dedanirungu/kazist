@@ -1764,16 +1764,16 @@
         },
         {
             "name": "kazist/themes",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/themes.git",
-                "reference": "f3def9977d43e3f60344a5ff9961efd2fb53bd55"
+                "reference": "b0b73b9003fa6079cfbc3ba5ee91eb538a0d534a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/themes/zipball/f3def9977d43e3f60344a5ff9961efd2fb53bd55",
-                "reference": "f3def9977d43e3f60344a5ff9961efd2fb53bd55",
+                "url": "https://api.github.com/repos/kazist/themes/zipball/b0b73b9003fa6079cfbc3ba5ee91eb538a0d534a",
+                "reference": "b0b73b9003fa6079cfbc3ba5ee91eb538a0d534a",
                 "shasum": ""
             },
             "require": {
@@ -1799,7 +1799,7 @@
                 "kazist",
                 "themes manager"
             ],
-            "time": "2017-06-29T08:10:39+00:00"
+            "time": "2017-06-29T14:50:42+00:00"
         },
         {
             "name": "kazist/users",

@@ -20,10 +20,43 @@ This file is part of Kazist Framework.
     }
 }
 
+.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span {
+    margin-left: -17px !important;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu {
+    margin-left: -15px !important;
+}
+
+.skin-black .main-header{
+    background: #37474F;
+    border: 1px solid transparent;
+    border-bottom-color: rgba(255,255,255,.1);
+}
+
+.skin-black .main-header .logo, .skin-black .main-header .logo:hover,
+.skin-black .main-header .sidebar-toggle,.skin-black .main-header .sidebar-toggle:hover,
+.skin-black .main-header .navbar, .skin-black .main-header .navbar:hover,
+.skin-black .main-header .navbar-custom-menu a,.skin-black .main-header .navbar-custom-menu a:hover{  
+    background: #37474F !important;
+}
+
+.skin-black .main-header a,
+.skin-black .main-header .logo{
+    color: white !important;
+}
+
+.skin-black .main-header .logo,
+.skin-black .main-header .navbar > .sidebar-toggle,
+.skin-black .main-header .navbar .navbar-nav > li > a {
+    border-left:none !important;
+    border-right:none !important;
+}
+
 .response-content .table-responsive .dropdown-menu {
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    
+
 }
 
 .content-wrapper, .right-side{
@@ -126,7 +159,7 @@ input[type=text], textarea, select{
 }
 
 .action-search{
-    padding:10px !important;
+    padding:5px 10px !important;
 }
 
 table .item-yesno{
@@ -163,13 +196,6 @@ table .item-yesno{
     clear: both;
 }
 
-.action-search .action_content{
-    padding:5px;
-}
-
-.action-search .search_content{
-    padding:5px;
-}
 
 .action-search .search_content .input-group{
     max-width: 350px;
