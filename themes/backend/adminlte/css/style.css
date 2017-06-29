@@ -8,6 +8,99 @@ This file is part of Kazist Framework.
     Created on : Apr 26, 2016, 5:19:54 PM
     Author     : sbc
 */
+@media (max-width: 767px) {
+    .response-content .table-responsive .dropdown-menu {
+        position: static !important;
+    }
+}
+@media (min-width: 768px) {
+    .response-content .table-responsive {
+        overflow: visible;
+
+    }
+}
+
+.response-content .table-responsive .dropdown-menu {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    
+}
+
+.content-wrapper, .right-side{
+    background: #F5F5F5 !important;
+}
+
+.response-content{
+    padding:5px;
+}
+
+.response-content .col-sm-1,
+.response-content .col-sm-2,
+.response-content .col-sm-3,
+.response-content .col-sm-4,
+.response-content .col-sm-5,
+.response-content .col-sm-6,
+.response-content .col-sm-7,
+.response-content .col-sm-8,
+.response-content .col-sm-9,
+.response-content .col-sm-10,
+.response-content .col-sm-11,
+.response-content .col-sm-12,
+.response-content .col-md-1,
+.response-content .col-md-2,
+.response-content .col-md-3,
+.response-content .col-md-4,
+.response-content .col-md-5,
+.response-content .col-md-6,
+.response-content .col-md-7,
+.response-content .col-md-8,
+.response-content .col-md-9,
+.response-content .col-md-10,
+.response-content .col-md-11,
+.response-content .col-md-12
+{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.response-content .tab-content .form-field-group{
+    border:none !important;
+}
+
+table, 
+.form-field-group,
+.tab-content
+{
+    background: white;  
+    border: 1px solid #EEE;
+    border-radius: 1px;
+    margin-bottom: 15px;
+}
+
+.content-top-wrapper{
+    background: white;
+    border-bottom: 1px solid #EEE;
+}
+
+.main-footer{
+    background: #FCFCFC;
+    border-top:none;
+    text-align: center;
+}
+
+.content-wrapper .kazi-block{
+    background: white;
+}
+
+.kazi-block .block-title{
+    padding:5px;
+    background: #FDFDFD;
+    border-bottom: 1px solid #ddd;
+}
+.kazi-block .block-content{
+    padding:5px;
+}
+
 
 input[type=text], textarea, select{
     max-width:350px; 
@@ -33,7 +126,7 @@ input[type=text], textarea, select{
 }
 
 .action-search{
-    padding:10px;
+    padding:10px !important;
 }
 
 table .item-yesno{
@@ -45,10 +138,21 @@ table .item-yesno{
     z-index: 800;
 }
 
+.form-group{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+
 .form-field-group-header{
     background: #FDFDFD;
-    border-bottom: 1px dotted #ddd;
-    padding:2px;
+    border-bottom: 1px solid #EEE;
+    padding:5px 8px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .content-wrapper .content{
@@ -96,7 +200,10 @@ table .item-yesno{
 
 .action-search .search_content .filter-summary{
     margin-left: 10px;
-    margin-top:-30px;
+    clear:both;
+    text-align: left;
+    width: 100%;
+    font-size:10px;
 }
 
 .action-search .search_content .dropdown-search-form .form-control input{
@@ -106,6 +213,32 @@ table .item-yesno{
 .ui-autocomplete{
     z-index: 1000;
 }
+
+
+.content-wrapper .content-header {
+    background: white;
+    padding:20px;
+    border-bottom: 1px solid #EEE;
+}
+
+.action-search{
+    background: #FCFCFC;
+    margin-bottom: 10px;
+}
+.action-search .action_content{
+    display: inline-block;
+}
+
+.search-button-text{
+    line-height: 24px;
+    display: inline-block;
+}
+
+.control-sidebar .tab-content{
+    background: none;
+    border:none;
+}
+
 
 
 

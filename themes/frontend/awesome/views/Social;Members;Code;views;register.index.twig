@@ -1,0 +1,280 @@
+{% import "form.macro.twig" as forms %}
+
+{% include "member.edit.top.index.twig" ignore missing %}
+
+{% set params = { 'country_id': item.country_id, 'location_id': item.location_id  } %}
+
+{% set country = callFunction( "Setup.Countries.Code.Models.CountriesModel", 'getCountriesInput') %}
+{% set location = callFunction( "Setup.Regions.Code.Models.RegionsModel", 'getRegionsInput', params) %}
+{% set countries_codes = callFunction( "Setup.Countries.Code.Models.CountriesModel", 'getCountriesCode', params) %}
+
+{{ set_assets('applications/Social/assets/css/registration_wizard.css') }}
+
+{% set session_form = get_session('session_form') %}
+
+{% set gender =
+    {
+        0:{'value':'male','text':'Male'},
+        1:{'value':'female','text':'Female'}
+    }
+%}
+
+{% set setting_date =
+    {
+        option:{'default':{'value':'','text':'Date'}}
+    }
+%}
+
+{% set setting_month =
+    {
+        option:{'default':{'value':'','text':'Month'}}
+    }
+%}
+
+{% set setting_year =
+    {
+        option:{'default':{'value':'','text':'Year'}}
+    }
+%}
+
+<script>
+    var location_id = '{{ item.location_id }}';
+    var countries_codes
+    = {{ countries_codes|json_encode()|raw }};
+</script>
+
+{% set action_url =  generate_url('social.members.saveregistration') %}
+
+<h1 class="component-header"> Register</h1>
+
+<form id="{{ main_form_id }}" class="form-horizontal" action="{{ action_url }}" method="post" role="form"  enctype="multipart/form-data">
+
+    {# 
+    <ul class="nav nav-wizard">
+        <li class="col-md-6 {% if step==1 %}active{% endif %}"><a href="{{ generate_url('social.members.register',{'step': 1}) }}">Select Inviter</a></li>
+        <li class="col-md-6 {% if step==2 %}active{% endif %}"><a href="{{ generate_url('social.members.register',{'step': 2}) }}"> Account Detail</a></li>
+    </ul>
+    #}
+
+    <div class="select_inviter">
+        <div class="well well-sm"> Select Inviter </div>
+
+        {% if is_forced_inviter %}
+            <div>
+
+                {% if not inviter.is_default %}
+
+                    <div class="form-group inviter-group"{% if inviter_name!='' %}style="display:none;"{% endif %}>
+                        <label for="inviter" class="col-sm-3 control-label">Enter Your Inviter Details</label>
+                        <div class="col-sm-9">
+
+                            <small>Enter Your Inviter's Username or Email</small><br>
+                            {{ forms.input('inviter', 'text', null, null, null, null, 'placeholder="Enter Inviter Username or Email"')  }}
+                            {{ forms.input('inviter_id', 'hidden', inviter.id)  }}
+                            <a class="btn btn-success btn-xs btn-flat search-inviter">CLICK HERE TO CONTINUE</a>
+                            <br>
+                            {#
+                            <div class="registration-no-inviter">
+                                If You dont have an inviter 
+                                <a href="{{ generate_url('social.members.register')}}?default=true" >
+                                    Click Here
+                                </a>
+                            </div>
+                            #}
+                        </div>
+                    </div>
+
+                {% endif %}
+
+                <div class="form-group inviter_detail-group" {% if inviter_name=='' and inviter.name=='' %}style="display:none;"{% endif %}>
+                    <div class="col-sm-12">
+                        <div class="alert alert-success">
+                            <div class="col-sm-offset-3 col-sm-9 col-xs-12">
+                                Your Inviter detail are shown below.
+                                <br>
+                                <small>
+                                    <span class="inviter_detail_name">
+
+                                        {% if inviter.is_default %}
+                                            <b>Name:</b> Admin<br>
+                                            <b>Email:</b>{{ inviter.email }}
+                                            <div class="registration-no-inviter">
+                                                To change Inviter
+                                                <a href="{{ generate_url('social.members.register')}}">
+                                                    Click Here
+                                                </a>
+                                            </div>
+
+                                            {{ forms.input('default_inviter', 'hidden', 1 )  }}
+                                            {{ forms.input('inviter_id', 'hidden', inviter.id, null, " inviter_detail_inviter_id" )  }}
+
+                                        {% else %}
+                                            <b>Name:</b>{{ inviter.name|capitalize }}<br>
+                                            <b>Email:</b>{{ inviter.email }}
+                                        {% endif %}
+                                    </span>
+                                </small>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        {% endif %}
+    </div>
+
+    <div class="account_detail" style="display:none;">
+        <div class="well well-sm"> Account Detail </div>
+        <div>
+            {% if separate_names %}
+                {{ forms.input('first_name', 'text', user.first_name, 'First Name', null, null, 'placeholder="Enter First Name" required')  }}
+                {{ forms.input('second_name', 'text', user.second_name, 'Last Name', null, null, 'placeholder="Enter Last Name" required')  }}
+            {% else %}
+                {{ forms.input('name', 'text', user.name, 'Name', null, null, 'placeholder="Enter Name" required')  }}
+            {% endif %}
+
+            {{ forms.input('email', 'email', user.email, 'Enter Your Email', null, null, 'placeholder="Enter Your Email" required')  }}
+
+            {% if confirm_email %}
+                {{ forms.input('email_again', 'email', user.email, 'Confirm Your Email', null, null, 'placeholder="Confirm Your Email" required')  }}
+            {% endif %}
+
+            {{ forms.input('username', 'text', user.username, 'Select a Username', null, null, 'placeholder="Select Username" pattern="[0-9A-Za-z]{4,16}" title="Only A-Z, a-z or 0-9 and at least 6 to 16 characters" required')  }}
+
+            {% if not item.id %}
+                {{ forms.input('password', 'password', user.password, 'Select a Password', null, null, 'placeholder="Select a Password"  pattern="[0-9A-Za-z]{4,16}" title="Only A-Z, a-z or 0-9 and at least 6 to 16 characters" required')  }}
+                {{ forms.input('password_again', 'password', user.password_again, 'Confirm Password', null, null, 'placeholder="Confirm Selected Password"  pattern="[0-9A-Za-z]{4,16}" title="Only A-Z, a-z or 0-9 and at least 6 to 16 characters" required')  }}
+            {% endif %}
+
+
+            {{ forms.input('gender', 'radio', item.gender, 'Gender', null, null, 'required', null, gender)  }}
+
+
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="personal_detail" style="display:none;">
+        <div class="well well-sm"> Personal Detail </div>
+        <div>
+
+            <div class="form-group inviter_detail-group">
+                <label for="inviter_detail" class="col-sm-3 control-label">Your Date of Birth</label>
+                <div class="col-sm-9">
+                    {{ forms.input('date_arr', 'select', dob_date, null, null, null, null, null, date_arr, setting_date)  }} / 
+                    {{ forms.input('month_arr', 'select', dob_month, null, null, null, null, null, month_arr, setting_month)  }} / 
+                    {{ forms.input('year_arr', 'select', dob_year, null, null, null, null, null, year_arr, setting_year)  }}
+                </div>
+            </div>
+
+            {{ forms.input('country_id', 'select', user.country_id, 'Your Country', null, null, 'placeholder="Your Country" required', null, country)  }}
+
+
+            {{ forms.input('location_id', 'select', user.location_id, 'Your Location', null, null, 'placeholder="Your Location"', null, location)  }}
+
+            {{ forms.input('city', 'text', item.city, 'Your City/Town', null, null, 'placeholder="Enter Your City/Town"')  }}
+
+            {{ forms.input('phone', 'text', user.phone, 'Your Mobile Phone', null, null, 'placeholder="Enter Mobile Phone eg 0722xxxxxx" required')  }}
+
+            {{ forms.input('phone_code', 'hidden', user.phone_code)  }}
+            {{ forms.input('phone_iso', 'hidden', user.phone_iso)  }}
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div>
+            <div class="form-group agreement-group">
+                <label for="phone" class="col-sm-3 control-label">&nbsp;</label>
+                <div class="col-sm-9 kazicode-form-field">
+
+                    {% if agreements %}
+
+                        {% set agreement_arr = {} %}
+
+                        {% for agreement in agreements %}
+                            {% set agreement_arr = agreement_arr|merge({0:{ 'value': agreement.id, 'text': '<small>'~agreement.agreement|striptags('p')|raw~'</small>' }}) %}
+                        {% endfor %}
+
+                        {{ forms.input('agreements', 'checkbox', null, null, null, null, null, null, agreement_arr)  }}
+
+                    {% endif%}         
+                </div>
+            </div>
+
+            {% if captcha_enable %}
+                <div class="form-group captcha-group">
+                    <label for="phone" class="col-sm-3 control-label">Securuty Code</label>
+                    <div class="col-sm-9 kazicode-form-field">
+
+                        <small>Enter the security code below.</small><br>
+                        <span class="captcha-image-wrapper">
+                            <img class="captcha-image" src="{{ generate_url('users.users.fetchcaptcha', null, 0) }}" width="200"  border="1" alt="CAPTCHA">
+                        </span>
+                        <a class=" btn btn-primary btn-xs refresh-captcha">
+                            <i class="fa fa-refresh"></i>
+                        </a>
+                        <div class="clearfix"></div>
+                        {{ forms.input('captcha', 'text', null, null, null, null, 'size="7" maxlength="6" placeholder="Enter Security Code"' )  }}
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+    {#
+    <div class="col-md-offset-3 col-md-8 ">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
+    </div>
+    #}
+
+
+    {% if step == 2 %}
+        <div class="clearfix"></div>
+        <div class="text-center registration-buttons" style="display:none;">
+
+
+            {{ forms.input('inviter', 'hidden', session_form.inviter)  }}
+            {{ forms.input('inviter_id', 'hidden', session_form.inviter_id)  }}
+
+            {{ forms.input('is_default', 'hidden', inviter.is_default|default('0'))  }}
+
+            <input class="btn btn-success btn-sm" type="submit" name="submit" value="REGISTER" />
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger btn-sm">CANCEL</a> 
+        </div>
+    {% else %}
+        <div class="clearfix"></div>
+        <div class="text-center registration-buttons" style="display:none;">
+
+            {% if step != 1 %}
+                <a class="btn btn-danger btn-sm pull-left" href="{{ generate_url('social.members.register',{'step':step - 1})  }}">
+                    <i class="fa fa-arrow-circle-left"></i>
+                    Previous
+                </a> 
+            {% endif %}
+
+            <center>
+                <button class="btn btn-success btn-sm  registration-button" type="submit" name="submit">
+                    <i class="fa fa-arrow-circle-right"></i>
+                    Continue to Registration
+                </button>
+            </center>
+
+        </div>
+    {% endif %}
+
+    {{ forms.input('_token' ) }} 
+
+</form>
+
+
+
+
+
+

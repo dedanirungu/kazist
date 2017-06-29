@@ -1175,16 +1175,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.3",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
@@ -1194,8 +1194,11 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -1233,7 +1236,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-28T22:50:30+00:00"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1551,16 +1554,16 @@
         },
         {
             "name": "kazist/core",
-            "version": "1.0.16",
+            "version": "1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/core.git",
-                "reference": "2588af1a2d5c4f0f2b40949b7eebd32f9aec7702"
+                "reference": "fa0a87be2cdb4e1b1256e3af689cbe16592ebb3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/core/zipball/2588af1a2d5c4f0f2b40949b7eebd32f9aec7702",
-                "reference": "2588af1a2d5c4f0f2b40949b7eebd32f9aec7702",
+                "url": "https://api.github.com/repos/kazist/core/zipball/fa0a87be2cdb4e1b1256e3af689cbe16592ebb3d",
+                "reference": "fa0a87be2cdb4e1b1256e3af689cbe16592ebb3d",
                 "shasum": ""
             },
             "type": "library",
@@ -1582,7 +1585,7 @@
                 "core manager",
                 "kazist"
             ],
-            "time": "2017-06-17T11:42:58+00:00"
+            "time": "2017-06-29T08:09:50+00:00"
         },
         {
             "name": "kazist/media",
@@ -1726,7 +1729,7 @@
         },
         {
             "name": "kazist/system",
-            "version": "1.0.7",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/system.git",
@@ -1761,16 +1764,16 @@
         },
         {
             "name": "kazist/themes",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/themes.git",
-                "reference": "778bd4026c77ae4f21e658d6027c562b99972055"
+                "reference": "f3def9977d43e3f60344a5ff9961efd2fb53bd55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/themes/zipball/778bd4026c77ae4f21e658d6027c562b99972055",
-                "reference": "778bd4026c77ae4f21e658d6027c562b99972055",
+                "url": "https://api.github.com/repos/kazist/themes/zipball/f3def9977d43e3f60344a5ff9961efd2fb53bd55",
+                "reference": "f3def9977d43e3f60344a5ff9961efd2fb53bd55",
                 "shasum": ""
             },
             "require": {
@@ -1796,20 +1799,20 @@
                 "kazist",
                 "themes manager"
             ],
-            "time": "2017-04-21T15:14:33+00:00"
+            "time": "2017-06-29T08:10:39+00:00"
         },
         {
             "name": "kazist/users",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/users.git",
-                "reference": "4156a7791a828adf289626a30942de68ad2ed25c"
+                "reference": "b826dd38b40d4255cf3d158e95a5f3fd2e7c3375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/users/zipball/4156a7791a828adf289626a30942de68ad2ed25c",
-                "reference": "4156a7791a828adf289626a30942de68ad2ed25c",
+                "url": "https://api.github.com/repos/kazist/users/zipball/b826dd38b40d4255cf3d158e95a5f3fd2e7c3375",
+                "reference": "b826dd38b40d4255cf3d158e95a5f3fd2e7c3375",
                 "shasum": ""
             },
             "type": "library",
@@ -1831,7 +1834,7 @@
                 "kazist",
                 "users manager"
             ],
-            "time": "2017-06-17T12:04:41+00:00"
+            "time": "2017-06-28T09:57:25+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
