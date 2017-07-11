@@ -2,48 +2,56 @@
     "title": "Setup",
     "description": "Setup Advertisement",
     "alias": "setup",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-cog",
     "home_link": "setup\/countries",
     "is_core": "1",
     "menulist": [{
             "title": "Countries",
             "alias": "admin_setup_countries",
             "url": "admin/setup/countries",
+            "icon": "fa fa-map",
             "children": []
         }, {
             "title": "Calendar",
             "alias": "admin_setup_calendar",
             "url": "admin/setup/calendar",
+            "icon": "fa fa-calendar",
             "children": []
         }, {
             "title": "Currencies",
             "alias": "admin_setup_currencies",
             "url": "admin/setup/currencies",
+            "icon": "fa fa-money",
             "children": []
         }, {
             "title": "Languages",
             "alias": "admin_setup_languages",
             "url": "admin/setup/languages",
+            "icon": "fa fa-language",
             "children": []
         }, {
             "title": "Metros",
             "alias": "admin_setup_metros",
             "url": "admin/setup/metros",
+            "icon": "fa fa-map-o",
             "children": []
         }, {
             "title": "Regions",
             "alias": "admin_setup_regions",
             "url": "admin/setup/regions",
+            "icon": "fa fa-map-marker",
             "children": []
         }, {
             "title": "Relationships",
             "alias": "admin_setup_relationships",
             "url": "admin/setup/relationships",
+            "icon": "fa fa-graduation-cap",
             "children": []
         }, {
             "title": "Timezones",
             "alias": "admin_setup_timezones",
             "url": "admin/setup/timezones",
+            "icon": "fa fa-map-signs",
             "children": []
         }]
 }

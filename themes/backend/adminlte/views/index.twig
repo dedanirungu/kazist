@@ -52,11 +52,16 @@
                     <span class="sr-only">Toggle navigation</span>
                 </a>
 
-                <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#launcherModal" style="margin-top:7px;">
+                <a class="btn btn-success btn-sm" href="{{ generate_url('admin.home') }}" title="Dashboard" alt="Dashboard" style="margin-top:7px;">
                     <i class="fa fa-dashboard"></i>
                     Dashboard
                 </a>
-
+                {#
+                    <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#launcherModal" style="margin-top:7px;">
+                        <i class="fa fa-dashboard"></i>
+                        Dashboard
+                    </a>
+                 #}
 
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">

@@ -2,23 +2,26 @@
     "title": "Contacts",
     "description": "Contacts",
     "alias": "contacts",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-address-card-o",
     "home_link": "contacts\/contacts",
     "is_core": "1",
     "menulist": [{
             "title": "Contacts",
             "alias": "admin_contacts_contacts",
             "url": "admin/contacts/contacts",
+            "icon": "fa fa-address-card-o",
             "children": []
         }, {
             "title": "Categories",
             "alias": "admin_contacts_categories",
             "url": "admin/contacts/categories",
+            "icon": "fa fa-navicon",
             "children": []
         }, {
             "title": "Messages",
             "alias": "admin_contacts_messages",
             "url": "admin/contacts/messages",
+            "icon": "fa fa-comments",
             "children": []
         }]
 }

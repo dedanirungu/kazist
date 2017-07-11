@@ -32,6 +32,7 @@ class BaseModel extends KazistModel {
     public $limit = 10;
     public $offset = 0;
     public $ordering = 'DESC';
+    public $query_failed_attempt = 0;
 
     public function getRecords($offset, $limit) {
 
@@ -49,7 +50,19 @@ class BaseModel extends KazistModel {
 
         $query->addOrderBy($this->table_alias . '.id', 'DESC');
 
-        $records = $query->loadObjectList();
+        try {
+            $records = $query->loadObjectList();
+        } catch (\Exception $ex) {
+
+            if (!$this->query_failed_attempt) {
+                $this->autoInstallTable($document->extension_path);
+                $this->getRecords($offset, $limit);
+                $this->query_failed_attempt++;
+            }
+
+            $this->loggingException($ex);
+            throw $ex;
+        }
 
         return json_decode(json_encode($records));
     }
@@ -79,6 +92,7 @@ class BaseModel extends KazistModel {
 
         $where_arr = array();
         $parameter_arr = array();
+        $document = $this->container->get('document');
 
         $query = (is_object($query)) ? $query : $this->getQueryBuilder();
 
@@ -95,7 +109,19 @@ class BaseModel extends KazistModel {
             $query->andWhere('1=-1');
         }
 
-        $record = $query->loadObject();
+        try {
+            $record = $query->loadObject();
+        } catch (\Exception $ex) {
+
+            if (!$this->query_failed_attempt) {
+                $this->autoInstallTable($document->extension_path);
+                $this->getRecord($id, $query);
+                $this->query_failed_attempt++;
+            }
+
+            $this->loggingException($ex);
+            throw $ex;
+        }
 
         $document = $this->container->get('document');
         $document->record_id = $record->id;
@@ -766,7 +792,7 @@ class BaseModel extends KazistModel {
         $parameter_arr = array();
 
         $json = $this->getJson();
-     
+
         if (!empty($search)) {
 
             $keyword = $search['keyword'];
@@ -817,56 +843,67 @@ class BaseModel extends KazistModel {
 
     public function generateUrl($route, $parameters = array(), $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH, $data = array()) {
 
-        $tmp_data = json_decode(json_encode($data), true);
-        $tmp_parameters = json_decode(json_encode($parameters), true);
-        $data_arr = array_merge((array) $tmp_data, (array) $tmp_parameters);
+        if ($route <> null || $route <> '') {
 
-        if (!WEB_IS_ADMIN) {
+            $tmp_data = json_decode(json_encode($data), true);
+            $tmp_parameters = json_decode(json_encode($parameters), true);
+            $data_arr = array_merge((array) $tmp_data, (array) $tmp_parameters);
 
-            $route_obj = $this->getQueryedRecord('#__system_routes', 'sr', array('unique_name=:unique_name'), array('unique_name' => $route));
+            $routes = $this->container->getParameter('routes');
+            $route_obj = $routes->get($route);
+            $defaults = $route_obj->getDefaults();
 
-            if ($route_obj->extension_path <> '' && $parameters['id'] && $route_obj->seo_url <> '') {
+            $controller = $defaults['_controller'];
+            $controller_arr = explode('Code', $controller);
+            $extension_path = str_replace('\\', '/', rtrim($controller_arr[0], '\\'));
 
-                $table_name = '#__' . str_replace('/', '_', strtolower($route_obj->extension_path));
+            if (!WEB_IS_ADMIN) {
 
-                $query = new Query();
-                $query->select('tx.slug');
-                $query->from($table_name, 'tx');
-                $query->where('tx.id=:id');
-                $query->setParameter('id', $parameters['id']);
-                $record = $query->loadObject();
+                if ($extension_path <> '' && $parameters['id'] && array_key_exists("slug", $defaults)) {
 
-                if ($record->id && $record->slug == '') {
+                    $table_name = '#__' . str_replace('/', '_', strtolower($extension_path));
 
                     $query = new Query();
-                    $query->select('tx.*');
+                    $query->select('tx.slug');
                     $query->from($table_name, 'tx');
                     $query->where('tx.id=:id');
                     $query->setParameter('id', $parameters['id']);
                     $record = $query->loadObject();
 
-                    $record_arr = json_decode(json_encode($record), true);
-                    $tmp_record = $this->updateSlug($route, $record_arr);
-                } else {
+                    if ($record->id && $record->slug == '') {
 
-                    if ($route_obj->seo_url <> '') {
-                        unset($parameters['id']);
+                        $query = new Query();
+                        $query->select('tx.*');
+                        $query->from($table_name, 'tx');
+                        $query->where('tx.id=:id');
+                        $query->setParameter('id', $parameters['id']);
+                        $record = $query->loadObject();
+
+                        $record_arr = json_decode(json_encode($record), true);
+                        $tmp_record = $this->updateSlug($route, $record_arr);
+                    } else {
+                        if (array_key_exists("slug", $defaults)) {
+                            unset($parameters['id']);
+                        }
+
+                        $tmp_record = json_decode(json_encode($record), true);
                     }
 
-                    $tmp_record = json_decode(json_encode($record), true);
+                    $data_arr = array_merge((array) $data_arr, (array) $tmp_record);
+
+                    unset($data_arr['id']);
                 }
-
-                $data_arr = array_merge((array) $data_arr, (array) $tmp_record);
-
-                unset($data_arr['id']);
             }
-        }
 
-        if (array_key_exists('slug', $data_arr) && $data_arr['slug'] == '') {
-            $data_arr = $this->updateSlug($route, $data_arr);
-        }
+            if (array_key_exists('slug', $data_arr) && $data_arr['slug'] == '') {
+                $data_arr = $this->updateSlug($route, $data_arr);
+            }
+            return parent::generateUrl($route, $parameters, $referenceType, $data_arr);
+        } else {
 
-        return parent::generateUrl($route, $parameters, $referenceType, $data_arr);
+            $home_name = (WEB_IS_ADMIN) ? 'admin.home' : 'home';
+            return parent::generateUrl($home_name, $parameters, $referenceType, $data_arr);
+        }
     }
 
     public function updateSlug($route, $data) {
@@ -943,6 +980,7 @@ class BaseModel extends KazistModel {
         $item = $this->getRecord($id);
 
         $json = $this->getJson($table_name);
+
 
         foreach ($json['fields'] as $field_name => $field) {
 
@@ -1058,6 +1096,16 @@ class BaseModel extends KazistModel {
         }
 
         return '';
+    }
+
+    public function autoInstallTable($extension_path) {
+
+        $this->doctrine->refresh = true;
+        $this->doctrine->entity_path = JPATH_ROOT . 'applications/' . $extension_path . '/Code/Tables';
+
+        if (is_dir($this->doctrine->entity_path)) {
+            $this->doctrine->getEntityManager();
+        }
     }
 
 }

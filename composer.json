@@ -73,6 +73,15 @@
             "": "include/"
         }
     },
+    "repositories": [
+        {
+            "type": "composer", 
+            "url": "https://packagist.org"
+        },
+        {
+            "packagist": false
+        }
+    ],
     "extra": {
         "installer-paths": {
             "applications/Contacts/": ["kazist/contacts"],
@@ -85,6 +94,7 @@
             "assets/": ["kazist/assets"],
             "include/": ["kazist/core"]
         },
+
         "merge-plugin": {
             "include": [
                 "composer.local.json",

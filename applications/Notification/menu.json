@@ -2,68 +2,80 @@
     "title": "Notification",
     "description": "Notification Advertisement",
     "alias": "notification",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-comments",
     "home_link": "notification\/newsletters",
     "is_core": "1",
     "menulist": [{
             "title": "Activities",
             "alias": "admin_notification_activities",
             "url": "admin/notification/activities",
+            "icon": "fa fa-comments",
             "children": []
         }, {
             "title": "Queued Emails",
             "alias": "admin_notification_emails",
             "url": "admin/notification/emails",
+            "icon": "fa fa-envelope",
             "children": []
         }, {
             "title": "Gateways",
             "alias": "admin_notification_gateways",
             "url": "admin/notification/gateways",
+            "icon": "fa fa-archive",
             "children": []
         }, {
             "title": "Messages",
             "alias": "admin_notification_messages",
             "url": "admin/notification/messages",
+            "icon": "fa fa-comments",
             "children": []
         }, {
             "title": "Newsletters",
             "alias": "admin_notification_newsletters",
             "url": "admin/notification/newsletters",
+            "icon": "fa fa-file-text",
             "children": [{
                     "title": "Categories ",
                     "alias": "admin_notification_newsletters_categories",
                     "url": "admin/notification/newsletters/categories",
+                    "icon": "fa fa-navicon",
                     "children": []
                 }, {
                     "title": "Frequencies ",
                     "alias": "admin_notification_newsletters_frequencies",
                     "url": "admin/notification/newsletters/frequencies",
+                    "icon": "fa fa-hourglass-end",
                     "children": []
                 }, {
                     "title": "Automated Emails",
                     "alias": "admin_notification_newsletters_automated",
                     "url": "admin/notification/newsletters/automated",
+                    "icon": "fa fa-share",
                     "children": []
                 }, {
                     "title": "Scheduled Emails",
                     "alias": "admin_notification_newsletters_scheduled",
                     "url": "admin/notification/newsletters/scheduled",
+                    "icon": "fa fa-envelope-o",
                     "children": []
                 }]
         }, {
             "title": "Subscribers",
             "alias": "admin_notification_subscribers",
             "url": "admin/notification/subscribers",
+            "icon": "fa fa-users",
             "children": []
         }, {
             "title": "Templates",
             "alias": "admin_notification_templates",
             "url": "admin/notification/templates",
+            "icon": "fa fa-file-picture-o",
             "children": []
         }, {
             "title": "User Emails",
             "alias": "admin_notification_templates_layouts",
             "url": "admin/notification/templates/layouts",
+           "icon": "fa fa-picture-o",
             "children": []
         }]
 }

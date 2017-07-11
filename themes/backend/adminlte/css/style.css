@@ -10,7 +10,8 @@ This file is part of Kazist Framework.
 */
 @media (max-width: 767px) {
     .response-content .table-responsive .dropdown-menu {
-        position: static !important;
+        position: relative !important;
+        z-index: 100000;
     }
 }
 @media (min-width: 768px) {

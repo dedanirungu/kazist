@@ -2,28 +2,32 @@
     "title": "Search",
     "description": "Search",
     "alias": "search",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-search",
     "home_link": "search\/subsets",
     "is_core": "1",
     "menulist": [{
             "title": "Subsets",
             "alias": "admin_search_subsets",
             "url": "admin/search/subsets",
+            "icon": "fa fa-tasks",
             "children": []
         }, {
             "title": "Keywords",
-            "alias": "admin_search_keywords",
-            "url": "admin/search/keywords",
+            "alias": "admin_search_indexes",
+            "url": "admin/search/indexes",
+            "icon": "fa fa-file-text",
             "children": []
         }, {
             "title": "Terms",
             "alias": "admin_search_terms",
             "url": "admin/search/terms",
+            "icon": "fa fa-tags",
             "children": []
         }, {
             "title": "Keywords",
             "alias": "admin_search_keywords",
             "url": "admin/search/keywords",
+            "icon": "fa fa-list",
             "children": []
         }]
 }

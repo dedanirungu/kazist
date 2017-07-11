@@ -2,23 +2,26 @@
     "title": "Users",
     "description": "Users",
     "alias": "users",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-users",
     "home_link": "users\/users",
     "is_core": "1",
     "menulist": [{
             "title": "Users",
             "alias": "admin_users_users",
             "url": "admin/users/users",
+            "icon": "fa fa-users",
             "children": []
         }, {
             "title": "Groups",
             "alias": "admin_users_groups",
             "url": "admin/users/groups",
+            "icon": "fa fa-sitemap",
             "children": []
         }, {
             "title": "Roles",
             "alias": "admin_users_roles",
             "url": "admin/users/roles",
+            "icon": "fa fa-share",
             "children": []
         }]
 }
