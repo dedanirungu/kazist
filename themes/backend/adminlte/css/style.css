@@ -266,6 +266,20 @@ table .item-yesno{
     border:none;
 }
 
+.sidebar-collapse .menu-search, .sidebar-collapse .hide-on-mini{
+    display:none;
+}
+
+.sidebar-collapse .language-link, .sidebar-collapse .setting-link{
+    display: block;
+    text-align: center;
+}
+
+.sidebar-collapse .language-link .fa, .sidebar-collapse .setting-link .fa{
+    font-size: 24px;
+}
+
+
 
 
 

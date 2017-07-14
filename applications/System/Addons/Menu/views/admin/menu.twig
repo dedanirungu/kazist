@@ -1,81 +1,130 @@
+<a class="language-link" href="{{web_base}}/admin/system/languages?path={{ document.root_route }}"><i class="fa fa-language text-red"></i> <span class="hide-on-mini">Languages</span></a> &nbsp;  &nbsp;
+<a class="setting-link" href="{{web_base}}/admin/system/settings?path={{ document.root_route }}"><i class="fa fa-cogs text-yellow"></i> <span class="hide-on-mini">Settings</span></a>
 
+<div class="sidebar-menu-wrapper">
 
+    <input class="form-control menu-search" type="text" placeholder="Search for the Menu">
 
+    <ul class="sidebar-menu">
+        {% if menus|length > 0 %}
+            {% for key,menu in menus %}   
+                <li class="treeview {% if menu.active %}active{% endif %} {% if menu.active %}selected-menu{% endif %}">
 
-<ul class="sidebar-menu">
+                    <a href="#">
+                        <i class="{{ menu.icon|default('fa fa-circle-o') }}"></i>
+                        <span>{{ menu.title }}</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
 
-    <li class="header">MAIN NAVIGATION</li>
+                    {% if menu.menulist|length > 0 %}
 
-    {% if categories|length > 0 %}
-        {% for key,category in categories %}   
-            <li class="treeview {% if not key %}active{% endif %}">
-                <a href="#">
-                    <i class="fa {{ category.icon }}"></i>
-                    <span>{{ category.title }}</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                {% if category.menus|length > 0 %}
+                        <ul class="treeview-menu">
+                            {% for main_menu in menu.menulist  %}
+                                <li>
+                                    {% if main_menu.children|length > 0 %}
+                                        <a href="#">
+                                            <i class="{{ main_menu.icon|default('fa fa-circle-o') }}"></i>{{ main_menu.title }} <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
 
-                    <ul class="treeview-menu">
-                        {% for cat_menu in category.menus  %}
-                            <li>
-                                {% if cat_menu.children|length > 0 %}
-                                    <a href="#">
-                                        <i class="fa fa-circle-o"></i>{{ cat_menu.title }} <i class="fa fa-angle-left pull-right"></i>
-                                    </a>
-                                    <ul class="treeview-menu">
+                                            {% if main_menu.url != '' %}
+                                                <li>
+                                                    <a class="menu-links" href="{{ web_base}}/{{ main_menu.url }}" menu-title="{{ main_menu.title }}"><i class="{{ main_menu.icon|default('fa fa-circle-o') }}"></i> 
+                                                        {{ main_menu.title }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
 
-                                        {% if cat_menu.url != '' %}
-                                            <li>
-                                                <a href="{{ web_base}}/{{ cat_menu.url }}"><i class="fa fa-circle-o"></i> 
-                                                    {{ cat_menu.title }}
-                                                </a>
-                                            </li>
-                                        {% endif %}
+                                            {% for kids_menu in main_menu.children  %}
+                                                <li>
+                                                    <a class="menu-links" href="{{ web_base}}/{{ kids_menu.url }}" menu-title="{{ kids_menu.title }}"><i class="{{ kids_menu.icon|default('fa fa-circle-o') }}"></i> {{ kids_menu.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <a class="menu-links" href="{{ web_base}}/{{ main_menu.url }}" menu-title="{{ main_menu.title }}"><i class="{{ main_menu.icon|default('fa fa-circle-o') }}"></i> 
+                                            {{ main_menu.title }}
+                                        </a>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}                  
 
-                                        {% for kids_menu in cat_menu.children  %}
-                                            <li>
-                                                <a href="{{ web_base}}/{{ kids_menu.url }}"><i class="fa fa-circle-o"></i> {{ kids_menu.title }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% else %}
-                                    <a href="{{ web_base}}/{{ cat_menu.url }}"><i class="fa fa-circle-o"></i> 
-                                        {{ cat_menu.title }}
-                                    </a>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>      
-
-        {% endfor %}
-    {% endif %}
-
-
-    <li class="header">Configuration</li>
-
-    <li><a href="{{web_base}}/admin/system/languages?path={{ document.root_route }}"><i class="fa fa-circle-o text-red"></i> <span>Languages</span></a></li>
-    <li><a href="{{web_base}}/admin/system/settings?path={{ document.root_route }}"><i class="fa fa-circle-o text-yellow"></i> <span>Settings</span></a></li>
-    
-</ul>
-
-<!-- Modal -->
-<div class="modal fade" id="launcherModal" tabindex="10" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Application Dashboard</h4>
-            </div>
-            <div class="modal-body">
-                {{ icon_menus|raw }}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
+                </li>      
+            {% endfor %}
+        {% endif %}
+    </ul>
 </div>
+
+
+<script>
+    jQuery(document).ready(function () {
+
+        var search_sidebar_val = kazist.readCookie("search-sidebar-val");
+
+        jQuery('.menu-search').val(search_sidebar_val);
+        jQuery('.menu-search').keyup(function () {
+
+            var search_val = jQuery(this).val();
+
+            searchSidebar(search_val);
+
+        });
+
+        //searchSidebar(jQuery('.menu-search').val());
+    });
+
+    function searchSidebar(search_val) {
+
+        var timestamp = new Date().getUTCMilliseconds();
+
+        if (search_val !== '') {
+
+            kazist.createCookie("search-sidebar-val", search_val, 1);
+
+            jQuery('.sidebar-menu a.menu-links').each(function (i, obj) {
+
+                var this_element = jQuery(this);
+                var menu_title = this_element.attr('menu-title');
+                var menu_title_lower = menu_title.toLowerCase();
+                var search_val_lower = search_val.toLowerCase();
+                var searchRegExp = new RegExp(search_val_lower);
+
+                //  if (menu_title_lower.indexOf(search_val_lower)>= 0) {
+                if (searchRegExp.test(menu_title_lower)) {
+
+                    this_element.closest('li').show();
+                    this_element.closest('.treeview').show();
+                    this_element.closest('.treeview').addClass('active');
+
+                    this_element.closest('.treeview').attr('timestamp', timestamp);
+
+                } else {
+
+                    var ele_timestamp = parseInt(this_element.closest('.treeview').attr('timestamp'));
+
+                    if (ele_timestamp !== timestamp) {
+                        this_element.closest('.treeview').hide();
+                    }
+
+                    this_element.closest('li').hide();
+                }
+
+            });
+
+        } else {
+
+            kazist.readCookie("search-sidebar-val");
+
+            jQuery('.sidebar-menu a.menu-links').each(function (i, obj) {
+
+                var this_element = jQuery(this);
+                this_element.closest('li').show();
+                this_element.closest('.treeview').show();
+                this_element.closest('.treeview').removeClass('active');
+                this_element.closest('.selected-menu').addClass('active');
+            });
+        }
+    }
+</script>

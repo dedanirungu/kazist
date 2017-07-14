@@ -1,9 +1,10 @@
 
+
 [{
         "tracking_id": "1",
-        "controller": "System\\Indexes\\Code\\Controllers\\IndexesController",
-        "function": "contentindexingAction",
-        "unique_name": "system.indexes.contentindexing",
+        "controller": "Media\\Media\\Code\\Controllers\\MediaController",
+        "function": "cronanalysemediaAction",
+        "unique_name": "media.media.cronanalysemedia",
         "minute": "0",
         "hour": "*",
         "day_of_month": "*",
@@ -11,7 +12,10 @@
         "day_of_week": "*",
         "year": "*",
         "next_run_time": "",
-        "published": 1
+        "published": 0
     }]
+
+
+
 
 

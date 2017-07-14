@@ -66,5 +66,9 @@
     "SystemListeners": {
         "namespace": "System\\Listeners",
         "controller": "ListenersController"
+    },
+    "SystemApplications": {
+        "namespace": "System\\Applications",
+        "controller": "ApplicationsController"
     }
 }

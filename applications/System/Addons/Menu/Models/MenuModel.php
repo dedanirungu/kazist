@@ -14,6 +14,7 @@ use Kazist\Service\Database\Query;
 class MenuModel {
 
     public $app;
+    public $container;
     public $block_id;
     public $paths = array();
 
@@ -106,6 +107,45 @@ class MenuModel {
         }
 
         return $tree_arr;
+    }
+
+    public function loadMenuFromFiles() {
+
+
+        $menu_arr = array();
+        $document = $this->container->get('document');
+        $extension_path = $document->extension_path;
+        $extension_path_arr = explode('/', $extension_path);
+        $current_app = strtolower($extension_path_arr[0]);
+
+        $dir = new \DirectoryIterator(JPATH_ROOT . 'applications');
+
+        foreach ($dir as $fileinfo) {
+            $file_name = $fileinfo->getFilename();
+            if ($fileinfo->isDir() && !$fileinfo->isDot()) {
+
+                $app_path = JPATH_ROOT . 'applications/' . $file_name;
+                $listed_app = strtolower($file_name);
+
+                if (file_exists($app_path . '/menu.json')) {
+
+                    $menu_obj = json_decode(file_get_contents($app_path . '/menu.json'));
+
+                    $firstCharacter = substr($menu_obj->title, 0, 1);
+                    $menu_obj->active = ($listed_app === $current_app) ? true : false;
+
+                    if ($menu_obj->active) {
+                        $menu_arr['1first'] = $menu_obj;
+                    } else {
+                        $menu_arr[$menu_obj->title] = $menu_obj;
+                    }
+                }
+            }
+        }
+
+        ksort($menu_arr);
+
+        return $menu_arr;
     }
 
 }

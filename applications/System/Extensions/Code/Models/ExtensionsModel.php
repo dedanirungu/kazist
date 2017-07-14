@@ -207,6 +207,9 @@ class ExtensionsModel extends BaseModel {
             $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Pages/Code/Tables';
             $this->doctrine->getEntityManager();
 
+            $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Applications/Code/Tables';
+            $this->doctrine->getEntityManager();
+
             $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Crons/Code/Tables';
             $this->doctrine->getEntityManager();
 

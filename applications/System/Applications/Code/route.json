@@ -1,0 +1,123 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::taskAction",
+            "unique_name": "admin.system.applications.task",
+            "route": "admin/system/applications/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "applications, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Application List",
+            "description": "Management of Applications.",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.system.applications",
+            "route": "admin/system/applications",
+            "arguments": "",
+            "keywords": "application, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Application ",
+            "description": "Add Application .",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::addAction",
+            "unique_name": "admin.system.applications.add",
+            "route": "admin/system/applications/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "application, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Application {{ item.name }}",
+            "description": "Edit Application {{ item.name }}.",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::editAction",
+            "unique_name": "admin.system.applications.edit",
+            "route": "admin/system/applications/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "application, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Application Detail: {{ item.name }}",
+            "description": "Application Detail: {{ item.name }}",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::detailAction",
+            "unique_name": "admin.system.applications.detail",
+            "route": "admin/system/applications/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "application, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Application Delete: {{ item.name }}",
+            "description": "Application Delete: {{ item.name }}",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::deleteAction",
+            "unique_name": "admin.system.applications.delete",
+            "route": "admin/system/applications/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "application, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Application Save: {{ item.name }}",
+            "description": "Application Save: {{ item.name }}",
+            "controller": "System\\Applications\\Code\\Controllers\\Admin\\ApplicationsController::saveAction",
+            "unique_name": "admin.system.applications.save",
+            "route": "admin/system/applications/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "application, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

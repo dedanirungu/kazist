@@ -1,6 +1,18 @@
-
 [{
         "tracking_id": "1",
+        "controller": "System\\Subsets\\Code\\Controllers\\SubsetsController",
+        "function": "cronprocessincompletesAction",
+        "unique_name": "systems.subsets.cronprocessincompletes",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 0
+    }, {
+        "tracking_id": "2",
         "controller": "System\\Routes\\Code\\Controllers\\RoutesController",
         "function": "processurlAction",
         "unique_name": "system.routes.scheduled.processurl",
@@ -13,7 +25,7 @@
         "next_run_time": "",
         "published": 0
     }, {
-        "tracking_id": "2",
+        "tracking_id": "3",
         "controller": "System\\Routes\\Code\\Controllers\\RoutesController",
         "function": "fetchlinksAction",
         "unique_name": "system.routes.fetchlinks",
@@ -26,7 +38,7 @@
         "next_run_time": "",
         "published": 0
     }, {
-        "tracking_id": "3",
+        "tracking_id": "4",
         "controller": "System\\Routes\\Code\\Controllers\\RoutesController",
         "function": "processsitemapAction",
         "unique_name": "system.routes.processsitemap",
@@ -39,5 +51,4 @@
         "next_run_time": "",
         "published": 0
     }]
-
 

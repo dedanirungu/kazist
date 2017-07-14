@@ -1,0 +1,13 @@
+{
+    "name": "applications",
+    "title": "System Applications",
+    "explanation": "  System Applications",
+    "description": "  System Applications",
+    "version": 6,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2017-07-10 14:16:12"
+}

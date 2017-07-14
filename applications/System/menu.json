@@ -2,58 +2,68 @@
     "title": "System",
     "description": "System",
     "alias": "system",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-cogs",
     "home_link": "system\/languages",
     "is_core": "1",
     "menulist": [{
-            "title": "Crons",
-            "alias": "admin_system_crons",
-            "url": "admin/system/crons",
-            "children": []
-        }, {
-            "title": "Extensions",
-            "alias": "admin_system_extensions",
-            "url": "admin/system/extensions",
-            "children": []
-        }, {
-            "title": "Flexviews",
-            "alias": "admin_system_flexviews",
-            "url": "admin/system/flexviews",
-            "children": []
-        }, {
-            "title": "Languages",
-            "alias": "admin_system_languages",
-            "url": "admin/system/languages",
-            "children": []
-        }, {
-            "title": "Menus",
-            "alias": "admin_system_menus",
-            "url": "admin/system/menus",
-            "children": []
-        }, {
-            "title": "Routes",
-            "alias": "admin_system_routes",
-            "url": "admin/system/routes",
-            "children": []
-        }, {
-            "title": "Settings",
-            "alias": "admin_system_settings",
-            "url": "admin/system/settings",
-            "children": []
-        }, {
-            "title": "Subsets",
-            "alias": "admin_system_subsets",
-            "url": "admin/system/subsets",
-            "children": []
-        }, {
-            "title": "Templates",
-            "alias": "admin_system_templates",
-            "url": "admin/system/templates",
+            "title": "Applications",
+            "alias": "admin_system_applications",
+            "url": "admin/system/applications",
+            "icon": "fa fa-tasks",
             "children": []
         }, {
             "title": "Pages",
             "alias": "admin_system_pages",
             "url": "admin/system/pages",
+            "icon": "fa fa-file-picture-o",
+            "children": []
+        }, {
+            "title": "Menus",
+            "alias": "admin_system_menus",
+            "url": "admin/system/menus",
+            "icon": "fa fa-navicon",
+            "children": [{
+                    "title": "Menus Categories",
+                    "alias": "admin_system_menus_categories",
+                    "url": "admin/system/menus/categories",
+                    "icon": "fa fa-archive",
+                    "children": []
+                }]
+        }, {
+            "title": "Crons",
+            "alias": "admin_system_crons",
+            "url": "admin/system/crons",
+            "icon": "fa fa-cogs",
+            "children": []
+        }, {
+            "title": "Flexviews",
+            "alias": "admin_system_flexviews",
+            "url": "admin/system/flexviews",
+            "icon": "fa fa-archive",
+            "children": []
+        }, {
+            "title": "Languages",
+            "alias": "admin_system_languages",
+            "url": "admin/system/languages",
+            "icon": "fa fa-language",
+            "children": []
+        }, {
+            "title": "Routes",
+            "alias": "admin_system_routes",
+            "url": "admin/system/routes",
+             "icon": "fa fa-sort-amount-asc",
+            "children": []
+        }, {
+            "title": "Settings",
+            "alias": "admin_system_settings",
+            "url": "admin/system/settings",
+            "icon": "fa fa-cog",
+            "children": []
+        }, {
+            "title": "Templates",
+            "alias": "admin_system_templates",
+            "url": "admin/system/templates",
+            "icon": "fa fa-picture-o",
             "children": []
         }]
 }

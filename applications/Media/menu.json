@@ -2,18 +2,20 @@
     "title": "Media",
     "description": "Media Advertisement",
     "alias": "media",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-file-image-o",
     "home_link": "media\/media",
     "is_core": "1",
     "menulist": [{
             "title": "Media",
             "alias": "admin_media_media",
             "url": "admin/media/media",
+            "icon": "fa fa-picture-o",
             "children": []
         }, {
             "title": "Sizes",
             "alias": "admin_media_sizes",
             "url": "admin/media/sizes",
+            "icon": "fa fa-tasks",
             "children": []
         }]
 }

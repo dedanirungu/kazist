@@ -1481,16 +1481,16 @@
         },
         {
             "name": "kazist/assets",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/assets.git",
-                "reference": "014129a28d3a90064988ad29a25e06a4d0773e5b"
+                "reference": "d0517ea67858137119bb32acf9f75ef5690a9a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/assets/zipball/014129a28d3a90064988ad29a25e06a4d0773e5b",
-                "reference": "014129a28d3a90064988ad29a25e06a4d0773e5b",
+                "url": "https://api.github.com/repos/kazist/assets/zipball/d0517ea67858137119bb32acf9f75ef5690a9a48",
+                "reference": "d0517ea67858137119bb32acf9f75ef5690a9a48",
                 "shasum": ""
             },
             "require": {
@@ -1515,11 +1515,11 @@
                 "assets manager",
                 "kazist"
             ],
-            "time": "2017-03-11T09:01:04+00:00"
+            "time": "2017-07-11T07:32:05+00:00"
         },
         {
             "name": "kazist/contacts",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/contacts.git",
@@ -1554,16 +1554,16 @@
         },
         {
             "name": "kazist/core",
-            "version": "1.0.33",
+            "version": "1.0.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/core.git",
-                "reference": "9738e27a8083d90d9ea71ec8a5666a6810d96039"
+                "reference": "5f8f3a4e1789e9b797f47ba82fb0ed13ca15537f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/core/zipball/9738e27a8083d90d9ea71ec8a5666a6810d96039",
-                "reference": "9738e27a8083d90d9ea71ec8a5666a6810d96039",
+                "url": "https://api.github.com/repos/kazist/core/zipball/5f8f3a4e1789e9b797f47ba82fb0ed13ca15537f",
+                "reference": "5f8f3a4e1789e9b797f47ba82fb0ed13ca15537f",
                 "shasum": ""
             },
             "require": {
@@ -1588,20 +1588,20 @@
                 "core manager",
                 "kazist"
             ],
-            "time": "2017-07-10T04:34:00+00:00"
+            "time": "2017-07-14T07:56:18+00:00"
         },
         {
             "name": "kazist/media",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/media.git",
-                "reference": "6b9b23413aac50a1f66ac9cc6428a03bf420978a"
+                "reference": "ef66a3339c59bab20a8932ec481b30d94ffc39a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/media/zipball/6b9b23413aac50a1f66ac9cc6428a03bf420978a",
-                "reference": "6b9b23413aac50a1f66ac9cc6428a03bf420978a",
+                "url": "https://api.github.com/repos/kazist/media/zipball/ef66a3339c59bab20a8932ec481b30d94ffc39a5",
+                "reference": "ef66a3339c59bab20a8932ec481b30d94ffc39a5",
                 "shasum": ""
             },
             "type": "library",
@@ -1623,20 +1623,20 @@
                 "Media Manager",
                 "kazist"
             ],
-            "time": "2017-03-15T10:34:28+00:00"
+            "time": "2017-07-13T10:12:23+00:00"
         },
         {
             "name": "kazist/notification",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/notification.git",
-                "reference": "f0300b85b09390763de207c03909455af260077c"
+                "reference": "79eb217e4c24e364f02dd7c1336dbaf4f497c4ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/notification/zipball/f0300b85b09390763de207c03909455af260077c",
-                "reference": "f0300b85b09390763de207c03909455af260077c",
+                "url": "https://api.github.com/repos/kazist/notification/zipball/79eb217e4c24e364f02dd7c1336dbaf4f497c4ed",
+                "reference": "79eb217e4c24e364f02dd7c1336dbaf4f497c4ed",
                 "shasum": ""
             },
             "type": "library",
@@ -1658,20 +1658,20 @@
                 "kazist",
                 "notifications manager"
             ],
-            "time": "2017-07-10T17:23:21+00:00"
+            "time": "2017-07-11T07:12:07+00:00"
         },
         {
             "name": "kazist/search",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/search.git",
-                "reference": "d831bf2150bf6010f1f763933120cb895add4aba"
+                "reference": "0c267e982b4a07d3e68577268ae33a63e271b5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/search/zipball/d831bf2150bf6010f1f763933120cb895add4aba",
-                "reference": "d831bf2150bf6010f1f763933120cb895add4aba",
+                "url": "https://api.github.com/repos/kazist/search/zipball/0c267e982b4a07d3e68577268ae33a63e271b5e3",
+                "reference": "0c267e982b4a07d3e68577268ae33a63e271b5e3",
                 "shasum": ""
             },
             "type": "library",
@@ -1693,20 +1693,20 @@
                 "kazist",
                 "search manager"
             ],
-            "time": "2017-07-10T17:19:11+00:00"
+            "time": "2017-07-11T07:14:10+00:00"
         },
         {
             "name": "kazist/setup",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/setup.git",
-                "reference": "8f333f2cb932b6c5384b21b57cb3db6c3c3c3d51"
+                "reference": "46d3ed71c74c278f8c9df50a941287ab184a76cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/setup/zipball/8f333f2cb932b6c5384b21b57cb3db6c3c3c3d51",
-                "reference": "8f333f2cb932b6c5384b21b57cb3db6c3c3c3d51",
+                "url": "https://api.github.com/repos/kazist/setup/zipball/46d3ed71c74c278f8c9df50a941287ab184a76cd",
+                "reference": "46d3ed71c74c278f8c9df50a941287ab184a76cd",
                 "shasum": ""
             },
             "type": "library",
@@ -1728,20 +1728,20 @@
                 "kazist",
                 "setup manager"
             ],
-            "time": "2017-07-10T17:14:48+00:00"
+            "time": "2017-07-11T07:15:10+00:00"
         },
         {
             "name": "kazist/system",
-            "version": "1.0.12",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/system.git",
-                "reference": "a43970a6b458bad224896b7a77123fec51ff2d48"
+                "reference": "a472e9c5eb5486fe1f8864a9132dc458b9e44e55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/system/zipball/a43970a6b458bad224896b7a77123fec51ff2d48",
-                "reference": "a43970a6b458bad224896b7a77123fec51ff2d48",
+                "url": "https://api.github.com/repos/kazist/system/zipball/a472e9c5eb5486fe1f8864a9132dc458b9e44e55",
+                "reference": "a472e9c5eb5486fe1f8864a9132dc458b9e44e55",
                 "shasum": ""
             },
             "type": "library",
@@ -1763,20 +1763,20 @@
                 "kazist",
                 "system manager"
             ],
-            "time": "2017-07-04T13:06:25+00:00"
+            "time": "2017-07-13T10:16:40+00:00"
         },
         {
             "name": "kazist/themes",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/themes.git",
-                "reference": "084bcc5d741cd0b7553dfb113648428f47e8eb96"
+                "reference": "a0dd05fceb221a11ed21f172cd64ecdcab76cf2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/themes/zipball/084bcc5d741cd0b7553dfb113648428f47e8eb96",
-                "reference": "084bcc5d741cd0b7553dfb113648428f47e8eb96",
+                "url": "https://api.github.com/repos/kazist/themes/zipball/a0dd05fceb221a11ed21f172cd64ecdcab76cf2b",
+                "reference": "a0dd05fceb221a11ed21f172cd64ecdcab76cf2b",
                 "shasum": ""
             },
             "require": {
@@ -1802,20 +1802,20 @@
                 "kazist",
                 "themes manager"
             ],
-            "time": "2017-07-05T12:51:40+00:00"
+            "time": "2017-07-10T16:13:44+00:00"
         },
         {
             "name": "kazist/users",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/users.git",
-                "reference": "9af3205aa4f72851ed88770916b838c19e0884ad"
+                "reference": "0d364d00393a75955a8a5934625a9caecf7bd27d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/users/zipball/9af3205aa4f72851ed88770916b838c19e0884ad",
-                "reference": "9af3205aa4f72851ed88770916b838c19e0884ad",
+                "url": "https://api.github.com/repos/kazist/users/zipball/0d364d00393a75955a8a5934625a9caecf7bd27d",
+                "reference": "0d364d00393a75955a8a5934625a9caecf7bd27d",
                 "shasum": ""
             },
             "type": "library",
@@ -1837,7 +1837,7 @@
                 "kazist",
                 "users manager"
             ],
-            "time": "2017-07-10T16:56:06+00:00"
+            "time": "2017-07-11T07:25:24+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -4574,16 +4574,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.2.12",
+            "version": "6.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f"
+                "reference": "95c5938aafe4b20df1454dbddb3e5005c0b26f64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/2f732eaa91b5665274689b1d40b285a7bacdc37f",
-                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/95c5938aafe4b20df1454dbddb3e5005c0b26f64",
+                "reference": "95c5938aafe4b20df1454dbddb3e5005c0b26f64",
                 "shasum": ""
             },
             "require": {
@@ -4592,7 +4592,6 @@
             "type": "library",
             "autoload": {
                 "classmap": [
-                    "fonts",
                     "config",
                     "include",
                     "tcpdf.php",
@@ -4633,7 +4632,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2015-09-12T10:08:34+00:00"
+            "time": "2017-04-26T08:14:48+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -4846,16 +4845,16 @@
         },
         {
             "name": "wikimedia/composer-merge-plugin",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c"
+                "reference": "81c6ac72a24a67383419c7eb9aa2b3437f2ab100"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/ca453f9f13d8b05f86f20ea10be992a782e6f78c",
-                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/81c6ac72a24a67383419c7eb9aa2b3437f2ab100",
+                "reference": "81c6ac72a24a67383419c7eb9aa2b3437f2ab100",
                 "shasum": ""
             },
             "require": {
@@ -4891,7 +4890,7 @@
                 }
             ],
             "description": "Composer plugin to merge multiple composer.json files",
-            "time": "2017-03-13T16:52:55+00:00"
+            "time": "2017-04-25T02:31:25+00:00"
         }
     ],
     "packages-dev": [],

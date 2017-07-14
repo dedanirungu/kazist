@@ -1,0 +1,84 @@
+[{
+        "tracking_id": "1",
+        "controller": "Notification\\Newsletters\\Code\\Controllers\\NewslettersController",
+        "function": "cronnewsletterAction",
+        "unique_name": "notification.newsletters.cronnewsletter",
+        "minute": "*/5",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }, {
+        "tracking_id": "2",
+        "controller": "Notification\\Newsletters\\Scheduled\\Code\\Controllers\\ScheduledController",
+        "function": "cronscheduledAction",
+        "unique_name": "notification.newsletters.scheduled.cronscheduled",
+        "minute": "*/5",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }, {
+        "tracking_id": "3",
+        "controller": "Notification\\Emails\\Code\\Controllers\\EmailsController",
+        "function": "cronemailsenderAction",
+        "unique_name": "notification.emails.cronemailsender",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }, {
+        "tracking_id": "4",
+        "controller": "Notification\\Newsletters\\Automated\\Code\\Controllers\\AutomatedController",
+        "function": "cronautonewsletterAction",
+        "unique_name": "notification.newsletters.automated.cronautonewsletter",
+        "minute": "*/5",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }, {
+        "tracking_id": "5",
+        "controller": "Notification\\Subscribers\\Harvesters\\Code\\Controllers\\HarvestersController",
+        "function": "emailharvesterAction",
+        "unique_name": "notification.subscribers.harvesters.emailharvester",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 0
+    }, {
+        "tracking_id": "6",
+        "controller": "Newsletters\\Subscribers\\Code\\Controllers\\SubscribersController",
+        "function": "cronsyncuserAction",
+        "unique_name": "notification.subscribers.cronsyncuser",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }]
+
+
+
+
+

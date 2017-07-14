@@ -1,9 +1,9 @@
 
 [{
         "tracking_id": "1",
-        "controller": "Notification\\Emails\\Code\\Controllers\\EmailsController",
-        "function": "cronemailsenderAction",
-        "unique_name": "notification.emails.cronemailsender",
+        "controller": "Search\\Indexes\\Code\\Controllers\\IndexesController",
+        "function": "contentindexingAction",
+        "unique_name": "search.indexes.contentindexing",
         "minute": "0",
         "hour": "*",
         "day_of_month": "*",

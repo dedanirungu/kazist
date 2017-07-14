@@ -24,21 +24,12 @@ class MenuController extends AddonController {
 
         $model = new MenuModel;
 
+        $model->container = $this->container;
         $model->flexview_id = $this->flexview_id;
 
-        $document = $this->container->get('document');
+        $menus = $model->loadMenuFromFiles();
 
-        if ($document->controller <> '') {
-            $name_arr = explode('\\', $document->controller);
-            $alias = $name_arr[0];
-        }
-     
-        $menus = $model->getCategoriesByAlias($alias, true);
-
-        $all_menus = $model->getCategoriesByAlias(null, true);
-
-        $data_arr['categories'] = $menus;
-        $data_arr['icon_menus'] = $this->render('System:Addons:Menu:views:admin:iconmenu.twig', array('categories' => $all_menus));
+        $data_arr['menus'] = $menus;
 
         $this->html = $this->render('System:Addons:Menu:views:admin:menu.twig', $data_arr);
 

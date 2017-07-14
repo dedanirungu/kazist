@@ -1,10 +1,10 @@
 {
-    "name": "kazist/users",
-    "description": "Kazist User Manager.",
-    "keywords": ["kazist", "users manager"],
-    "homepage": "https://github.com/kazist/users",
+    "name": "kazist/media",
+    "description": "Kazist Media Manager.",
+    "keywords": ["kazist", "media manager"],
+    "homepage": "https://github.com/kazist/media",
     "license": "LGPL-3.0",
-    "version": "1.0.6",
+     "version": "1.0.3",
     "authors": [
         {
             "name": "Dedan Irungu",
