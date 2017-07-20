@@ -39,7 +39,7 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
-     * @ORM\Column(name="admin_access", type="integer", length=11)
+     * @ORM\Column(name="admin_access", type="integer", length=11, nullable=true)
      */
     protected $admin_access;
 
@@ -53,28 +53,28 @@ class Roles extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
 

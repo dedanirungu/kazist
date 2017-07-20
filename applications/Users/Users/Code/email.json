@@ -3,19 +3,19 @@
             "tracking_id": "1",
             "unique_name": "users.users.verify",
             "subject": "Email Verification",
-            "sms": "Email Verification",
+            "short_body": "Email Verification",
             "body": "<p>Verify Your Account<\/p>\r\n<p>This site is very concerned about security and therefore it requires you to verify your email address. An email has been sent to you, it contains a special link which verifies you and allows you to log in freely. This verification is required only once for this email address. Please check your email and verify your email address now. <\/p>\r\n<p><a href=\"{{ verification_url }}\">Verify Account<\/a><\/p>\r\n<p>Or copy and paste this url<\/p>\r\n<p>{{ verification_url }}<\/p>"
         }, {
             "tracking_id": "2",
             "unique_name": "users.users.registration.thankyou",
             "subject": "Thank you For Registering",
-            "sms": "Thank you For Registering",
+            "short_body": "Thank you For Registering",
             "body": "<p>Thank you For Registering<\/p>"
         }, {
             "tracking_id": "3",
             "unique_name": "users.users.forgot",
             "subject": "Forgot Password or Username",
-            "sms": "Forgot Password or Username",
+            "short_body": "Forgot Password or Username",
             "body": "<p><strong>Forgot Your Password<\/strong><\/p>\r\n<p>Your password is now reset.<\/p>\r\n<p>Name: {{name}}<\/p>\r\n<p>UserName: {{username}}<\/p>\r\n<p>New Password: {{password_raw}}<\/p>\r\n<p>Click to link below to login to your account.&nbsp;<\/p>\r\n<p>&nbsp;Please change your password after logging in.<\/p>\r\n<p><a href=\"{{ login_url }}\">Login to your Account<\/a><\/p>\r\n<p>Or copy and paste this url<\/p>\r\n<p>{{ login_url }}<\/p>"
         }],
     "scheduled": [{

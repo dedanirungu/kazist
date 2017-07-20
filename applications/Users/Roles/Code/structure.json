@@ -103,7 +103,7 @@
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -126,7 +126,7 @@
             }
         },
         {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "0",
             "name": "title",
             "html_type": "text",
@@ -150,7 +150,7 @@
             }
         },
         {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "0",
             "name": "alias",
             "html_type": "text",
@@ -198,14 +198,18 @@
             }
         },
         {
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "admin_access",
             "html_type": "yesno",
             "mysql_type": "int",
             "view_side": "",
             "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
             "size": "",
             "readonly": "0",
-            "default_value": "",
             "format_value": "",
             "parameters": {
                 "general": [],
@@ -219,7 +223,7 @@
             }
         },
         {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "1",
             "name": "published",
             "html_type": "yesno",
@@ -243,8 +247,8 @@
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -267,8 +271,8 @@
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -292,7 +296,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -316,7 +320,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -345,7 +349,7 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "id"
+        "title"
     ],
     "main_view": "table",
     "has_view": "1",

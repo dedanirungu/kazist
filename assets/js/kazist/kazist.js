@@ -217,7 +217,7 @@ kazist = function () {
 
         }, setViewNSubmit: function (view_name, task_name) {
 
-            var base_route = kazist_document.document.base_route;
+            var base_route = kazist_document.base_route;
             var main_form_id = jQuery('#main_form_id').val();
             var url = kazist_document.web_base + '/' + base_route.split('.').join('/');
 

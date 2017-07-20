@@ -20,6 +20,7 @@ Users\Roles\Code\Tables\Roles:
       name: admin_access
       type: integer
       length: 11
+      nullable: true
     published:
       name: published
       type: integer
@@ -29,20 +30,20 @@ Users\Roles\Code\Tables\Roles:
       name: created_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_created:
       name: date_created
       type: datetime
-      nullable: false
+      nullable: true
     modified_by:
       name: modified_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_modified:
       name: date_modified
       type: datetime
-      nullable: false
+      nullable: true
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

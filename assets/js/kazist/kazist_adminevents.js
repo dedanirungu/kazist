@@ -21,8 +21,8 @@ kazist_adminevents = function () {
         }, updateServer: function (this_element) {
 
             var form = this_element.closest('form');
-
-            var url = kazist_document.web_base + '/' + kazist_document.document.route + '/task?activity=updatestatus';
+            
+            var url = kazist_document.main_route + '/task?activity=updatestatus';
 
             var item_id = this_element.attr('item_id');
             var item_status = this_element.attr('item_status');

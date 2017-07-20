@@ -113,18 +113,18 @@ media_manager = function () {
 
             data.append('media', file);
             //  data.append('title', this_element.closest('.modal-body').find('#kazicode_media_title').val());
-            // data.append('root_route', kazist_document.document.root_route);
+            // data.append('root_route', kazist_document.root_route);
 
             var title = this_element.closest('.modal-body').find('#kazicode_media_title').val();
-            var route = kazist_document.document.root_route;
+            var route = kazist_document.root_route;
 
-            console.log(kazist_document.document.root_route);
+            console.log(kazist_document.root_route);
 
             data.append('_token', jQuery('#_token').val());
 
             jQuery.ajax({
                 type: 'POST',
-                url: kazist_document.document.web_base + '/media/media/upload?name=' + file.name + '&title=' + title + '&root_route=' + route,
+                url: kazist_document.web_base + '/media/media/upload?name=' + file.name + '&title=' + title + '&root_route=' + route,
                 data: data,
                 mimeType: "multipart/form-data",
                 cache: false,
@@ -202,7 +202,7 @@ media_manager = function () {
 
             jQuery.ajax({
                 type: 'POST',
-                url: kazist_document.document.web_base + '/media/media/listing',
+                url: kazist_document.web_base + '/media/media/listing',
                 data: data,
                 cache: false,
                 processData: false, // Don't process the files
@@ -313,7 +313,7 @@ media_manager = function () {
 
             html += '<li style="margin-top:10px;">';
             html += '<a class="label label-danger delete_media"><span class="glyphicon glyphicon-trash"></span></a>';
-            html += '&nbsp; <img width="32px" src="' + kazist_document.document.web_root + '/' + record.image + '"/>';
+            html += '&nbsp; <img width="32px" src="' + kazist_document.web_root + '/' + record.image + '"/>';
             html += '&nbsp; ' + record.title;
             html += '<input class="comment_attachment_ids"  type="hidden" value="' + record.id + '"/>';
             html += '</li>';
@@ -329,7 +329,7 @@ media_manager = function () {
         }, getImageHtml: function (record, fieldformname) {
             //console.log(fieldformname);
             var html = '';
-            html += '<img src="' + kazist_document.document.web_root + '/' + record.image + '"/> ';
+            html += '<img src="' + kazist_document.web_root + '/' + record.image + '"/> ';
             html += '<input id="' + fieldformname + '_medias_value" name="form[' + fieldformname + ']" type="hidden" value="' + record.id + '"/>';
 
             jQuery('.' + fieldformname + '_medias_single').html(html);
@@ -339,7 +339,7 @@ media_manager = function () {
             var html = '';
             html += '<tr>';
             html += '<td>';
-            html += '<img width="32px" src="' + kazist_document.document.web_root + '/' + record.image + '" class="tooltip_element" data-placement="bottom" data-toggle="tooltip" title="' + record.title + '"/>';
+            html += '<img width="32px" src="' + kazist_document.web_root + '/' + record.image + '" class="tooltip_element" data-placement="bottom" data-toggle="tooltip" title="' + record.title + '"/>';
             html += '</td>';
             html += '<td>';
             html += record.title;
@@ -375,7 +375,7 @@ media_manager = function () {
 
             var html = '';
             html += '<li>';
-            html += '<img width="64px" height="64px" src="' + kazist_document.document.web_root + '/' + record.image + '" class="tooltip_element" data-placement="bottom" data-toggle="tooltip" title="' + record.title + '"/>';
+            html += '<img width="64px" height="64px" src="' + kazist_document.web_root + '/' + record.image + '" class="tooltip_element" data-placement="bottom" data-toggle="tooltip" title="' + record.title + '"/>';
             html += '<br>';
             html += record.title;
             html += '<input class="media_id" type="hidden" name="" value="' + record.id + '">';

@@ -15,20 +15,20 @@ kazi_comment = function () {
     return {
         saveComment: function (comment, comment_id, parent_id, attachments) {
 
-            var data_object = {subset_id: kazist_document.document.subset_id, record_id: kazist_document.document.record_id, comment: comment, parent_id: parent_id, comment_id: comment_id, attachments: attachments};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id, comment: comment, parent_id: parent_id, comment_id: comment_id, attachments: attachments};
             var msg = kazist.callAjaxByRoute('notification.comments.savecomment', data_object);
             kazi_comment.commentsHtml(msg);
 
         }, deleteComment: function (comment_id) {
 
-            var data_object = {subset_id: kazist_document.document.subset_id, record_id: kazist_document.document.record_id, comment_id: comment_id};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id, comment_id: comment_id};
             var msg = kazist.callAjaxByRoute('notification.comments.deletecomment', data_object);
             kazi_comment.commentsHtml(msg);
 
         },
         fetchComments: function () {
 
-            var data_object = {subset_id: kazist_document.document.subset_id, record_id: kazist_document.document.record_id};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id};
             var msg = kazist.callAjaxByRoute('notification.comments.fetchcomment', data_object);
             kazi_comment.commentsHtml(msg);
         },
@@ -79,7 +79,6 @@ kazi_comment = function () {
 
         },
         getCommentRecursivelyHtml: function (comments, html) {
-            console.log(kazist_document);
             jQuery.each(comments, function (key, single_comment) {
                 var attachments = single_comment.attachments;
                 var new_html = '';
@@ -113,7 +112,7 @@ kazi_comment = function () {
 
                 html += '<span class="kazi_comment_posting_info">';
                 html += ' <a class="btn btn-default btn-xs kazi_reply_comment_btn"> Reply </a>';
-                if (kazist_document.document.user.id === single_comment.created_by) {
+                if (kazist_document.user_id === single_comment.created_by) {
                     html += ' <a class="btn btn-default btn-xs kazi_edit_comment_btn"> Edit </a>';
                     html += ' <a class="btn btn-default btn-xs kazi_delete_comment_btn"> Delete </a>';
                 }
