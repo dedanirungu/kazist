@@ -895,7 +895,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -919,7 +919,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "datetime",
             "mysql_type": "datetime",
@@ -943,7 +943,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -967,7 +967,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "datetime",
             "mysql_type": "datetime",
@@ -1039,7 +1039,7 @@
         "select": [
             "uu.id",
             "uu.inviter_id",
-            "uu_2528.name AS inviter_id_name",
+            "uu_5615.name AS inviter_id_name",
             "uu.name",
             "uu.is_admin",
             "uu.username",
@@ -1073,9 +1073,9 @@
         "leftjoin": [
             {
                 "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu_2528",
+                "alias": "uu_5615",
                 "name": "#__users_users",
-                "on": "uu.inviter_id = uu_2528.id"
+                "on": "uu.inviter_id = uu_5615.id"
             },
             {
                 "table": "Setup\\Countries\\Code\\Tables\\Countries",

@@ -4,6 +4,7 @@
     "alias": "contacts",
     "icon": "fa fa-address-card-o",
     "home_link": "contacts\/contacts",
+    "path": "applications/Contacts",
     "is_core": "1",
     "menulist": [{
             "title": "Contacts",

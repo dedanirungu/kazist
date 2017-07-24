@@ -114,20 +114,20 @@ Users\Users\Code\Tables\Users:
       name: created_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_created:
       name: date_created
       type: datetime
-      nullable: false
+      nullable: true
     modified_by:
       name: modified_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_modified:
       name: date_modified
       type: datetime
-      nullable: false
+      nullable: true
     last_date_active:
       name: last_date_active
       type: datetime

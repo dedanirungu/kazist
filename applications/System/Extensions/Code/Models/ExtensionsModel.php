@@ -127,8 +127,8 @@ class ExtensionsModel extends BaseModel {
         $namespace_path = $new_path . '/namespace.json';
 
         $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/prepare' . '?' . $uniqid;
-        $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/menu' . '?' . $uniqid;
-        $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/manifest' . '?' . $uniqid;
+        //$urls[] = WEB_BASE . '/admin/system-install/' . $path . '/menu' . '?' . $uniqid;
+        // $urls[] = WEB_BASE . '/admin/system-install/' . $path . '/manifest' . '?' . $uniqid;
 
         $namespaces = json_decode(file_get_contents($namespace_path));
 
@@ -467,13 +467,9 @@ class ExtensionsModel extends BaseModel {
 
 
         $files['structure'] = $file_path . 'structure.json';
-        $files['cron'] = $file_path . 'cron.json';
         $files['data'] = $file_path . 'data.json';
         $files['email'] = $file_path . 'email.json';
-        $files['listener'] = $file_path . 'listener.json';
-        $files['permission'] = $file_path . 'permission.json';
         $files['language'] = $file_path . 'language.json';
-        $files['route'] = $file_path . 'route.json';
         $files['setting'] = $file_path . 'setting.json';
         $files['search'] = $file_path . 'search.json';
         $files['flexview'] = $file_path . 'flexview.json';
@@ -485,22 +481,13 @@ class ExtensionsModel extends BaseModel {
             $this->updateData($files['data'], $namespace_rewrite);
         }
 
-        if (file_exists($files['cron'])) {
-            $this->updateCron($files['cron'], $namespace_path);
-        }
-
         if (file_exists($files['email'])) {
             $this->updateEmail($files['email'], $namespace_path);
-        }
-
-        if (file_exists($files['listener'])) {
-            $this->updateListener($files['listener'], $namespace_path);
         }
 
         if (file_exists($files['search'])) {
             $this->updateSearch($files['search'], $namespace_path);
         }
-
 
         if (file_exists($files['language'])) {
             $this->updateLanguage($files['language'], $namespace_path);
@@ -512,31 +499,6 @@ class ExtensionsModel extends BaseModel {
 
         if (file_exists($files['flexview'])) {
             $this->updateFlexview($files['flexview'], $namespace_path);
-        }
-
-        if (file_exists($files['permission'])) {
-            $permissions = json_decode(file_get_contents($files['permission']), true);
-
-            if (isset($permissions['USER'])) {
-                $this->updatePermission($permissions['USER'], 'USER');
-            }
-            if (isset($permissions['MODERATOR'])) {
-                $this->updatePermission($permissions['MODERATOR'], 'MODERATOR');
-            }
-            if (isset($permissions['ADMIN'])) {
-                $this->updatePermission($permissions['ADMIN'], 'ADMIN');
-            }
-            if (isset($permissions['SUPER_ADMIN'])) {
-                $this->updatePermission($permissions['SUPER_ADMIN'], 'SUPER_ADMIN');
-            }
-        }
-
-        if (file_exists($files['route'])) {
-
-            $routes = json_decode(file_get_contents($files['route']), true);
-
-            $this->updateRoute($routes['frontend'], 'frontend', $namespace_path);
-            $this->updateRoute($routes['backend'], 'backend', $namespace_path);
         }
     }
 
@@ -703,6 +665,7 @@ class ExtensionsModel extends BaseModel {
         $factory->saveRecord('#__search_subsets', $search);
     }
 
+    /** @TODO Remove this function */
     public function updateCron($cron_path, $namespace_rewrite) {
         $ids = array();
         $factory = new KazistFactory();
@@ -735,6 +698,7 @@ class ExtensionsModel extends BaseModel {
         }
     }
 
+    /** @TODO Remove this function */
     public function updateListener($listener_path, $namespace_rewrite) {
 
         $ids = array();
@@ -956,6 +920,7 @@ class ExtensionsModel extends BaseModel {
         }
     }
 
+    /** @TODO Remove this function */
     public function updatePermission($permissions, $role_name) {
 
         $factory = new KazistFactory();
@@ -989,6 +954,7 @@ class ExtensionsModel extends BaseModel {
         return;
     }
 
+    /** @TODO Remove this function */
     public function updateRoute($routes, $viewside, $namespace_rewrite) {
 
         $ids = array();
@@ -1029,6 +995,7 @@ class ExtensionsModel extends BaseModel {
         }
     }
 
+    /** @TODO Remove this function */
     public function updateRouteRole($route_id, $roles) {
 
         $factory = new KazistFactory();

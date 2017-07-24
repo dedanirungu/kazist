@@ -4,6 +4,7 @@
     "alias": "setup",
     "icon": "fa fa-cog",
     "home_link": "setup\/countries",
+    "path": "applications/Setup",
     "is_core": "1",
     "menulist": [{
             "title": "Countries",

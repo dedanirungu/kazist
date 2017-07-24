@@ -3,6 +3,7 @@
     "description": "Users",
     "alias": "users",
     "icon": "fa fa-users",
+    "path": "applications/Users",
     "home_link": "users\/users",
     "is_core": "1",
     "menulist": [{

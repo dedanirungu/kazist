@@ -4,6 +4,7 @@
     "alias": "system",
     "icon": "fa fa-cogs",
     "home_link": "system\/languages",
+    "path": "applications/System",
     "is_core": "1",
     "menulist": [{
             "title": "Applications",
@@ -51,7 +52,7 @@
             "title": "Routes",
             "alias": "admin_system_routes",
             "url": "admin/system/routes",
-             "icon": "fa fa-sort-amount-asc",
+            "icon": "fa fa-sort-amount-asc",
             "children": []
         }, {
             "title": "Settings",

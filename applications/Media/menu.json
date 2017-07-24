@@ -4,6 +4,7 @@
     "alias": "media",
     "icon": "fa fa-file-image-o",
     "home_link": "media\/media",
+    "path": "applications/Media",
     "is_core": "1",
     "menulist": [{
             "title": "Media",

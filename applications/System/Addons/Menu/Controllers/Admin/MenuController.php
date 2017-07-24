@@ -54,12 +54,13 @@ class MenuController extends AddonController {
     }
 
     function iconmenuAction($offset = 0, $limit = 6) {
+       
         $model = new MenuModel;
 
+        $model->container = $this->container;
         $model->flexview_id = $this->flexview_id;
 
-        $menus = $model->getCategoriesByAlias(null, true);
-        // $menus = $model->getCategories();
+        $menus = $model->loadMenuFromFiles();
 
         $data_arr['categories'] = $menus;
 

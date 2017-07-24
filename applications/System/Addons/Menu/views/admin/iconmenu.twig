@@ -6,11 +6,11 @@
             <li>
 
                 <a href="{{ web_base~'/admin/'~category.home_link }}" title="{{ category.title }}">
-                    <img src="{{ resized_image('applications/' ~ category.alias|capitalize ~ '/assets/images/icon.png') }}">
+                    <img src="{{ resized_image( category.path ~ '/assets/images/icon.png') }}">
                 </a>
-                
+
                 <small>{{ category.title }}</small>
-                
+
             </li>
         {% endfor %}
     {% endif %}

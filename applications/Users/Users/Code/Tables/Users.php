@@ -172,28 +172,28 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
 
@@ -208,7 +208,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -216,9 +216,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set inviter_id
+     * Set inviterId
      *
      * @param integer $inviterId
+     *
      * @return Users
      */
     public function setInviterId($inviterId)
@@ -229,9 +230,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get inviter_id
+     * Get inviterId
      *
-     * @return integer 
+     * @return integer
      */
     public function getInviterId()
     {
@@ -242,6 +243,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set name
      *
      * @param string $name
+     *
      * @return Users
      */
     public function setName($name)
@@ -254,7 +256,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -262,9 +264,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set is_admin
+     * Set isAdmin
      *
      * @param integer $isAdmin
+     *
      * @return Users
      */
     public function setIsAdmin($isAdmin)
@@ -275,9 +278,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get is_admin
+     * Get isAdmin
      *
-     * @return integer 
+     * @return integer
      */
     public function getIsAdmin()
     {
@@ -288,6 +291,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set username
      *
      * @param string $username
+     *
      * @return Users
      */
     public function setUsername($username)
@@ -300,7 +304,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -311,6 +315,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set password
      *
      * @param string $password
+     *
      * @return Users
      */
     public function setPassword($password)
@@ -323,7 +328,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -334,6 +339,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set salt
      *
      * @param string $salt
+     *
      * @return Users
      */
     public function setSalt($salt)
@@ -346,7 +352,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get salt
      *
-     * @return string 
+     * @return string
      */
     public function getSalt()
     {
@@ -357,6 +363,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set email
      *
      * @param string $email
+     *
      * @return Users
      */
     public function setEmail($email)
@@ -369,7 +376,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -380,6 +387,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set gender
      *
      * @param string $gender
+     *
      * @return Users
      */
     public function setGender($gender)
@@ -392,7 +400,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get gender
      *
-     * @return string 
+     * @return string
      */
     public function getGender()
     {
@@ -400,9 +408,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set country_id
+     * Set countryId
      *
      * @param integer $countryId
+     *
      * @return Users
      */
     public function setCountryId($countryId)
@@ -413,9 +422,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get country_id
+     * Get countryId
      *
-     * @return integer 
+     * @return integer
      */
     public function getCountryId()
     {
@@ -423,9 +432,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set location_id
+     * Set locationId
      *
      * @param integer $locationId
+     *
      * @return Users
      */
     public function setLocationId($locationId)
@@ -436,9 +446,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get location_id
+     * Get locationId
      *
-     * @return integer 
+     * @return integer
      */
     public function getLocationId()
     {
@@ -449,6 +459,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set town
      *
      * @param string $town
+     *
      * @return Users
      */
     public function setTown($town)
@@ -461,7 +472,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get town
      *
-     * @return string 
+     * @return string
      */
     public function getTown()
     {
@@ -472,6 +483,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set phone
      *
      * @param string $phone
+     *
      * @return Users
      */
     public function setPhone($phone)
@@ -484,7 +496,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get phone
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -492,9 +504,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set phone_iso
+     * Set phoneIso
      *
      * @param string $phoneIso
+     *
      * @return Users
      */
     public function setPhoneIso($phoneIso)
@@ -505,9 +518,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get phone_iso
+     * Get phoneIso
      *
-     * @return string 
+     * @return string
      */
     public function getPhoneIso()
     {
@@ -515,9 +528,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set phone_code
+     * Set phoneCode
      *
      * @param integer $phoneCode
+     *
      * @return Users
      */
     public function setPhoneCode($phoneCode)
@@ -528,9 +542,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get phone_code
+     * Get phoneCode
      *
-     * @return integer 
+     * @return integer
      */
     public function getPhoneCode()
     {
@@ -541,6 +555,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set address
      *
      * @param string $address
+     *
      * @return Users
      */
     public function setAddress($address)
@@ -553,7 +568,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get address
      *
-     * @return string 
+     * @return string
      */
     public function getAddress()
     {
@@ -564,6 +579,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set points
      *
      * @param integer $points
+     *
      * @return Users
      */
     public function setPoints($points)
@@ -576,7 +592,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get points
      *
-     * @return integer 
+     * @return integer
      */
     public function getPoints()
     {
@@ -587,6 +603,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set avatar
      *
      * @param integer $avatar
+     *
      * @return Users
      */
     public function setAvatar($avatar)
@@ -599,7 +616,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get avatar
      *
-     * @return integer 
+     * @return integer
      */
     public function getAvatar()
     {
@@ -610,6 +627,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set verification
      *
      * @param string $verification
+     *
      * @return Users
      */
     public function setVerification($verification)
@@ -622,7 +640,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get verification
      *
-     * @return string 
+     * @return string
      */
     public function getVerification()
     {
@@ -630,9 +648,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set is_verified
+     * Set isVerified
      *
      * @param integer $isVerified
+     *
      * @return Users
      */
     public function setIsVerified($isVerified)
@@ -643,9 +662,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get is_verified
+     * Get isVerified
      *
-     * @return integer 
+     * @return integer
      */
     public function getIsVerified()
     {
@@ -656,6 +675,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set ordering
      *
      * @param integer $ordering
+     *
      * @return Users
      */
     public function setOrdering($ordering)
@@ -668,7 +688,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get ordering
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrdering()
     {
@@ -679,6 +699,7 @@ class Users extends \Kazist\Table\BaseTable
      * Set published
      *
      * @param integer $published
+     *
      * @return Users
      */
     public function setPublished($published)
@@ -691,7 +712,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -699,9 +720,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -709,9 +730,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -719,9 +740,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -729,9 +750,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -739,9 +760,10 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set last_date_active
+     * Set lastDateActive
      *
      * @param \DateTime $lastDateActive
+     *
      * @return Users
      */
     public function setLastDateActive($lastDateActive)
@@ -752,9 +774,9 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get last_date_active
+     * Get lastDateActive
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getLastDateActive()
     {
@@ -768,3 +790,4 @@ class Users extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+

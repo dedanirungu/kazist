@@ -4,6 +4,7 @@
     "alias": "search",
     "icon": "fa fa-search",
     "home_link": "search\/subsets",
+    "path": "applications/Search",
     "is_core": "1",
     "menulist": [{
             "title": "Subsets",

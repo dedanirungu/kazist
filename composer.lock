@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e050379ae4f299ce3083a11ce9f761d5",
+    "content-hash": "7ab0cceb3a404a977ce9c9e0afe6878c",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -489,16 +489,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
+                "reference": "eb152c5100571c7a45470ff2a35095ab3f3b900b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
+                "reference": "eb152c5100571c7a45470ff2a35095ab3f3b900b",
                 "shasum": ""
             },
             "require": {
@@ -555,7 +555,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2017-07-22T12:49:21+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -626,16 +626,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "930297026c8009a567ac051fd545bf6124150347"
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
-                "reference": "930297026c8009a567ac051fd545bf6124150347",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/4acb8f89626baafede6ee5475bc5844096eba8a9",
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9",
                 "shasum": ""
             },
             "require": {
@@ -695,20 +695,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-01-13T14:02:13+00:00"
+            "time": "2017-07-22T08:35:12+00:00"
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.12",
+            "version": "v2.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44"
+                "reference": "729340d8d1eec8f01bff708e12e449a3415af873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7b9e911f9d8b30d43b96853dab26898c710d8f44",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/729340d8d1eec8f01bff708e12e449a3415af873",
+                "reference": "729340d8d1eec8f01bff708e12e449a3415af873",
                 "shasum": ""
             },
             "require": {
@@ -766,37 +766,37 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-02-08T12:53:47+00:00"
+            "time": "2017-07-22T20:44:48+00:00"
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Inflector\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -833,7 +833,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06T14:35:42+00:00"
+            "time": "2017-07-22T12:18:28+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -1519,16 +1519,16 @@
         },
         {
             "name": "kazist/contacts",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/contacts.git",
-                "reference": "4254ab1285970ee5836d73d641a2326feeff8380"
+                "reference": "d40e7a1bbf44028d336a59bb4be1cc6b4a6f5a01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/contacts/zipball/4254ab1285970ee5836d73d641a2326feeff8380",
-                "reference": "4254ab1285970ee5836d73d641a2326feeff8380",
+                "url": "https://api.github.com/repos/kazist/contacts/zipball/d40e7a1bbf44028d336a59bb4be1cc6b4a6f5a01",
+                "reference": "d40e7a1bbf44028d336a59bb4be1cc6b4a6f5a01",
                 "shasum": ""
             },
             "type": "library",
@@ -1550,7 +1550,7 @@
                 "contacts manager",
                 "kazist"
             ],
-            "time": "2017-07-10T17:27:34+00:00"
+            "time": "2017-07-22T08:30:25+00:00"
         },
         {
             "name": "kazist/core",
@@ -1592,16 +1592,16 @@
         },
         {
             "name": "kazist/media",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/media.git",
-                "reference": "400185bd833c0bdd49e0c87a6b9ce90df829f626"
+                "reference": "f79a776b390c848f3e81b0a75cb7eaf308e69d2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/media/zipball/400185bd833c0bdd49e0c87a6b9ce90df829f626",
-                "reference": "400185bd833c0bdd49e0c87a6b9ce90df829f626",
+                "url": "https://api.github.com/repos/kazist/media/zipball/f79a776b390c848f3e81b0a75cb7eaf308e69d2b",
+                "reference": "f79a776b390c848f3e81b0a75cb7eaf308e69d2b",
                 "shasum": ""
             },
             "type": "library",
@@ -1623,20 +1623,20 @@
                 "Media Manager",
                 "kazist"
             ],
-            "time": "2017-07-17T06:39:37+00:00"
+            "time": "2017-07-22T08:47:48+00:00"
         },
         {
             "name": "kazist/notification",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/notification.git",
-                "reference": "79eb217e4c24e364f02dd7c1336dbaf4f497c4ed"
+                "reference": "c79923072eb044eff61dd6864a31a690a27f2eaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/notification/zipball/79eb217e4c24e364f02dd7c1336dbaf4f497c4ed",
-                "reference": "79eb217e4c24e364f02dd7c1336dbaf4f497c4ed",
+                "url": "https://api.github.com/repos/kazist/notification/zipball/c79923072eb044eff61dd6864a31a690a27f2eaf",
+                "reference": "c79923072eb044eff61dd6864a31a690a27f2eaf",
                 "shasum": ""
             },
             "type": "library",
@@ -1658,20 +1658,20 @@
                 "kazist",
                 "notifications manager"
             ],
-            "time": "2017-07-11T07:12:07+00:00"
+            "time": "2017-07-22T08:48:28+00:00"
         },
         {
             "name": "kazist/search",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/search.git",
-                "reference": "0c267e982b4a07d3e68577268ae33a63e271b5e3"
+                "reference": "bfdb00960d68f15e2a377c0318a3993e6ac671ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/search/zipball/0c267e982b4a07d3e68577268ae33a63e271b5e3",
-                "reference": "0c267e982b4a07d3e68577268ae33a63e271b5e3",
+                "url": "https://api.github.com/repos/kazist/search/zipball/bfdb00960d68f15e2a377c0318a3993e6ac671ee",
+                "reference": "bfdb00960d68f15e2a377c0318a3993e6ac671ee",
                 "shasum": ""
             },
             "type": "library",
@@ -1693,20 +1693,20 @@
                 "kazist",
                 "search manager"
             ],
-            "time": "2017-07-11T07:14:10+00:00"
+            "time": "2017-07-22T08:51:58+00:00"
         },
         {
             "name": "kazist/setup",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/setup.git",
-                "reference": "46d3ed71c74c278f8c9df50a941287ab184a76cd"
+                "reference": "f529837a530443276d014c5a549b8ae7f3059aa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/setup/zipball/46d3ed71c74c278f8c9df50a941287ab184a76cd",
-                "reference": "46d3ed71c74c278f8c9df50a941287ab184a76cd",
+                "url": "https://api.github.com/repos/kazist/setup/zipball/f529837a530443276d014c5a549b8ae7f3059aa7",
+                "reference": "f529837a530443276d014c5a549b8ae7f3059aa7",
                 "shasum": ""
             },
             "type": "library",
@@ -1728,20 +1728,20 @@
                 "kazist",
                 "setup manager"
             ],
-            "time": "2017-07-11T07:15:10+00:00"
+            "time": "2017-07-22T08:52:38+00:00"
         },
         {
             "name": "kazist/system",
-            "version": "1.0.17",
+            "version": "1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/system.git",
-                "reference": "5df7e27eb670e871a3f9d1ede371844323f81b40"
+                "reference": "f6765861580428d736f534996f3638f848da7b28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/system/zipball/5df7e27eb670e871a3f9d1ede371844323f81b40",
-                "reference": "5df7e27eb670e871a3f9d1ede371844323f81b40",
+                "url": "https://api.github.com/repos/kazist/system/zipball/f6765861580428d736f534996f3638f848da7b28",
+                "reference": "f6765861580428d736f534996f3638f848da7b28",
                 "shasum": ""
             },
             "type": "library",
@@ -1763,7 +1763,7 @@
                 "kazist",
                 "system manager"
             ],
-            "time": "2017-07-20T15:27:11+00:00"
+            "time": "2017-07-22T08:57:25+00:00"
         },
         {
             "name": "kazist/themes",
@@ -1806,16 +1806,16 @@
         },
         {
             "name": "kazist/users",
-            "version": "1.0.7",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kazist/users.git",
-                "reference": "2b7091de3d52a5e1727f178ed6c513ee7e0af4d7"
+                "reference": "78bf5550d0745297a41db352a201ca414f59f39b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kazist/users/zipball/2b7091de3d52a5e1727f178ed6c513ee7e0af4d7",
-                "reference": "2b7091de3d52a5e1727f178ed6c513ee7e0af4d7",
+                "url": "https://api.github.com/repos/kazist/users/zipball/78bf5550d0745297a41db352a201ca414f59f39b",
+                "reference": "78bf5550d0745297a41db352a201ca414f59f39b",
                 "shasum": ""
             },
             "type": "library",
@@ -1837,7 +1837,7 @@
                 "kazist",
                 "users manager"
             ],
-            "time": "2017-07-17T08:19:14+00:00"
+            "time": "2017-07-24T10:21:15+00:00"
         },
         {
             "name": "kriswallsmith/assetic",

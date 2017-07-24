@@ -4,6 +4,7 @@
     "alias": "notification",
     "icon": "fa fa-comments",
     "home_link": "notification\/newsletters",
+    "path": "applications/Notification",
     "is_core": "1",
     "menulist": [{
             "title": "Activities",
