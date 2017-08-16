@@ -5,7 +5,7 @@
     "keywords": ["kazist", "cms", "code generator", "system builder", "ERP", "School Manager"],
     "homepage": "https://github.com/kazist/kazist",
     "license": "GPL-3.0",
-     "version": "1.0.15",
+     "version": "1.0.16",
     "authors": [ 
         {
             "name": "Dedan Irungu",

@@ -42,14 +42,4 @@ $sc->setParameter('system.seo_rewrite', '1');
 $sc->setParameter('system.error_reporting', 'E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR');
 $sc->setParameter('system.error_display', 'on');
 
-/* -------------------------- Company settings ------------------- */
-
-$sc->setParameter('company.name', 'Kazist');
-$sc->setParameter('company.postal_address', '232323');
-$sc->setParameter('company.postal_code', '00400');
-$sc->setParameter('company.physical_location', 'Nairobi Kenya');
-$sc->setParameter('company.phone', '254000000000');
-$sc->setParameter('company.telephone', '254000000000');
-$sc->setParameter('company.email', 'info@example.com');
-
 
