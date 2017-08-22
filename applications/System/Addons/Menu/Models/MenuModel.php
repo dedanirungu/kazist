@@ -112,7 +112,9 @@ class MenuModel {
     public function loadMenuFromFiles() {
 
 
+        $active_menu = '';
         $menu_arr = array();
+        $child_menu_arr = array();
         $document = $this->container->get('document');
         $extension_path = $document->extension_path;
         $extension_path_arr = explode('/', $extension_path);
@@ -131,17 +133,40 @@ class MenuModel {
 
                     $menu_obj = json_decode(file_get_contents($app_path . '/menu.json'));
 
-                    $firstCharacter = substr($menu_obj->title, 0, 1);
-                    $menu_obj->active = ($listed_app === $current_app) ? true : false;
-
-                    if ($menu_obj->active) {
-                        $menu_arr['1first'] = $menu_obj;
+                    if (isset($menu_obj->parent) && $menu_obj->parent <> '') {
+                        $child_menu_arr[] = $menu_obj;
                     } else {
-                        $menu_arr[$menu_obj->title] = $menu_obj;
+                        $firstCharacter = substr($menu_obj->title, 0, 1);
+                        $menu_obj->active = ($listed_app === $current_app) ? true : false;
+
+                        if ($menu_obj->active) {
+                            $active_menu = $menu_obj->alias;
+                        }
+
+                        $menu_arr[$menu_obj->alias] = $menu_obj;
                     }
                 }
             }
         }
+
+        foreach ($child_menu_arr as $child_menu) {
+            if (array_key_exists($child_menu->parent, $menu_arr)) {
+
+                $sub_menus = $child_menu->menulist;
+
+                foreach ($sub_menus as $sub_menu) {
+                    $menu_arr[$child_menu->parent]->menulist[] = $sub_menu;
+                }
+            }
+        }
+
+        foreach ($menu_arr as $key => $menu) {
+            if ($menu->active) {
+                unset($menu_arr[$key]);
+                $menu_arr['1first'] = $menu;
+            }
+        }
+
 
         ksort($menu_arr);
 

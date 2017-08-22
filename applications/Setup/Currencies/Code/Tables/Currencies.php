@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Currencies extends \Kazist\Table\BaseTable {
-
+class Currencies extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -46,72 +46,81 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * @var integer
      *
-     * @ORM\Column(name="country_id", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="country_id", type="integer", length=11, nullable=true)
      */
     protected $country_id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="rate", type="decimal", nullable=true)
+     * @ORM\Column(name="rate", type="decimal", precision=11, scale=2, nullable=true)
      */
     protected $rate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="buying", type="decimal", nullable=true)
+     * @ORM\Column(name="buying", type="decimal", precision=11, scale=2, nullable=true)
      */
     protected $buying;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="selling", type="decimal", nullable=true)
+     * @ORM\Column(name="selling", type="decimal", precision=11, scale=2, nullable=true)
      */
     protected $selling;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="published", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="published", type="integer", length=11, nullable=true)
      */
     protected $published;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="is_fetched", type="integer", length=11)
+     */
+    protected $is_fetched;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -119,9 +128,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set name
      *
      * @param string $name
+     *
      * @return Currencies
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -130,9 +141,10 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -140,9 +152,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set code
      *
      * @param string $code
+     *
      * @return Currencies
      */
-    public function setCode($code) {
+    public function setCode($code)
+    {
         $this->code = $code;
 
         return $this;
@@ -151,9 +165,10 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get code
      *
-     * @return string 
+     * @return string
      */
-    public function getCode() {
+    public function getCode()
+    {
         return $this->code;
     }
 
@@ -161,9 +176,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set symbol
      *
      * @param string $symbol
+     *
      * @return Currencies
      */
-    public function setSymbol($symbol) {
+    public function setSymbol($symbol)
+    {
         $this->symbol = $symbol;
 
         return $this;
@@ -172,30 +189,34 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get symbol
      *
-     * @return string 
+     * @return string
      */
-    public function getSymbol() {
+    public function getSymbol()
+    {
         return $this->symbol;
     }
 
     /**
-     * Set country_id
+     * Set countryId
      *
      * @param integer $countryId
+     *
      * @return Currencies
      */
-    public function setCountryId($countryId) {
+    public function setCountryId($countryId)
+    {
         $this->country_id = $countryId;
 
         return $this;
     }
 
     /**
-     * Get country_id
+     * Get countryId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCountryId() {
+    public function getCountryId()
+    {
         return $this->country_id;
     }
 
@@ -203,9 +224,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set rate
      *
      * @param string $rate
+     *
      * @return Currencies
      */
-    public function setRate($rate) {
+    public function setRate($rate)
+    {
         $this->rate = $rate;
 
         return $this;
@@ -214,9 +237,10 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get rate
      *
-     * @return string 
+     * @return string
      */
-    public function getRate() {
+    public function getRate()
+    {
         return $this->rate;
     }
 
@@ -224,9 +248,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set buying
      *
      * @param string $buying
+     *
      * @return Currencies
      */
-    public function setBuying($buying) {
+    public function setBuying($buying)
+    {
         $this->buying = $buying;
 
         return $this;
@@ -235,9 +261,10 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get buying
      *
-     * @return string 
+     * @return string
      */
-    public function getBuying() {
+    public function getBuying()
+    {
         return $this->buying;
     }
 
@@ -245,9 +272,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set selling
      *
      * @param string $selling
+     *
      * @return Currencies
      */
-    public function setSelling($selling) {
+    public function setSelling($selling)
+    {
         $this->selling = $selling;
 
         return $this;
@@ -256,9 +285,10 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get selling
      *
-     * @return string 
+     * @return string
      */
-    public function getSelling() {
+    public function getSelling()
+    {
         return $this->selling;
     }
 
@@ -266,9 +296,11 @@ class Currencies extends \Kazist\Table\BaseTable {
      * Set published
      *
      * @param integer $published
+     *
      * @return Currencies
      */
-    public function setPublished($published) {
+    public function setPublished($published)
+    {
         $this->published = $published;
 
         return $this;
@@ -277,53 +309,82 @@ class Currencies extends \Kazist\Table\BaseTable {
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
-    public function getPublished() {
+    public function getPublished()
+    {
         return $this->published;
     }
 
     /**
-     * Get created_by
+     * Set isFetched
      *
-     * @return integer 
+     * @param integer $isFetched
+     *
+     * @return Currencies
      */
-    public function getCreatedBy() {
+    public function setIsFetched($isFetched)
+    {
+        $this->is_fetched = $isFetched;
+
+        return $this;
+    }
+
+    /**
+     * Get isFetched
+     *
+     * @return integer
+     */
+    public function getIsFetched()
+    {
+        return $this->is_fetched;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return integer
+     */
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
     /**
      * @ORM\PreUpdate
      */
-    public function onPreUpdate() {
+    public function onPreUpdate()
+    {
         // Add your code here
     }
-
 }
+

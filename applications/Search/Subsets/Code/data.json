@@ -1,5 +1,5 @@
 [{
-        "tracking_id": "1",
+        "system_tracking_id": "1",
         "title": "Article",
         "alias": "article",
         "table_name": "cms_articles",
@@ -9,7 +9,7 @@
         "published": "1",
         "is_processed": "0"
     }, {
-        "tracking_id": "2",
+        "system_tracking_id": "2",
         "title": "Blog",
         "alias": "blog",
         "table_name": "cms_blogs",
@@ -19,7 +19,7 @@
         "published": "1",
         "is_processed": "0"
     }, {
-        "tracking_id": "3",
+        "system_tracking_id": "3",
         "title": "Feeds Articles",
         "alias": "feeds",
         "table_name": "feeds_articles",

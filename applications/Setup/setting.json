@@ -1,0 +1,14 @@
+{
+    "title": "Setup",
+    "alias": "setup",
+    "groups": [{
+            "title": "Setup Setting",
+            "settings": [{
+                    "name": "setup_currency_default_code",
+                    "label": "Default Currency",
+                    "default": "USD",
+                    "tooltip": "Set the default Currency Code for the whole system.",
+                    "type": "text"
+                }]
+        }]
+}

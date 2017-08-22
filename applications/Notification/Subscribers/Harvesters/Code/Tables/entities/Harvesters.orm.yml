@@ -6,16 +6,16 @@ Notification\Subscribers\Harvesters\Code\Tables\Harvesters:
       type: integer
       generator: { strategy: AUTO }
   fields:
-    subset_id:
-      name: subset_id
-      type: integer
-      length: 11
-      nullable: false
     title:
       name: title
       type: string
       length: 255
       nullable: false
+    group_id:
+      name: group_id
+      type: integer
+      length: 11
+      nullable: true
     email_field:
       name: email_field
       type: string
@@ -30,27 +30,33 @@ Notification\Subscribers\Harvesters\Code\Tables\Harvesters:
       name: extension_path
       type: string
       length: 255
+      nullable: true
+    published:
+      name: published
+      type: integer
+      length: 11
+      nullable: true
     created_by:
       name: created_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_created:
       name: date_created
       type: datetime
-      nullable: false
+      nullable: true
     modified_by:
       name: modified_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_modified:
       name: date_modified
       type: datetime
-      nullable: false
+      nullable: true
   indexes:
-    subset_id_index:
-      columns: [subset_id]
+    group_id_index:
+      columns: [group_id]
     created_by_index:
       columns: [created_by]
     modified_by_index:

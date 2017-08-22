@@ -19,6 +19,7 @@
                                             "fields": [
                                                 "title",
                                                 "class",
+                                                "ordering",
                                                 "description",
                                                 "extension_path",
                                                 "published"
@@ -88,6 +89,35 @@
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [
+                ],
+                "source": [
+                ],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [
+                ],
+                "payment": [
+                ]
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "0",
+            "name": "ordering",
+            "html_type": "text",
+            "mysql_type": "varchar",
             "view_side": "",
             "index": "",
             "id_name": "",

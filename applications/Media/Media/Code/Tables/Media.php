@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Media extends \Kazist\Table\BaseTable {
-
+class Media extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -25,7 +25,7 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     protected $title;
 
@@ -39,7 +39,7 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
-     * @ORM\Column(name="route", type="string", length=255)
+     * @ORM\Column(name="route", type="string", length=255, nullable=true)
      */
     protected $route;
 
@@ -81,37 +81,39 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -119,9 +121,11 @@ class Media extends \Kazist\Table\BaseTable {
      * Set title
      *
      * @param string $title
+     *
      * @return Media
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -130,9 +134,10 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -140,9 +145,11 @@ class Media extends \Kazist\Table\BaseTable {
      * Set file
      *
      * @param string $file
+     *
      * @return Media
      */
-    public function setFile($file) {
+    public function setFile($file)
+    {
         $this->file = $file;
 
         return $this;
@@ -151,9 +158,10 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * Get file
      *
-     * @return string 
+     * @return string
      */
-    public function getFile() {
+    public function getFile()
+    {
         return $this->file;
     }
 
@@ -161,9 +169,11 @@ class Media extends \Kazist\Table\BaseTable {
      * Set route
      *
      * @param string $route
+     *
      * @return Media
      */
-    public function setRoute($route) {
+    public function setRoute($route)
+    {
         $this->route = $route;
 
         return $this;
@@ -172,9 +182,10 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * Get route
      *
-     * @return string 
+     * @return string
      */
-    public function getRoute() {
+    public function getRoute()
+    {
         return $this->route;
     }
 
@@ -182,9 +193,11 @@ class Media extends \Kazist\Table\BaseTable {
      * Set type
      *
      * @param string $type
+     *
      * @return Media
      */
-    public function setType($type) {
+    public function setType($type)
+    {
         $this->type = $type;
 
         return $this;
@@ -193,72 +206,82 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
     /**
-     * Set field_name
+     * Set fieldName
      *
      * @param string $fieldName
+     *
      * @return Media
      */
-    public function setFieldName($fieldName) {
+    public function setFieldName($fieldName)
+    {
         $this->field_name = $fieldName;
 
         return $this;
     }
 
     /**
-     * Get field_name
+     * Get fieldName
      *
-     * @return string 
+     * @return string
      */
-    public function getFieldName() {
+    public function getFieldName()
+    {
         return $this->field_name;
     }
 
     /**
-     * Set not_found
+     * Set notFound
      *
      * @param integer $notFound
+     *
      * @return Media
      */
-    public function setNotFound($notFound) {
+    public function setNotFound($notFound)
+    {
         $this->not_found = $notFound;
 
         return $this;
     }
 
     /**
-     * Get not_found
+     * Get notFound
      *
-     * @return integer 
+     * @return integer
      */
-    public function getNotFound() {
+    public function getNotFound()
+    {
         return $this->not_found;
     }
 
     /**
-     * Set is_analyzed
+     * Set isAnalyzed
      *
      * @param integer $isAnalyzed
+     *
      * @return Media
      */
-    public function setIsAnalyzed($isAnalyzed) {
+    public function setIsAnalyzed($isAnalyzed)
+    {
         $this->is_analyzed = $isAnalyzed;
 
         return $this;
     }
 
     /**
-     * Get is_analyzed
+     * Get isAnalyzed
      *
-     * @return integer 
+     * @return integer
      */
-    public function getIsAnalyzed() {
+    public function getIsAnalyzed()
+    {
         return $this->is_analyzed;
     }
 
@@ -266,9 +289,11 @@ class Media extends \Kazist\Table\BaseTable {
      * Set extension
      *
      * @param string $extension
+     *
      * @return Media
      */
-    public function setExtension($extension) {
+    public function setExtension($extension)
+    {
         $this->extension = $extension;
 
         return $this;
@@ -277,53 +302,58 @@ class Media extends \Kazist\Table\BaseTable {
     /**
      * Get extension
      *
-     * @return string 
+     * @return string
      */
-    public function getExtension() {
+    public function getExtension()
+    {
         return $this->extension;
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCreatedBy() {
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
     /**
      * @ORM\PreUpdate
      */
-    public function onPreUpdate() {
+    public function onPreUpdate()
+    {
         // Add your code here
     }
-
 }
+

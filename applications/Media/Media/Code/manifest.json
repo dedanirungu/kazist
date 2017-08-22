@@ -3,11 +3,11 @@
     "title": "Media Manager",
     "explanation": "Media Manager",
     "description": "Media Manager",
-    "version": 17,
+    "version": 20,
     "has_view": "1",
     "tie_field": "0",
     "email_on_new": "0",
     "email_on_edit": "0",
     "email_on_delete": "0",
-    "date_file_modified": "2016-06-06 18:23:47"
+    "date_file_modified": "2017-08-22 06:47:19"
 }

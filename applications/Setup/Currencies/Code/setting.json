@@ -1,6 +1,0 @@
-[{
-        "name": "setup_currency_default_code",
-        "label": "Default Currency",
-        "default": "USD",
-        "type": "text"
-    }]

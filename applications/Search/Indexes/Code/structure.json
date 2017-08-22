@@ -18,12 +18,12 @@
                                             "hide_on_new": null,
                                             "fields": [
                                                 "title",
-                                                "subset_id",
                                                 "description",
                                                 "sale_price",
                                                 "discounted_price",
                                                 "image",
-                                                "record_id"
+                                                "record_id",
+                                                "table_name"
                                             ]
                                         }
                                     }
@@ -76,7 +76,7 @@
         "table": {
             "fields": [
                 "title",
-                "subset_id",
+                "table_name",
                 "record_id",
                 "image",
                 "date_index",
@@ -86,7 +86,6 @@
             ],
             "has_label": [
                 "title",
-                "subset_id",
                 "record_id",
                 "image",
                 "date_index",
@@ -105,7 +104,7 @@
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -179,12 +178,12 @@
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
-            "name": "subset_id",
-            "html_type": "select",
-            "mysql_type": "int",
-            "view_side": "both",
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "table_name",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -194,15 +193,9 @@
             "format_value": "",
             "parameters": {
                 "general": [],
-                "source": {
-                    "data_source": "db_table",
-                    "join_field": "id",
-                    "display_field": [
-                        "title"
-                    ],
-                    "join_table_name": "search_subsets"
-                },
+                "source": [],
                 "save": {
+                    "view_side": "both",
                     "index": ""
                 },
                 "media": [],
@@ -211,7 +204,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "record_id",
             "html_type": "text",
             "mysql_type": "int",
@@ -536,8 +529,7 @@
             "si.id",
             "si.title",
             "si.description",
-            "si.subset_id",
-            "ss.title AS subset_id_title",
+            "si.table_name",
             "si.record_id",
             "si.image",
             "mm.title AS image_title",
@@ -554,12 +546,6 @@
             "si.date_modified"
         ],
         "leftjoin": [
-            {
-                "table": "Search\\Subsets\\Code\\Tables\\Subsets",
-                "alias": "ss",
-                "name": "#__search_subsets",
-                "on": "si.subset_id = ss.id"
-            },
             {
                 "table": "Media\\Media\\Code\\Tables\\Media",
                 "alias": "mm",

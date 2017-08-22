@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Harvesters
  *
- * @ORM\Table(name="notification_subscribers_harvesters", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
+ * @ORM\Table(name="notification_subscribers_harvesters", indexes={@ORM\Index(name="group_id_index", columns={"group_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Harvesters extends \Kazist\Table\BaseTable {
-
+class Harvesters extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -23,18 +23,18 @@ class Harvesters extends \Kazist\Table\BaseTable {
     protected $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="subset_id", type="integer", length=11, nullable=false)
-     */
-    protected $subset_id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     protected $title;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="group_id", type="integer", length=11, nullable=true)
+     */
+    protected $group_id;
 
     /**
      * @var string
@@ -53,75 +53,65 @@ class Harvesters extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
-     * @ORM\Column(name="extension_path", type="string", length=255)
+     * @ORM\Column(name="extension_path", type="string", length=255, nullable=true)
      */
     protected $extension_path;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="published", type="integer", length=11, nullable=true)
+     */
+    protected $published;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
-    }
-
-    /**
-     * Set subset_id
-     *
-     * @param integer $subsetId
-     * @return Harvesters
-     */
-    public function setSubsetId($subsetId) {
-        $this->subset_id = $subsetId;
-
-        return $this;
-    }
-
-    /**
-     * Get subset_id
-     *
-     * @return integer 
-     */
-    public function getSubsetId() {
-        return $this->subset_id;
     }
 
     /**
      * Set title
      *
      * @param string $title
+     *
      * @return Harvesters
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -130,109 +120,178 @@ class Harvesters extends \Kazist\Table\BaseTable {
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
     /**
-     * Set email_field
+     * Set groupId
      *
-     * @param string $emailField
+     * @param integer $groupId
+     *
      * @return Harvesters
      */
-    public function setEmailField($emailField) {
+    public function setGroupId($groupId)
+    {
+        $this->group_id = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * Get groupId
+     *
+     * @return integer
+     */
+    public function getGroupId()
+    {
+        return $this->group_id;
+    }
+
+    /**
+     * Set emailField
+     *
+     * @param string $emailField
+     *
+     * @return Harvesters
+     */
+    public function setEmailField($emailField)
+    {
         $this->email_field = $emailField;
 
         return $this;
     }
 
     /**
-     * Get email_field
+     * Get emailField
      *
-     * @return string 
+     * @return string
      */
-    public function getEmailField() {
+    public function getEmailField()
+    {
         return $this->email_field;
     }
 
     /**
-     * Set user_field
+     * Set userField
      *
      * @param string $userField
+     *
      * @return Harvesters
      */
-    public function setUserField($userField) {
+    public function setUserField($userField)
+    {
         $this->user_field = $userField;
 
         return $this;
     }
 
     /**
-     * Get user_field
+     * Get userField
      *
-     * @return string 
+     * @return string
      */
-    public function getUserField() {
+    public function getUserField()
+    {
         return $this->user_field;
     }
 
     /**
-     * Set extension_path
+     * Set extensionPath
      *
      * @param string $extensionPath
+     *
      * @return Harvesters
      */
-    public function setExtensionPath($extensionPath) {
+    public function setExtensionPath($extensionPath)
+    {
         $this->extension_path = $extensionPath;
 
         return $this;
     }
 
     /**
-     * Get extension_path
+     * Get extensionPath
      *
-     * @return string 
+     * @return string
      */
-    public function getExtensionPath() {
+    public function getExtensionPath()
+    {
         return $this->extension_path;
     }
 
     /**
-     * Get created_by
+     * Set published
      *
-     * @return integer 
+     * @param integer $published
+     *
+     * @return Harvesters
      */
-    public function getCreatedBy() {
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return integer
+     */
+    public function getPublished()
+    {
+        return $this->published;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return integer
+     */
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        // Add your code here
+    }
 }
+

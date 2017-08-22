@@ -25,6 +25,10 @@ System\Listeners\Code\Tables\Listeners:
       type: string
       length: 255
       nullable: false
+    ordering:
+      name: ordering
+      type: integer
+      length: 11
     published:
       name: published
       type: integer

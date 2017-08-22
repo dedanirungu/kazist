@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Indexes
  *
- * @ORM\Table(name="search_indexes", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"})})
+ * @ORM\Table(name="search_indexes")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -37,16 +37,16 @@ class Indexes extends \Kazist\Table\BaseTable
     protected $description;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="subset_id", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="table_name", type="string", length=255, nullable=true)
      */
-    protected $subset_id;
+    protected $table_name;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="record_id", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="record_id", type="integer", length=11, nullable=true)
      */
     protected $record_id;
 
@@ -131,7 +131,7 @@ class Indexes extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -142,6 +142,7 @@ class Indexes extends \Kazist\Table\BaseTable
      * Set title
      *
      * @param string $title
+     *
      * @return Indexes
      */
     public function setTitle($title)
@@ -154,7 +155,7 @@ class Indexes extends \Kazist\Table\BaseTable
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -165,6 +166,7 @@ class Indexes extends \Kazist\Table\BaseTable
      * Set description
      *
      * @param string $description
+     *
      * @return Indexes
      */
     public function setDescription($description)
@@ -177,7 +179,7 @@ class Indexes extends \Kazist\Table\BaseTable
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -185,32 +187,34 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set subset_id
+     * Set tableName
      *
-     * @param integer $subsetId
+     * @param string $tableName
+     *
      * @return Indexes
      */
-    public function setSubsetId($subsetId)
+    public function setTableName($tableName)
     {
-        $this->subset_id = $subsetId;
+        $this->table_name = $tableName;
 
         return $this;
     }
 
     /**
-     * Get subset_id
+     * Get tableName
      *
-     * @return integer 
+     * @return string
      */
-    public function getSubsetId()
+    public function getTableName()
     {
-        return $this->subset_id;
+        return $this->table_name;
     }
 
     /**
-     * Set record_id
+     * Set recordId
      *
      * @param integer $recordId
+     *
      * @return Indexes
      */
     public function setRecordId($recordId)
@@ -221,9 +225,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get record_id
+     * Get recordId
      *
-     * @return integer 
+     * @return integer
      */
     public function getRecordId()
     {
@@ -234,6 +238,7 @@ class Indexes extends \Kazist\Table\BaseTable
      * Set image
      *
      * @param integer $image
+     *
      * @return Indexes
      */
     public function setImage($image)
@@ -246,7 +251,7 @@ class Indexes extends \Kazist\Table\BaseTable
     /**
      * Get image
      *
-     * @return integer 
+     * @return integer
      */
     public function getImage()
     {
@@ -254,9 +259,10 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set date_index
+     * Set dateIndex
      *
      * @param \DateTime $dateIndex
+     *
      * @return Indexes
      */
     public function setDateIndex($dateIndex)
@@ -267,9 +273,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_index
+     * Get dateIndex
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateIndex()
     {
@@ -280,6 +286,7 @@ class Indexes extends \Kazist\Table\BaseTable
      * Set published
      *
      * @param integer $published
+     *
      * @return Indexes
      */
     public function setPublished($published)
@@ -292,7 +299,7 @@ class Indexes extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -300,9 +307,10 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set publish_up
+     * Set publishUp
      *
      * @param \DateTime $publishUp
+     *
      * @return Indexes
      */
     public function setPublishUp($publishUp)
@@ -313,9 +321,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get publish_up
+     * Get publishUp
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getPublishUp()
     {
@@ -323,9 +331,10 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set publish_down
+     * Set publishDown
      *
      * @param \DateTime $publishDown
+     *
      * @return Indexes
      */
     public function setPublishDown($publishDown)
@@ -336,9 +345,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get publish_down
+     * Get publishDown
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getPublishDown()
     {
@@ -346,9 +355,10 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set sale_price
+     * Set salePrice
      *
      * @param integer $salePrice
+     *
      * @return Indexes
      */
     public function setSalePrice($salePrice)
@@ -359,9 +369,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get sale_price
+     * Get salePrice
      *
-     * @return integer 
+     * @return integer
      */
     public function getSalePrice()
     {
@@ -369,9 +379,10 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set discounted_price
+     * Set discountedPrice
      *
      * @param integer $discountedPrice
+     *
      * @return Indexes
      */
     public function setDiscountedPrice($discountedPrice)
@@ -382,9 +393,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get discounted_price
+     * Get discountedPrice
      *
-     * @return integer 
+     * @return integer
      */
     public function getDiscountedPrice()
     {
@@ -392,9 +403,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -402,9 +413,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -412,9 +423,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -422,9 +433,9 @@ class Indexes extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -438,3 +449,4 @@ class Indexes extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+

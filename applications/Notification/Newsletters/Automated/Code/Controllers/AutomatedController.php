@@ -26,7 +26,7 @@ class AutomatedController extends BaseController {
 
         $this->model->sendAutomatedList();
 
-        return $this->redirectToRoute('home');
+        return $this->json($data);
     }
 
 }

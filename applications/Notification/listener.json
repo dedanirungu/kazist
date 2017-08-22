@@ -2,6 +2,7 @@
         "tracking_id": "1",
         "class": "Notification\\Subscribers\\Code\\Listeners\\UserListener",
         "title": "Notification User Event Listener",
+        "ordering": "1",
         "description": "Listen For User Events and Modify Notification Detail"
     }]
 

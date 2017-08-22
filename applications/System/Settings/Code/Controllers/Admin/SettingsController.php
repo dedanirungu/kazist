@@ -23,28 +23,26 @@ class SettingsController extends BaseController {
 
     public function indexAction($offset = 0, $limit = 10) {
 
-        $subsets = $this->model->getSubsets();
-        $subset = $subsets[0];
-        $path = $this->request->get('path');
+        $tmp_alias = $this->request->get('alias');
 
-        if ($path == '') {
-            $path = str_replace('/', '.', $subset->path);
+        $alias_arr = explode('.', $tmp_alias);
+        $alias = $alias_arr[0];
+
+        if ($alias == '') {
+            $alias = 'system';
         }
-        $settings = $this->model->getSettings($path);
-        $path_subset = $this->model->getPathSubset($path);
 
-        $path_arr = explode('.', $path);
-        $tmp_data_arr['settings'] = $settings;
-        $tmp_data_arr['path'] = $path;
-        $tmp_data_arr['root'] = $path_arr[0];
+        $settings = $this->model->getSettings($alias);
 
-        $html = $this->render('Kazist:views:main:setting.index.twig', $tmp_data_arr);
+        $tmp_data_arr['settings'] = $settings[$alias];
+        $tmp_data_arr['alias'] = alias;
 
-        $this->data_arr['path_subset'] = $path_subset;
-        $this->data_arr['subsets'] = $subsets;
+        $html = $this->render('System;Settings;Code;views:admin:setting.index.twig', $tmp_data_arr);
+
         $this->data_arr['settings'] = $settings;
         $this->data_arr['settings_html'] = $html;
-        $this->data_arr['item'] = $path_subset;
+        $this->data_arr['alias'] = $alias;
+        $this->data_arr['return_url'] = base64_encode($this->model->generateUrl('admin.system.settings', array('alias' => $alias)));
 
         return parent::indexAction($offset, $limit);
     }

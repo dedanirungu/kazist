@@ -2,7 +2,7 @@
     "frontend": [{
             "title": "cron setup currencies",
             "description": "cron setup currencies",
-            "controller": "Setup\\Currencies\\Code\\Controllers\\SubscriptionsController::cronfetchcurrencyAction",
+            "controller": "Setup\\Currencies\\Code\\Controllers\\CurrenciesController::cronfetchcurrencyAction",
             "unique_name": "setup.currencies.cronfetchcurrency",
             "route": "setup/currencies/cronfetchcurrency",
             "permissions": "can_view, can_viewown",

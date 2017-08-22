@@ -1,6 +1,0 @@
-[{
-        "name": "system_cron_run_page_load",
-        "label": "Run Cron on Page Load",
-        "default": "0",
-        "type": "yesno"
-    }]

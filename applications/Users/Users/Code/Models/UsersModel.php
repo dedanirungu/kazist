@@ -444,11 +444,9 @@ class UsersModel extends BaseModel {
     public function fetchUser() {
 
         $factory = new KazistFactory;
-        $db = $factory->getDatabase();
 
-
-        $keyword = $this->request->request->get('keyword');
-
+        $keyword = $this->request->get('keyword');
+        
         $query = new Query();
         $query->select('u.id, u.username, u.name, u.phone, u.email');
         $query->from('#__users_users', 'u');

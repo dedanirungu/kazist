@@ -32,7 +32,14 @@ class ContentIndexing {
 
         if (!empty($subset_tables)) {
             foreach ($subset_tables as $key => $subset_table) {
-                $this->indexSubsetTable($subset_table);
+
+                $table_name = $subset_table->table_name;
+                $table_name_arr = explode('_', $table_name);
+                $table_name_arr = array_map('ucfirst', $table_name_arr);
+
+                if (is_dir(JPATH_ROOT . 'applications/' . implode('/', $table_name_arr))) {
+                    $this->indexSubsetTable($subset_table);
+                }
             }
         }
     }
@@ -70,7 +77,7 @@ class ContentIndexing {
         $factory = new KazistFactory();
         $string_modification = new StringModification();
 
-        $data_obj->subset_id = $subset_table->id;
+        $data_obj->table_name = $subset_table->table_name;
         $data_obj->record_id = (method_exists($subset_content, 'getId')) ? $subset_content->getId() : $subset_content->id;
 
         $existing_obj = clone $data_obj;
@@ -102,7 +109,7 @@ class ContentIndexing {
         $data_obj->is_processed = 1;
 
         $where_arr = array();
-        $where_arr[] = 'si.subset_id=:subset_id';
+        $where_arr[] = 'si.table_name=:table_name';
         $where_arr[] = 'si.record_id=:record_id';
 
         $factory->saveRecord('#__search_indexes', $data_obj, $where_arr, $existing_obj);
@@ -152,7 +159,7 @@ class ContentIndexing {
     public function processSubsetContent($subset_table) {
 
         $subset_contents = $this->getSubsetContents($subset_table);
-
+       
         if (!empty($subset_contents)) {
             foreach ($subset_contents as $key => $subset_content) {
                 $this->saveContentIndex($subset_table, $subset_content);
@@ -162,14 +169,10 @@ class ContentIndexing {
 
     public function getSubsetContents($subset_table) {
 
-        $factory = new KazistFactory();
-        $db = $factory->getDatabase();
-
-
         $subquery = new Query();
         $subquery->select('record_id');
         $subquery->from('#__search_indexes', 'tt');
-        $subquery->where('subset_id=' . $subset_table->id);
+        $subquery->where('table_name=:table_name');
 
         $query = new Query();
         $query->select('tt.*');
@@ -177,6 +180,7 @@ class ContentIndexing {
         $query->where('id NOT IN (' . (string) $subquery . ')');
         $query->orWhere('tt.date_modified > :date_modified');
         $query->setParameter('date_modified', $subset_table->date_indexed);
+        $query->setParameter('table_name', $subset_table->table_name);
         $query->orderBy('tt.id', 'DESC');
 
         $query->setFirstResult(0);

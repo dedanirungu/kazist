@@ -26,5 +26,17 @@
     "UsersPermission": {
         "namespace": "Users\\Permission",
         "controller": "PermissionController"
+    },
+    "UsersUsersLogs": {
+        "namespace": "Users\\Users\\Logs",
+        "controller": "LogsController"
+    },
+    "UsersDoubleauthRoutes": {
+        "namespace": "Users\\Doubleauth\\Routes",
+        "controller": "RoutesController"
+    },
+    "UsersDoubleauthUsers": {
+        "namespace": "Users\\Doubleauth\\Users",
+        "controller": "UsersController"
     }
 }

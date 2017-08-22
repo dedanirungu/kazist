@@ -8,16 +8,16 @@
         <b>Subscription</b>
         <ul class="menu-open">
             <li>
-                <a href="{{ generate_url('admin.subscriptions.subscriptions') }}">All Members</a>
+                <a href="{{ generate_url('admin.affiliates.affiliates') }}">All Members</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.subscriptions.subscriptions', {'type':'pro'}) }}">Pro Members</a>
+                <a href="{{ generate_url('admin.affiliates.affiliates', {'type':'pro'}) }}">Pro Members</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.subscriptions.subscriptions', {'type':'expired'}) }}">Expired Members</a>
+                <a href="{{ generate_url('admin.affiliates.affiliates', {'type':'expired'}) }}">Expired Members</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.subscriptions.subscriptions', {'type':'free'}) }}">Free Members</a>
+                <a href="{{ generate_url('admin.affiliates.affiliates', {'type':'free'}) }}">Free Members</a>
             </li>
         </ul>
     </li>
@@ -25,29 +25,29 @@
         <b>Finance</b>
         <ul>  
             <li>
-                <a href="{{ generate_url('admin.finance.tokens') }}">Tokens</a>
+                <a href="{{ generate_url('admin.tokens.tokens') }}">Tokens</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.finance.transactions', {'view':'commission'}) }}">Commission History</a>
+                <a href="{{ generate_url('admin.payments.transactions', {'view':'commission'}) }}">Commission History</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.finance.transactions') }}">Transaction History</a>
+                <a href="{{ generate_url('admin.payments.transactions') }}">Transaction History</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.finance.withdraws') }}">Members Withdrawal</a>
+                <a href="{{ generate_url('admin.withdraws.withdraws') }}">Members Withdrawal</a>
             </li>
 
             <li>
-                <a href="{{ generate_url('admin.finance.payments') }}">Member Payments</a>
+                <a href="{{ generate_url('admin.payments.payments') }}">Member Payments</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.finance.gateways') }}">Payment Gateways</a>
+                <a href="{{ generate_url('admin.payments.gateways') }}">Payment Gateways</a>
             </li>
             <li>
-                <a href="{{ generate_url('admin.finance.masspay') }}">Mass Pay</a>
+                <a href="{{ generate_url('admin.withdraws.masspay') }}">Mass Pay</a>
             </li>
             <li>
-                <a href="{{ generate_url('finance.masspay.generatemasspay') }}" target="_blank">Generate MassPay</a>
+                <a href="{{ generate_url('withdraws.masspay.generatemasspay') }}" target="_blank">Generate MassPay</a>
             </li>
 
         </ul>

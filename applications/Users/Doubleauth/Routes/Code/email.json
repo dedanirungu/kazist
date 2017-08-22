@@ -1,0 +1,10 @@
+{
+    "layout": [{
+            "tracking_id": "1",
+            "unique_name": "users.users.doubleauth",
+            "subject": "Double Authentication Code",
+            "short_body": "Double Authentication Code {{ doubleauth_code }}",
+
+            "body": "Double Authentication Code {{ doubleauth_code }}"
+        }]
+}

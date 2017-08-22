@@ -3,11 +3,11 @@
     "title": "Groups List",
     "explanation": "Groups List",
     "description": "Groups List",
-    "version": 6,
+    "version": 7,
     "has_view": "1",
     "tie_field": "0",
     "email_on_new": "0",
     "email_on_edit": "0",
     "email_on_delete": "0",
-    "date_file_modified": "2016-08-19 16:30:50"
+    "date_file_modified": "2017-08-22 05:00:06"
 }

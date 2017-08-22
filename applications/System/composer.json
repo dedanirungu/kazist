@@ -1,10 +1,10 @@
 {
     "name": "kazist/system",
-    "description": "Kazist System Manager.",
+    "description": "Kazist System Manager. ",
     "keywords": ["kazist", "system manager"],
     "homepage": "https://github.com/kazist/system",
     "license": "LGPL-3.0",
-    "version": "1.0.18",
+    "version": "1.0.28",
     "authors": [
         {
             "name": "Dedan Irungu",

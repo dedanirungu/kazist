@@ -20,11 +20,7 @@
                                                 "name",
                                                 "code",
                                                 "symbol",
-                                                "country_id",
-                                                "rate",
-                                                "published",
-                                                "buying",
-                                                "selling"
+                                                "country_id"
                                             ]
                                         }
                                     }
@@ -34,6 +30,33 @@
                                 "name": "",
                                 "class_name": "col-sm-6",
                                 "items": [
+                                    {
+                                        "group": {
+                                            "name": "Currency Rate",
+                                            "unique_name": "currency_rate",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "rate",
+                                                "buying",
+                                                "selling"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
+                                            "name": "Publishing Detail",
+                                            "unique_name": "publishing_detail",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "published",
+                                                "is_fetched"
+                                            ]
+                                        }
+                                    },
                                     {
                                         "group": {
                                             "name": "Modification Detail",
@@ -83,15 +106,11 @@
         }
     },
     "rights": {
-        "tab": [
-        ],
-        "group": [
-        ],
-        "field": [
-        ]
+        "tab": [],
+        "group": [],
+        "field": []
     },
-    "customhtmls": [
-    ],
+    "customhtmls": [],
     "fields": [
         {
             "dropdown_filter": "0",
@@ -108,17 +127,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -136,17 +151,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -164,17 +175,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -192,22 +199,18 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "country_id",
             "html_type": "select",
             "mysql_type": "int",
@@ -220,8 +223,7 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
+                "general": [],
                 "source": {
                     "data_source": "db_table",
                     "join_field": "id",
@@ -233,10 +235,8 @@
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -254,17 +254,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -282,17 +278,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -310,22 +302,18 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "published",
             "html_type": "yesno",
             "mysql_type": "int",
@@ -338,22 +326,39 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "name": "is_fetched",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "size": "",
+            "readonly": "0",
+            "default_value": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -366,22 +371,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -394,22 +395,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -422,22 +419,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -450,17 +443,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         }
     ],
@@ -470,7 +459,7 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "id"
+        "name"
     ],
     "main_view": "table",
     "has_view": "1",
@@ -492,11 +481,12 @@
             "sc.code",
             "sc.symbol",
             "sc.country_id",
-            "sc_7154.name AS country_id_name",
+            "sc_7276.name AS country_id_name",
             "sc.rate",
             "sc.buying",
             "sc.selling",
             "sc.published",
+            "sc.is_fetched",
             "sc.created_by",
             "sc.date_created",
             "sc.modified_by",
@@ -505,9 +495,9 @@
         "leftjoin": [
             {
                 "table": "Setup\\Countries\\Code\\Tables\\Countries",
-                "alias": "sc_7154",
+                "alias": "sc_7276",
                 "name": "#__setup_countries",
-                "on": "sc.country_id = sc_7154.id"
+                "on": "sc.country_id = sc_7276.id"
             }
         ]
     }

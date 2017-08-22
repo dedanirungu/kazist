@@ -21,76 +21,60 @@ use Kazist\Service\Database\Query;
  */
 class SettingsModel extends BaseModel {
 
-    public function getSubsets() {
+    public function getSettings($alias) {
 
-        $factory = new KazistFactory;
+        $settings_arr = array();
 
-        $query = $factory->getQueryBuilder('#__system_settings', 'ss');
-        $query->leftJoin('ss', '#__system_subsets', 'sub', 'sub.id=ss.subset_id');
-        $query->select('DISTINCT sub.*');
-        $query->where('ss.subset_id >= 1');
-        $query->orderBy('sub.title', 'ASC');
+        $dir = new \DirectoryIterator(JPATH_ROOT . 'applications');
+        foreach ($dir as $fileinfo) {
+            $file_name = $fileinfo->getFilename();
+            if ($fileinfo->isDir() && !$fileinfo->isDot()) {
 
-        $subsets = $query->loadObjectList();
+                $app_path = JPATH_ROOT . 'applications/' . $file_name;
 
-        return $subsets;
-    }
+                if (file_exists($app_path . '/setting.json')) {
 
-    public function getPathSubset($path) {
+                    $setting = json_decode(file_get_contents($app_path . '/setting.json'), true);
 
-        $factory = new KazistFactory;
-        
-        $new_path = str_replace('.', '/', $path);
-        
-        $query = $factory->getQueryBuilder('#__system_subsets', 'ss');
-        $query->orderBy('ss.title', 'ASC');
-        $query->where('ss.path=:path');
-        $query->setParameter('path', $new_path);
+                    if ($alias == $setting['alias']) {
+                        $setting = $this->prepareSetting($setting);
+                    }
 
-        $subset = $query->loadObject();
-
-        return $subset;
-    }
-
-    public function getSettings($path) {
-
-        $settings = array();
-        $path_arr = explode('.', $path);
-        $path_arr = array_map('ucfirst', $path_arr);
-
-        $new_path = JPATH_ROOT . 'applications/' . implode('/', $path_arr) . '/Code/setting.json';
-
-        if (file_exists($new_path)) {
-            $settings = json_decode(file_get_contents($new_path), true);
+                    $settings_arr[$setting['alias']] = $setting;
+                }
+            }
         }
 
-        $setting = $this->prepareSetting($settings);
+        ksort($settings_arr);
 
-
-        return $setting;
+        return $settings_arr;
     }
 
-    public function prepareSetting($settings) {
+    public function prepareSetting($setting_obj) {
 
-        if (!empty($settings)) {
-            foreach ($settings as $key => $setting) {
+        if (!empty($setting_obj)) {
+            foreach ($setting_obj['groups'] as $group_key => $group) {
+                if (!empty($group['settings'])) {
+                    foreach ($group['settings'] as $seting_key => $setting) {
 
-                $settings[$key]['options'] = array();
+                        $setting_obj['groups'][$group_key]['settings'][$seting_key]['options'] = array();
 
-                if ($setting['source']['custom'] <> '') {
-                    $settings[$key]['options'] = $setting['source']['custom'];
+                        if ($setting['source']['custom'] <> '') {
+                            $setting_obj['groups'][$group_key]['settings'][$seting_key]['options'] = $setting['source']['custom'];
+                        }
+
+                        if ($setting['source'] <> '') {
+                            $setting_obj['groups'][$group_key]['settings'][$seting_key]['options'] = array_merge($setting_obj[$key]['options'], $this->getSettingOptions($setting));
+                        }
+
+                        $setting_obj['groups'][$group_key]['settings'][$seting_key]['default'] = $this->getSettingDefault($setting);
+                    }
                 }
-
-                if ($setting['source'] <> '') {
-                    $settings[$key]['options'] = array_merge($settings[$key]['options'], $this->getSettingOptions($setting));
-                }
-
-                $settings[$key]['default'] = $this->getSettingDefault($setting);
             }
         }
 
 
-        return $settings;
+        return $setting_obj;
     }
 
     public function getSettingDefault($setting) {

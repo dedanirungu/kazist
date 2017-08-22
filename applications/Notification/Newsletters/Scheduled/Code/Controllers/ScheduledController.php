@@ -26,6 +26,8 @@ class ScheduledController extends BaseController {
     public function cronscheduledAction() {
 
         $this->model->sendScheduledList();
+
+        return $this->json($data);
     }
 
     public function tableinputAction() {

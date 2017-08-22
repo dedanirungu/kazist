@@ -23,8 +23,11 @@ use Setup\Currencies\Code\Models\CurrenciesModel;
 class CurrenciesController extends BaseController {
 
     public function cronfetchcurrencyAction() {
+        
         $currencyModel = new CurrenciesModel();
-        echo $currencyModel->fetchCurrency();
+        $currencyModel->fetchCurrency();
+
+        return $this->json($data);
     }
 
 }

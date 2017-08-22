@@ -1,6 +1,6 @@
 
 [{
-        "tracking_id": "1",
+        "system_tracking_id": "1",
         "name": "Blue Template",
         "template": "<table style=\"font-family: Arial, Helvetica, sans-serif; margin-top: 0px; margin-bottom: 30px; width: 1017px; height: 378px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n<tbody>\r\n<tr>\r\n<td style=\"background-color: #ededeb;\" height=\"30\">&nbsp;<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"padding: 0px 20px; text-align: center; background-color: #3c8dbc; color: white;\" height=\"57\">\r\n<h2>{{email_title}}<\/h2>\r\n<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"background-color: #ededeb;\" height=\"15\">&nbsp;<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"background-color: #ffffff; border: 1px solid #d7d7d7; padding: 20px;\"><hr style=\"border: 0; color: #ededeb; background-color: #ededeb; height: 1px; width: 100%; text-align: left;\" \/>\r\n<div style=\"margin: 10px auto; font-size: 16px; line-height: 18px; color: #444444;\">{{ layout|raw }}<\/div>\r\n<hr style=\"border: 0; color: #ededeb; background-color: #ededeb; height: 1px; width: 100%; text-align: left;\" \/><\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"background-color: #e0dfdf;\" height=\"3\">&nbsp;<\/td>\r\n<\/tr>\r\n<tr>\r\n<td style=\"text-align: center; background-color: #ededeb;\" height=\"30\">&nbsp;<\/td>\r\n<\/tr>\r\n<\/tbody>\r\n<\/table>",
         "published": "1"

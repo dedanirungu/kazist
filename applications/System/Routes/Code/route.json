@@ -1,41 +1,4 @@
 {
-    "frontend": [{
-            "title": "cron system route",
-            "description": "cron system route",
-            "controller": "System\\Routes\\Code\\Controllers\\RoutesController::processurlAction",
-            "unique_name": "system.routes.processurl",
-            "route": "system/routes/processurl",
-            "permissions": "can_view, can_viewown",
-            "arguments": [],
-            "keywords": "system, processurl",
-            "priority": "0.5",
-            "changefreq": "weekly",
-            "login_required": 0
-        }, {
-            "title": "cron system route",
-            "description": "cron system route",
-            "controller": "System\\Routes\\Code\\Controllers\\RoutesController::fetchlinksAction",
-            "unique_name": "system.routes.fetchlinks",
-            "route": "system/routes/fetchlinks",
-            "permissions": "can_view, can_viewown",
-            "arguments": [],
-            "keywords": "system, fetchlinks",
-            "priority": "0.5",
-            "changefreq": "weekly",
-            "login_required": 0
-        }, {
-            "title": "cron system route",
-            "description": "cron system route",
-            "controller": "System\\Routes\\Code\\Controllers\\RoutesController::processsitemapAction",
-            "unique_name": "system.routes.processsitemap",
-            "route": "system/routes/processsitemap",
-            "permissions": "can_view, can_viewown",
-            "arguments": [],
-            "keywords": "system, processsitemap",
-            "priority": "0.5",
-            "changefreq": "weekly",
-            "login_required": 0
-        }],
     "backend": [{
             "title": "General Tasks",
             "description": "General Tasks.",

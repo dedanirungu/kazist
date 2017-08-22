@@ -25,16 +25,22 @@ Setup\Currencies\Code\Tables\Currencies:
       name: country_id
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     rate:
+      scale: 2
+      precision: 11
       name: rate
       type: decimal
       nullable: true
     buying:
+      scale: 2
+      precision: 11
       name: buying
       type: decimal
       nullable: true
     selling:
+      scale: 2
+      precision: 11
       name: selling
       type: decimal
       nullable: true
@@ -42,25 +48,29 @@ Setup\Currencies\Code\Tables\Currencies:
       name: published
       type: integer
       length: 11
-      nullable: false
+      nullable: true
+    is_fetched:
+      name: is_fetched
+      type: integer
+      length: 11
     created_by:
       name: created_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_created:
       name: date_created
       type: datetime
-      nullable: false
+      nullable: true
     modified_by:
       name: modified_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_modified:
       name: date_modified
       type: datetime
-      nullable: false
+      nullable: true
   indexes:
     country_id_index:
       columns: [country_id]

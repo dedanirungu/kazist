@@ -69,6 +69,8 @@ class IndexesController extends BaseController {
     public function contentindexingAction() {
 
         $this->model->contentIndexing();
+        
+        return $this->json($data);
     }
 
 }

@@ -144,6 +144,13 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
+     * @ORM\Column(name="ip", type="string", length=255, nullable=true)
+     */
+    protected $ip;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="verification", type="string", length=255, nullable=true)
      */
     protected $verification;
@@ -621,6 +628,30 @@ class Users extends \Kazist\Table\BaseTable
     public function getAvatar()
     {
         return $this->avatar;
+    }
+
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     *
+     * @return Users
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->ip;
     }
 
     /**

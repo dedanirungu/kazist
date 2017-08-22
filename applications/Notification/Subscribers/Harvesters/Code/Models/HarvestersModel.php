@@ -39,22 +39,15 @@ class HarvestersModel extends BaseModel {
 
     public function processHarvesterEmails($harvester, $group_id) {
 
-        $system = new System();
         $factory = new KazistFactory();
 
-        $app_name = $system->getApplicationNameById($harvester->app_id);
-        $com_name = $system->getComponentNameById($harvester->com_id, $harvester->app_id);
-        $subset_name = $system->getSubsetNameById($harvester->subset_name, $harvester->com_id);
+        $table_name = strtolower(str_replace('/', '_', $harvester->extension_path));
 
-        $check_arr = array('is_email_harvested' => 0);
-        $table_name = $system->getTableName($app_name, $com_name, $subset_name);
-
-        $records = $factory->getRecords($table_name, 'tx', array('is_email_harvested=:is_email_harvested'), $check_arr);
+        $records = $factory->getRecords($table_name, 'tx');
 
         if (!empty($records)) {
             foreach ($records as $record) {
                 $this->saveEmails($record, $group_id, $harvester->user_field, $harvester->email_field);
-                $factory->saveRecord($table_name, array('id' => $record->id, 'is_email_harvested' => 1));
             }
         }
     }
@@ -65,22 +58,19 @@ class HarvestersModel extends BaseModel {
 
         if ($email_field <> '') {
             $email = $record->$email_field;
-        } elseif ($user_field <> '') {
-            $user_id = $record->$user_field;
-            $user = $factory->getQueryBuilder('#__users_users', 'uu', array('id=:id'), array('id' => $user_id));
-            $email = $user->email;
         }
 
         if ($email == '') {
-            $user_id = $record->created_by;
-            $user = $factory->getQueryBuilder('#__users_users', 'uu', array('id=:id'), array('id' => $user_id));
+            $user_id = ($user_field <> '' && isset($record->$user_field)) ? $record->$user_field : $record->created_by;
+
+            $user = $factory->getRecord('#__users_users', 'uu', array('id=:id'), array('id' => $user_id));
+          
             $email = $user->email;
         }
 
         if ((!filter_var($email, FILTER_VALIDATE_EMAIL) === false)) {
 
             $subscriber = $factory->getRecord('#__notification_subscribers', 'ns', array('email=:email'), array('email' => $email));
-
 
             if (!is_object($subscriber)) {
                 $data_obj = new \stdClass();
@@ -111,24 +101,25 @@ class HarvestersModel extends BaseModel {
         $query = new Query();
         $query->select('ng.*');
         $query->from('#__notification_groups', 'ng');
-        $query->where('ng.app_id=:app_id');
-        $query->andWhere('ng.com_id=:com_id');
-        $query->andWhere('ng.subset_id=:subset_id');
-        $query->setParameter('app_id', $harvester->app_id);
-        $query->setParameter('com_id', $harvester->com_id);
-        $query->setParameter('subset_id', $harvester->subset_id);
-
+        $query->where('ng.id=:id');
+        $query->setParameter('id', $harvester->group_id);
         $group = $query->loadObject();
 
+
         if (!is_object($group)) {
+
             $data_obj = new \stdClass();
-            $data_obj->subset_id = $harvester->subset_id;
-            $exist_obj = clone $data_obj;
             $data_obj->title = $harvester->title;
             $data_obj->name = ($harvester->name <> '') ? $harvester->name : $harvester->title;
             $data_obj->description = ($harvester->description <> '') ? $harvester->description : $harvester->title;
+            $group_id = $factory->saveRecord('#__notification_groups', $data_obj);
 
-            return $factory->saveRecord('#__notification_groups', $data_obj, $exist_obj);
+            $harvester_data_obj = new \stdClass();
+            $harvester_data_obj->id = $harvester->id;
+            $harvester_data_obj->group_id = $group_id;
+            $factory->saveRecord('#__notification_subscribers_harvesters', $harvester_data_obj);
+
+            return $group_id;
         } else {
             return $group->id;
         }

@@ -64,7 +64,7 @@
                 "date_created"
             ],
             "has_label": [
-                "id",
+                "name",
                 "ordering",
                 "published",
                 "created_by",
@@ -81,7 +81,7 @@
     "fields": [
         {
             "dropdown_filter": "1",
-            "nullable": "1",
+            "nullable": "0",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -131,7 +131,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "description",
             "html_type": "editor",
             "mysql_type": "text",
@@ -159,7 +159,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "ordering",
             "html_type": "text",
             "mysql_type": "int",
@@ -184,7 +184,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "published",
             "html_type": "yesno",
             "mysql_type": "int",
@@ -209,7 +209,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -234,7 +234,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -259,7 +259,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -284,7 +284,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -314,7 +314,7 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "id"
+        "name"
     ],
     "main_view": "table",
     "has_view": "1",

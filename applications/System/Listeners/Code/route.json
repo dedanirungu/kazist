@@ -1,0 +1,123 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::taskAction",
+            "unique_name": "admin.adverts.listeners.task",
+            "route": "admin/adverts/listeners/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "listeners, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Listener List",
+            "description": "Management of Listeners.",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.system.listeners",
+            "route": "admin/system/listeners",
+            "arguments": "",
+            "keywords": "listener, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Listener ",
+            "description": "Add Listener .",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::addAction",
+            "unique_name": "admin.system.listeners.add",
+            "route": "admin/system/listeners/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "listener,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Listener {{ item.name }}",
+            "description": "Edit Listener {{ item.name }}.",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::editAction",
+            "unique_name": "admin.system.listeners.edit",
+            "route": "admin/system/listeners/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "listener, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Listener Detail: {{ item.name }}",
+            "description": "Listener Detail: {{ item.name }}",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::detailAction",
+            "unique_name": "admin.system.listeners.detail",
+            "route": "admin/system/listeners/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "listener, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Listener Delete: {{ item.name }}",
+            "description": "Listener Delete: {{ item.name }}",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::deleteAction",
+            "unique_name": "admin.system.listeners.delete",
+            "route": "admin/system/listeners/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "listener, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Listener Save: {{ item.name }}",
+            "description": "Listener Save: {{ item.name }}",
+            "controller": "System\\Listeners\\Code\\Controllers\\Admin\\ListenersController::saveAction",
+            "unique_name": "admin.system.listeners.save",
+            "route": "admin/system/listeners/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "listener, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

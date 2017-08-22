@@ -21,6 +21,7 @@ use System\Extensions\Code\Classes\ListExtensions;
 use System\Extensions\Code\Classes\AutoDiscover;
 use System\Extensions\Code\Classes\FtpNew;
 use System\Extensions\Code\Classes\UpdateSystem;
+use Kazist\Service\Database\Query;
 
 defined('KAZIST') or exit('Not Kazist Framework');
 
@@ -195,6 +196,10 @@ class ExtensionsModel extends BaseModel {
         $table_prepared = $session->get('table_prepared');
 
         if (!$table_prepared || $clear_name == '') {
+
+            $this->doctrine->entity_path = JPATH_ROOT . 'applications/Media/Media/Code/Tables';
+            $this->doctrine->getEntityManager();
+
             $this->doctrine->entity_path = JPATH_ROOT . 'applications/System/Flexviews/Code/Tables';
             $this->doctrine->getEntityManager();
 
@@ -504,6 +509,7 @@ class ExtensionsModel extends BaseModel {
 
     public function updateData($data_path, $namespace = '') {
 
+        $query = new Query();
         $factory = new KazistFactory();
 
         $namespace_tablealias = '';
@@ -521,6 +527,11 @@ class ExtensionsModel extends BaseModel {
         foreach ($datas as $key => $data) {
 
             $data['system_tracking_id'] = (isset($data['system_tracking_id']) && $data['system_tracking_id']) ? $data['system_tracking_id'] : $data['tracking_id'];
+
+            if (array_key_exists('_table_name', $data) && $data['_table_name'] <> '') {
+                $namespace_tablename = $data['_table_name'];
+                $namespace_tablealias = $query->getTableAlias($data['_table_name']);
+            }
 
             if ($key > 500) {
                 break;

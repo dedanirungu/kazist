@@ -56,6 +56,12 @@ class Listeners extends \Kazist\Table\BaseTable {
      * @ORM\Column(name="published", type="integer", length=11)
      */
     protected $published;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ordering", type="integer", length=11)
+     */
+    protected $ordering;
 
     /**
      * @var integer
@@ -197,6 +203,26 @@ class Listeners extends \Kazist\Table\BaseTable {
      */
     public function getPublished() {
         return $this->published;
+    }
+    /**
+     * Set ordering
+     *
+     * @param integer $ordering
+     * @return Listeners
+     */
+    public function setOrdering($ordering) {
+        $this->ordering = $ordering;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return integer 
+     */
+    public function getOrdering() {
+        return $this->ordering;
     }
 
     /**

@@ -75,6 +75,8 @@ class NewslettersController extends BaseController {
     public function cronnewsletterAction() {
         $this->model = new NewslettersModel();
         $this->model->sendNewsletterList();
+        
+        return $this->json($data);
     }
 
 }

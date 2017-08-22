@@ -3,11 +3,11 @@
     "title": "Currencies",
     "explanation": "Currencies",
     "description": "Currencies",
-    "version": 38,
+    "version": 39,
     "has_view": "1",
     "tie_field": "0",
     "email_on_new": "0",
     "email_on_edit": "0",
     "email_on_delete": "0",
-    "date_file_modified": "2016-06-27 08:49:44"
+    "date_file_modified": "2017-08-22 07:07:39"
 }

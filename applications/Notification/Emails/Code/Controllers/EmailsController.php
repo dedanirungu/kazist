@@ -38,8 +38,7 @@ class EmailsController extends BaseController {
 
         $emailsender->sendEmailList();
 
-        echo json_encode('ok');
-        exit;
+        return $this->json('ok');
     }
 
 }

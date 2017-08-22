@@ -32,49 +32,49 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text", nullable=false)
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     protected $description;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="ordering", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="ordering", type="integer", length=11, nullable=true)
      */
     protected $ordering;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="published", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="published", type="integer", length=11, nullable=true)
      */
     protected $published;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
 
@@ -82,7 +82,7 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -93,6 +93,7 @@ class Groups extends \Kazist\Table\BaseTable
      * Set name
      *
      * @param string $name
+     *
      * @return Groups
      */
     public function setName($name)
@@ -105,7 +106,7 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -116,6 +117,7 @@ class Groups extends \Kazist\Table\BaseTable
      * Set description
      *
      * @param string $description
+     *
      * @return Groups
      */
     public function setDescription($description)
@@ -128,7 +130,7 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -139,6 +141,7 @@ class Groups extends \Kazist\Table\BaseTable
      * Set ordering
      *
      * @param integer $ordering
+     *
      * @return Groups
      */
     public function setOrdering($ordering)
@@ -151,7 +154,7 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * Get ordering
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrdering()
     {
@@ -162,6 +165,7 @@ class Groups extends \Kazist\Table\BaseTable
      * Set published
      *
      * @param integer $published
+     *
      * @return Groups
      */
     public function setPublished($published)
@@ -174,7 +178,7 @@ class Groups extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -182,9 +186,9 @@ class Groups extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -192,9 +196,9 @@ class Groups extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -202,9 +206,9 @@ class Groups extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -212,9 +216,9 @@ class Groups extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -228,3 +232,4 @@ class Groups extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+

@@ -1,6 +1,6 @@
 
 [{
-        "tracking_id": "1",
+        "system_tracking_id": "1",
         "title": "Sending Via PHP",
         "type": "php",
         "from_email": "kazist",

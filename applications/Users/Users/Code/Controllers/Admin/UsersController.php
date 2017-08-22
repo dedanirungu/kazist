@@ -80,10 +80,11 @@ class UsersController extends BaseController {
     }
 
     public function fetchuserAction() {
+
         $this->model = new UsersModel();
         $message = $this->model->fetchUser();
-        echo $message;
-        exit;
+
+        return $this->json($message);
     }
 
 }

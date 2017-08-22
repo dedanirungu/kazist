@@ -43,6 +43,12 @@
             "icon": "fa fa-archive",
             "children": []
         }, {
+            "title": "Listeners",
+            "alias": "admin_system_listeners",
+            "url": "admin/system/listeners",
+            "icon": "fa fa-cog",
+            "children": []
+        }, {
             "title": "Languages",
             "alias": "admin_system_languages",
             "url": "admin/system/languages",

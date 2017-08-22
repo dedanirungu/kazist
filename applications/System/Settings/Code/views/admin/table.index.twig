@@ -3,22 +3,17 @@
 
 <form id="{{ main_form_id }}" class="form-horizontal" action="{{ generate_url('admin.system.settings.save') }}" method="post" role="form"  enctype="multipart/form-data">
 
-
     <br>
     <div class="col-md-12">
         <div class="col-md-3">
             <ul id="kazi-system" class="nav nav-pills nav-stacked">
 
-                {% for key,subset in subsets %}
+                {% for key,setting in settings %}
 
-                    <li  {% if path_subset.id == subset.id %}class="active"{% endif %}> 
-                        {% if subset.path is not null %}
-                            <a href="{{ generate_url('admin.system.settings', { 'path':subset.path|replace({'/':'.'}) }) }}" title="{{ subset.title }}">
-                                {{ subset.title }}
-                            </a>
-                        {% else %}
-                            {{ subset.title }}
-                        {% endif %}
+                    <li {% if alias == setting.alias %}class="active"{% endif %}> 
+                        <a href="{{ generate_url('admin.system.settings', { 'alias':setting.alias }) }}" title="{{ subset.title }}">
+                            {{ setting.title }}
+                        </a>
                     </li>
 
                 {% endfor %}  
@@ -35,6 +30,7 @@
     </div>  
 
     {{ forms.input('_token' ) }} 
+    {{ forms.input('return_url' , 'hidden', return_url) }}
 
 </form>   
 

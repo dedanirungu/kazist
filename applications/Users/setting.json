@@ -1,0 +1,131 @@
+{
+    "title": "Users",
+    "alias": "users",
+    "groups": [{
+            "title": "User Setting",
+            "settings": [{
+                    "name": "users_users_frontend_category",
+                    "label": "Frontend Category",
+                    "default": "1",
+                    "tooltip": "Set the frontend category for the guest",
+                    "type": "yesno"
+                }, {
+                    "name": "users_users_login_attempts",
+                    "label": "Maximum Login Attempts",
+                    "default": "10",
+                    "tooltip": "Set Maximum Login Attempts.",
+                    "type": "text"
+                }, {
+                    "name": "users_users_double_auth",
+                    "label": "Enable Double Authentication",
+                    "default": "1",
+                    "tooltip": "Enable Double Authentication for Selected Routes",
+                    "type": "yesno"
+                }, {
+                    "name": "users_users_email_verification",
+                    "label": "Email Verification",
+                    "default": "1",
+                    "tooltip": "Enable user email verification when registering",
+                    "type": "yesno"
+                }, {
+                    "name": "users_users_login_using",
+                    "label": "Login Using",
+                    "default": "",
+                    "tooltip": "Set the option of logging in to the system. et email, username or both.",
+                    "type": "select",
+                    "source": {
+                        "custom": [{
+                                "value": "both",
+                                "text": "Both Username/Email"
+                            }, {
+                                "value": "email",
+                                "text": "Login With Email"
+                            }, {
+                                "value": "username",
+                                "text": "Login With Username"
+                            }]
+                    }
+                }]
+        }, {
+            "title": "Google",
+            "settings": [{
+                    "name": "google_login_allowed",
+                    "label": "Login Allowed",
+                    "default": "",
+                    "tooltip": "Set the allow login using google Api.",
+                    "type": "text"
+                }, {
+                    "name": "google_client_id",
+                    "label": "Google Client Id",
+                    "default": "",
+                    "tooltip": "Set the Google Client Id.",
+                    "type": "text"
+                }, {
+                    "name": "google_client_secret",
+                    "label": "Google Client Secret",
+                    "default": "",
+                    "tooltip": "Set the Google Client Secret.",
+                    "type": "text"
+                }, {
+                    "name": "google_developer_key",
+                    "label": "Google Developer Key",
+                    "default": "",
+                    "tooltip": "Set the Google Developer Key.",
+                    "type": "text"
+                }, {
+                    "name": "google_label",
+                    "label": "Google Label",
+                    "default": "Kazi Framework Test",
+                    "tooltip": "Google Label.",
+                    "type": "text"
+                }]
+        }, {
+            "title": "Facebook",
+            "settings": [{
+                    "name": "facebook_app_id",
+                    "label": "Facebook App Id",
+                    "default": "",
+                    "tooltip": "Set Facebook App Id",
+                    "type": "text"
+                }, {
+                    "name": "facebook_secret",
+                    "label": "Facebook Secret",
+                    "default": "Kazist Framework",
+                    "tooltip": "Set Kazist Framework",
+                    "type": "text"
+                }]
+        }, {
+            "title": "Twitter",
+            "settings": [{
+                    "name": "twitter_user",
+                    "label": "Twitter User",
+                    "default": "",
+                    "tooltip": "Set Twitter User",
+                    "type": "text"
+                }, {
+                    "name": "twitter_consumer_key",
+                    "label": "Twitter Consumer Key",
+                    "default": "",
+                    "tooltip": "Set Twitter Consumer Key",
+                    "type": "text"
+                }, {
+                    "name": "twitter_consumer_secret",
+                    "label": "Twitter Consumer Secret",
+                    "default": "",
+                    "tooltip": "Set Twitter Consumer Secret",
+                    "type": "text"
+                }, {
+                    "name": "twitter_oauth_access_token",
+                    "label": "Twitter Oauth Access Token",
+                    "default": "",
+                    "tooltip": "Set Twitter Oauth Access Token",
+                    "type": "text"
+                }, {
+                    "name": "twitter_oauth_access_token_secret",
+                    "label": "Twitter Oauth Access Token Secret",
+                    "default": "",
+                    "tooltip": "Set Twitter Oauth Access Token Secret",
+                    "type": "text"
+                }]
+        }]
+}

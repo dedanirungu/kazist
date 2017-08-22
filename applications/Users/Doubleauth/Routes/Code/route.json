@@ -1,0 +1,123 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::taskAction",
+            "unique_name": "admin.users.doubleauth.routes.task",
+            "route": "admin/users/doubleauth/routes/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "doubleauth, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Doubleauth Routes List",
+            "description": "Management of Doubleauth Routes.",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.users.doubleauth.routes",
+            "route": "admin/users/doubleauth/routes",
+            "arguments": "",
+            "keywords": "doubleauth, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Doubleauth  Routes",
+            "description": "Add Doubleauth  Routes.",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::addAction",
+            "unique_name": "admin.users.doubleauth.routes.add",
+            "route": "admin/users/doubleauth/routes/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "doubleauth, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Doubleauth Routes {{ item.name }}",
+            "description": "Edit Doubleauth Routes {{ item.name }}.",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::editAction",
+            "unique_name": "admin.users.doubleauth.routes.edit",
+            "route": "admin/users/doubleauth/routes/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "doubleauth, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Doubleauth Routes Detail: {{ item.name }}",
+            "description": "Doubleauth Routes Detail: {{ item.name }}",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::detailAction",
+            "unique_name": "admin.users.doubleauth.routes.detail",
+            "route": "admin/users/doubleauth/routes/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "doubleauth, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Doubleauth Routes Delete: {{ item.name }}",
+            "description": "Doubleauth Routes Delete: {{ item.name }}",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::deleteAction",
+            "unique_name": "admin.users.doubleauth.routes.delete",
+            "route": "admin/users/doubleauth/routes/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "doubleauth, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Doubleauth Routes Save: {{ item.name }}",
+            "description": "Doubleauth Routes Save: {{ item.name }}",
+            "controller": "Users\\Doubleauth\\Routes\\Code\\Controllers\\Admin\\RoutesController::saveAction",
+            "unique_name": "admin.users.doubleauth.routes.save",
+            "route": "admin/users/doubleauth/routes/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "doubleauth, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

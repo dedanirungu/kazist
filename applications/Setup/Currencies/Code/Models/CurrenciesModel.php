@@ -26,10 +26,8 @@ class CurrenciesModel extends BaseModel {
     public function fetchCurrency() {
 
         $factory = new KazistFactory();
-        $db = $factory->getDatabase();
         $query = new Query();
 
-        $this->checkCurrencyFetchField();
         $currencies = $this->getCurrencies();
 
         if (!empty($currencies)) {
@@ -46,7 +44,7 @@ class CurrenciesModel extends BaseModel {
     public function updateCurrency($currency) {
 
         $factory = new KazistFactory();
-
+        
         if ($currency->code <> '') {
 
             $rate_amount = $this->convertCurrency(1, 'USD', $currency->code);

@@ -7,8 +7,21 @@
                         "columns": [
                             {
                                 "name": "",
-                                "class_name": "col-sm-12",
+                                "class_name": "col-sm-5",
                                 "items": [
+                                    {
+                                        "group": {
+                                            "name": "General Detail",
+                                            "unique_name": "general_detail",
+                                            "has_title": 1,
+                                            "user_right": null,
+                                            "hide_on_new": null,
+                                            "fields": [
+                                                "title",
+                                                "field_name"
+                                            ]
+                                        }
+                                    },
                                     {
                                         "group": {
                                             "name": "Document Preview",
@@ -17,8 +30,6 @@
                                             "user_right": null,
                                             "hide_on_new": null,
                                             "fields": [
-                                                "return_url",
-                                                "preview",
                                                 "not_found",
                                                 "is_analyzed",
                                                 "type",
@@ -28,32 +39,24 @@
                                         }
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "columns": [
-                            {
-                                "name": "",
-                                "class_name": "col-sm-4",
-                                "items": [
-                                    {
-                                        "group": {
-                                            "name": "media Detail",
-                                            "unique_name": "media_detail",
-                                            "has_title": 1,
-                                            "user_right": null,
-                                            "hide_on_new": null,
-                                            "fields": [
-                                            ]
-                                        }
-                                    }
-                                ]
                             },
                             {
                                 "name": "",
-                                "class_name": "col-sm-4",
+                                "class_name": "col-sm-7",
                                 "items": [
+                                    {
+                                        "group": {
+                                            "name": "Media Details",
+                                            "unique_name": "media_details",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "preview",
+                                                "return_url"
+                                            ]
+                                        }
+                                    },
                                     {
                                         "group": {
                                             "name": "Modification Detail",
@@ -70,32 +73,22 @@
                                         }
                                     }
                                 ]
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "columns": [
                             {
                                 "name": "",
                                 "class_name": "col-sm-4",
-                                "items": [
-                                    {
-                                        "group": {
-                                            "name": "General Detail",
-                                            "unique_name": "general_detail",
-                                            "has_title": 1,
-                                            "user_right": null,
-                                            "hide_on_new": null,
-                                            "fields": [
-                                                "id",
-                                                "title",
-                                                "field_name"
-                                            ]
-                                        }
-                                    }
-                                ]
+                                "items": []
                             }
                         ]
                     }
                 ]
             },
             "ommitted": [
+                "id",
                 "file"
             ]
         },
@@ -103,24 +96,33 @@
             "fields": [
                 "title",
                 "file",
+                "route",
+                "type",
+                "field_name",
+                "not_found",
+                "is_analyzed",
+                "extension",
                 "created_by",
                 "date_created"
             ],
             "has_label": [
                 "title",
                 "file",
+                "route",
+                "type",
+                "field_name",
+                "not_found",
+                "is_analyzed",
+                "extension",
                 "created_by",
                 "date_created"
             ]
         }
     },
     "rights": {
-        "tab": [
-        ],
-        "group": [
-        ],
-        "field": [
-        ]
+        "tab": [],
+        "group": [],
+        "field": []
     },
     "customhtmls": [
         {
@@ -139,7 +141,7 @@
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -152,22 +154,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "title",
             "html_type": "text",
             "mysql_type": "varchar",
@@ -180,17 +178,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -208,42 +202,38 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "route",
             "html_type": "text",
             "mysql_type": "varchar",
             "view_side": "",
             "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
             "size": "",
             "readonly": "0",
-            "default_value": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "view_side": "both",
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -261,17 +251,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -289,17 +275,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -317,17 +299,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -345,17 +323,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -373,22 +347,18 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -401,22 +371,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -429,22 +395,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
@@ -457,22 +419,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -485,17 +443,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         }
     ],
@@ -505,7 +459,8 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "id"
+        "id",
+        "file"
     ],
     "main_view": "table",
     "has_view": "1",

@@ -2,6 +2,7 @@
         "tracking_id": "1",
         "class": "Search\\Indexes\\Code\\Listeners\\IndexesListener",
         "title": "Search Indexing Event Listener",
+        "ordering": "1",
         "description": "Listen For Indexing Events and Modify Indexing Detail"
     }]
 

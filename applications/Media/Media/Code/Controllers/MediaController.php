@@ -125,6 +125,8 @@ class MediaController extends BaseController {
     public function cronanalysemediaAction() {
         $this->model = new MediaModel();
         $this->model->analyseMedia();
+
+        return $this->json($data);
     }
 
 }

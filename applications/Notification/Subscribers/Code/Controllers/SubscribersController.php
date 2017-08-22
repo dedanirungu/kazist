@@ -25,7 +25,8 @@ class SubscribersController extends BaseController {
     function cronsyncuserAction() {
 
         $this->model->syncSyncUsers();
-        exit;
+       
+        return $this->json($data);
     }
 
     function indexAction($offset = 0, $limit = 0) {

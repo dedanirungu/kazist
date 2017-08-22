@@ -26,6 +26,8 @@ class HarvestersController extends BaseController {
 
         $harvesterModel = new HarvestersModel();
         $harvesterModel->emailHarverster();
+
+        return $this->json($data);
     }
 
 }

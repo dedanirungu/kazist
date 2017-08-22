@@ -2,23 +2,67 @@
 
 {% import "form.macro.twig" as forms %}
 
-<h4>Setting :- {{ path }}</h4>
+<h4>Setting :- {{ settings.title }}</h4>
 <hr>
 
 
-{% if settings %}
-    {% for setting in settings %}
+{% if settings.groups %}
+    {% for group in settings.groups %}
+        <div class="text-center">
+            <b>{{ group.title }}</b>
+        </div>
+        <hr style="border-style: dotted;">
+        {% if group.settings %}
+            {% for setting in group.settings %}
 
-        {{ forms.input(setting.name , setting.type, setting.default, setting.label, null, null, null, null, setting.options) }}
+                <div class="form-group {{ setting.name }}-group">
+
+                    <div class="col-sm-6">
+                        <label for="{{ setting.name }}" class="col-sm-12">{{ setting.label }}</label>
+                        <div class="col-sm-12 kazicode-form-field ">
+                            {{ forms.input(setting.name , setting.type, setting.default, null, null, null, null, null, setting.options) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        {% if setting.tooltip %}
+                            <i class="fa fa-info-circle"></i>
+                            <small>{{ setting.tooltip|raw }}</small>
+                        {% endif %}
+                    </div>
+
+                </div>
+            {% endfor %}
+        {% endif %}
     {% endfor %}
 {% endif %}
+
 <div>
     <div class="col-sm-3">&nbsp;</div>
     <div class="col-sm-9">
-        {{ forms.input('return_url' , 'hidden', generate_url('admin.system.settings',{ 'path':path })) }}
         <input class="btn btn-success" name="save" type="submit" value="Save">
     </div>
 </div>
 <br>
 <br>
+
+<style>
+    #main-setting hr{
+        margin-top:5px;
+        margin-bottom:5px;
+    }
+    
+    .form-group{
+        padding:5px;
+        border-bottom: 1px dotted #EFEFEF;
+        margin-bottom: 0;
+    }
+
+    .form-group .form-group{
+        border-bottom: none;
+    }
+    
+    #admin_system_settings_table .nav-pills li{
+        background: white;
+    }
+</style>
 

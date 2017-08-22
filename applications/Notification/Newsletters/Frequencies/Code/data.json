@@ -1,6 +1,6 @@
 
 [{
-        "tracking_id": "1",
+        "system_tracking_id": "1",
         "title": "Weekly(Monday)",
         "alias": "weekly",
         "how_to_repeat": "weekly",
@@ -14,7 +14,7 @@
         "repeated_day_of_week": "1",
         "repeated_year": "*"
     }, {
-        "tracking_id": "2",
+        "system_tracking_id": "2",
         "title": "Weekly(Sunday)",
         "alias": "weekly",
         "how_to_repeat": "weekly",
@@ -28,7 +28,7 @@
         "repeated_day_of_week": "0,7",
         "repeated_year": "*"
     }, {
-        "tracking_id": "3",
+        "system_tracking_id": "3",
         "title": "Weekend",
         "alias": "weekend",
         "how_to_repeat": "weekend",
@@ -42,7 +42,7 @@
         "repeated_day_of_week": "0,6,7",
         "repeated_year": "*"
     }, {
-        "tracking_id": "4",
+        "system_tracking_id": "4",
         "title": "Weekday",
         "alias": "weekday",
         "how_to_repeat": "weekday",
@@ -56,7 +56,7 @@
         "repeated_day_of_week": "1-5",
         "repeated_year": "*"
     }, {
-        "tracking_id": "3",
+        "system_tracking_id": "3",
         "title": "Monthly(First Day)",
         "alias": "monthly",
         "how_to_repeat": "monthly",
@@ -70,7 +70,7 @@
         "repeated_day_of_week": "*",
         "repeated_year": "*"
     }, {
-        "tracking_id": "4",
+        "system_tracking_id": "4",
         "title": "Monthly(28 Date)",
         "alias": "monthly",
         "how_to_repeat": "monthly",
@@ -84,7 +84,7 @@
         "repeated_day_of_week": "*",
         "repeated_year": "*"
     }, {
-        "tracking_id": "5",
+        "system_tracking_id": "5",
         "title": "Christmas",
         "alias": "christmas",
         "how_to_repeat": "yearly",
@@ -98,7 +98,7 @@
         "repeated_day_of_week": "*",
         "repeated_year": "*"
     }, {
-        "tracking_id": "6",
+        "system_tracking_id": "6",
         "title": "New year",
         "alias": "newyear",
         "how_to_repeat": "yearly",

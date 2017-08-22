@@ -273,7 +273,7 @@ class MediaModel extends BaseModel {
                 $data_obj = new \stdClass();
                 $data_obj->id = $media->id;
                 $data_obj->title = ($media->title != '') ? $media->title : $this->getMediaTitle($media->file);
-                $data_obj->not_found = $not_found;
+                $data_obj->not_found = (int)$not_found;
                 $data_obj->is_analyzed = 1;
                 $data_obj->extension = $mediamanager->getFileExtension($media->file);
                 $data_obj->type = $mediamanager->getFileType($data_obj->extension);

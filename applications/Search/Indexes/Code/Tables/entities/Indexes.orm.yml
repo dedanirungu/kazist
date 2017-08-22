@@ -16,16 +16,16 @@ Search\Indexes\Code\Tables\Indexes:
       type: string
       length: 255
       nullable: true
-    subset_id:
-      name: subset_id
-      type: integer
-      length: 11
-      nullable: false
+    table_name:
+      name: table_name
+      type: string
+      length: 255
+      nullable: true
     record_id:
       name: record_id
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     image:
       name: image
       type: integer
@@ -76,9 +76,6 @@ Search\Indexes\Code\Tables\Indexes:
       name: date_modified
       type: datetime
       nullable: true
-  indexes:
-    subset_id_index:
-      columns: [subset_id]
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

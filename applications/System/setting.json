@@ -1,0 +1,74 @@
+{
+    "title": "System",
+    "alias": "system",
+    "groups": [{
+            "title": "Contact Information",
+            "settings": [{
+                    "name": "system_setting_company_name",
+                    "label": "Company Name",
+                    "default": "Emshy Innovate",
+                    "tooltip": "Set your company name.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_postal_address",
+                    "label": "Company Post Address",
+                    "default": "20703",
+                    "tooltip": "Set your Company Post Address.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_postal_code",
+                    "label": "Company Postal Code",
+                    "default": "00400",
+                    "tooltip": "Set your Company Postal Code.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_physical_location",
+                    "label": "Company Physical Location",
+                    "default": "Kasarani",
+                    "tooltip": "Set your Company Physical Location.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_phone",
+                    "label": "Company Phone",
+                    "default": "254713034569",
+                    "tooltip": "Set your Company Phone.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_telephone",
+                    "label": "Company Telephone",
+                    "default": "254713034569",
+                    "tooltip": "Set your Company Telephone.",
+                    "type": "text"
+                }, {
+                    "name": "system_setting_company_email",
+                    "label": "Company Email",
+                    "default": "info@emshyinnovate.com",
+                    "tooltip": "Set your Company Email.",
+                    "type": "text"
+                }]
+        }, {
+            "title": "Copyright Information",
+            "settings": [{
+                    "name": "system_template_copyright_link",
+                    "label": "Copyright Link",
+                    "tooltip": "Set Copyright Link to be used on the display of templates.",
+                    "default": "http://emshyinnovate.com",
+                    "type": "text"
+                }, {
+                    "name": "system_template_copyright_link_text",
+                    "label": "Copyright Link Text",
+                    "default": "Emshy Innovate",
+                    "tooltip": "Set Copyright Link Text to be used on the display of templates.",
+                    "type": "text"
+                }]
+        }, {
+            "title": "System Execution Settings",
+            "settings": [{
+                    "name": "system_cron_run_page_load",
+                    "label": "Run Cron on Page Load",
+                    "default": "0",
+                    "tooltip": "Set to run Cron on Page Load or not. If set to yes, it will process cron on every page load.",
+                    "type": "yesno"
+                }]
+        }]
+}

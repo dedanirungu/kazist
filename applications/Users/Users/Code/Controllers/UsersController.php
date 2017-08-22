@@ -46,4 +46,11 @@ class UsersController extends BaseController {
         $this->model->fetchCaptcha();
     }
 
+    public function fetchuserAction() {
+        $this->model = new UsersModel();
+        $message = $this->model->fetchUser();
+        echo $message;
+        exit;
+    }
+
 }
