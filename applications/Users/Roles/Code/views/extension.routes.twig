@@ -30,7 +30,7 @@
                                                     {% set cur_permission = attribute(route.route_permissions, permission) %}
 
                                                     {% if permission != '' %}
-                                                        <input value="1" type="checkbox" {% if cur_permission %}checked{% endif %} role_id="{{ role.id }}" permission="{{ permission }}" route_id="{{ route.id }}"> {{ permission}}
+                                                        <input value="1" type="checkbox" {% if cur_permission %}checked{% endif %} role_id="{{ role.id }}" permission="{{ permission }}" route="{{ route.unique_name }}"> {{ permission}}
                                                     {% endif %} 
                                                 </li>
                                             {% endfor %}

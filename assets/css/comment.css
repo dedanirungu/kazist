@@ -17,10 +17,73 @@ This file is part of Kazist Framework.
     clear:both;
 }
 
-.kazi-comment-list .single-comment .single-comment-image{
-    width:48px;
-}
-
 .kazi-comment-list .single-comment{margin-left: 10px; border-left: 1px solid #eee; padding:2px;}
 .kazi_comment_posting_info{font-style: italic;}
 .kazi-comments > .kazi_comment_form_holder > .attachment{margin-left: 0;}
+
+.kazi-comments > .kazi_comment_form_holder img, .kazi-comments > .kazi-comment-list img,
+.kazi-comment-list .single-comment .single-comment-image{
+    width:48px;
+    height:48px;
+    float: left;
+    border: 1px solid #EFEFEF;
+    border-radius: 5px;
+    background: #dbdfe4;
+}
+
+.kazi-comments > .kazi_comment_form_holder textarea{
+    width: 100%;
+}
+
+.textarea-wrapper {
+    background: #fff;
+    border: 2px solid #dbdfe4;
+    position: relative;
+    border-radius: 4px;
+    margin: 0 0 0 64px;
+    margin-left: 64px;
+}
+
+.textarea-wrapper textarea {
+    border:none; 
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 64px;
+    padding:5px;
+}
+
+
+.textarea-wrapper .post-actions {
+
+    background: #f6f8f9;
+    border-radius: 0 0 2px 2px;
+    border-top: solid 2px #dbdfe4;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    transition: opacity linear .2s;
+    overflow: hidden;
+
+}
+
+.textarea-wrapper .post-by{
+    background: #737f85;
+    height: 36px;
+    color: white;
+    padding:5px;
+}
+.textarea-wrapper .post-by .post-by-name{
+    font-weight: bold;
+}
+
+.kazi_comment_save, .kazi_comment_attachment{
+    margin:2px;
+}
+
+.comment-wrapper{
+    background: #fff;
+    border-radius: 4px;
+    margin: 0 0 0 64px;
+    margin-left: 64px;
+}

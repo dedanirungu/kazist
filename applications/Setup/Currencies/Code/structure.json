@@ -336,14 +336,18 @@
             }
         },
         {
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "is_fetched",
             "html_type": "yesno",
             "mysql_type": "int",
             "view_side": "",
             "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
             "size": "",
             "readonly": "0",
-            "default_value": "",
             "format_value": "",
             "parameters": {
                 "general": [],
@@ -360,7 +364,7 @@
             "dropdown_filter": "0",
             "nullable": "1",
             "name": "created_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -372,7 +376,14 @@
             "format_value": "",
             "parameters": {
                 "general": [],
-                "source": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
@@ -384,7 +395,7 @@
             "dropdown_filter": "0",
             "nullable": "1",
             "name": "date_created",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -408,7 +419,7 @@
             "dropdown_filter": "0",
             "nullable": "1",
             "name": "modified_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -420,7 +431,14 @@
             "format_value": "",
             "parameters": {
                 "general": [],
-                "source": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
@@ -432,7 +450,7 @@
             "dropdown_filter": "0",
             "nullable": "1",
             "name": "date_modified",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -481,7 +499,7 @@
             "sc.code",
             "sc.symbol",
             "sc.country_id",
-            "sc_7276.name AS country_id_name",
+            "sc_1770.name AS country_id_name",
             "sc.rate",
             "sc.buying",
             "sc.selling",
@@ -495,9 +513,9 @@
         "leftjoin": [
             {
                 "table": "Setup\\Countries\\Code\\Tables\\Countries",
-                "alias": "sc_7276",
+                "alias": "sc_1770",
                 "name": "#__setup_countries",
-                "on": "sc.country_id = sc_7276.id"
+                "on": "sc.country_id = sc_1770.id"
             }
         ]
     }

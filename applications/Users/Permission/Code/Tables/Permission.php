@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Permission
  *
- * @ORM\Table(name="users_permission", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"}), @ORM\Index(name="role_id_index", columns={"role_id"})})
+ * @ORM\Table(name="users_permission", indexes={@ORM\Index(name="role_id_index", columns={"role_id"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Permission extends \Kazist\Table\BaseTable {
-
+class Permission extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -23,16 +23,16 @@ class Permission extends \Kazist\Table\BaseTable {
     protected $id;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="subset_id", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="route", type="string", length=255)
      */
-    protected $subset_id;
+    protected $route;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="role_id", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="role_id", type="integer", length=11, nullable=true)
      */
     protected $role_id;
 
@@ -113,245 +113,278 @@ class Permission extends \Kazist\Table\BaseTable {
      */
     protected $date_modified;
 
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set subset_id
+     * Set route
      *
-     * @param integer $subsetId
+     * @param string $route
+     *
      * @return Permission
      */
-    public function setSubsetId($subsetId) {
-        $this->subset_id = $subsetId;
+    public function setRoute($route)
+    {
+        $this->route = $route;
 
         return $this;
     }
 
     /**
-     * Get subset_id
+     * Get route
      *
-     * @return integer 
+     * @return string
      */
-    public function getSubsetId() {
-        return $this->subset_id;
+    public function getRoute()
+    {
+        return $this->route;
     }
 
     /**
-     * Set role_id
+     * Set roleId
      *
      * @param integer $roleId
+     *
      * @return Permission
      */
-    public function setRoleId($roleId) {
+    public function setRoleId($roleId)
+    {
         $this->role_id = $roleId;
 
         return $this;
     }
 
     /**
-     * Get role_id
+     * Get roleId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getRoleId() {
+    public function getRoleId()
+    {
         return $this->role_id;
     }
 
     /**
-     * Set can_add
+     * Set canAdd
      *
      * @param integer $canAdd
+     *
      * @return Permission
      */
-    public function setCanAdd($canAdd) {
+    public function setCanAdd($canAdd)
+    {
         $this->can_add = $canAdd;
 
         return $this;
     }
 
     /**
-     * Get can_add
+     * Get canAdd
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanAdd() {
+    public function getCanAdd()
+    {
         return $this->can_add;
     }
 
     /**
-     * Set can_view
+     * Set canView
      *
      * @param integer $canView
+     *
      * @return Permission
      */
-    public function setCanView($canView) {
+    public function setCanView($canView)
+    {
         $this->can_view = $canView;
 
         return $this;
     }
 
     /**
-     * Get can_view
+     * Get canView
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanView() {
+    public function getCanView()
+    {
         return $this->can_view;
     }
 
     /**
-     * Set can_write
+     * Set canWrite
      *
      * @param integer $canWrite
+     *
      * @return Permission
      */
-    public function setCanWrite($canWrite) {
+    public function setCanWrite($canWrite)
+    {
         $this->can_write = $canWrite;
 
         return $this;
     }
 
     /**
-     * Get can_write
+     * Get canWrite
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanWrite() {
+    public function getCanWrite()
+    {
         return $this->can_write;
     }
 
     /**
-     * Set can_delete
+     * Set canDelete
      *
      * @param integer $canDelete
+     *
      * @return Permission
      */
-    public function setCanDelete($canDelete) {
+    public function setCanDelete($canDelete)
+    {
         $this->can_delete = $canDelete;
 
         return $this;
     }
 
     /**
-     * Get can_delete
+     * Get canDelete
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanDelete() {
+    public function getCanDelete()
+    {
         return $this->can_delete;
     }
 
     /**
-     * Set can_viewown
+     * Set canViewown
      *
      * @param integer $canViewown
+     *
      * @return Permission
      */
-    public function setCanViewown($canViewown) {
+    public function setCanViewown($canViewown)
+    {
         $this->can_viewown = $canViewown;
 
         return $this;
     }
 
     /**
-     * Get can_viewown
+     * Get canViewown
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanViewown() {
+    public function getCanViewown()
+    {
         return $this->can_viewown;
     }
 
     /**
-     * Set can_writeown
+     * Set canWriteown
      *
      * @param integer $canWriteown
+     *
      * @return Permission
      */
-    public function setCanWriteown($canWriteown) {
+    public function setCanWriteown($canWriteown)
+    {
         $this->can_writeown = $canWriteown;
 
         return $this;
     }
 
     /**
-     * Get can_writeown
+     * Get canWriteown
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanWriteown() {
+    public function getCanWriteown()
+    {
         return $this->can_writeown;
     }
 
     /**
-     * Set can_deleteown
+     * Set canDeleteown
      *
      * @param integer $canDeleteown
+     *
      * @return Permission
      */
-    public function setCanDeleteown($canDeleteown) {
+    public function setCanDeleteown($canDeleteown)
+    {
         $this->can_deleteown = $canDeleteown;
 
         return $this;
     }
 
     /**
-     * Get can_deleteown
+     * Get canDeleteown
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCanDeleteown() {
+    public function getCanDeleteown()
+    {
         return $this->can_deleteown;
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCreatedBy() {
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
     /**
      * @ORM\PreUpdate
      */
-    public function onPreUpdate() {
+    public function onPreUpdate()
+    {
         // Add your code here
     }
-
 }
+

@@ -78,5 +78,13 @@
     "NotificationGroupsSubscribers": {
         "namespace": "Notification\\Groups\\Subscribers",
         "controller": "SubscribersController"
+    },
+    "NotificationInbox": {
+        "namespace": "Notification\\Inbox",
+        "controller": "InboxController"
+    },
+    "NotificationMessagesAttachments": {
+        "namespace": "Notification\\Messages\\Attachments",
+        "controller": "AttachmentsController"
     }
 }

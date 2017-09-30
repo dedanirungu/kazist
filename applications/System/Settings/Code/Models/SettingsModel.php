@@ -64,7 +64,7 @@ class SettingsModel extends BaseModel {
                         }
 
                         if ($setting['source'] <> '') {
-                            $setting_obj['groups'][$group_key]['settings'][$seting_key]['options'] = array_merge($setting_obj[$key]['options'], $this->getSettingOptions($setting));
+                            $setting_obj['groups'][$group_key]['settings'][$seting_key]['options'] = array_merge($setting_obj['groups'][$group_key]['settings'][$seting_key]['options'], $this->getSettingOptions($setting));
                         }
 
                         $setting_obj['groups'][$group_key]['settings'][$seting_key]['default'] = $this->getSettingDefault($setting);
@@ -83,7 +83,11 @@ class SettingsModel extends BaseModel {
 
         $record = $this->getQueryedRecord('#__system_settings', 'ss', array('ss.name=:name'), array('name' => $name));
 
-        return $record->value;
+        if (is_object($record)) {
+            return $record->value;
+        } else {
+            return $setting['default'];
+        }
     }
 
     public function getSettingOptions($setting) {
@@ -135,6 +139,8 @@ class SettingsModel extends BaseModel {
                 $record->name = $key;
                 $record->value = $item;
             }
+
+            $record->is_modified = 1;
 
             $this->saveRecord('#__system_settings', $record);
         }

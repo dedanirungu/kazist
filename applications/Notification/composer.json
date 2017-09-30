@@ -4,7 +4,7 @@
     "keywords": ["kazist", "notifications manager"],
     "homepage": "https://github.com/kazist/notifications",
     "license": "LGPL-3.0",
-     "version": "1.0.7",
+    "version": "1.0.9",
     "authors": [
         {
             "name": "Dedan Irungu",
@@ -12,5 +12,8 @@
             "homepage": "http://emshyinnovate.com",
             "role": "Founder & Developer"
         }
-    ]
+    ],
+    "require": {
+        "php-imap/php-imap": "@stable"
+    }
 }

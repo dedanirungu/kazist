@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ document.title }}</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <!-- Font Awesome -->
+        <script src="{{ web_root }}assets/js/jquery.js"/></script>
+        {{ set_assets('themes/backend/adminlte/css/skins/_all-skins.css', 'main') }}
+        {{ set_assets('themes/backend/adminlte/css/AdminLTE.css', 'main') }}
+        {{ set_assets('assets/js/kazist/kazist_adminevents.js', 'main') }}
+        {{ set_assets('themes/backend/adminlte/css/style.css', 'main') }}
+        {{ set_assets('assets/css/kazist.css', 'main') }}
+</head>
+<body class="sidebar-mini">
+    <div class="wrapper">
+
+        {% if response_content != '' %}
+            <div class="main-content">
+                {{ response_content|raw }}
+                <div style="clear:both;"></div>
+            </div>
+        {% endif %}
+    </div><!-- ./wrapper -->
+
+    {{ set_assets('themes/backend/adminlte/plugins/fastclick/fastclick.min.js', 'main') }}
+    {{ set_assets('themes/backend/adminlte/js/app.js', 'main') }}
+    {{ set_assets('themes/backend/adminlte/js/adminlte.js', 'main') }}
+    {{ set_assets('themes/backend/adminlte/js/custom.js', 'main') }}
+
+</body>
+</html>

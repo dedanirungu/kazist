@@ -1,10 +1,8 @@
 
 {{ set_assets('applications/Users/assets/js/role.js') }}
 
-{% set extensions = callFunction( "Users.Roles.Code.Models.RolesModel", 'getSystemExtensions' ) %}
+{% set extensions = callFunction( "Users.Roles.Code.Models.RolesModel", 'getSystemRouteSets' ) %}
 {% set viewsides = callFunction( "Users.Roles.Code.Models.RolesModel", 'getViewSides' ) %}
-
-
 
 {% set applications = get_context('applications') %}
 {% set item = get_context('item') %}
@@ -84,11 +82,11 @@
             html.find('input').click(function () {
 
                 var role_id = jQuery(this).attr('role_id');
-                var route_id = jQuery(this).attr('route_id');
+                var route = jQuery(this).attr('route');
                 var permission = jQuery(this).attr('permission');
                 var value = (jQuery(this).is(':checked')) ? 1 : 0;
 
-                var data_object = {"role_id": role_id, "route_id": route_id, "permission": permission, "value": value};
+                var data_object = {"role_id": role_id, "route": route, "permission": permission, "value": value};
 
                 table_fields = kazist.callAjaxByRoute('admin.users.roles.savepermission', data_object, false);
 

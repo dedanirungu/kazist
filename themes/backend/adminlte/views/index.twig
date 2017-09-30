@@ -72,7 +72,11 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-body">
-                                    {{ block_index.render_block('navbar_user') }}
+                                    {% if navbar_user|length > 0 %}
+                                        {% for block in navbar_user %}
+                                            {{ block_index.render_single_block( block, true) }}
+                                        {% endfor %}
+                                    {% endif %}
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">

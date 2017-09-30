@@ -8,6 +8,7 @@ and open the template in the editor.
     Author     : sbc
 */
 
+
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -- My Enhancement -- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 .clr{clear:both; margin-top: 3px;}
 .item-listing{list-style: none; margin-left:5px; padding-left:0;}
@@ -167,4 +168,9 @@ div.no-record{
     font-size: 20px;
     border:2px dotted #DDD;
     background: white;
+}
+
+.recordpicker .modal-body{
+    margin:0;
+    padding:0;
 }

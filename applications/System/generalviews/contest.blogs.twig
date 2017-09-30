@@ -30,12 +30,12 @@
                         </td>
                         <td>
                             {% if blog.contest_start_date != '0000-00-00 00:00:00' %}
-                                {{ blog.contest_start_date ? blog.contest_start_date|date('d M Y') }}
+                                {{ blog.contest_start_date ? blog.contest_start_date|date('d M Y',  document.timezone) }}
                             {% endif %}
                         </td>
                         <td>
                             {% if blog.contest_end_date != '0000-00-00 00:00:00' %}
-                                {{ blog.contest_end_date ? blog.contest_end_date|date('d M Y') }}
+                                {{ blog.contest_end_date ? blog.contest_end_date|date('d M Y',  document.timezone) }}
                             {% endif %}
                         </td>
                         <td>

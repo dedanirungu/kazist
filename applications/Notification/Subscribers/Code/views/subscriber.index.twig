@@ -2,7 +2,7 @@
 
 {% import "form.macro.twig" as forms %}
 
-<h1> You are now unsuscribed from the following Email Detail</h1>
+<h1 class="component-header"> You are now unsuscribed from the following Email Detail</h1>
 
 {{ forms.input('name', 'text', subscriber.name, 'Name', null, null, null, 1)  }}
 {{ forms.input('email', 'text', subscriber.email, 'Email', null, null, null, 1)  }}

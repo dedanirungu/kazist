@@ -2,7 +2,7 @@
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -15,56 +15,39 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "0",
-            "nullable": "0",
-            "name": "subset_id",
-            "html_type": "select",
-            "mysql_type": "int",
-            "view_side": "both",
+            "name": "route",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
             "index": "",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
             "size": "",
             "readonly": "0",
+            "default_value": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": {
-                    "data_source": "db_table",
-                    "join_field": "id",
-                    "display_field": [
-                        "title"
-                    ],
-                    "join_table_name": "system_subsets"
-                },
+                "general": [],
+                "source": [],
                 "save": {
+                    "view_side": "both",
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "role_id",
             "html_type": "select",
             "mysql_type": "int",
@@ -77,8 +60,7 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
+                "general": [],
                 "source": {
                     "data_source": "db_table",
                     "join_field": "id",
@@ -90,10 +72,8 @@
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -111,18 +91,14 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "view_side": "both",
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -140,17 +116,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -168,18 +140,14 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "view_side": "both",
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -197,17 +165,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -225,17 +189,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -253,17 +213,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -281,24 +237,20 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "created_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -309,24 +261,27 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "date_created",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -337,24 +292,20 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "modified_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -365,24 +316,27 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "date_modified",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -393,17 +347,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         }
     ],
@@ -431,8 +381,7 @@
         },
         "select": [
             "up.id",
-            "up.subset_id",
-            "ss.title AS subset_id_title",
+            "up.route",
             "up.role_id",
             "ur.title AS role_id_title",
             "up.can_add",
@@ -448,12 +397,6 @@
             "up.date_modified"
         ],
         "leftjoin": [
-            {
-                "table": "System\\Subsets\\Code\\Tables\\Subsets",
-                "alias": "ss",
-                "name": "#__system_subsets",
-                "on": "up.subset_id = ss.id"
-            },
             {
                 "table": "Users\\Roles\\Code\\Tables\\Roles",
                 "alias": "ur",

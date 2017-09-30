@@ -108,6 +108,22 @@ class NewRouterCollection extends RouteCollection {
             '_controller' => 'Kazist\Controller\\UserController::loginCheckAction',
         )));
 
+        $this->add('doubleauth', new Routing\Route('/doubleauth', array(
+            '_controller' => 'Kazist\Controller\\UserController::doubleauthAction',
+        )));
+
+        $this->add('admin.doubleauth', new Routing\Route('/admin/doubleauth', array(
+            '_controller' => 'Kazist\Controller\\UserController::doubleauthAction',
+        )));
+
+        $this->add('doubleauth_check', new Routing\Route('/doubleauth-check', array(
+            '_controller' => 'Kazist\Controller\\UserController::doubleauthCheckAction',
+        )));
+
+        $this->add('admin.doubleauth_check', new Routing\Route('/admin/doubleauth-check', array(
+            '_controller' => 'Kazist\Controller\\UserController::doubleauthCheckAction',
+        )));
+
         $this->add('user_invite', new Routing\Route('/invite/{username}', array(
             'username' => null,
             '_controller' => 'Kazist\Controller\\UserController::userInviteAction',
@@ -247,6 +263,9 @@ class NewRouterCollection extends RouteCollection {
         $doctrine->entity_path = JPATH_ROOT . 'applications/Users/Groups/Code/Tables';
         $doctrine->getEntityManager();
 
+        $doctrine->entity_path = JPATH_ROOT . 'applications/Users/Doubleauth/Routes/Code/Tables';
+        $doctrine->getEntityManager();
+
         $doctrine->entity_path = JPATH_ROOT . 'applications/Users/Users/Code/Tables';
         $doctrine->getEntityManager();
 
@@ -334,7 +353,7 @@ class NewRouterCollection extends RouteCollection {
         foreach ($dir as $appfileinfo) {
 
             $app_file_name = $appfileinfo->getFilename();
-
+        
             if ($appfileinfo->isDir() && !$appfileinfo->isDot()) {
 
                 $app_path = JPATH_ROOT . 'applications/' . $app_file_name;

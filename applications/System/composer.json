@@ -4,7 +4,7 @@
     "keywords": ["kazist", "system manager"],
     "homepage": "https://github.com/kazist/system",
     "license": "LGPL-3.0",
-    "version": "1.0.28",
+    "version": "1.0.34",
     "authors": [
         {
             "name": "Dedan Irungu",

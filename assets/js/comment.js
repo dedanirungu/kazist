@@ -15,20 +15,20 @@ kazi_comment = function () {
     return {
         saveComment: function (comment, comment_id, parent_id, attachments) {
 
-            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id, comment: comment, parent_id: parent_id, comment_id: comment_id, attachments: attachments};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.record_id, comment: comment, parent_id: parent_id, comment_id: comment_id, attachments: attachments};
             var msg = kazist.callAjaxByRoute('notification.comments.savecomment', data_object);
             kazi_comment.commentsHtml(msg);
 
         }, deleteComment: function (comment_id) {
 
-            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id, comment_id: comment_id};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.record_id, comment_id: comment_id};
             var msg = kazist.callAjaxByRoute('notification.comments.deletecomment', data_object);
             kazi_comment.commentsHtml(msg);
 
         },
         fetchComments: function () {
 
-            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.document.record_id};
+            var data_object = {subset_id: kazist_document.extension_path, record_id: kazist_document.record_id};
             var msg = kazist.callAjaxByRoute('notification.comments.fetchcomment', data_object);
             kazi_comment.commentsHtml(msg);
         },
@@ -45,7 +45,7 @@ kazi_comment = function () {
                 html.find('.kazi_reply_comment_btn').on('click', function () {
                     var this_element = jQuery(this);
                     var single_comment = this_element.closest('.single-comment');
-                    var form_holder = single_comment.find(' > .kazi_comment_form_holder');
+                    var form_holder = single_comment.find(' > .comment-wrapper >  .kazi_comment_form_holder');
 
                     kazi_comment.generateFormHTML(form_holder, true);
                 });
@@ -53,8 +53,8 @@ kazi_comment = function () {
                 html.find('.kazi_edit_comment_btn').on('click', function () {
                     var this_element = jQuery(this);
                     var single_comment = this_element.closest('.single-comment');
-                    var form_holder = single_comment.find(' > .kazi_comment_form_holder');
-                    var comment = single_comment.find(' > #comment').val();
+                    var form_holder = single_comment.find('> .comment-wrapper > .kazi_comment_form_holder');
+                    var comment = single_comment.find('> .comment-wrapper > #comment').val();
 
                     kazi_comment.generateFormHTML(form_holder, true, comment, true);
                 });
@@ -67,7 +67,7 @@ kazi_comment = function () {
 
                         var this_element = jQuery(this);
                         var single_comment = this_element.closest('.single-comment');
-                        var comment_id = single_comment.find(' > #comment_id').val();
+                        var comment_id = single_comment.find('> .comment-wrapper > #comment_id').val();
 
                         kazi_comment.deleteComment(comment_id);
                     }
@@ -85,13 +85,17 @@ kazi_comment = function () {
 
                 html += '<div class="single-comment item">';
                 html += '<img src="' + single_comment.avatar + '" align="left" alt="user image" class="online single-comment-image">';
+               
+                html += '<div class="comment-wrapper">';
                 html += '<a href="#" class="name">'
-                        + '<small class="text-muted pull-right"><i class="fa fa-clock-o"></i> ' + single_comment.date_created + '</small>'
-                        + single_comment.user_full_name
+                        + single_comment.user_full_name+'&nbsp;'
+                        + ' <small class="text-muted"><i class="fa fa-clock-o"></i> ' + single_comment.date_created + '</small>'
                         + '</a>';
-                html += '<p class="message">';
+
+                html += '<p>';
                 html += single_comment.comment;
-                html += '<br>';
+                html += '</p>';
+             
 
                 if (attachments.length) {
                     html += '<div class="kazi_comment_attachments_holder attachment">';
@@ -129,6 +133,8 @@ kazi_comment = function () {
                 html += '<input type="hidden" id="comment" value="' + single_comment.comment + '">';
 
                 html += '</div>';
+                html += '</div>';
+                html += '</div>';
             });
 
             return html;
@@ -146,17 +152,27 @@ kazi_comment = function () {
 
             jQuery('.kazi-comment-list .kazi_comment_form_holder').hide();
 
-            var tmp_html = '<div class="attachment">';
-            tmp_html += '<textarea id="kazi_reply_comments_post" class="form-control input-sm comments" name="comments">' + comment + '</textarea>';
-            tmp_html += '<a class="kazi_comment_attachment btn btn-primary btn-xs" data-toggle="modal" data-target="#mediaModal" field_name="' + random_number + '" application_name="notification" component_name="comments" subset_name="comments" saving_type="multiple" for_comment="1">Attachment</a> &nbsp;';
-            tmp_html += '<input class="kazi_comment_save btn btn-success btn-xs" type="submit" name="reply_comment" value="Save Comment">';
+            var tmp_html = '<div>';
+            tmp_html += '<img src="' + kazist_document.web_root + '/' + comment_user_avatar + '">';
+
+            tmp_html += '<div class="textarea-wrapper">';
+            tmp_html += '<textarea id="kazi_reply_comments_post" class="comments" name="comments">' + comment + '</textarea>';
+
+            tmp_html += '<div class="post-actions">';
+            tmp_html += '<div class="post-by pull-left hidden-xs">';
+            tmp_html += 'Post as: <span class="post-by-name">' + comment_user_name + '</span>';
+            tmp_html += '</div>';
+            tmp_html += '<button class="kazi_comment_save btn btn-success btn-sm pull-right" type="submit" name="reply_comment"><i class="fa fa-save"></i>Save</button>';
+            tmp_html += '<a class="kazi_comment_attachment btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#mediaModal" field_name="' + random_number + '" application_name="notification" component_name="comments" subset_name="comments" saving_type="multiple" for_comment="1"><i class="fa fa-upload"></i> Attach </a> &nbsp;';
             tmp_html += '<input class="kazi_comment_editing" type="hidden" name="editing" value="' + editing + '">';
+            tmp_html += '</div>';
+            tmp_html += '</div>';
 
             tmp_html += '<div class="comment_attachment_' + random_number + '">';
             tmp_html += '<ul>';
 
             if (is_for_editing) {
-                var attachments = host_object.closest('.single-comment').find('> .kazi_comment_attachments_holder > span');
+                var attachments = host_object.closest('.single-comment').find('> .comment-wrapper > .kazi_comment_attachments_holder > span');
 
                 attachments.each(function () {
                     attachment = jQuery(this);
@@ -197,8 +213,8 @@ kazi_comment = function () {
                 var comment_attachment_ids = jQuery(this).closest('.attachment').find('.comment_attachment_ids');
 
                 if (single_comment.length) {
-                    parent_id = single_comment.find('> #parent_id').val();
-                    comment_id = single_comment.find('> #comment_id').val();
+                    parent_id = single_comment.find('> .comment-wrapper > #parent_id').val();
+                    comment_id = single_comment.find('> .comment-wrapper > #comment_id').val();
                     if (!parseInt(editing)) {
                         parent_id = comment_id;
                         comment_id = '';

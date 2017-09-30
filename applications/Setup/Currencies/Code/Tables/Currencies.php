@@ -81,7 +81,7 @@ class Currencies extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
-     * @ORM\Column(name="is_fetched", type="integer", length=11)
+     * @ORM\Column(name="is_fetched", type="integer", length=11, nullable=true)
      */
     protected $is_fetched;
 

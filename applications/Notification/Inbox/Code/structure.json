@@ -1,0 +1,177 @@
+{
+    "fields": [
+        {
+            "dropdown_filter": "true",
+            "name": "id",
+            "html_type": "text",
+            "mysql_type": "int",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "true",
+            "name": "title",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "true",
+            "name": "created_by",
+            "html_type": "text",
+            "mysql_type": "int",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "true",
+            "name": "date_created",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "true",
+            "name": "modified_by",
+            "html_type": "text",
+            "mysql_type": "int",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "true",
+            "name": "date_modified",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        }
+    ],
+    "views": {
+        "table": {
+            "fields": [
+                "id",
+                "title",
+                "created_by",
+                "date_created"
+            ]
+        },
+        "edit": {
+            "structure": {
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "items": [
+                                    {
+                                        "group": {
+                                            "name": "Inbox Detail",
+                                            "fields": [
+                                                "id",
+                                                "title",
+                                                "created_by",
+                                                "date_created"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ommitted": [
+                "modified_by",
+                "date_modified"
+            ]
+        }
+    },
+    "primarykey": "id",
+    "foreignkey": "",
+    "renamedfields": "",
+    "main_view": "table",
+    "has_view": 1,
+    "tie_field": 0,
+    "subset_name": "Inbox",
+    "table_name": "notification_inbox"
+}

@@ -25,7 +25,7 @@
                     </a>
                 </div>
                 <div class="text-capitalize">
-                    <i class="fa fa-clock-o"></i> {{ items.0.date_created|date('d M Y H:i') }}
+                    <i class="fa fa-clock-o"></i> {{ items.0.date_created|date('d M Y H:i',  document.timezone) }}
                 </div>
                 <div class="text-capitalize pull-right">
                     <a>
@@ -88,7 +88,7 @@
                                 </a>
                             </div>
                             <div class="text-capitalize">
-                                <i class="fa fa-clock-o"></i> {{ items.0.date_created|date('d M Y H:i') }}
+                                <i class="fa fa-clock-o"></i> {{ items.0.date_created|date('d M Y H:i',  document.timezone) }}
                             </div>
                             <div class="text-capitalize pull-right">
                                 <a>

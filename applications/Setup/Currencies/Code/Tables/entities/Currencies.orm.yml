@@ -53,6 +53,7 @@ Setup\Currencies\Code\Tables\Currencies:
       name: is_fetched
       type: integer
       length: 11
+      nullable: true
     created_by:
       name: created_by
       type: integer

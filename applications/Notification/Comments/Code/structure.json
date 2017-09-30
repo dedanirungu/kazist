@@ -237,7 +237,7 @@
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "created_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -248,17 +248,20 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -293,7 +296,7 @@
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "modified_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -304,17 +307,20 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {

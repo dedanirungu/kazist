@@ -6,16 +6,15 @@ Users\Permission\Code\Tables\Permission:
       type: integer
       generator: { strategy: AUTO }
   fields:
-    subset_id:
-      name: subset_id
-      type: integer
-      length: 11
-      nullable: false
+    route:
+      name: route
+      type: string
+      length: 255
     role_id:
       name: role_id
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     can_add:
       name: can_add
       type: integer
@@ -70,8 +69,6 @@ Users\Permission\Code\Tables\Permission:
       type: datetime
       nullable: false
   indexes:
-    subset_id_index:
-      columns: [subset_id]
     role_id_index:
       columns: [role_id]
   lifecycleCallbacks:

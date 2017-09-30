@@ -25,45 +25,60 @@ class RolesModel extends BaseModel {
 
         $role_id = $this->request->get('role_id');
         $permission = $this->request->get('permission');
-        $route_id = $this->request->get('route_id');
+        $route = $this->request->get('route');
         $value = $this->request->get('value');
 
         $data_obj = new \stdClass();
         $data_obj->role_id = $role_id;
-        $data_obj->route_id = $route_id;
+        $data_obj->route = $route;
         $exist_obj = clone $data_obj;
         $data_obj->$permission = (int) $value;
 
-        $id = $this->saveRecordByEntity('#__system_routes_permissions', $data_obj, array('role_id=:role_id', 'route_id=:route_id'), $exist_obj);
+        $id = $this->saveRecordByEntity('#__users_permission', $data_obj, array('role_id=:role_id', 'route_id=:route_id'), $exist_obj);
     }
 
     public function getViewSides() {
         $tmp_array = array();
 
-        $tmp_array[] = array('value' => 'front', 'text' => 'Front Side');
-        $tmp_array[] = array('value' => 'back', 'text' => 'Back Side');
+        $tmp_array[] = array('value' => 'frontend', 'text' => 'Front Side');
+        $tmp_array[] = array('value' => 'backend', 'text' => 'Back Side');
 
         return $tmp_array;
     }
 
-    public function getSystemExtensions() {
+    public function getSystemRouteSets() {
 
         $tmp_array = array();
 
-        $query = new Query();
-        $query->select('se.*');
-        $query->from('#__system_extensions', 'se');
-        $query->where('extension=:extension');
-        $query->setParameter('extension', 'component');
-        $query->orderBy('se.name');
+        $dir = new \DirectoryIterator(JPATH_ROOT . 'applications');
 
-        $records = $query->loadObjectList();
+        foreach ($dir as $fileinfo) {
 
-        if (!empty($records)) {
-            foreach ($records as $record) {
-                $tmp_array[] = array('value' => $record->name, 'text' => $record->name);
+            $file_name = $fileinfo->getFilename();
+
+            if ($fileinfo->isDir() && !$fileinfo->isDot()) {
+
+                $app_path = JPATH_ROOT . 'applications/' . $file_name;
+
+                if (file_exists($app_path . '/namespace.json')) {
+                    $namespace_arr = json_decode(file_get_contents($app_path . '/namespace.json'), true);
+
+                    foreach ($namespace_arr as $key => $namespace) {
+
+                        $code_folder = JPATH_ROOT . 'applications/' . str_replace('\\', '/', $namespace['namespace']);
+
+                        if (file_exists($code_folder . '/Code/route.json')) {
+                            
+                            $namespace_key = str_replace('\\', '', $namespace['namespace']);
+                            $namespace_label = str_replace('\\', ' ', $namespace['namespace']);
+                            $tmp_array[$namespace_key] = array('value' => $namespace['namespace'], 'text' => $namespace_label);
+                        }
+                    }
+                }
             }
         }
+
+        ksort($tmp_array);
 
         return $tmp_array;
     }
@@ -71,51 +86,42 @@ class RolesModel extends BaseModel {
     public function getRouteList() {
 
         $tmp_array = array();
+        $tmp_role_id = $this->request->get('role_id');
         $tmp_route = $this->request->get('extension');
         $viewside = $this->request->get('viewside');
-        $route = str_replace('kazist/', '', $tmp_route);
 
-        $query = new Query();
-        $query->select('sr.*');
-        $query->from('#__system_routes', 'sr');
-        if ($viewside == 'front') {
-            $query->where('route LIKE :route_front');
-            $query->setParameter('route_front', $route . '/%');
-        } elseif ($viewside == 'back') {
-            $query->orWhere('route LIKE :route_back');
-            $query->setParameter('route_back', 'admin/' . $route . '/%');
-        } else {
-            $query->where('route LIKE :route_front');
-            $query->setParameter('route_front', $route . '/%');
-            $query->orWhere('route LIKE :route_back');
-            $query->setParameter('route_back', 'admin/' . $route . '/%');
-        }
-        $query->orderBy('sr.route');
-        $records = $query->loadObjectList();
+        $tmp_route_path = JPATH_ROOT . 'applications/' . $tmp_route . '/Code/route.json';
+        $route_path = str_replace('\\', '/', $tmp_route_path);
 
-        if (!empty($records)) {
-            foreach ($records as $key => $record) {
-                $permission_str = str_replace(' ', '', $records[$key]->permissions);
-                $records[$key]->permissions = explode(',', $permission_str);
-                $records[$key]->route_permissions = $this->getRoutePermissions($record);
+        if (file_exists($route_path)) {
+
+            $front_back_routes = json_decode(file_get_contents($route_path), true);
+
+            $routes = $front_back_routes[$viewside];
+
+            if (!empty($routes)) {
+                foreach ($routes as $key => $route) {
+                    $permission_str = str_replace(' ', '', $route['permissions']);
+                    $routes[$key]['permissions'] = explode(',', $permission_str);
+                    $routes[$key]['route_permissions'] = $this->getRoutePermissions($route, $tmp_role_id);
+                }
             }
         }
 
-        return $records;
+
+        return $routes;
     }
 
-    public function getRoutePermissions($record) {
-
-        $tmp_array = array();
+    public function getRoutePermissions($route, $role_id) {
 
         $query = new Query();
         $query->select('srp.*');
-        $query->from('#__system_routes_permissions', 'srp');
-        $query->where('srp.route_id LIKE :route_id');
-        $query->setParameter('route_id', $record->id);
+        $query->from('#__users_permission', 'srp');
+        $query->where('srp.route = :route');
+        $query->setParameter('route', $route['unique_name']);
+        $query->andWhere('srp.role_id = :role_id');
+        $query->setParameter('role_id', $role_id);
         $record = $query->loadObject();
-
-      
 
         return $record;
     }

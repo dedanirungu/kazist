@@ -16,6 +16,7 @@ namespace Kazist\Model;
 
 defined('KAZIST') or exit('Not Kazist Framework');
 
+use Kazist\Service\Email\Email;
 use Kazist\Service\Json\Json;
 use Assetic\AssetManager;
 use Assetic\Asset\AssetCollection;
@@ -38,6 +39,7 @@ class KazistModel {
     public $doctrine = '';
     public $request = '';
     public $container = '';
+    public $query_failed_attempt = 0;
 
     public function __construct($doctrine = '', $request = '') {
 
@@ -47,6 +49,63 @@ class KazistModel {
         $this->doctrine = $this->container->get('doctrine');
         $this->request = $this->container->get('request');
         ;
+    }
+
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Check Double Auth xxxxxxxxxxxxxxxx */
+
+    public function verifyDoubleAuth($user, $router, $return_url) {
+
+        $email = new Email();
+
+        $session = $this->container->get('session');
+        $doubleauth_code = $session->get('doubleauth_code');
+        $user_doubleauth_code = $session->get('user_doubleauth_code');
+
+        $route = $this->fetchDoubleAuth($router);
+
+        if (is_object($route)) {
+
+            if ($doubleauth_code <> '' && $user_doubleauth_code == $doubleauth_code) {
+                return true;
+            } else {
+                $link_route = (WEB_IS_ADMIN) ? 'admin.doubleauth' : 'doubleauth';
+
+                $parameters = array();
+                $parameters['user'] = $user;
+                $parameters['doubleauth_code'] = $doubleauth_code = rand(10000, 100000);
+                $parameters['doubleauth_url'] = $this->generateUrl($link_route, array('return_url' => base64_encode($return_url)), 0);
+
+                $email->sendDefinedLayoutEmail('users.users.doubleauth', $user->email, $parameters, null, 1);
+                $session->set('doubleauth_code', $doubleauth_code);
+                $this->enqueueMessage($doubleauth_code);
+
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    public function fetchDoubleAuth($router) {
+
+
+        $query = new Query();
+        $query->select('udr.*');
+        $query->from('#__users_doubleauth_routes', 'udr')->where('udr.route=:route')->setParameter('route', $router);
+
+        try {
+            $route = $query->loadObject();
+        } catch (\Exception $ex) {
+
+            $this->doctrine->refresh = true;
+            $this->doctrine->entity_path = JPATH_ROOT . 'applications/Users/Doubleauth/Routes/Code/Tables';
+            $this->doctrine->getEntityManager();
+
+            $route = $query->loadObject();
+        }
+
+
+        return $route;
     }
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Start Process User Object xxxxxxxxxxxxxxxx */
@@ -200,8 +259,9 @@ class KazistModel {
             return true;
         }
 
+
         if (($document->login_required || WEB_IS_ADMIN)) {
-            $is_allowed = $this->getUserActiveRole($document->id, $user, $document->permissions);
+            $is_allowed = $this->getUserActiveRole($document->unique_name, $user, $document->permissions);
 
             return $is_allowed;
         } else {
@@ -211,7 +271,7 @@ class KazistModel {
         return false;
     }
 
-    public function getUserActiveRole($route_id, $user, $permissions) {
+    public function getUserActiveRole($route_name, $user, $permissions) {
 
         $where_arr = array();
 
@@ -219,13 +279,13 @@ class KazistModel {
 
         $query = new Query();
         $query->select(' DISTINCT srp.*');
-        $query->from('#__system_routes_permissions', 'srp');
+        $query->from('#__users_permission', 'srp');
         if (!empty($user->role_ids)) {
             $query->andWhere('srp.role_id IN (' . implode(',', $user->role_ids) . ')');
         } else {
             $query->andWhere('1=-1');
         }
-        $query->andWhere('srp.route_id =' . (int) $route_id);
+        $query->andWhere('srp.route =' . (int) $route_name);
 
         if (!empty($permissions_arr)) {
             foreach ($permissions_arr as $permission_item) {

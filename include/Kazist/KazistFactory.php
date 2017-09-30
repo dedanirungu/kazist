@@ -12,9 +12,9 @@ defined('KAZIST') or exit('Not Kazist Framework');
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Kazist\Service\Database\Query;
-
 use Kazist\Model\BaseModel;
 use Kazist\Service\Media\MediaManager;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Database service provider
@@ -186,7 +186,7 @@ class KazistFactory {
         return $request;
     }
 
-    public function getSetting($setting_name, $block_id = '') {
+    public function getSetting($setting_name, $default = '') {
 
 
         $query = new Query();
@@ -195,16 +195,9 @@ class KazistFactory {
         $query->from('#__system_settings', 'ss');
         $query->where('ss.name=:name');
         $query->setParameter('name', $setting_name);
-
-        if ($block_id) {
-            $query->andWhere('ss.block_id=:block_id OR ss.block_id IS NULL ');
-            $query->setParameter('block_id', $block_id);
-            $query->orderBy('block_id DESC');
-        }
-
         $record = $query->loadObject();
 
-        return (is_object($record)) ? $record->value : '';
+        return (is_object($record)) ? $record->value : $default;
     }
 
     public function getPhrase($phrase_name) {
@@ -283,6 +276,13 @@ class KazistFactory {
         return $media_ids;
     }
 
+    public function urlExist($route) {
+
+        $baseModel = new BaseModel();
+
+        return $baseModel->urlExist($route);
+    }
+
     /**
      * Generates a URL from the given parameters.
      *
@@ -299,6 +299,16 @@ class KazistFactory {
         $baseModel = new BaseModel();
 
         return $baseModel->generateUrl($route, $parameters, $referenceType, $data);
+    }
+
+    public function redirectToRoute($route, $parameters = '', $status = '302') {
+
+        $this->getSession()->set('is_redirect', true);
+
+        $url = $this->generateUrl($route, $parameters);
+        $redirect_response = new RedirectResponse($url, $status);
+        $redirect_response->sendHeaders();
+        exit;
     }
 
     public function loggingMessage($msg, $type = '') {

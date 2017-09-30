@@ -104,7 +104,7 @@
 
 
                 <div class="business-posted-date">
-                    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+                    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i',  document.timezone) }} &nbsp;&nbsp;
                     <i class="fa fa-arrow-circle-o-right"></i> In: {{item.subset_id_title }} 
                 </div>
 

@@ -57,19 +57,30 @@ class Document {
         $document->root_route = (in_array($router, $ignore_route)) ? $router : $this->formatBaseRoute($document->class);
         $document->base_route = (WEB_IS_ADMIN) ? 'admin.' . $document->root_route : $document->root_route;
 
-         
         $document->user = $this->getUser();
 
+        $this->setTimeZone($document);
         $this->setPageDetail($document);
         $this->setSearchCriteria($document);
-
+        //  print_r($document); exit;
         return $document;
+    }
+
+    public function setTimeZone($document) {
+
+        $timezone = 'Africa/Nairobi';
+
+        if ($this->container->hasParameter('system.timezone')) {
+            $timezone = $this->container->getParameter('system.timezone');
+        }
+
+        $document->timezone = $timezone;
     }
 
     public function getUser() {
 
         $doctrine = $this->container->get('doctrine');
-   
+
         $factory = new KazistFactory();
         $temp_user = $factory->getUser();
 
@@ -85,7 +96,7 @@ class Document {
 
             $new_user = $factory->getRecord('#__users_users', 'uu', array('uu.id=:id'), array('id' => $temp_user->id));
         }
-       
+
         $user = (object) array_merge((array) $temp_user, (array) $new_user);
 
         return $user;
@@ -217,7 +228,7 @@ class Document {
 
         $tmp_permission_arr = array();
 
-        $query->from('#__system_routes_permissions', 'p');
+        $query->from('#__users_permission', 'p');
         $query->select('r.alias, p.can_add, p.can_view, p.can_write, p.can_delete, p.can_viewown, p.can_writeown, p.can_deleteown');
         $query->where('p.route_id=:route_id');
         $query->leftjoin('p', '#__users_roles', 'r', 'p.role_id=r.id');

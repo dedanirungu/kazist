@@ -45,6 +45,18 @@
                                 "text": "Login With Username"
                             }]
                     }
+                }, {
+                    "name": "users_users_frontend_login_redirector",
+                    "label": "Frontend Login Redirector",
+                    "default": "home",
+                    "tooltip": "Frontend Login Redirector.",
+                    "type": "text"
+                }, {
+                    "name": "users_users_backend_login_redirector",
+                    "label": "Backend Login Redirector",
+                    "default": "admin.home",
+                    "tooltip": "Backend Login Redirector.",
+                    "type": "text"
                 }]
         }, {
             "title": "Google",

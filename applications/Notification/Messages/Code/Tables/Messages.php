@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Messages
  *
- * @ORM\Table(name="notification_messages", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"})})
+ * @ORM\Table(name="notification_messages")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Messages extends \Kazist\Table\BaseTable {
-
+class Messages extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -28,20 +28,6 @@ class Messages extends \Kazist\Table\BaseTable {
      * @ORM\Column(name="message", type="text", nullable=false)
      */
     protected $message;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="subset_id", type="integer", length=11, nullable=false)
-     */
-    protected $subset_id;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="record_id", type="integer", length=11, nullable=false)
-     */
-    protected $record_id;
 
     /**
      * @var integer
@@ -71,12 +57,14 @@ class Messages extends \Kazist\Table\BaseTable {
      */
     protected $date_modified;
 
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -84,9 +72,11 @@ class Messages extends \Kazist\Table\BaseTable {
      * Set message
      *
      * @param string $message
+     *
      * @return Messages
      */
-    public function setMessage($message) {
+    public function setMessage($message)
+    {
         $this->message = $message;
 
         return $this;
@@ -95,88 +85,58 @@ class Messages extends \Kazist\Table\BaseTable {
     /**
      * Get message
      *
-     * @return string 
+     * @return string
      */
-    public function getMessage() {
+    public function getMessage()
+    {
         return $this->message;
     }
 
     /**
-     * Set subset_id
+     * Get createdBy
      *
-     * @param integer $subsetId
-     * @return Messages
+     * @return integer
      */
-    public function setSubsetId($subsetId) {
-        $this->subset_id = $subsetId;
-
-        return $this;
-    }
-
-    /**
-     * Get subset_id
-     *
-     * @return integer 
-     */
-    public function getSubsetId() {
-        return $this->subset_id;
-    }
-
-    /**
-     * Set record_id
-     *
-     * @param integer $recordId
-     * @return Messages
-     */
-    public function setRecordId($recordId) {
-        $this->record_id = $recordId;
-
-        return $this;
-    }
-
-    /**
-     * Get record_id
-     *
-     * @return integer 
-     */
-    public function getRecordId() {
-        return $this->record_id;
-    }
-
-    /**
-     * Get created_by
-     *
-     * @return integer 
-     */
-    public function getCreatedBy() {
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        // Add your code here
+    }
 }
+

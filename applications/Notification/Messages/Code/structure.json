@@ -18,8 +18,7 @@
                                             "hide_on_new": null,
                                             "fields": [
                                                 "message",
-                                                "subset_id",
-                                                "record_id"
+                                                "attachments"
                                             ]
                                         }
                                     }
@@ -62,8 +61,7 @@
                                             "has_title": null,
                                             "user_right": null,
                                             "hide_on_new": null,
-                                            "fields": [
-                                            ]
+                                            "fields": []
                                         }
                                     }
                                 ]
@@ -72,36 +70,27 @@
                     }
                 ]
             },
-            "ommitted": [
-            ]
+            "ommitted": []
         },
         "table": {
             "fields": [
                 "message",
-                "subset_id",
-                "record_id",
                 "created_by",
                 "date_created"
             ],
             "has_label": [
                 "message",
-                "subset_id",
-                "record_id",
                 "created_by",
                 "date_created"
             ]
         }
     },
     "rights": {
-        "tab": [
-        ],
-        "group": [
-        ],
-        "field": [
-        ]
+        "tab": [],
+        "group": [],
+        "field": []
     },
-    "customhtmls": [
-    ],
+    "customhtmls": [],
     "fields": [
         {
             "dropdown_filter": "0",
@@ -118,17 +107,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -150,84 +135,46 @@
                     "col": "",
                     "row": ""
                 },
-                "source": [
-                ],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
-            "name": "subset_id",
-            "html_type": "select",
-            "mysql_type": "int",
-            "view_side": "both",
+            "name": "attachments",
+            "html_type": "media",
+            "mysql_type": "none",
+            "view_side": "",
             "index": "",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
             "size": "",
-            "readonly": "",
+            "readonly": "0",
+            "default_value": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": {
-                    "data_source": "db_table",
-                    "join_field": "id",
-                    "display_field": [
-                        "title"
-                    ],
-                    "join_table_name": "system_subsets"
+                "general": {
+                    "file_path": "",
+                    "file_group_by": "id"
                 },
+                "source": [],
                 "save": {
-                    "index": ""
+                    "saving_type": "multiple",
+                    "table_creation": "custom",
+                    "save_table_name": "notification_messages_attachments",
+                    "save_field_name": "media_id",
+                    "foreign_field_name": "message_id"
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
-            }
-        },
-        {
-            "dropdown_filter": "1",
-            "nullable": "0",
-            "name": "record_id",
-            "html_type": "text",
-            "mysql_type": "int",
-            "view_side": "both",
-            "index": "",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "readonly": "",
-            "format_value": "",
-            "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
-                "save": {
-                    "index": ""
-                },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
             "nullable": "0",
             "name": "created_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -238,24 +185,27 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
             "nullable": "0",
             "name": "date_created",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -266,24 +216,20 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "modified_by",
-            "html_type": "text",
+            "html_type": "recordpicker",
             "mysql_type": "int",
             "view_side": "both",
             "index": "",
@@ -294,24 +240,27 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "0",
             "name": "date_modified",
-            "html_type": "text",
+            "html_type": "datetime",
             "mysql_type": "datetime",
             "view_side": "both",
             "index": "",
@@ -322,17 +271,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         }
     ],
@@ -361,21 +306,10 @@
         "select": [
             "nm.id",
             "nm.message",
-            "nm.subset_id",
-            "ss.title AS subset_id_title",
-            "nm.record_id",
             "nm.created_by",
             "nm.date_created",
             "nm.modified_by",
             "nm.date_modified"
-        ],
-        "leftjoin": [
-            {
-                "table": "System\\Subsets\\Code\\Tables\\Subsets",
-                "alias": "ss",
-                "name": "#__system_subsets",
-                "on": "nm.subset_id = ss.id"
-            }
         ]
     }
 }
