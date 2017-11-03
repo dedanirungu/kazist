@@ -15,15 +15,15 @@
         {% if group.settings %}
             {% for setting in group.settings %}
 
-                <div class="form-group {{ setting.name }}-group">
+                <div class="form-group {{ setting.name }}-group field-{{ setting.type }}">
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <label for="{{ setting.name }}" class="col-sm-12">{{ setting.label }}</label>
                         <div class="col-sm-12 kazicode-form-field ">
                             {{ forms.input(setting.name , setting.type, setting.default, null, null, null, null, null, setting.options) }}
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         {% if setting.tooltip %}
                             <i class="fa fa-info-circle"></i>
                             <small>{{ setting.tooltip|raw }}</small>
@@ -46,11 +46,17 @@
 <br>
 
 <style>
+
+    .field-editor .kazicode-form-field{
+        width:100% !important;
+        max-width: 100% !important;
+    }
+
     #main-setting hr{
         margin-top:5px;
         margin-bottom:5px;
     }
-    
+
     .form-group{
         padding:5px;
         border-bottom: 1px dotted #EFEFEF;
@@ -60,7 +66,7 @@
     .form-group .form-group{
         border-bottom: none;
     }
-    
+
     #admin_system_settings_table .nav-pills li{
         background: white;
     }

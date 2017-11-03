@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Users
  *
- * @ORM\Table(name="users_users", indexes={@ORM\Index(name="inviter_id_index", columns={"inviter_id"}), @ORM\Index(name="country_id_index", columns={"country_id"})})
+ * @ORM\Table(name="users_users", indexes={@ORM\Index(name="inviter_id_index", columns={"inviter_id"}), @ORM\Index(name="country_id_index", columns={"country_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -23,18 +23,18 @@ class Users extends \Kazist\Table\BaseTable
     protected $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="inviter_id", type="integer", length=11, nullable=true)
-     */
-    protected $inviter_id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     protected $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="inviter_id", type="integer", length=11, nullable=true)
+     */
+    protected $inviter_id;
 
     /**
      * @var integer
@@ -126,6 +126,13 @@ class Users extends \Kazist\Table\BaseTable
      * @ORM\Column(name="address", type="text", nullable=true)
      */
     protected $address;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dob", type="datetime", nullable=true)
+     */
+    protected $dob;
 
     /**
      * @var integer
@@ -223,30 +230,6 @@ class Users extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set inviterId
-     *
-     * @param integer $inviterId
-     *
-     * @return Users
-     */
-    public function setInviterId($inviterId)
-    {
-        $this->inviter_id = $inviterId;
-
-        return $this;
-    }
-
-    /**
-     * Get inviterId
-     *
-     * @return integer
-     */
-    public function getInviterId()
-    {
-        return $this->inviter_id;
-    }
-
-    /**
      * Set name
      *
      * @param string $name
@@ -268,6 +251,30 @@ class Users extends \Kazist\Table\BaseTable
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set inviterId
+     *
+     * @param integer $inviterId
+     *
+     * @return Users
+     */
+    public function setInviterId($inviterId)
+    {
+        $this->inviter_id = $inviterId;
+
+        return $this;
+    }
+
+    /**
+     * Get inviterId
+     *
+     * @return integer
+     */
+    public function getInviterId()
+    {
+        return $this->inviter_id;
     }
 
     /**
@@ -580,6 +587,30 @@ class Users extends \Kazist\Table\BaseTable
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Set dob
+     *
+     * @param \DateTime $dob
+     *
+     * @return Users
+     */
+    public function setDob($dob)
+    {
+        $this->dob = $dob;
+
+        return $this;
+    }
+
+    /**
+     * Get dob
+     *
+     * @return \DateTime
+     */
+    public function getDob()
+    {
+        return $this->dob;
     }
 
     /**

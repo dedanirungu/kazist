@@ -176,7 +176,13 @@ class ExtensionsModel extends BaseModel {
 
         $session->set('urls', $urls);
 
-        echo ' <script type="text/javascript">
+        echo ' <html>
+                
+                <meta http-equiv="cache-control" content="max-age=0" />
+                <meta http-equiv="cache-control" content="no-cache" />
+                <meta http-equiv="expires" content="0" />
+                <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+                <meta http-equiv="pragma" content="no-cache" /><script type="text/javascript">
                    function Redirect() {
                       window.location="' . $url . '";
                    }
@@ -195,6 +201,7 @@ class ExtensionsModel extends BaseModel {
             echo '<li>' . $tmp_url . '</ul>';
         }
         echo '</ol>';
+        echo '</html>';
 
         exit;
     }
@@ -1042,6 +1049,8 @@ class ExtensionsModel extends BaseModel {
                     $setting['subset_id'] = $this->subset_id;
 
                     $ids[] = $factory->saveRecord('#__system_settings', $setting);
+                } else {
+                    $ids[] = $setting_data->id;
                 }
             }
         }

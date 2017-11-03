@@ -56,6 +56,7 @@ class AutomatedModel extends BaseModel {
 
             $this->updateAutomatedData($autonewsletter, $frequency);
 
+            $email->priority = 7;
             $email->sendPreparedEmail($subject, $body, $recipient_query_str, $data_query_str);
 
             $factory->saveRecord('#__notification_newsletters_automated', $autonewsletter);

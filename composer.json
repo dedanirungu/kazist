@@ -5,7 +5,7 @@
     "keywords": ["kazist", "cms", "code generator", "system builder", "ERP", "School Manager"],
     "homepage": "https://github.com/kazist/kazist",
     "license": "GPL-3.0",
-     "version": "1.0.19",
+     "version": "1.0.20",
     "authors": [
         {
             "name": "Dedan Irungu",
@@ -48,16 +48,12 @@
         "fabpot/goutte": "3.*@stable",
         "doctrine/orm": "2.*@stable",
         "twig/twig": "1.*@stable",
-        "twbs/bootstrap": "3.*@stable",
         "swiftmailer/swiftmailer": "6.*@stable",
         "mtdowling/cron-expression": "1.*@stable",
         "kriswallsmith/assetic": "1.*@stable",
-        "tinymce/tinymce": "4.*@stable",
         "maximebf/debugbar": "1.*@stable",
         "monolog/monolog": "1.*@stable",
-        "almasaeed2010/adminlte": "2.*@stable",
         "imagine/imagine": "0.*@stable",
-        "fortawesome/font-awesome": "4.*@stable",
         "tijsverkoyen/css-to-inline-styles": "2.*@stable",
         "tecnickcom/tcpdf": "6.*@stable"
     },

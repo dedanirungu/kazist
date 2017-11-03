@@ -105,6 +105,7 @@ class NewslettersModel extends BaseModel {
 
             $subject = $newsletter->subject;
             $body = $newsletter->body;
+            $email->priority = 7;
             $email->send_date = $newsletter->send_date;
 
             $parameters = $this->getParametersArray($group_ids);

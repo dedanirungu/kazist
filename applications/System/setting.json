@@ -60,6 +60,12 @@
                     "default": "Emshy Innovate",
                     "tooltip": "Set Copyright Link Text to be used on the display of templates.",
                     "type": "text"
+                }, {
+                    "name": "system_template_copyright_start_year",
+                    "label": "Copyright Start Year",
+                    "default": "2014",
+                    "tooltip": "Set Copyright Start Year to be used on the display of templates.",
+                    "type": "text"
                 }]
         }, {
             "title": "System Execution Settings",

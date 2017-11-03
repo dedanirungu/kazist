@@ -5,7 +5,7 @@
         "code": "AED",
         "symbol": null,
         "country_id": 2,
-        "published": 1,
+        "published": 0,
         "rate": 4
     }, {
         "system_tracking_id": 2,
@@ -13,7 +13,7 @@
         "code": "AFN",
         "symbol": "?",
         "country_id": 3,
-        "published": 1,
+        "published": 0,
         "rate": 56
     }, {
         "system_tracking_id": 3,
@@ -21,7 +21,7 @@
         "code": "ALL",
         "symbol": "Lek",
         "country_id": 6,
-        "published": 1,
+        "published": 0,
         "rate": 102
     }, {
         "system_tracking_id": 4,
@@ -29,7 +29,7 @@
         "code": "AMD",
         "symbol": null,
         "country_id": 7,
-        "published": 1,
+        "published": 0,
         "rate": 413
     }, {
         "system_tracking_id": 5,
@@ -37,7 +37,7 @@
         "code": "ANG",
         "symbol": "ƒ",
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 6,
@@ -45,7 +45,7 @@
         "code": "AOA",
         "symbol": null,
         "country_id": 8,
-        "published": 1,
+        "published": 0,
         "rate": 98
     }, {
         "system_tracking_id": 7,
@@ -53,7 +53,7 @@
         "code": "ARS",
         "symbol": "$",
         "country_id": 10,
-        "published": 1,
+        "published": 0,
         "rate": 8
     }, {
         "system_tracking_id": 8,
@@ -61,7 +61,7 @@
         "code": "AUD",
         "symbol": "$",
         "country_id": 13,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 9,
@@ -69,7 +69,7 @@
         "code": "AWG",
         "symbol": "ƒ",
         "country_id": 14,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 10,
@@ -77,7 +77,7 @@
         "code": "AZN",
         "symbol": "???",
         "country_id": 16,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 11,
@@ -85,7 +85,7 @@
         "code": "BAM",
         "symbol": "KM",
         "country_id": 17,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 12,
@@ -93,7 +93,7 @@
         "code": "BBD",
         "symbol": "$",
         "country_id": 18,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 13,
@@ -101,7 +101,7 @@
         "code": "BDT",
         "symbol": null,
         "country_id": 19,
-        "published": 1,
+        "published": 0,
         "rate": 77
     }, {
         "system_tracking_id": 14,
@@ -109,7 +109,7 @@
         "code": "BGN",
         "symbol": "??",
         "country_id": 22,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 15,
@@ -117,7 +117,7 @@
         "code": "BHD",
         "symbol": null,
         "country_id": 23,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 16,
@@ -125,7 +125,7 @@
         "code": "BIF",
         "symbol": null,
         "country_id": 24,
-        "published": 1,
+        "published": 0,
         "rate": 1545
     }, {
         "system_tracking_id": 17,
@@ -133,7 +133,7 @@
         "code": "BMD",
         "symbol": "$",
         "country_id": 27,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 18,
@@ -141,7 +141,7 @@
         "code": "BND",
         "symbol": "$",
         "country_id": 28,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 19,
@@ -149,7 +149,7 @@
         "code": "BOB",
         "symbol": "$b",
         "country_id": 29,
-        "published": 1,
+        "published": 0,
         "rate": 7
     }, {
         "system_tracking_id": 20,
@@ -157,7 +157,7 @@
         "code": "BOV",
         "symbol": null,
         "country_id": 29,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 21,
@@ -165,7 +165,7 @@
         "code": "BRL",
         "symbol": "R$",
         "country_id": 31,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 22,
@@ -173,7 +173,7 @@
         "code": "BSD",
         "symbol": "$",
         "country_id": 32,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 23,
@@ -181,7 +181,7 @@
         "code": "BTN",
         "symbol": null,
         "country_id": 33,
-        "published": 1,
+        "published": 0,
         "rate": 62
     }, {
         "system_tracking_id": 24,
@@ -189,7 +189,7 @@
         "code": "BWP",
         "symbol": "P",
         "country_id": 35,
-        "published": 1,
+        "published": 0,
         "rate": 9
     }, {
         "system_tracking_id": 25,
@@ -197,7 +197,7 @@
         "code": "BYR",
         "symbol": "p.",
         "country_id": 36,
-        "published": 1,
+        "published": 0,
         "rate": 9770
     }, {
         "system_tracking_id": 26,
@@ -205,7 +205,7 @@
         "code": "BZD",
         "symbol": "BZ$",
         "country_id": 37,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 27,
@@ -213,7 +213,7 @@
         "code": "CAD",
         "symbol": "$",
         "country_id": 38,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 28,
@@ -221,7 +221,7 @@
         "code": "CDF",
         "symbol": null,
         "country_id": 40,
-        "published": 1,
+        "published": 0,
         "rate": 909
     }, {
         "system_tracking_id": 29,
@@ -229,7 +229,7 @@
         "code": "CHE",
         "symbol": null,
         "country_id": 43,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 30,
@@ -237,7 +237,7 @@
         "code": "CHF",
         "symbol": null,
         "country_id": 43,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 31,
@@ -245,7 +245,7 @@
         "code": "CHW",
         "symbol": null,
         "country_id": 43,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 32,
@@ -253,7 +253,7 @@
         "code": "CLF",
         "symbol": null,
         "country_id": 46,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 33,
@@ -261,7 +261,7 @@
         "code": "CLP",
         "symbol": "$",
         "country_id": 46,
-        "published": 1,
+        "published": 0,
         "rate": 558
     }, {
         "system_tracking_id": 34,
@@ -269,7 +269,7 @@
         "code": "CNY",
         "symbol": "¥",
         "country_id": 48,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 35,
@@ -277,7 +277,7 @@
         "code": "COP",
         "symbol": "$",
         "country_id": 49,
-        "published": 1,
+        "published": 0,
         "rate": 2046
     }, {
         "system_tracking_id": 36,
@@ -285,7 +285,7 @@
         "code": "COU",
         "symbol": null,
         "country_id": 49,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 37,
@@ -293,7 +293,7 @@
         "code": "CRC",
         "symbol": "¢",
         "country_id": 50,
-        "published": 1,
+        "published": 0,
         "rate": 502
     }, {
         "system_tracking_id": 38,
@@ -301,7 +301,7 @@
         "code": "CUC",
         "symbol": null,
         "country_id": 51,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 39,
@@ -309,7 +309,7 @@
         "code": "CUP",
         "symbol": "?",
         "country_id": 51,
-        "published": 1,
+        "published": 0,
         "rate": 27
     }, {
         "system_tracking_id": 40,
@@ -317,7 +317,7 @@
         "code": "CVE",
         "symbol": null,
         "country_id": 52,
-        "published": 1,
+        "published": 0,
         "rate": 79
     }, {
         "system_tracking_id": 41,
@@ -325,7 +325,7 @@
         "code": "CZK",
         "symbol": "Kc",
         "country_id": 56,
-        "published": 1,
+        "published": 0,
         "rate": 20
     }, {
         "system_tracking_id": 42,
@@ -333,7 +333,7 @@
         "code": "DJF",
         "symbol": null,
         "country_id": 58,
-        "published": 1,
+        "published": 0,
         "rate": 175
     }, {
         "system_tracking_id": 43,
@@ -341,7 +341,7 @@
         "code": "DKK",
         "symbol": "kr",
         "country_id": 59,
-        "published": 1,
+        "published": 0,
         "rate": 5
     }, {
         "system_tracking_id": 44,
@@ -349,7 +349,7 @@
         "code": "DOP",
         "symbol": "RD$",
         "country_id": 61,
-        "published": 1,
+        "published": 0,
         "rate": 43
     }, {
         "system_tracking_id": 45,
@@ -357,7 +357,7 @@
         "code": "DZD",
         "symbol": null,
         "country_id": 62,
-        "published": 1,
+        "published": 0,
         "rate": 77
     }, {
         "system_tracking_id": 46,
@@ -365,7 +365,7 @@
         "code": "EGP",
         "symbol": "£",
         "country_id": 65,
-        "published": 1,
+        "published": 0,
         "rate": 7
     }, {
         "system_tracking_id": 47,
@@ -373,7 +373,7 @@
         "code": "ERN",
         "symbol": null,
         "country_id": 67,
-        "published": 1,
+        "published": 0,
         "rate": 10
     }, {
         "system_tracking_id": 48,
@@ -381,7 +381,7 @@
         "code": "ETB",
         "symbol": null,
         "country_id": 69,
-        "published": 1,
+        "published": 0,
         "rate": 19
     }, {
         "system_tracking_id": 49,
@@ -397,7 +397,7 @@
         "code": "FJD",
         "symbol": "$",
         "country_id": 72,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 51,
@@ -405,7 +405,7 @@
         "code": "FKP",
         "symbol": "£",
         "country_id": 73,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 52,
@@ -413,7 +413,7 @@
         "code": "GBP",
         "symbol": "£",
         "country_id": 78,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 53,
@@ -421,7 +421,7 @@
         "code": "GEL",
         "symbol": null,
         "country_id": 80,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 54,
@@ -429,7 +429,7 @@
         "code": "GHS",
         "symbol": null,
         "country_id": 83,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 55,
@@ -437,7 +437,7 @@
         "code": "GIP",
         "symbol": "£",
         "country_id": 84,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 56,
@@ -445,7 +445,7 @@
         "code": "GMD",
         "symbol": null,
         "country_id": 86,
-        "published": 1,
+        "published": 0,
         "rate": 38
     }, {
         "system_tracking_id": 57,
@@ -453,7 +453,7 @@
         "code": "GNF",
         "symbol": null,
         "country_id": 87,
-        "published": 1,
+        "published": 0,
         "rate": 6780
     }, {
         "system_tracking_id": 58,
@@ -461,7 +461,7 @@
         "code": "GTQ",
         "symbol": "Q",
         "country_id": 92,
-        "published": 1,
+        "published": 0,
         "rate": 8
     }, {
         "system_tracking_id": 59,
@@ -469,7 +469,7 @@
         "code": "GYD",
         "symbol": "$",
         "country_id": 95,
-        "published": 1,
+        "published": 0,
         "rate": 203
     }, {
         "system_tracking_id": 60,
@@ -477,7 +477,7 @@
         "code": "HKD",
         "symbol": "$",
         "country_id": 96,
-        "published": 1,
+        "published": 0,
         "rate": 8
     }, {
         "system_tracking_id": 61,
@@ -485,7 +485,7 @@
         "code": "HNL",
         "symbol": "L",
         "country_id": 98,
-        "published": 1,
+        "published": 0,
         "rate": 20
     }, {
         "system_tracking_id": 62,
@@ -493,7 +493,7 @@
         "code": "HRK",
         "symbol": "kn",
         "country_id": 99,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 63,
@@ -501,7 +501,7 @@
         "code": "HTG",
         "symbol": null,
         "country_id": 100,
-        "published": 1,
+        "published": 0,
         "rate": 39
     }, {
         "system_tracking_id": 64,
@@ -509,7 +509,7 @@
         "code": "HUF",
         "symbol": "Ft",
         "country_id": 101,
-        "published": 1,
+        "published": 0,
         "rate": 225
     }, {
         "system_tracking_id": 65,
@@ -517,7 +517,7 @@
         "code": "IDR",
         "symbol": "Rp",
         "country_id": 102,
-        "published": 1,
+        "published": 0,
         "rate": 11580
     }, {
         "system_tracking_id": 66,
@@ -525,7 +525,7 @@
         "code": "ILS",
         "symbol": "?",
         "country_id": 104,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 67,
@@ -533,7 +533,7 @@
         "code": "INR",
         "symbol": null,
         "country_id": 106,
-        "published": 1,
+        "published": 0,
         "rate": 62
     }, {
         "system_tracking_id": 68,
@@ -541,7 +541,7 @@
         "code": "IQD",
         "symbol": null,
         "country_id": 108,
-        "published": 1,
+        "published": 0,
         "rate": 1163
     }, {
         "system_tracking_id": 69,
@@ -549,7 +549,7 @@
         "code": "IRR",
         "symbol": "?",
         "country_id": 109,
-        "published": 1,
+        "published": 0,
         "rate": 24898
     }, {
         "system_tracking_id": 70,
@@ -557,7 +557,7 @@
         "code": "ISK",
         "symbol": "kr",
         "country_id": 110,
-        "published": 1,
+        "published": 0,
         "rate": 113
     }, {
         "system_tracking_id": 71,
@@ -565,7 +565,7 @@
         "code": "JMD",
         "symbol": "J$",
         "country_id": 113,
-        "published": 1,
+        "published": 0,
         "rate": 108
     }, {
         "system_tracking_id": 72,
@@ -573,7 +573,7 @@
         "code": "JOD",
         "symbol": null,
         "country_id": 114,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 73,
@@ -581,7 +581,7 @@
         "code": "JPY",
         "symbol": "¥",
         "country_id": 115,
-        "published": 1,
+        "published": 0,
         "rate": 102
     }, {
         "system_tracking_id": 74,
@@ -597,7 +597,7 @@
         "code": "KGS",
         "symbol": "??",
         "country_id": 117,
-        "published": 1,
+        "published": 0,
         "rate": 52
     }, {
         "system_tracking_id": 76,
@@ -605,7 +605,7 @@
         "code": "KHR",
         "symbol": "?",
         "country_id": 118,
-        "published": 1,
+        "published": 0,
         "rate": 3978
     }, {
         "system_tracking_id": 77,
@@ -613,7 +613,7 @@
         "code": "KMF",
         "symbol": null,
         "country_id": 120,
-        "published": 1,
+        "published": 0,
         "rate": 356
     }, {
         "system_tracking_id": 78,
@@ -621,7 +621,7 @@
         "code": "KPW",
         "symbol": "?",
         "country_id": 122,
-        "published": 1,
+        "published": 0,
         "rate": 130
     }, {
         "system_tracking_id": 79,
@@ -629,7 +629,7 @@
         "code": "KRW",
         "symbol": "?",
         "country_id": 123,
-        "published": 1,
+        "published": 0,
         "rate": 1066
     }, {
         "system_tracking_id": 80,
@@ -637,7 +637,7 @@
         "code": "KWD",
         "symbol": null,
         "country_id": 124,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 81,
@@ -645,7 +645,7 @@
         "code": "KYD",
         "symbol": "$",
         "country_id": 125,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 82,
@@ -653,7 +653,7 @@
         "code": "KZT",
         "symbol": "??",
         "country_id": 126,
-        "published": 1,
+        "published": 0,
         "rate": 184
     }, {
         "system_tracking_id": 83,
@@ -661,7 +661,7 @@
         "code": "LAK",
         "symbol": "?",
         "country_id": 127,
-        "published": 1,
+        "published": 0,
         "rate": 8018
     }, {
         "system_tracking_id": 84,
@@ -669,7 +669,7 @@
         "code": "LBP",
         "symbol": "£",
         "country_id": 128,
-        "published": 1,
+        "published": 0,
         "rate": 1503
     }, {
         "system_tracking_id": 85,
@@ -677,7 +677,7 @@
         "code": "LKR",
         "symbol": "?",
         "country_id": 131,
-        "published": 1,
+        "published": 0,
         "rate": 131
     }, {
         "system_tracking_id": 86,
@@ -685,7 +685,7 @@
         "code": "LRD",
         "symbol": "$",
         "country_id": 132,
-        "published": 1,
+        "published": 0,
         "rate": 85
     }, {
         "system_tracking_id": 87,
@@ -693,7 +693,7 @@
         "code": "LSL",
         "symbol": null,
         "country_id": 133,
-        "published": 1,
+        "published": 0,
         "rate": 11
     }, {
         "system_tracking_id": 88,
@@ -701,7 +701,7 @@
         "code": "LTL",
         "symbol": "Lt",
         "country_id": 134,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 89,
@@ -709,7 +709,7 @@
         "code": "LYD",
         "symbol": null,
         "country_id": 137,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 90,
@@ -717,7 +717,7 @@
         "code": "MAD",
         "symbol": null,
         "country_id": 138,
-        "published": 1,
+        "published": 0,
         "rate": 8
     }, {
         "system_tracking_id": 91,
@@ -725,7 +725,7 @@
         "code": "MDL",
         "symbol": null,
         "country_id": 140,
-        "published": 1,
+        "published": 0,
         "rate": 14
     }, {
         "system_tracking_id": 92,
@@ -733,7 +733,7 @@
         "code": "MGA",
         "symbol": null,
         "country_id": 143,
-        "published": 1,
+        "published": 0,
         "rate": 2325
     }, {
         "system_tracking_id": 93,
@@ -741,7 +741,7 @@
         "code": "MKD",
         "symbol": "???",
         "country_id": 145,
-        "published": 1,
+        "published": 0,
         "rate": 45
     }, {
         "system_tracking_id": 94,
@@ -749,7 +749,7 @@
         "code": "MMK",
         "symbol": null,
         "country_id": 147,
-        "published": 1,
+        "published": 0,
         "rate": 977
     }, {
         "system_tracking_id": 95,
@@ -757,7 +757,7 @@
         "code": "MNT",
         "symbol": "?",
         "country_id": 148,
-        "published": 1,
+        "published": 0,
         "rate": 1720
     }, {
         "system_tracking_id": 96,
@@ -765,7 +765,7 @@
         "code": "MOP",
         "symbol": null,
         "country_id": 149,
-        "published": 1,
+        "published": 0,
         "rate": 8
     }, {
         "system_tracking_id": 97,
@@ -773,7 +773,7 @@
         "code": "MRO",
         "symbol": null,
         "country_id": 152,
-        "published": 1,
+        "published": 0,
         "rate": 288
     }, {
         "system_tracking_id": 98,
@@ -781,7 +781,7 @@
         "code": "MUR",
         "symbol": "?",
         "country_id": 155,
-        "published": 1,
+        "published": 0,
         "rate": 30
     }, {
         "system_tracking_id": 99,
@@ -789,7 +789,7 @@
         "code": "MVR",
         "symbol": null,
         "country_id": 156,
-        "published": 1,
+        "published": 0,
         "rate": 15
     }, {
         "system_tracking_id": 100,
@@ -797,7 +797,7 @@
         "code": "MWK",
         "symbol": null,
         "country_id": 157,
-        "published": 1,
+        "published": 0,
         "rate": 409
     }, {
         "system_tracking_id": 101,
@@ -805,7 +805,7 @@
         "code": "MXN",
         "symbol": "$",
         "country_id": 158,
-        "published": 1,
+        "published": 0,
         "rate": 13
     }, {
         "system_tracking_id": 102,
@@ -813,7 +813,7 @@
         "code": "MXV",
         "symbol": null,
         "country_id": 158,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 103,
@@ -821,7 +821,7 @@
         "code": "MYR",
         "symbol": "RM",
         "country_id": 159,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 104,
@@ -829,7 +829,7 @@
         "code": "MZN",
         "symbol": "MT",
         "country_id": 160,
-        "published": 1,
+        "published": 0,
         "rate": 32
     }, {
         "system_tracking_id": 105,
@@ -837,7 +837,7 @@
         "code": "NAD",
         "symbol": "$",
         "country_id": 161,
-        "published": 1,
+        "published": 0,
         "rate": 11
     }, {
         "system_tracking_id": 106,
@@ -845,7 +845,7 @@
         "code": "NGN",
         "symbol": "?",
         "country_id": 165,
-        "published": 1,
+        "published": 0,
         "rate": 166
     }, {
         "system_tracking_id": 107,
@@ -853,7 +853,7 @@
         "code": "NIO",
         "symbol": "C$",
         "country_id": 166,
-        "published": 1,
+        "published": 0,
         "rate": 25
     }, {
         "system_tracking_id": 108,
@@ -861,7 +861,7 @@
         "code": "NOK",
         "symbol": "kr",
         "country_id": 168,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 109,
@@ -869,7 +869,7 @@
         "code": "NPR",
         "symbol": "?",
         "country_id": 169,
-        "published": 1,
+        "published": 0,
         "rate": 99
     }, {
         "system_tracking_id": 110,
@@ -877,7 +877,7 @@
         "code": "NZD",
         "symbol": "$",
         "country_id": 172,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 111,
@@ -885,7 +885,7 @@
         "code": "OMR",
         "symbol": "?",
         "country_id": 173,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 112,
@@ -893,7 +893,7 @@
         "code": "PAB",
         "symbol": "B/.",
         "country_id": 174,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 113,
@@ -901,7 +901,7 @@
         "code": "PEN",
         "symbol": "S/.",
         "country_id": 175,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 114,
@@ -909,7 +909,7 @@
         "code": "PGK",
         "symbol": null,
         "country_id": 177,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 115,
@@ -917,7 +917,7 @@
         "code": "PHP",
         "symbol": "?",
         "country_id": 178,
-        "published": 1,
+        "published": 0,
         "rate": 45
     }, {
         "system_tracking_id": 116,
@@ -925,7 +925,7 @@
         "code": "PKR",
         "symbol": "?",
         "country_id": 179,
-        "published": 1,
+        "published": 0,
         "rate": 105
     }, {
         "system_tracking_id": 117,
@@ -933,7 +933,7 @@
         "code": "PLN",
         "symbol": "zl",
         "country_id": 180,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 118,
@@ -941,7 +941,7 @@
         "code": "PYG",
         "symbol": "Gs",
         "country_id": 187,
-        "published": 1,
+        "published": 0,
         "rate": 4432
     }, {
         "system_tracking_id": 119,
@@ -949,7 +949,7 @@
         "code": "QAR",
         "symbol": "?",
         "country_id": 188,
-        "published": 1,
+        "published": 0,
         "rate": 4
     }, {
         "system_tracking_id": 120,
@@ -957,7 +957,7 @@
         "code": "RON",
         "symbol": "lei",
         "country_id": 190,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 121,
@@ -965,7 +965,7 @@
         "code": "RSD",
         "symbol": "???.",
         "country_id": 191,
-        "published": 1,
+        "published": 0,
         "rate": 84
     }, {
         "system_tracking_id": 122,
@@ -973,7 +973,7 @@
         "code": "RUB",
         "symbol": "???",
         "country_id": 192,
-        "published": 1,
+        "published": 0,
         "rate": 36
     }, {
         "system_tracking_id": 123,
@@ -981,7 +981,7 @@
         "code": "RWF",
         "symbol": null,
         "country_id": 193,
-        "published": 1,
+        "published": 0,
         "rate": 675
     }, {
         "system_tracking_id": 124,
@@ -989,7 +989,7 @@
         "code": "SAR",
         "symbol": "?",
         "country_id": 194,
-        "published": 1,
+        "published": 0,
         "rate": 4
     }, {
         "system_tracking_id": 125,
@@ -997,7 +997,7 @@
         "code": "SBD",
         "symbol": "$",
         "country_id": 195,
-        "published": 1,
+        "published": 0,
         "rate": 7
     }, {
         "system_tracking_id": 126,
@@ -1005,7 +1005,7 @@
         "code": "SCR",
         "symbol": "?",
         "country_id": 196,
-        "published": 1,
+        "published": 0,
         "rate": 12
     }, {
         "system_tracking_id": 127,
@@ -1013,7 +1013,7 @@
         "code": "SDG",
         "symbol": null,
         "country_id": 197,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 128,
@@ -1021,7 +1021,7 @@
         "code": "SEK",
         "symbol": "kr",
         "country_id": 198,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 129,
@@ -1029,7 +1029,7 @@
         "code": "SGD",
         "symbol": "$",
         "country_id": 199,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 130,
@@ -1037,7 +1037,7 @@
         "code": "SHP",
         "symbol": "£",
         "country_id": 200,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 131,
@@ -1045,7 +1045,7 @@
         "code": "SLL",
         "symbol": null,
         "country_id": 204,
-        "published": 1,
+        "published": 0,
         "rate": 4290
     }, {
         "system_tracking_id": 132,
@@ -1053,7 +1053,7 @@
         "code": "SOS",
         "symbol": "S",
         "country_id": 207,
-        "published": 1,
+        "published": 0,
         "rate": 1199
     }, {
         "system_tracking_id": 133,
@@ -1061,7 +1061,7 @@
         "code": "SRD",
         "symbol": "$",
         "country_id": 208,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 134,
@@ -1069,7 +1069,7 @@
         "code": "SSP",
         "symbol": null,
         "country_id": 209,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 135,
@@ -1077,7 +1077,7 @@
         "code": "STD",
         "symbol": null,
         "country_id": 210,
-        "published": 1,
+        "published": 0,
         "rate": 17740
     }, {
         "system_tracking_id": 136,
@@ -1085,7 +1085,7 @@
         "code": "SVC",
         "symbol": "$",
         "country_id": 211,
-        "published": 1,
+        "published": 0,
         "rate": 9
     }, {
         "system_tracking_id": 137,
@@ -1093,7 +1093,7 @@
         "code": "SYP",
         "symbol": "£",
         "country_id": 213,
-        "published": 1,
+        "published": 0,
         "rate": 143
     }, {
         "system_tracking_id": 138,
@@ -1101,7 +1101,7 @@
         "code": "SZL",
         "symbol": null,
         "country_id": 214,
-        "published": 1,
+        "published": 0,
         "rate": 11
     }, {
         "system_tracking_id": 139,
@@ -1109,7 +1109,7 @@
         "code": "THB",
         "symbol": "?",
         "country_id": 219,
-        "published": 1,
+        "published": 0,
         "rate": 33
     }, {
         "system_tracking_id": 140,
@@ -1117,7 +1117,7 @@
         "code": "TJS",
         "symbol": null,
         "country_id": 220,
-        "published": 1,
+        "published": 0,
         "rate": 5
     }, {
         "system_tracking_id": 141,
@@ -1125,7 +1125,7 @@
         "code": "TMT",
         "symbol": null,
         "country_id": 223,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 142,
@@ -1133,7 +1133,7 @@
         "code": "TND",
         "symbol": null,
         "country_id": 224,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 143,
@@ -1141,7 +1141,7 @@
         "code": "TOP",
         "symbol": null,
         "country_id": 225,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 144,
@@ -1149,7 +1149,7 @@
         "code": "TRY",
         "symbol": null,
         "country_id": 226,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 145,
@@ -1157,7 +1157,7 @@
         "code": "TTD",
         "symbol": "TT$",
         "country_id": 227,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 146,
@@ -1165,7 +1165,7 @@
         "code": "TWD",
         "symbol": "NT$",
         "country_id": 229,
-        "published": 1,
+        "published": 0,
         "rate": 30
     }, {
         "system_tracking_id": 147,
@@ -1173,7 +1173,7 @@
         "code": "TZS",
         "symbol": null,
         "country_id": 230,
-        "published": 1,
+        "published": 0,
         "rate": 1620
     }, {
         "system_tracking_id": 148,
@@ -1181,7 +1181,7 @@
         "code": "UAH",
         "symbol": "?",
         "country_id": 231,
-        "published": 1,
+        "published": 0,
         "rate": 10
     }, {
         "system_tracking_id": 149,
@@ -1189,7 +1189,7 @@
         "code": "UGX",
         "symbol": null,
         "country_id": 232,
-        "published": 1,
+        "published": 0,
         "rate": 2530
     }, {
         "system_tracking_id": 150,
@@ -1205,7 +1205,7 @@
         "code": "USN",
         "symbol": null,
         "country_id": 234,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 152,
@@ -1213,7 +1213,7 @@
         "code": "USS",
         "symbol": null,
         "country_id": 234,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 153,
@@ -1221,7 +1221,7 @@
         "code": "UYI",
         "symbol": null,
         "country_id": 235,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 154,
@@ -1229,7 +1229,7 @@
         "code": "UYU",
         "symbol": "$U",
         "country_id": 235,
-        "published": 1,
+        "published": 0,
         "rate": 22
     }, {
         "system_tracking_id": 155,
@@ -1237,7 +1237,7 @@
         "code": "UZS",
         "symbol": "??",
         "country_id": 236,
-        "published": 1,
+        "published": 0,
         "rate": 2232
     }, {
         "system_tracking_id": 156,
@@ -1245,7 +1245,7 @@
         "code": "VEF",
         "symbol": "Bs",
         "country_id": 239,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 157,
@@ -1253,7 +1253,7 @@
         "code": "VND",
         "symbol": "?",
         "country_id": 242,
-        "published": 1,
+        "published": 0,
         "rate": 21080
     }, {
         "system_tracking_id": 158,
@@ -1261,7 +1261,7 @@
         "code": "VUV",
         "symbol": null,
         "country_id": 243,
-        "published": 1,
+        "published": 0,
         "rate": 95
     }, {
         "system_tracking_id": 159,
@@ -1269,7 +1269,7 @@
         "code": "WST",
         "symbol": null,
         "country_id": 245,
-        "published": 1,
+        "published": 0,
         "rate": 2
     }, {
         "system_tracking_id": 160,
@@ -1277,7 +1277,7 @@
         "code": "XAF",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 475
     }, {
         "system_tracking_id": 161,
@@ -1285,7 +1285,7 @@
         "code": "XAG",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 162,
@@ -1293,7 +1293,7 @@
         "code": "XAU",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 163,
@@ -1301,7 +1301,7 @@
         "code": "XBA",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 164,
@@ -1309,7 +1309,7 @@
         "code": "XBB",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 165,
@@ -1317,7 +1317,7 @@
         "code": "XBC",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 166,
@@ -1325,7 +1325,7 @@
         "code": "XBD",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 167,
@@ -1333,7 +1333,7 @@
         "code": "XCD",
         "symbol": "$",
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 3
     }, {
         "system_tracking_id": 168,
@@ -1341,7 +1341,7 @@
         "code": "XDR",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 1
     }, {
         "system_tracking_id": 169,
@@ -1349,7 +1349,7 @@
         "code": "XOF",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 475
     }, {
         "system_tracking_id": 170,
@@ -1357,7 +1357,7 @@
         "code": "XPD",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 171,
@@ -1365,7 +1365,7 @@
         "code": "XPF",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 86
     }, {
         "system_tracking_id": 172,
@@ -1373,7 +1373,7 @@
         "code": "XPT",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": 0
     }, {
         "system_tracking_id": 173,
@@ -1381,7 +1381,7 @@
         "code": "XSU",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 174,
@@ -1389,7 +1389,7 @@
         "code": "XTS",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 175,
@@ -1397,7 +1397,7 @@
         "code": "XUA",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 176,
@@ -1405,7 +1405,7 @@
         "code": "XXX",
         "symbol": null,
         "country_id": null,
-        "published": 1,
+        "published": 0,
         "rate": null
     }, {
         "system_tracking_id": 177,
@@ -1413,7 +1413,7 @@
         "code": "YER",
         "symbol": "?",
         "country_id": 246,
-        "published": 1,
+        "published": 0,
         "rate": 215
     }, {
         "system_tracking_id": 178,
@@ -1421,7 +1421,7 @@
         "code": "ZAR",
         "symbol": "R",
         "country_id": 248,
-        "published": 1,
+        "published": 0,
         "rate": 11
     }, {
         "system_tracking_id": 179,
@@ -1429,7 +1429,7 @@
         "code": "ZMW",
         "symbol": null,
         "country_id": 249,
-        "published": 1,
+        "published": 0,
         "rate": 6
     }, {
         "system_tracking_id": 180,
@@ -1437,6 +1437,6 @@
         "code": "ZWL",
         "symbol": null,
         "country_id": 250,
-        "published": 1,
+        "published": 0,
         "rate": null
     }]

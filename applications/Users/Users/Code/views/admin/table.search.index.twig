@@ -1,0 +1,41 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{% set search = document.search %}
+
+<form id="{{ main_form_id }}" action="{{ generate_url('admin.users.users') }}" method="post" >
+    <div class="custom-search">
+        <div class="col-sm-2">
+            <b>General</b><br>
+            {{ forms.input(' search.keyword', 'text', search.keyword) }}
+        </div>
+        <div class="col-sm-2">
+            <b>Username</b><br>
+            {{ forms.input(' search.username', 'text', search.username) }}
+        </div>
+        <div class="col-sm-2">
+            <b>Email</b><br>
+            {{ forms.input(' search.email', 'text', search.email) }}
+        </div>
+        <div class="col-sm-4">
+            <br>
+            <button class="btn btn-success btn-sm" type="submit" name="submit">Search</button>
+            <button class="btn btn-default btn-sm" type="submit" name="clear" value="clear">Clear</button>
+        </div>
+    </div>
+
+    {{ forms.input('_token' ) }}  
+
+</form>
+
+
+<div class="clearfix"></div>
+<br>
+
+<style>
+    .custom-search .col-sm-1, .custom-search .col-sm-2, .custom-search .col-sm-3, .custom-search .col-sm-9, .custom-search .col-sm-12{
+        margin:0;
+        padding:0 2px;
+    }
+</style>

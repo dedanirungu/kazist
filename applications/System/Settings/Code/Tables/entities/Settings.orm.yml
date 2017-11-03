@@ -19,7 +19,7 @@ System\Settings\Code\Tables\Settings:
     value:
       name: value
       type: string
-      length: 255
+      length: '1000'
       nullable: false
     extension_path:
       name: extension_path
@@ -49,6 +49,10 @@ System\Settings\Code\Tables\Settings:
       columns: [subset_id]
     name_index:
       columns: [name]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

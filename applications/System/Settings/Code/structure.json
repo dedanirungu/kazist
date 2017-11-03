@@ -165,8 +165,8 @@
             "id_name": "",
             "class_name": "",
             "default_value": "",
-            "size": "",
-            "readonly": "",
+            "size": "1000",
+            "readonly": "0",
             "format_value": "",
             "parameters": {
                 "general": [],
@@ -339,21 +339,35 @@
         "select": [
             "ss.id",
             "ss.subset_id",
-            "ss_324.name AS subset_id_name",
+            "ss_1388.name AS subset_id_name",
             "ss.name",
             "ss.value",
             "ss.extension_path",
             "ss.created_by",
+            "uu.name AS created_by_name",
             "ss.date_created",
             "ss.modified_by",
+            "uu_1624.name AS modified_by_name",
             "ss.date_modified"
         ],
         "leftjoin": [
             {
                 "table": "System\\Subsets\\Code\\Tables\\Subsets",
-                "alias": "ss_324",
+                "alias": "ss_1388",
                 "name": "#__system_subsets",
-                "on": "ss.subset_id = ss_324.id"
+                "on": "ss.subset_id = ss_1388.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu",
+                "name": "#__users_users",
+                "on": "ss.created_by = uu.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu_1624",
+                "name": "#__users_users",
+                "on": "ss.modified_by = uu_1624.id"
             }
         ]
     }

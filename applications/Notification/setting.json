@@ -10,6 +10,33 @@
                     "tooltip": "Enable sending emails on the website. If is disabled, no emails will be sent out.",
                     "type": "yesno"
                 }, {
+                    "name": "notification_emails_send_immediate_priority",
+                    "label": "Send Email Immediately Priority Level",
+                    "default": "5",
+                    "tooltip": "Set priority level for the emails to be sent immediately.",
+                    "type": "select",
+                    "source": {
+                        "custom": [{
+                                "value": "1",
+                                "text": "1"
+                            }, {
+                                "value": "2",
+                                "text": "2"
+                            }, {
+                                "value": "3",
+                                "text": "3"
+                            }, {
+                                "value": "4",
+                                "text": "4"
+                            }, {
+                                "value": "5",
+                                "text": "5"
+                            }, {
+                                "value": "6",
+                                "text": "6"
+                            }]
+                    }
+                }, {
                     "name": "notification_subscribers_default_group",
                     "label": "Default Group",
                     "default": "1",

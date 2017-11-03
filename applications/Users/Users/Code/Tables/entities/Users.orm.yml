@@ -6,16 +6,16 @@ Users\Users\Code\Tables\Users:
       type: integer
       generator: { strategy: AUTO }
   fields:
-    inviter_id:
-      name: inviter_id
-      type: integer
-      length: 11
-      nullable: true
     name:
       name: name
       type: string
       length: '255'
       nullable: false
+    inviter_id:
+      name: inviter_id
+      type: integer
+      length: 11
+      nullable: true
     is_admin:
       name: is_admin
       type: integer
@@ -80,6 +80,10 @@ Users\Users\Code\Tables\Users:
       name: address
       type: text
       nullable: true
+    dob:
+      name: dob
+      type: datetime
+      nullable: true
     points:
       name: points
       type: integer
@@ -142,6 +146,10 @@ Users\Users\Code\Tables\Users:
       columns: [inviter_id]
     country_id_index:
       columns: [country_id]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

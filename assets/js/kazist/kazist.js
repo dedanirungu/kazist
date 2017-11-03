@@ -145,7 +145,7 @@ kazist = function () {
             });
 
             html.find('.cancel-search').click(function () {
-             
+
                 var form = jQuery(this).closest('form');
                 var input = form.find('input:text, input:radio, select');
 
@@ -175,7 +175,57 @@ kazist = function () {
             if (is_tinyMCE_active) {
 
                 tinymce.init({
-                    selector: "textarea.kazi-editor",
+                    selector: "textarea.kazi-editor-basic",
+                    plugins: [
+                        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern fullscreen"
+                    ],
+                    toolbar: "bold italic underline | alignleft aligncenter alignright  | fontsizeselect | forecolor backcolor | " +
+                            "bullist numlist",
+                    menubar: false,
+                    toolbar_items_size: 'small',
+                    document_base_url: kazist_document.web_root,
+                    powerpaste_word_import: 'clean',
+                    powerpaste_html_import: 'merge'
+                });
+
+                tinymce.init({
+                    selector: "textarea.kazi-editor-medium",
+                    plugins: [
+                        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern fullscreen"
+                    ],
+                    toolbar: "bold italic underline | alignleft aligncenter alignright  | fontselect fontsizeselect | forecolor backcolor | " +
+                            " hr | bullist numlist | link unlink image media | table",
+                    toolbar_items_size: 'small',
+                    document_base_url: kazist_document.web_root,
+                    powerpaste_word_import: 'clean',
+                    powerpaste_html_import: 'merge',
+                    file_browser_callback: function (field_name, url, type, win) {
+
+                        if (type === 'file') {
+
+                            jQuery('#linkModal').css('z-index', '100000');
+                            jQuery('#linkModal').modal('show');
+                            jQuery('#linkModal .kazicode_link_source').val('editor');
+                            jQuery('#linkModal .kazicode_link_search_type').val(type);
+                            jQuery('#linkModal .kazicode_link_input_id').val(field_name);
+
+                        } else {
+
+                            jQuery('#mediaModal').css('z-index', '100000');
+                            jQuery('#mediaModal').modal('show');
+                            jQuery('#mediaModal .kazicode_media_source').val('editor');
+                            jQuery('#mediaModal .kazicode_media_search_type').val(type);
+                            jQuery('#mediaModal .kazicode_media_input_id').val(field_name);
+
+                        }
+                    }
+                });
+                tinymce.init({
+                    selector: "textarea.kazi-editor-advanced",
                     plugins: [
                         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
                         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
@@ -184,6 +234,7 @@ kazist = function () {
                     toolbar: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify  | fontselect fontsizeselect | forecolor backcolor | " +
                             "cut copy paste searchreplace | hr | bullist numlist | outdent indent | undo redo | link unlink image media | table",
                     toolbar_items_size: 'small',
+                    menubar: false,
                     document_base_url: kazist_document.web_root,
                     powerpaste_word_import: 'clean',
                     powerpaste_html_import: 'merge',
@@ -229,9 +280,9 @@ kazist = function () {
                 url += '?activity=' + task_name;
             }
 
-            jQuery('#' + main_form_id).attr('action', url);
+            jQuery('.' + main_form_id).attr('action', url);
 
-            jQuery('#' + main_form_id).submit();
+            jQuery('.' + main_form_id).submit();
 
             return false;
 
@@ -242,6 +293,23 @@ kazist = function () {
             if (!confirm_delete) {
                 return false;
             }
+
+            var base_route = kazist_document.base_route;
+            var main_form_id = jQuery('#main_form_id').val();
+            var url = kazist_document.web_base + '/' + base_route.split('.').join('/');
+
+            if (view_name != '' && typeof view_name != 'undefined') {
+                url += '/' + view_name;
+            }
+
+            if (task_name != '' && typeof task_name != 'undefined') {
+                url += '?activity=' + task_name;
+            }
+
+
+            jQuery('.' + main_form_id).attr('action', url);
+
+            jQuery('.' + main_form_id).submit();
 
         }, onClickSelectButtons: function (this_element) {
 

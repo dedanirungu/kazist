@@ -45,7 +45,8 @@ class ScheduledModel extends BaseModel {
         $subject = $sheduled->subject;
         $body = $sheduled->body;
         $query_str = $this->getItemsQuery($sheduled);
-
+        
+        $email->priority = 7;
         $email->sendPreparedEmail($subject, $body, '', base64_encode($query_str));
 
         $data_obj = new \stdClass();
@@ -82,7 +83,7 @@ class ScheduledModel extends BaseModel {
         }
 
         $query_str = (string) $query;
-      //  print_r($query_str); exit;
+        //  print_r($query_str); exit;
 
         return $query_str;
     }

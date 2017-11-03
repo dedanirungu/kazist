@@ -236,7 +236,8 @@
             "parameters": {
                 "general": {
                     "col": "",
-                    "row": ""
+                    "row": "",
+                    "editor_type": "advanced"
                 },
                 "source": [],
                 "save": {

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Settings
  *
- * @ORM\Table(name="system_settings", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"}), @ORM\Index(name="name_index", columns={"name"})})
+ * @ORM\Table(name="system_settings", indexes={@ORM\Index(name="subset_id_index", columns={"subset_id"}), @ORM\Index(name="name_index", columns={"name"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -39,7 +39,7 @@ class Settings extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
-     * @ORM\Column(name="value", type="string", length=255, nullable=false)
+     * @ORM\Column(name="value", type="string", length=1000, nullable=false)
      */
     protected $value;
 
@@ -82,7 +82,7 @@ class Settings extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -90,9 +90,10 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set subset_id
+     * Set subsetId
      *
      * @param integer $subsetId
+     *
      * @return Settings
      */
     public function setSubsetId($subsetId)
@@ -103,9 +104,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get subset_id
+     * Get subsetId
      *
-     * @return integer 
+     * @return integer
      */
     public function getSubsetId()
     {
@@ -116,6 +117,7 @@ class Settings extends \Kazist\Table\BaseTable
      * Set name
      *
      * @param string $name
+     *
      * @return Settings
      */
     public function setName($name)
@@ -128,7 +130,7 @@ class Settings extends \Kazist\Table\BaseTable
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -139,6 +141,7 @@ class Settings extends \Kazist\Table\BaseTable
      * Set value
      *
      * @param string $value
+     *
      * @return Settings
      */
     public function setValue($value)
@@ -151,7 +154,7 @@ class Settings extends \Kazist\Table\BaseTable
     /**
      * Get value
      *
-     * @return string 
+     * @return string
      */
     public function getValue()
     {
@@ -159,9 +162,10 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set extension_path
+     * Set extensionPath
      *
      * @param string $extensionPath
+     *
      * @return Settings
      */
     public function setExtensionPath($extensionPath)
@@ -172,9 +176,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get extension_path
+     * Get extensionPath
      *
-     * @return string 
+     * @return string
      */
     public function getExtensionPath()
     {
@@ -182,9 +186,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -192,9 +196,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -202,9 +206,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -212,9 +216,9 @@ class Settings extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -228,3 +232,4 @@ class Settings extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+
