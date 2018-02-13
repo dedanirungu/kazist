@@ -82,7 +82,7 @@ class ScheduledModel extends BaseModel {
             $query->leftJoin($table_alias, '#__users_users', 'uu_scheduled', 'uu_scheduled.id=' . $table_alias . '.' . $user_field);
         }
 
-        $query_str = (string) $query;
+        $query_str = $query->getRawQuery();
         //  print_r($query_str); exit;
 
         return $query_str;

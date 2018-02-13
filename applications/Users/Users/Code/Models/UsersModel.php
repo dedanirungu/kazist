@@ -37,6 +37,13 @@ class UsersModel extends BaseModel {
         $email = $search['email'];
         $username = $search['username'];
 
+        $createdrange_arr = explode(' - ', $search['createdrange']);
+
+        if ($search['createdrange'] <> '' && !empty($createdrange_arr)) {
+            $search['date_created']['start'] = date('Y-m-d 00:00:00', strtotime($createdrange_arr[0]));
+            $search['date_created']['end'] = date('Y-m-d 23:59:59', strtotime($createdrange_arr[1]));
+        }
+
         parent::appendSearchQuery($query);
 
         if ($email <> '' || $username <> '') {

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Gateways
  *
- * @ORM\Table(name="notification_gateways")
+ * @ORM\Table(name="notification_gateways", indexes={@ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -32,7 +32,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     protected $type;
 
@@ -95,6 +95,13 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
+     * @ORM\Column(name="sendmail_command", type="string", length=255, nullable=true)
+     */
+    protected $sendmail_command;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="auto_reply_to", type="string", length=255, nullable=true)
      */
     protected $auto_reply_to;
@@ -144,6 +151,34 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
+     * @ORM\Column(name="incoming", type="integer", length=11, nullable=true)
+     */
+    protected $incoming;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="incoming_port", type="string", length=255, nullable=true)
+     */
+    protected $incoming_port;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="incoming_url", type="string", length=255, nullable=true)
+     */
+    protected $incoming_url;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="incoming_sslvalidate", type="integer", length=11, nullable=true)
+     */
+    protected $incoming_sslvalidate;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="is_html", type="integer", length=11, nullable=true)
      */
     protected $is_html;
@@ -158,28 +193,28 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
 
@@ -187,7 +222,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -198,6 +233,7 @@ class Gateways extends \Kazist\Table\BaseTable
      * Set title
      *
      * @param string $title
+     *
      * @return Gateways
      */
     public function setTitle($title)
@@ -210,7 +246,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -221,6 +257,7 @@ class Gateways extends \Kazist\Table\BaseTable
      * Set type
      *
      * @param string $type
+     *
      * @return Gateways
      */
     public function setType($type)
@@ -233,7 +270,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
     public function getType()
     {
@@ -241,9 +278,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_auth
+     * Set smtpAuth
      *
      * @param integer $smtpAuth
+     *
      * @return Gateways
      */
     public function setSmtpAuth($smtpAuth)
@@ -254,9 +292,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_auth
+     * Get smtpAuth
      *
-     * @return integer 
+     * @return integer
      */
     public function getSmtpAuth()
     {
@@ -264,9 +302,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_secure
+     * Set smtpSecure
      *
      * @param string $smtpSecure
+     *
      * @return Gateways
      */
     public function setSmtpSecure($smtpSecure)
@@ -277,9 +316,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_secure
+     * Get smtpSecure
      *
-     * @return string 
+     * @return string
      */
     public function getSmtpSecure()
     {
@@ -287,9 +326,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_host
+     * Set smtpHost
      *
      * @param string $smtpHost
+     *
      * @return Gateways
      */
     public function setSmtpHost($smtpHost)
@@ -300,9 +340,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_host
+     * Get smtpHost
      *
-     * @return string 
+     * @return string
      */
     public function getSmtpHost()
     {
@@ -310,9 +350,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_username
+     * Set smtpUsername
      *
      * @param string $smtpUsername
+     *
      * @return Gateways
      */
     public function setSmtpUsername($smtpUsername)
@@ -323,9 +364,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_username
+     * Get smtpUsername
      *
-     * @return string 
+     * @return string
      */
     public function getSmtpUsername()
     {
@@ -333,9 +374,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_password
+     * Set smtpPassword
      *
      * @param string $smtpPassword
+     *
      * @return Gateways
      */
     public function setSmtpPassword($smtpPassword)
@@ -346,9 +388,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_password
+     * Get smtpPassword
      *
-     * @return string 
+     * @return string
      */
     public function getSmtpPassword()
     {
@@ -356,9 +398,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set smtp_port
+     * Set smtpPort
      *
      * @param string $smtpPort
+     *
      * @return Gateways
      */
     public function setSmtpPort($smtpPort)
@@ -369,9 +412,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get smtp_port
+     * Get smtpPort
      *
-     * @return string 
+     * @return string
      */
     public function getSmtpPort()
     {
@@ -379,9 +422,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set from_email
+     * Set fromEmail
      *
      * @param string $fromEmail
+     *
      * @return Gateways
      */
     public function setFromEmail($fromEmail)
@@ -392,9 +436,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get from_email
+     * Get fromEmail
      *
-     * @return string 
+     * @return string
      */
     public function getFromEmail()
     {
@@ -402,9 +446,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set from_name
+     * Set fromName
      *
      * @param string $fromName
+     *
      * @return Gateways
      */
     public function setFromName($fromName)
@@ -415,9 +460,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get from_name
+     * Get fromName
      *
-     * @return string 
+     * @return string
      */
     public function getFromName()
     {
@@ -425,9 +470,34 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set auto_reply_to
+     * Set sendmailCommand
+     *
+     * @param string $sendmailCommand
+     *
+     * @return Gateways
+     */
+    public function setSendmailCommand($sendmailCommand)
+    {
+        $this->sendmail_command = $sendmailCommand;
+
+        return $this;
+    }
+
+    /**
+     * Get sendmailCommand
+     *
+     * @return string
+     */
+    public function getSendmailCommand()
+    {
+        return $this->sendmail_command;
+    }
+
+    /**
+     * Set autoReplyTo
      *
      * @param string $autoReplyTo
+     *
      * @return Gateways
      */
     public function setAutoReplyTo($autoReplyTo)
@@ -438,9 +508,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get auto_reply_to
+     * Get autoReplyTo
      *
-     * @return string 
+     * @return string
      */
     public function getAutoReplyTo()
     {
@@ -448,9 +518,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set mail_debuger
+     * Set mailDebuger
      *
      * @param integer $mailDebuger
+     *
      * @return Gateways
      */
     public function setMailDebuger($mailDebuger)
@@ -461,9 +532,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get mail_debuger
+     * Get mailDebuger
      *
-     * @return integer 
+     * @return integer
      */
     public function getMailDebuger()
     {
@@ -471,9 +542,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set debug_exit
+     * Set debugExit
      *
      * @param integer $debugExit
+     *
      * @return Gateways
      */
     public function setDebugExit($debugExit)
@@ -484,9 +556,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get debug_exit
+     * Get debugExit
      *
-     * @return integer 
+     * @return integer
      */
     public function getDebugExit()
     {
@@ -494,9 +566,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set use_template
+     * Set useTemplate
      *
      * @param integer $useTemplate
+     *
      * @return Gateways
      */
     public function setUseTemplate($useTemplate)
@@ -507,9 +580,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get use_template
+     * Get useTemplate
      *
-     * @return integer 
+     * @return integer
      */
     public function getUseTemplate()
     {
@@ -517,9 +590,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set sql_limit
+     * Set sqlLimit
      *
      * @param integer $sqlLimit
+     *
      * @return Gateways
      */
     public function setSqlLimit($sqlLimit)
@@ -530,9 +604,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get sql_limit
+     * Get sqlLimit
      *
-     * @return integer 
+     * @return integer
      */
     public function getSqlLimit()
     {
@@ -540,9 +614,10 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set anti_flood
+     * Set antiFlood
      *
      * @param integer $antiFlood
+     *
      * @return Gateways
      */
     public function setAntiFlood($antiFlood)
@@ -553,9 +628,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get anti_flood
+     * Get antiFlood
      *
-     * @return integer 
+     * @return integer
      */
     public function getAntiFlood()
     {
@@ -566,6 +641,7 @@ class Gateways extends \Kazist\Table\BaseTable
      * Set throttler
      *
      * @param integer $throttler
+     *
      * @return Gateways
      */
     public function setThrottler($throttler)
@@ -578,7 +654,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * Get throttler
      *
-     * @return integer 
+     * @return integer
      */
     public function getThrottler()
     {
@@ -586,9 +662,106 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Set is_html
+     * Set incoming
+     *
+     * @param integer $incoming
+     *
+     * @return Gateways
+     */
+    public function setIncoming($incoming)
+    {
+        $this->incoming = $incoming;
+
+        return $this;
+    }
+
+    /**
+     * Get incoming
+     *
+     * @return integer
+     */
+    public function getIncoming()
+    {
+        return $this->incoming;
+    }
+
+    /**
+     * Set incomingPort
+     *
+     * @param string $incomingPort
+     *
+     * @return Gateways
+     */
+    public function setIncomingPort($incomingPort)
+    {
+        $this->incoming_port = $incomingPort;
+
+        return $this;
+    }
+
+    /**
+     * Get incomingPort
+     *
+     * @return string
+     */
+    public function getIncomingPort()
+    {
+        return $this->incoming_port;
+    }
+
+    /**
+     * Set incomingUrl
+     *
+     * @param string $incomingUrl
+     *
+     * @return Gateways
+     */
+    public function setIncomingUrl($incomingUrl)
+    {
+        $this->incoming_url = $incomingUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get incomingUrl
+     *
+     * @return string
+     */
+    public function getIncomingUrl()
+    {
+        return $this->incoming_url;
+    }
+
+    /**
+     * Set incomingSslvalidate
+     *
+     * @param integer $incomingSslvalidate
+     *
+     * @return Gateways
+     */
+    public function setIncomingSslvalidate($incomingSslvalidate)
+    {
+        $this->incoming_sslvalidate = $incomingSslvalidate;
+
+        return $this;
+    }
+
+    /**
+     * Get incomingSslvalidate
+     *
+     * @return integer
+     */
+    public function getIncomingSslvalidate()
+    {
+        return $this->incoming_sslvalidate;
+    }
+
+    /**
+     * Set isHtml
      *
      * @param integer $isHtml
+     *
      * @return Gateways
      */
     public function setIsHtml($isHtml)
@@ -599,9 +772,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get is_html
+     * Get isHtml
      *
-     * @return integer 
+     * @return integer
      */
     public function getIsHtml()
     {
@@ -612,6 +785,7 @@ class Gateways extends \Kazist\Table\BaseTable
      * Set published
      *
      * @param integer $published
+     *
      * @return Gateways
      */
     public function setPublished($published)
@@ -624,7 +798,7 @@ class Gateways extends \Kazist\Table\BaseTable
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
     public function getPublished()
     {
@@ -632,9 +806,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -642,9 +816,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -652,9 +826,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifiedBy()
     {
@@ -662,9 +836,9 @@ class Gateways extends \Kazist\Table\BaseTable
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -678,3 +852,4 @@ class Gateways extends \Kazist\Table\BaseTable
         // Add your code here
     }
 }
+

@@ -17,8 +17,15 @@ namespace Notification\Inbox\Code\Controllers;
 
 defined('KAZIST') or exit('Not Kazist Framework');
 
+use Notification\Inbox\Code\Classes\FetchMail;
 use Kazist\Controller\BaseController;
 
 class InboxController extends BaseController {
-    
+
+    public function fetchmailAction() {
+
+        $fetchMail = new FetchMail();
+        $fetchMail->fetchMail();
+    }
+
 }

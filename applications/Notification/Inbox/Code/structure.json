@@ -1,156 +1,29 @@
 {
-    "fields": [
-        {
-            "dropdown_filter": "true",
-            "name": "id",
-            "html_type": "text",
-            "mysql_type": "int",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        },
-        {
-            "dropdown_filter": "true",
-            "name": "title",
-            "html_type": "text",
-            "mysql_type": "varchar",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        },
-        {
-            "dropdown_filter": "true",
-            "name": "created_by",
-            "html_type": "text",
-            "mysql_type": "int",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        },
-        {
-            "dropdown_filter": "true",
-            "name": "date_created",
-            "html_type": "text",
-            "mysql_type": "datetime",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        },
-        {
-            "dropdown_filter": "true",
-            "name": "modified_by",
-            "html_type": "text",
-            "mysql_type": "int",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        },
-        {
-            "dropdown_filter": "true",
-            "name": "date_modified",
-            "html_type": "text",
-            "mysql_type": "datetime",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "format_value": "",
-            "parameters": {
-                "general": [],
-                "source": [],
-                "save": {
-                    "view_side": "both",
-                    "index": ""
-                },
-                "media": [],
-                "payment": []
-            }
-        }
-    ],
     "views": {
-        "table": {
-            "fields": [
-                "id",
-                "title",
-                "created_by",
-                "date_created"
-            ]
-        },
         "edit": {
             "structure": {
                 "rows": [
                     {
                         "columns": [
                             {
+                                "name": "",
+                                "class_name": "col-sm-12",
                                 "items": [
                                     {
                                         "group": {
                                             "name": "Inbox Detail",
+                                            "unique_name": "inbox_detail",
+                                            "has_title": null,
+                                            "user_right": null,
+                                            "hide_on_new": null,
                                             "fields": [
                                                 "id",
-                                                "title",
                                                 "created_by",
-                                                "date_created"
+                                                "date_created",
+                                                "subject",
+                                                "body",
+                                                "gateway_id",
+                                                "email"
                                             ]
                                         }
                                     }
@@ -164,14 +37,305 @@
                 "modified_by",
                 "date_modified"
             ]
+        },
+        "table": {
+            "fields": [
+                "id",
+                "created_by",
+                "date_created"
+            ],
+            "has_label": [
+                "id",
+                "created_by",
+                "date_created"
+            ]
         }
     },
+    "rights": {
+        "tab": [],
+        "group": [],
+        "field": []
+    },
+    "customhtmls": [],
+    "fields": [
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "id",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "subject",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "body",
+            "html_type": "editor",
+            "mysql_type": "text",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": {
+                    "col": "",
+                    "row": "",
+                    "editor_type": "advanced"
+                },
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "gateway_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "title"
+                    ],
+                    "join_table_name": "notification_gateways"
+                },
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "0",
+            "name": "email",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "created_by",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "date_created",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "modified_by",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "date_modified",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        }
+    ],
     "primarykey": "id",
+    "table_name": "notification_inbox",
+    "table_alias": "ni",
     "foreignkey": "",
     "renamedfields": "",
+    "main_fields": [
+        "id"
+    ],
     "main_view": "table",
-    "has_view": 1,
-    "tie_field": 0,
-    "subset_name": "Inbox",
-    "table_name": "notification_inbox"
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "subset_name": "inbox",
+    "right_field": "",
+    "query": {
+        "from": {
+            "table": "Notification\\Inbox\\Code\\Tables\\Inbox",
+            "alias": "ni",
+            "name": "#__notification_inbox"
+        },
+        "select": [
+            "ni.id",
+            "ni.subject",
+            "ni.body",
+            "ni.gateway_id",
+            "ng.title AS gateway_id_title",
+            "ni.email",
+            "ni.created_by",
+            "ni.date_created",
+            "ni.modified_by",
+            "ni.date_modified"
+        ],
+        "leftjoin": [
+            {
+                "table": "Notification\\Gateways\\Code\\Tables\\Gateways",
+                "alias": "ng",
+                "name": "#__notification_gateways",
+                "on": "ni.gateway_id = ng.id"
+            }
+        ]
+    }
 }

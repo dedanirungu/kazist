@@ -15,7 +15,7 @@ Notification\Gateways\Code\Tables\Gateways:
       name: type
       type: string
       length: 255
-      nullable: false
+      nullable: true
     smtp_auth:
       name: smtp_auth
       type: integer
@@ -56,6 +56,11 @@ Notification\Gateways\Code\Tables\Gateways:
       type: string
       length: 255
       nullable: true
+    sendmail_command:
+      name: sendmail_command
+      type: string
+      length: 255
+      nullable: true
     auto_reply_to:
       name: auto_reply_to
       type: string
@@ -90,7 +95,27 @@ Notification\Gateways\Code\Tables\Gateways:
       name: throttler
       type: integer
       length: 11
-      nullable: false
+      nullable: true
+    incoming:
+      name: incoming
+      type: integer
+      length: 11
+      nullable: true
+    incoming_port:
+      name: incoming_port
+      type: string
+      length: 255
+      nullable: true
+    incoming_url:
+      name: incoming_url
+      type: string
+      length: 255
+      nullable: true
+    incoming_sslvalidate:
+      name: incoming_sslvalidate
+      type: integer
+      length: 11
+      nullable: true
     is_html:
       name: is_html
       type: integer
@@ -105,20 +130,25 @@ Notification\Gateways\Code\Tables\Gateways:
       name: created_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_created:
       name: date_created
       type: datetime
-      nullable: false
+      nullable: true
     modified_by:
       name: modified_by
       type: integer
       length: 11
-      nullable: false
+      nullable: true
     date_modified:
       name: date_modified
       type: datetime
-      nullable: false
+      nullable: true
+  indexes:
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
   lifecycleCallbacks:
     prePersist:
       - onPrePersist

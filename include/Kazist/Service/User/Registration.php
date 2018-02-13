@@ -13,6 +13,7 @@ use Kazist\Event\UserEvent;
  * @copyright  Copyright (C) 2012 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
+
 class Registration {
 
     public $user_id = 0;
@@ -97,7 +98,15 @@ class Registration {
 
     public function validateRegistration($user_obj, $is_register) {
 
+        $factory = new KazistFactory();
+
         if (!$this->isValidCaptcha($is_register)) {
+            $this->is_valid = false;
+        }
+
+        if (trim($user_obj->name) === '') {
+            $msg = 'Name Is Empty.';
+            $factory->enqueueMessage($msg, 'error');
             $this->is_valid = false;
         }
 
@@ -147,6 +156,19 @@ class Registration {
         return false;
     }
 
+    public function isValidName($name) {
+
+        $factory = new KazistFactory();
+
+        if ($name == '' || $name == ' ' || $name == null) {
+            $msg = 'Name is not Valid.';
+            $factory->enqueueMessage($msg, 'error');
+            return false;
+        }
+
+        return true;
+    }
+
     public function isValidEmail($email) {
 
         $factory = new KazistFactory();
@@ -164,8 +186,14 @@ class Registration {
 
         $factory = new KazistFactory();
 
-        if (count($username) > 16) {
+        if (strlen($username) > 16) {
             $msg = 'Username should be less than 16 Character.';
+            $factory->enqueueMessage($msg, 'error');
+            return true;
+        }
+
+        if (strlen($username) < 4) {
+            $msg = 'Username should be greater than 4 Character.';
             $factory->enqueueMessage($msg, 'error');
             return true;
         }

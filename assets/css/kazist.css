@@ -66,11 +66,6 @@ and open the template in the editor.
 .fc-sun{background: #fafafa !important;}
 .fc-button-prev, .fc-button-next, .fc-text-arrow{padding:0; margin: 0;line-height: .9;}
 
-.tooltip-inner{background: #3c8dbc;}
-.tooltip.in {
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
 
 .dashboad-title{font-size: 10px; white-space: nowrap; overflow: hidden;}
 
@@ -90,7 +85,7 @@ and open the template in the editor.
 .pagination-select{margin:20px 0; width: 60px;}
 
 .image_medias_single img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .ui-dialog{

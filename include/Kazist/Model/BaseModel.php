@@ -224,9 +224,9 @@ class BaseModel extends KazistModel {
     }
 
     public function delete($delete_ids = array()) {
-        
-      
-        
+
+
+
         $entityManager = $this->container->get('doctrine')->getEntityManager();
 
         $form_data = $this->request->get('form');
@@ -258,7 +258,6 @@ class BaseModel extends KazistModel {
 
         $entityManager->flush();
         $entityManager->getConnection()->close();
-
     }
 
     public function save($form_data = '') {
@@ -325,7 +324,6 @@ class BaseModel extends KazistModel {
                 case 'date':
                     $form_data[$field_name] = ($this->validateDate($form_data[$field_name], 'Y-m-d')) ? $form_data[$field_name] : NULL;
                     $form_data[$field_name] = ( is_null($form_data[$field_name]) && $field_not_null) ? date('Y-m-d') : $form_data[$field_name];
-
                     break;
                 case 'time':
                     $form_data[$field_name] = ($this->validateDate($form_data[$field_name], 'H:i:s')) ? $form_data[$field_name] : NULL;
@@ -361,6 +359,18 @@ class BaseModel extends KazistModel {
     }
 
     function validateDate($date, $format_str) {
+
+        switch ($format_str) {
+            case 'datetime':
+                $format_str = 'Y-m-d H:i:s';
+                break;
+            case 'time':
+                $format_str = 'H:i:s';
+                break;
+            case 'date':
+                $format_str = 'Y-m-d';
+                break;
+        }
 
         $date_str = ($format_str <> '') ? $format_str : 'Y-m-d H:i:s';
 
@@ -847,6 +857,7 @@ class BaseModel extends KazistModel {
                         $where_arr[] = $this->table_alias . '.' . $key . ' = :' . $key;
                         $parameter_arr[$key] = $item;
                     } elseif (is_array($item)) {
+
                         if ($this->validateDate($item['start'], $field['html_type']) && $this->validateDate($item['end'], $field['html_type'])) {
                             $where_arr[] = $this->table_alias . '.' . $key . ' BETWEEN :' . $key . '_start AND :' . $key . '_end';
                             $parameter_arr[$key . '_start'] = $item['start'];

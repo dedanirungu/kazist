@@ -25,22 +25,10 @@
             "icon": "fa fa-share",
             "children": []
         }, {
-            "title": "Double Auth",
+            "title": "Double Auth Routes",
             "alias": "admin_users_doubleauth_routes",
-            "url": "",
+            "url": "admin/users/doubleauth/routes",
             "icon": "fa fa-road",
-            "children": [{
-                    "title": "Routes",
-                    "alias": "admin_users_doubleauth_routes",
-                    "url": "admin/users/doubleauth/routes",
-                    "icon": "fa fa-road",
-                    "children": []
-                }, {
-                    "title": "Users",
-                    "alias": "admin_users_doubleauth_users",
-                    "url": "admin/users/doubleauth/users",
-                    "icon": "fa fa-road",
-                    "children": []
-                }]
+            "children": []
         }]
 }

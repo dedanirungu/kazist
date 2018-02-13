@@ -86,5 +86,9 @@
     "NotificationMessagesAttachments": {
         "namespace": "Notification\\Messages\\Attachments",
         "controller": "AttachmentsController"
+    },
+    "NotificationInboxAttachments": {
+        "namespace": "Notification\\Inbox\\Attachments",
+        "controller": "AttachmentsController"
     }
 }

@@ -25,6 +25,7 @@ Users\Users\Code\Tables\Users:
       name: username
       type: string
       length: '255'
+      unique: 'true'
       nullable: false
     password:
       name: password
@@ -40,6 +41,7 @@ Users\Users\Code\Tables\Users:
       name: email
       type: string
       length: '255'
+      unique: 'true'
       nullable: false
     gender:
       name: gender
@@ -82,7 +84,7 @@ Users\Users\Code\Tables\Users:
       nullable: true
     dob:
       name: dob
-      type: datetime
+      type: date
       nullable: true
     points:
       name: points
@@ -146,6 +148,8 @@ Users\Users\Code\Tables\Users:
       columns: [inviter_id]
     country_id_index:
       columns: [country_id]
+    location_id_index:
+      columns: [location_id]
     created_by_index:
       columns: [created_by]
     modified_by_index:

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Users
  *
- * @ORM\Table(name="users_users", indexes={@ORM\Index(name="inviter_id_index", columns={"inviter_id"}), @ORM\Index(name="country_id_index", columns={"country_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
+ * @ORM\Table(name="users_users", indexes={@ORM\Index(name="inviter_id_index", columns={"inviter_id"}), @ORM\Index(name="country_id_index", columns={"country_id"}), @ORM\Index(name="location_id_index", columns={"location_id"}), @ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -46,7 +46,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, nullable=false)
+     * @ORM\Column(name="username", type="string", length=255, nullable=false, unique=true)
      */
     protected $username;
 
@@ -67,7 +67,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false, unique=true)
      */
     protected $email;
 
@@ -130,7 +130,7 @@ class Users extends \Kazist\Table\BaseTable
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dob", type="datetime", nullable=true)
+     * @ORM\Column(name="dob", type="date", nullable=true)
      */
     protected $dob;
 

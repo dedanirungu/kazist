@@ -59,13 +59,13 @@ class ContentIndexing {
         $data_obj = new \stdClass;
         $factory = new KazistFactory();
 
-        $data_obj->subset_id = $subset_table->id;
+        $data_obj->table_name = $subset_table->table_name;
         $data_obj->record_id = $subset_content->getId();
 
         $existing_obj = clone $data_obj;
 
         $where_arr = array();
-        $where_arr[] = 'subset_id=:subset_id';
+        $where_arr[] = 'table_name=:table_name';
         $where_arr[] = 'record_id=:record_id';
 
         $factory->deleteRecords('#__search_indexes', $where_arr, $existing_obj);

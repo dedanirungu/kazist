@@ -50,6 +50,19 @@
                                 "items": [
                                     {
                                         "group": {
+                                            "name": "Login Detail",
+                                            "unique_name": "login_detail",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "smtp_username",
+                                                "smtp_password"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
                                             "name": "Smtp Detail",
                                             "unique_name": "smtp_detail",
                                             "has_title": 1,
@@ -59,9 +72,22 @@
                                                 "smtp_auth",
                                                 "smtp_secure",
                                                 "smtp_host",
-                                                "smtp_username",
-                                                "smtp_password",
                                                 "smtp_port"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
+                                            "name": "Incoming Detail",
+                                            "unique_name": "incoming_detail",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "incoming",
+                                                "incoming_url",
+                                                "incoming_port",
+                                                "incoming_sslvalidate"
                                             ]
                                         }
                                     },
@@ -88,6 +114,7 @@
             },
             "ommitted": [
                 "id",
+                "sendmail_command",
                 "mail_debuger",
                 "debug_exit"
             ]
@@ -124,7 +151,7 @@
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -172,7 +199,7 @@
         },
         {
             "dropdown_filter": "1",
-            "nullable": "0",
+            "nullable": "1",
             "name": "type",
             "html_type": "select",
             "mysql_type": "varchar",
@@ -630,6 +657,106 @@
             }
         },
         {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "incoming",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "incoming_port",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "incoming_url",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "incoming_sslvalidate",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "view_side": "both",
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
             "dropdown_filter": "1",
             "nullable": "1",
             "name": "is_html",
@@ -679,7 +806,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "recordpicker",
             "mysql_type": "int",
@@ -710,7 +837,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "datetime",
             "mysql_type": "datetime",
@@ -734,7 +861,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "recordpicker",
             "mysql_type": "int",
@@ -765,7 +892,7 @@
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "datetime",
             "mysql_type": "datetime",
@@ -794,7 +921,7 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "id"
+        "title"
     ],
     "main_view": "table",
     "has_view": "1",
@@ -822,6 +949,7 @@
             "ng.smtp_port",
             "ng.from_email",
             "ng.from_name",
+            "ng.sendmail_command",
             "ng.auto_reply_to",
             "ng.mail_debuger",
             "ng.debug_exit",
@@ -829,12 +957,32 @@
             "ng.sql_limit",
             "ng.anti_flood",
             "ng.throttler",
+            "ng.incoming",
+            "ng.incoming_port",
+            "ng.incoming_url",
+            "ng.incoming_sslvalidate",
             "ng.is_html",
             "ng.published",
             "ng.created_by",
+            "uu.name AS created_by_name",
             "ng.date_created",
             "ng.modified_by",
+            "uu_8917.name AS modified_by_name",
             "ng.date_modified"
+        ],
+        "leftjoin": [
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu",
+                "name": "#__users_users",
+                "on": "ng.created_by = uu.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu_8917",
+                "name": "#__users_users",
+                "on": "ng.modified_by = uu_8917.id"
+            }
         ]
     }
 }

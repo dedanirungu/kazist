@@ -78,7 +78,7 @@ class MediaController extends BaseController {
         $upload_detail['route'] = $this->request->get('root_route');
 
         $uploaddir = 'uploads/' . str_replace('.', '/', $upload_detail['route']);
-        $upload_path = JPATH_ROOT . '/' . $uploaddir;
+        $upload_path = JPATH_ROOT . $uploaddir;
 
         $factory->makeDir($upload_path);
 
@@ -86,7 +86,13 @@ class MediaController extends BaseController {
 
             $original_name = preg_replace("/[^A-Za-z0-9.]/", '-', $uploadedFile->getClientOriginalName());
             $web_file = $uploaddir . '/' . $original_name;
-            $file = $uploadedFile->move($upload_path, $original_name);
+            
+            try {
+                $file = $uploadedFile->move($upload_path, $original_name);
+            } catch (Exception $exc) {
+                echo $exc->getTraceAsString();
+            }
+            
 
             $upload_detail['file'] = $web_file;
             $upload_detail['extension'] = $uploadedFile->getClientOriginalExtension();
@@ -100,6 +106,7 @@ class MediaController extends BaseController {
     }
 
     function listingAction() {
+
         $medias = array();
 
         $factory = new KazistFactory;

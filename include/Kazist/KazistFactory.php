@@ -32,6 +32,12 @@ class KazistFactory {
         $this->container = $sc;
     }
 
+    public function isAdmin() {
+
+        $baseModel = new BaseModel();
+        return $baseModel->isAdmin();
+    }
+
     public function getUser() {
 
         $baseModel = new BaseModel();
@@ -67,7 +73,7 @@ class KazistFactory {
     }
 
     public function saveRecord($table_name, $data, $where_arr = array(), $parameter_arr = array()) {
-
+    
         $baseModel = new BaseModel();
         return $baseModel->saveRecord($table_name, $data, $where_arr, $parameter_arr);
     }
@@ -217,6 +223,17 @@ class KazistFactory {
         } else {
             return $phrase_name;
         }
+    }
+
+    public function getMedia($media_id) {
+
+        $query = $this->getQueryBuilder('#__media_media', 'mm');
+        $query->where('mm.id=:id');
+        $query->setParameter('id', $media_id);
+
+        $record = $query->loadObject();
+
+        return $record;
     }
 
     public function uploadMedia($fields, $extension, $alias) {

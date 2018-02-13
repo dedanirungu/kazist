@@ -82,19 +82,21 @@ kazist = function () {
                 }
             });
 
-            html.find('.confirm_delete').click(function () {
+            html.find('.confirm_delete').on('click',function (e) {
+
+                e.stopPropagation();
 
                 var confirm_delete = confirm('Are you sure you want to delete selected record.');
 
-                if (!confirm_delete) {
-                    return  kazist.confirmDelete();
+                if (confirm_delete) {
+                    
+                    var href_url = jQuery(this).attr('href');
+
+                    window.location.href = href_url;
                 }
                 return false;
             });
 
-            html.find('.kazi-delete').click(function () {
-                kazist.setViewNSubmit('delete');
-            });
 
             html.find('.kazi-add').click(function () {
 
@@ -102,8 +104,15 @@ kazist = function () {
                 kazist.setViewNSubmit('add', 'save');
             });
 
-            html.find('.kazi-delete').click(function () {
-                kazist.setViewNSubmit('delete');
+            html.find('.kazi-delete').on('click', function (e) {
+
+                e.stopPropagation();
+
+                var confirm_delete = confirm('Are you sure you want to delete selected record.');
+
+                if (confirm_delete) {
+                    kazist.setViewNSubmit('delete');
+                }
             });
 
             html.find('.kazi-detail').click(function () {
@@ -224,6 +233,7 @@ kazist = function () {
                         }
                     }
                 });
+                
                 tinymce.init({
                     selector: "textarea.kazi-editor-advanced",
                     plugins: [
@@ -234,7 +244,7 @@ kazist = function () {
                     toolbar: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify  | fontselect fontsizeselect | forecolor backcolor | " +
                             "cut copy paste searchreplace | hr | bullist numlist | outdent indent | undo redo | link unlink image media | table",
                     toolbar_items_size: 'small',
-                    menubar: false,
+                    menubar: true,
                     document_base_url: kazist_document.web_root,
                     powerpaste_word_import: 'clean',
                     powerpaste_html_import: 'merge',
@@ -280,9 +290,9 @@ kazist = function () {
                 url += '?activity=' + task_name;
             }
 
-            jQuery('.' + main_form_id).attr('action', url);
+            jQuery('#' + main_form_id).attr('action', url);
 
-            jQuery('.' + main_form_id).submit();
+            jQuery('#' + main_form_id).submit();
 
             return false;
 

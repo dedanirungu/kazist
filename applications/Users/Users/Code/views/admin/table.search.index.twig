@@ -2,13 +2,23 @@
 
 {% import "form.macro.twig" as forms %}
 
-{% set search = document.search %}
+{{ set_assets('assets/js/moments.js') }}
+{{ set_assets('assets/js/daterangepicker.js') }}
+{{ set_assets('assets/css/daterangepicker.css') }}
 
-<form id="{{ main_form_id }}" action="{{ generate_url('admin.users.users') }}" method="post" >
+{% set search = document.search %}
+{% set start_year = get_setting('system_template_copyright_start_year')|default('2013') %}
+
+
+<form action="{{ generate_url('admin.users.users') }}" method="post" >
     <div class="custom-search">
         <div class="col-sm-2">
-            <b>General</b><br>
+            <b>Keyword</b><br>
             {{ forms.input(' search.keyword', 'text', search.keyword) }}
+        </div>
+        <div class="col-sm-2">
+            <b>Join Date</b><br>
+            {{ forms.input(' search.createdrange', 'text', search.createdrange|default( start_year ~ '-01-01 - ' ~ 'now'|date('Y-m-d')) ) }}
         </div>
         <div class="col-sm-2">
             <b>Username</b><br>
@@ -32,6 +42,88 @@
 
 <div class="clearfix"></div>
 <br>
+
+<script>
+
+    jQuery(document).ready(function () {
+
+        var cb = function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+            jQuery('.search_createdrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        };
+
+        var optionSet1 = {
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            minDate: '{{ start_year }}-01-01',
+            maxDate: '{{ 'now'|date('Y-m-d') }}',
+            dateLimit: {days: 60},
+            showDropdowns: true,
+            showWeekNumbers: true,
+            timePicker: false,
+            timePickerIncrement: 1,
+            timePicker12Hour: true,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                'Last 3 Month': [moment().subtract(3, 'months'), moment()],
+                'Last 6 Month': [moment().subtract(6, 'months'), moment()],
+                'Last 1 Year': [moment().subtract(12, 'months'), moment()],
+                'Last 2 Year': [moment().subtract(24, 'months'), moment()]
+            },
+            opens: 'right',
+            buttonClasses: ['btn btn-default'],
+            applyClass: 'btn-sm btn-primary',
+            cancelClass: 'btn-sm',
+            format: 'YYYY-MM-DD',
+            separator: ' - ',
+            locale: {
+                applyLabel: 'Submit',
+                cancelLabel: 'Clear',
+                fromLabel: 'From',
+                toLabel: 'To',
+                customRangeLabel: 'Custom',
+                daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                firstDay: 1
+            }
+        };
+
+        jQuery('.search_createdrange').daterangepicker(optionSet1, cb);
+
+    });
+
+    /*jQuery(document).ready(function () {
+     var start = moment().subtract(12, 'months');
+     var end = moment();
+     jQuery('.search_joinrange').daterangepicker({
+     showDropdowns: true,
+     changeMonth: true,
+     changeYear: true,
+     forceParse: false,
+     minDate: '{{ start_year }}-01-01',
+     maxDate: '{{ 'now'|date('Y-m-d') }}',
+     locale: {
+     format: 'YYYY-MM-DD'
+     },
+     ranges: {
+     'Today': [moment(), moment()],
+     'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+     'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+     'This Month': [moment().startOf('month'), moment().endOf('month')],
+     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+     'Last 3 Month': [moment().subtract(3, 'months'), moment()],
+     'Last 6 Month': [moment().subtract(6, 'months'), moment()],
+     'Last 1 Year': [moment().subtract(12, 'months'), moment()],
+     'Last 2 Year': [moment().subtract(24, 'months'), moment()],
+     }
+     });
+     });*/
+</script>
+
 
 <style>
     .custom-search .col-sm-1, .custom-search .col-sm-2, .custom-search .col-sm-3, .custom-search .col-sm-9, .custom-search .col-sm-12{
